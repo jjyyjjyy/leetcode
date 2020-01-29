@@ -1,0 +1,9 @@
+= LeetCode
+:icons: font
+:source-highlighter: highlightjs
+:highlightjs-theme: idea
+:hardbreaks:
+:sectlinks:
+:sectnums:
+:stem:
+:tabsize: 4
