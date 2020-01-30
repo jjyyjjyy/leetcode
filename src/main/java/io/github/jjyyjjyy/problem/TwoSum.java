@@ -38,4 +38,10 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.HASH_TABLE}
 )
 public class TwoSum {
+
+    public int[] twoSum(int[] nums, int target) {
+
+        return new int[0];
+    }
+
 }
