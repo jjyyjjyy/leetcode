@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/two-sum/">两数之和</a>
@@ -39,9 +43,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TwoSum {
 
+    /**
+     * 遍历两次数组, 两两相加找到两个元素的索引.
+     */
+    @Complexity("O(n^2)")
     public int[] twoSum(int[] nums, int target) {
-
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
         return new int[0];
     }
 
+    /**
+     * 使用哈希表存储元素和索引的映射关系.
+     * 遍历数组时尝试获取另外一个元素的索引.
+     */
+    @Complexity("O(n)")
+    public int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            Integer idx = map.get(target - nums[i]);
+            if (idx != null) {
+                return new int[]{idx, i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[0];
+    }
 }
