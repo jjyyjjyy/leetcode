@@ -59,5 +59,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
-public class RemoveDuplicatesfromSortedArray {
+public class RemoveDuplicatesFromSortedArray {
+
+    public int removeDuplicates(int[] nums) {
+        return 0;
+    }
 }
