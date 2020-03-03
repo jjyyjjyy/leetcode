@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -61,6 +62,13 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveDuplicatesFromSortedArray {
 
+    /**
+     * 1. 维护快慢两个指针初始化为0.
+     * 2. 如果快指针的值等于慢指针处的值, 慢指针向后进一位.
+     * 3. 快指针向后进一位, 重复步骤2.
+     * 4. 最后慢指针的值加1就是数组中不重复的元素数量.
+     */
+    @Complexity("O(n)")
     public int removeDuplicates(int[] nums) {
 
         if (nums.length == 0) {

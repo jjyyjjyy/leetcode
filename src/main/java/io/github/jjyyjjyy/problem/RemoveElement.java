@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -67,7 +68,40 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveElement {
 
+    /**
+     * 1. 维护快慢两个指针初始化为0.
+     * 2. 如果快指针处的值不等于指定值, 则将快指针处的值赋值给慢指针, 满指针向前进一位.
+     * 3. 快指针向后进一位, 重复步骤2.
+     */
+    @Complexity("O(n)")
     public int removeElement(int[] nums, int val) {
-        return 0;
+        int j = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
+    }
+
+    /**
+     * 1. 维护快指针和尾指针.
+     * 2. 如果快指针的值等于指定值, 则交换两个指针处的值, 尾指针向前进一位.
+     * 3. 重复步骤2, 直到快指针等于尾指针.
+     * 4. 尾指针的索引值即为数组元素的数量.
+     */
+    @Complexity("O(n)")
+    public int removeElement2(int[] nums, int val) {
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[--n];
+            } else {
+                i++;
+            }
+        }
+        return n;
     }
 }

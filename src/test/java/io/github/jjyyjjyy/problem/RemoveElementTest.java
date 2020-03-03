@@ -18,4 +18,10 @@ class RemoveElementTest {
     void removeElement(@ConvertWith(CsvToArray.class) int[] param1, int param2, int result) {
         Assertions.assertEquals(result, removeElement.removeElement(param1, param2));
     }
+
+    @ParameterizedTest
+    @CsvSource({"'3,2,2,3',3,2", "'0,1,2,2,3,0,4,2',2,5"})
+    void removeElement2(@ConvertWith(CsvToArray.class) int[] param1, int param2, int result) {
+        Assertions.assertEquals(result, removeElement.removeElement2(param1, param2));
+    }
 }
