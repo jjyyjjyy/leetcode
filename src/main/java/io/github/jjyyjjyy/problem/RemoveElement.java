@@ -66,4 +66,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class RemoveElement {
+
+    public int removeElement(int[] nums, int val) {
+        return 0;
+    }
 }
