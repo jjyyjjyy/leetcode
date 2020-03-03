@@ -22,9 +22,4 @@ class TwoSumTest {
         assertArrayEquals(result, twoSum.twoSum(param1, param2));
     }
 
-    @Test
-    void twoSum2() {
-        assertArrayEquals(new int[]{0, 1}, twoSum.twoSum2(new int[]{2, 7, 11, 15}, 9));
-        assertArrayEquals(new int[]{2, 3}, twoSum.twoSum2(new int[]{11, 15, 2, 7}, 9));
-    }
 }
