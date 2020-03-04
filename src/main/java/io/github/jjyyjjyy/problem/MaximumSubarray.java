@@ -36,4 +36,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.DIVIDE_AND_CONQUER, Tag.DYNAMIC_PROGRAMMING}
 )
 public class MaximumSubarray {
+
+    public int maxSubArray(int[] nums) {
+        return 0;
+    }
 }
