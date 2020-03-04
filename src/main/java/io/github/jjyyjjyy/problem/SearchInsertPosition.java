@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -49,8 +50,16 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SearchInsertPosition {
 
+    @Complexity("O(n)")
     public int searchInsert(int[] nums, int target) {
-        return 0;
+        int i = 0;
+        while (i < nums.length) {
+            if (nums[i] >= target) {
+                return i;
+            }
+            i++;
+        }
+        return i;
     }
 
 }
