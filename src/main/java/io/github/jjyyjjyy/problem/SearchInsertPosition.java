@@ -48,4 +48,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
 public class SearchInsertPosition {
+
+    public int searchInsert(int[] nums, int target) {
+        return 0;
+    }
+
 }
