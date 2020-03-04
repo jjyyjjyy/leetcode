@@ -18,5 +18,6 @@ class MaximumSubarrayTest {
     @CsvSource({"'-2,1,-3,4,-1,2,1,-5,4',6"})
     void maxSubArray(@ConvertWith(CsvToArray.class) int[] param, int result) {
         assertEquals(result, maximumSubarray.maxSubArray(param));
+        assertEquals(result, maximumSubarray.maxSubArray2(param));
     }
 }
