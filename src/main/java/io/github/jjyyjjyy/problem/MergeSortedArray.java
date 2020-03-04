@@ -39,4 +39,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class MergeSortedArray {
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+    }
 }
