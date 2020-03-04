@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -44,7 +45,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PlusOne {
 
+    /**
+     * 数组从后向前遍历
+     * 如果小于9, 则直接加1, 结束.
+     * 如果等于9, 则该位置变为0, 前面一个位置加1. 如果前面没有位置, 则补1.
+     */
+    @Complexity("O(n)")
     public int[] plusOne(int[] digits) {
-        return new int[0];
+        return plusOne(digits, digits.length - 1);
+    }
+
+    private int[] plusOne(int[] digits, int index) {
+        if (digits[index] < 9) {
+            digits[index]++;
+            return digits;
+        }
+        digits[index] = 0;
+        if (index > 0) {
+            return plusOne(digits, index - 1);
+        }
+        int[] result = new int[digits.length + 1];
+        result[0] = 1;
+        System.arraycopy(digits, 0, result, 1, digits.length);
+        return result;
     }
 }
