@@ -43,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class PlusOne {
+
+    public int[] plusOne(int[] digits) {
+        return new int[0];
+    }
 }
