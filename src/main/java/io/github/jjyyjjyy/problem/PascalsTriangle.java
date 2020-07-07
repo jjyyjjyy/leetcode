@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +43,32 @@ import java.util.List;
 )
 public class PascalsTriangle {
 
+    /**
+     * 1. 设置数组首尾为1.
+     * 2. 第j位元素的值等于前一个数组第j-1位和第j位的值之和.
+     */
+    @Complexity("O(n^2)")
     public List<List<Integer>> generate(int numRows) {
-        return Collections.emptyList();
+        List<List<Integer>> result = new ArrayList<>(numRows);
+        if (numRows == 0) {
+            return result;
+        }
+        List<Integer> firstRow = new ArrayList<>(1);
+        firstRow.add(1);
+        result.add(firstRow);
+
+        for (int i = 1; i < numRows; i++) {
+            List<Integer> row = new ArrayList<>(i + 1);
+            row.add(1);
+
+            List<Integer> prevRow = result.get(i - 1);
+            for (int j = 1; j < i; j++) {
+                row.add(prevRow.get(j - 1) + prevRow.get(j));
+            }
+            row.add(1);
+            result.add(row);
+        }
+
+        return result;
     }
 }
