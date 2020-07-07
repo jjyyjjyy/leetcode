@@ -12,7 +12,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  */
 class RemoveDuplicatesFromSortedArrayTest {
 
-    private RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
+    private static final RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
 
     @ParameterizedTest
     @CsvSource({"'1,1,2',2", "'0,0,1,1,1,2,2,3,3,4',5"})

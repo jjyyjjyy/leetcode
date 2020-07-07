@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 class TwoSumTest {
 
-    private TwoSum twoSum = new TwoSum();
+    private static final TwoSum twoSum = new TwoSum();
 
     @ParameterizedTest
     @CsvSource({"'2,7,11,15',9,'0,1'", "'11,15,2,7',9,'2,3'"})

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
  */
 class PlusOneTest {
 
-    private PlusOne plusOne = new PlusOne();
+    private static final PlusOne plusOne = new PlusOne();
 
     @ParameterizedTest
     @CsvSource({"'1,2,3','1,2,4'", "'4,3,2,1','4,3,2,2'", "'4,9','5,0'", "'9,9','1,0,0'"})
