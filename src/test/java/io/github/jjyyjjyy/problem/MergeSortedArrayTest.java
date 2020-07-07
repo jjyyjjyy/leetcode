@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  */
 class MergeSortedArrayTest {
 
-    private MergeSortedArray mergeSortedArray = new MergeSortedArray();
+    private static final MergeSortedArray mergeSortedArray = new MergeSortedArray();
 
     @ParameterizedTest
     @CsvSource({"'1,2,3,0,0,0',3,'2,5,6',3,'1,2,2,3,5,6'", "'0',0,'1',1,'1'"})

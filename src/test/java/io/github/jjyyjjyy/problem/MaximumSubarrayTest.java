@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 class MaximumSubarrayTest {
 
-    private MaximumSubarray maximumSubarray = new MaximumSubarray();
+    private static final MaximumSubarray maximumSubarray = new MaximumSubarray();
 
     @ParameterizedTest
     @CsvSource({"'-2,1,-3,4,-1,2,1,-5,4',6"})

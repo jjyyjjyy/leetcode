@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource;
  */
 class RemoveElementTest {
 
-    private RemoveElement removeElement = new RemoveElement();
+    private static final RemoveElement removeElement = new RemoveElement();
 
     @ParameterizedTest
     @CsvSource({"'3,2,2,3',3,2", "'0,1,2,2,3,0,4,2',2,5"})
