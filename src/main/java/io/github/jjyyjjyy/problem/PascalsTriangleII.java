@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/pascals-triangle-ii/">杨辉三角 II</a>
  *
@@ -36,4 +39,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class PascalsTriangleII {
+
+    public List<Integer> getRow(int rowIndex) {
+        return Collections.emptyList();
+    }
 }
