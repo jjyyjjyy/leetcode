@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +41,36 @@ import java.util.List;
 )
 public class PascalsTriangleII {
 
+    /**
+     * 每一行元素: stem:[C((1),(n)), C((2),(n)), C((3),(n)), ..., C((k),(n))]
+     * 每列元素值: stem:[C((k),(n))=C((k-1),(n))xx(n-k+1)/k]
+     */
+    @Complexity("O(n)")
     public List<Integer> getRow(int rowIndex) {
-        return Collections.emptyList();
+        List<Integer> result = new ArrayList<>(rowIndex + 1);
+        result.add(1);
+        long pre = 1;
+        for (int k = 1; k < rowIndex + 1; k++) {
+            long cur = pre * (rowIndex - k + 1) / k;
+            result.add((int) cur);
+            pre = cur;
+        }
+        return result;
+    }
+
+    /**
+     * 从后向前遍历, 第j位的值等于第j-1位加上第j位之和.
+     */
+    @Complexity("O(n^2)")
+    public List<Integer> getRow2(int rowIndex) {
+        List<Integer> result = new ArrayList<>(rowIndex + 1);
+        result.add(1);
+        for (int i = 1; i < rowIndex + 1; i++) {
+            for (int j = i - 1; j > 0; j--) {
+                result.set(j, result.get(j) + result.get(j - 1));
+            }
+            result.add(1);
+        }
+        return result;
     }
 }
