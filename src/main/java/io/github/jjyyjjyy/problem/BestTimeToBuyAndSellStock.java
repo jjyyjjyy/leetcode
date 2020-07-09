@@ -44,5 +44,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING}
 )
-public class BestTimetoBuyandSellStock {
+public class BestTimeToBuyAndSellStock {
+
+    public int maxProfit(int[] prices) {
+        return 0;
+    }
 }
