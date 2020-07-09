@@ -68,7 +68,7 @@ public class RemoveDuplicatesFromSortedArray {
      * 3. 快指针向后进一位, 重复步骤2.
      * 4. 最后慢指针的值加1就是数组中不重复的元素数量.
      */
-    @Complexity("O(n)")
+    @Complexity(Complexity.ComplexityType.O_N)
     public int removeDuplicates(int[] nums) {
 
         if (nums.length == 0) {

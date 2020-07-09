@@ -50,7 +50,7 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SearchInsertPosition {
 
-    @Complexity("O(n)")
+    @Complexity(Complexity.ComplexityType.O_N)
     public int searchInsert(int[] nums, int target) {
         int i = 0;
         while (i < nums.length) {

@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -46,7 +47,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BestTimeToBuyAndSellStock {
 
+    /**
+     * 依次遍历数组, 找到前面数组的最小值与其相减得出最大的差值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxProfit(int[] prices) {
-        return 0;
+        int min = Integer.MAX_VALUE;
+        int max = 0;
+
+        for (int price : prices) {
+            min = Math.min(min, price);
+            max = Math.max(max, price - min);
+        }
+
+        return max;
+    }
+
+    /**
+     * 依次遍历数组, 依次减去前面数组的元素, 计算出差值, 并比较得出最大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
+    public int maxProfit2(int[] prices) {
+        int max = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            int current = prices[i];
+            for (int j = i + 1; j < prices.length; j++) {
+                max = Math.max(max, prices[j] - current);
+            }
+        }
+        return max;
     }
 }

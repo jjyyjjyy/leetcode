@@ -50,7 +50,7 @@ public class PlusOne {
      * 如果小于9, 则直接加1, 结束.
      * 如果等于9, 则该位置变为0, 前面一个位置加1. 如果前面没有位置, 则补1.
      */
-    @Complexity("O(n)")
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] plusOne(int[] digits) {
         return plusOne(digits, digits.length - 1);
     }

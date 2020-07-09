@@ -45,7 +45,7 @@ public class PascalsTriangleII {
      * 每一行元素: stem:[C((1),(n)), C((2),(n)), C((3),(n)), ..., C((k),(n))]
      * 每列元素值: stem:[C((k),(n))=C((k-1),(n))xx(n-k+1)/k]
      */
-    @Complexity("O(n)")
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> getRow(int rowIndex) {
         List<Integer> result = new ArrayList<>(rowIndex + 1);
         result.add(1);
@@ -61,7 +61,7 @@ public class PascalsTriangleII {
     /**
      * 从后向前遍历, 第j位的值等于第j-1位加上第j位之和.
      */
-    @Complexity("O(n^2)")
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public List<Integer> getRow2(int rowIndex) {
         List<Integer> result = new ArrayList<>(rowIndex + 1);
         result.add(1);

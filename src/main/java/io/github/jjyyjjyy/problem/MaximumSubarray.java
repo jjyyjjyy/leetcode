@@ -43,7 +43,7 @@ public class MaximumSubarray {
      * 维护两个变量 maxToCurrent和max.
      * 依次遍历数组, maxToCurrent等于nums[i]和maxToCurrent+nums[i]的最大值, max等于maxToCurrent和max的最大值.
      */
-    @Complexity("O(n)")
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxSubArray(int[] nums) {
         int maxToCurrent = nums[0];
         int max = nums[0];
@@ -59,7 +59,7 @@ public class MaximumSubarray {
      * 分别找到左右两侧的最大和, 然后和中间包括mid和mid+1的最大和比较.
      * 中间和的计算: 从mid向左找到左边最大和, 从mid+1向右找到最大和, 中间最大和即左边最大和加上右边最大和.
      */
-    @Complexity("O(log(n))")
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int maxSubArray2(int[] nums) {
         return maxSubArray2Internal(nums, 0, nums.length - 1);
     }

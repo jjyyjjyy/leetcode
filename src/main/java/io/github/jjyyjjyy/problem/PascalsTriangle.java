@@ -47,7 +47,7 @@ public class PascalsTriangle {
      * 1. 设置数组首尾为1.
      * 2. 第j位元素的值等于前一个数组第j-1位和第j位的值之和.
      */
-    @Complexity("O(n^2)")
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>(numRows);
         if (numRows == 0) {
