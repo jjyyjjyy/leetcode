@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -54,8 +55,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BestTimeToBuyAndSellStockII {
 
+    /**
+     * 依次遍历数组, 如果相邻两个元素的差值大于0, 则累加.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxProfit(int[] prices) {
-        return 0;
+        int max = 0;
+        for (int i = 1; i < prices.length; i++) {
+            int val = prices[i] - prices[i - 1];
+            if (val > 0) {
+                max += val;
+            }
+        }
+        return max;
     }
 
 }
