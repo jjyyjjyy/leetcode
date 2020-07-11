@@ -38,5 +38,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY, Tag.TWO_POINTERS, Tag.BINARY_SEARCH}
 )
-public class TwoSumIIInputarrayissorted {
+public class TwoSumIIInputArrayIsSorted {
+
+    public int[] twoSum(int[] numbers, int target) {
+        return new int[]{0, 0};
+    }
 }
