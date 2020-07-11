@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,7 +41,48 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TwoSumIIInputArrayIsSorted {
 
+    /**
+     * 1. 初始化首尾两个指针.
+     * 2. 两个指针位置上的元素相加.
+     * 2.1. 如果和等于期望值, 则返回两个指针.
+     * 2.2. 如果和小于期望值, 首指针向右进一位.
+     * 2.3. 如果和大于期望值, 尾指针向左退一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] twoSum(int[] numbers, int target) {
+        int i = 0;
+        int j = numbers.length - 1;
+        while (i < j) {
+            int sum = numbers[i] + numbers[j];
+            if (sum == target) {
+                return new int[]{i + 1, j + 1};
+            }
+            if (sum < target) {
+                i++;
+            } else {
+                j--;
+            }
+        }
+        return new int[]{0, 0};
+    }
+
+    /**
+     * 两个指针从左到右依次遍历数组, 相加, 得到位置.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
+    public int[] twoSum2(int[] numbers, int target) {
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = i + 1; j < numbers.length; j++) {
+                int sum = numbers[i] + numbers[j];
+                if (sum == target) {
+                    return new int[]{i + 1, j + 1};
+                }
+                if (sum > target) {
+                    break;
+                }
+            }
+        }
+
         return new int[]{0, 0};
     }
 }
