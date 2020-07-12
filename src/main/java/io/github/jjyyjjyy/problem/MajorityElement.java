@@ -36,4 +36,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.DIVIDE_AND_CONQUER}
 )
 public class MajorityElement {
+
+    public int majorityElement(int[] nums) {
+        return 0;
+    }
 }
