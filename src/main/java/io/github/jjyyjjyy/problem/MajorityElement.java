@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,50 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MajorityElement {
 
+    /**
+     * Boyer-Moore
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int majorityElement(int[] nums) {
-        return 0;
+        int count = 1;
+        int candidate = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (count == 0) {
+                candidate = nums[i];
+            }
+            count = candidate == nums[i] ? (count + 1) : (count - 1);
+        }
+        return candidate;
+    }
+
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
+    public int majorityElement2(int[] nums) {
+        return majorityElement2(nums, 0, nums.length - 1);
+    }
+
+    private int majorityElement2(int[] nums, int start, int end) {
+        if (start == end) {
+            return nums[start];
+        }
+        int mid = (end - start) / 2 + start;
+        int left = majorityElement2(nums, start, mid);
+        int right = majorityElement2(nums, mid + 1, end);
+        if (left == right) {
+            return left;
+        }
+
+        int leftCount = count(nums, left, start, end);
+        int rightCount = count(nums, right, start, end);
+        return leftCount > rightCount ? left : right;
+    }
+
+    private int count(int[] nums, int target, int start, int end) {
+        int count = 0;
+        for (int i = start; i < end + 1; i++) {
+            if (nums[i] == target) {
+                count++;
+            }
+        }
+        return count;
     }
 }
