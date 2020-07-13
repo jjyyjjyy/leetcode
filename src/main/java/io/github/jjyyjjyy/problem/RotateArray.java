@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -49,6 +50,61 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RotateArray {
 
+    /**
+     * 1. 遍历数组元素.
+     * 2. 将元素与它下一个位置替换, 然后依次替换下一个元素, 直到替换的位置与当前的位置相等.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public void rotate(int[] nums, int k) {
+        int length = nums.length;
+        k %= length;
+        int count = 0;
+        for (int i = 0; count < length; i++) {
+            int current = i;
+            int prev = nums[i];
+            do {
+                int next = (current + k) % length;
+                int tmp = nums[next];
+                nums[next] = prev;
+                prev = tmp;
+                current = next;
+                count++;
+            } while (i != current);
+        }
+    }
+
+    /**
+     * 1. 将数组全部元素反转.
+     * 2. 将数组元素0~k-1反转.
+     * 3. 将数组元素k~length-1反转.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public void rotate2(int[] nums, int k) {
+        int length = nums.length;
+        k %= length;
+        reverse(nums, 0, length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, length - 1);
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int tmp = nums[start];
+            nums[start++] = nums[end];
+            nums[end--] = tmp;
+        }
+    }
+
+    /**
+     * 使用一个缓冲数组, 分别复制 0~(length-k-1) 和 (length-k)~(length-1) 到缓冲数组中. 最后将缓冲数组复制到原数组中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public void rotate3(int[] nums, int k) {
+        int length = nums.length;
+        k %= length;
+        int[] arr = new int[length];
+        System.arraycopy(nums, 0, arr, k, length - k);
+        System.arraycopy(nums, length - k, arr, 0, k);
+        System.arraycopy(arr, 0, nums, 0, length);
     }
 }

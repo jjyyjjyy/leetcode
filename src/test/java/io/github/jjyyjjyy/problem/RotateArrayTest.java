@@ -6,6 +6,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.Arrays;
+
 /**
  * @author jy
  */
@@ -18,7 +20,14 @@ class RotateArrayTest {
     void rotate(@ConvertWith(CsvToArray.class) int[] arr,
                 int k,
                 @ConvertWith(CsvToArray.class) int[] expect) {
-        ROTATE_ARRAY.rotate(arr, k);
-        Assertions.assertArrayEquals(expect, arr);
+        int[] arr1 = Arrays.copyOf(arr, arr.length);
+        int[] arr2 = Arrays.copyOf(arr, arr.length);
+        int[] arr3 = Arrays.copyOf(arr, arr.length);
+        ROTATE_ARRAY.rotate(arr1, k);
+        ROTATE_ARRAY.rotate2(arr2, k);
+        ROTATE_ARRAY.rotate3(arr3, k);
+        Assertions.assertArrayEquals(expect, arr1);
+        Assertions.assertArrayEquals(expect, arr2);
+        Assertions.assertArrayEquals(expect, arr3);
     }
 }
