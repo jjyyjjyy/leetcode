@@ -48,4 +48,7 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class RotateArray {
+
+    public void rotate(int[] nums, int k) {
+    }
 }
