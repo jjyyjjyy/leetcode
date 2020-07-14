@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/contains-duplicate-ii/">存在重复元素 II</a>
@@ -39,7 +43,23 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ContainsDuplicateII {
 
+    /**
+     * 使用Set维护一个滑动窗口集合
+     * 依次遍历数组, 如果Set中存在当前元素, 则返回true. 否则将当前元素加入到Set中.
+     * 如果Set长度超过了k, 则删除第一个元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> set = new HashSet<>(k);
+        for (int i = 0; i < nums.length; i++) {
+            if (set.contains(nums[i])) {
+                return true;
+            }
+            set.add(nums[i]);
+            if (set.size() > k) {
+                set.remove(nums[i - k]);
+            }
+        }
         return false;
     }
 }
