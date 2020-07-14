@@ -38,4 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.HASH_TABLE}
 )
 public class ContainsDuplicateII {
+
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        return false;
+    }
 }
