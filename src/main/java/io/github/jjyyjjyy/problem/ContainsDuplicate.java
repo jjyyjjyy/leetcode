@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/contains-duplicate/">存在重复元素</a>
@@ -41,7 +44,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ContainsDuplicate {
 
+    /**
+     * 将数组排完序, 依次比对相邻元素是否相同. 如果相同则表示有重复元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                return true;
+            }
+        }
         return false;
     }
 }
