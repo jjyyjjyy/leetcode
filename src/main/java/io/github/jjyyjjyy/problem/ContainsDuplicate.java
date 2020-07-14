@@ -40,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.HASH_TABLE}
 )
 public class ContainsDuplicate {
+
+    public boolean containsDuplicate(int[] nums) {
+        return false;
+    }
 }
