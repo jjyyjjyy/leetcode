@@ -40,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.MATH}
 )
 public class MissingNumber {
+
+    public int missingNumber(int[] nums) {
+        return 0;
+    }
 }
