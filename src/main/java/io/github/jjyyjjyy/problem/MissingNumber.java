@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -41,7 +42,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MissingNumber {
 
+    /**
+     * 对数组每个元素和下标异或操作, 最后异或数组长度值, 得到缺失的值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int missingNumber(int[] nums) {
-        return 0;
+        int result = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            result ^= i ^ nums[i];
+        }
+        return result;
+    }
+
+    /**
+     * 先用高斯公式求出序列期望的总和, 然后依次减去数组元素, 最后得到缺失的值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int missingNumber2(int[] nums) {
+        int n = nums.length;
+        int sum = n * (n + 1) / 2;
+        for (int num : nums) {
+            sum -= num;
+        }
+        return sum;
     }
 }
