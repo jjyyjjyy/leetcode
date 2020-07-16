@@ -34,4 +34,7 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class MoveZeroes {
+
+    public void moveZeroes(int[] nums) {
+    }
 }
