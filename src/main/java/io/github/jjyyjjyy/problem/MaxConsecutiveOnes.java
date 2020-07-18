@@ -38,4 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class MaxConsecutiveOnes {
+
+    public int findMaxConsecutiveOnes(int[] nums) {
+        return 0;
+    }
 }
