@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.TreeSet;
 
 /**
  * <a href="https://leetcode-cn.com/problems/third-maximum-number/">第三大的数</a>
@@ -54,7 +57,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ThirdMaximumNumber {
 
+    /**
+     * 将数组放入长度固定为3的最小堆里, 堆顶的元素即为第3大的元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int thirdMax(int[] nums) {
-        return 0;
+        TreeSet<Integer> set = new TreeSet<>();
+        for (int num : nums) {
+            set.add(num);
+            if (set.size() > 3) {
+                set.pollFirst();
+            }
+        }
+        return set.size() >= 3 ? set.first() : set.last();
     }
 }
