@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/">找到所有数组中消失的数字</a>
  *
@@ -36,5 +38,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class FindAllNumbersDisappearedinanArray {
+public class FindAllNumbersDisappearedInAnArray {
+
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        return null;
+    }
 }
