@@ -53,4 +53,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class ThirdMaximumNumber {
+
+    public int thirdMax(int[] nums) {
+        return 0;
+    }
 }
