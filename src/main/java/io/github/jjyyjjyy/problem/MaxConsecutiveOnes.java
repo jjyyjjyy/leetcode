@@ -40,6 +40,16 @@ import io.github.jjyyjjyy.core.Tag;
 public class MaxConsecutiveOnes {
 
     public int findMaxConsecutiveOnes(int[] nums) {
-        return 0;
+        int max = 0;
+        int current = 0;
+        for (int num : nums) {
+            if (num != 1) {
+                current = 0;
+            } else {
+                current++;
+                max = Math.max(max, current);
+            }
+        }
+        return max;
     }
 }
