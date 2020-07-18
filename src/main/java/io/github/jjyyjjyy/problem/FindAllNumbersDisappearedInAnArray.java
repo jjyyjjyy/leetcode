@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +42,25 @@ import java.util.List;
 )
 public class FindAllNumbersDisappearedInAnArray {
 
+    /**
+     * 1. 遍历数组, 将每个元素的值作为索引, 将该索引的值的绝对值减去1,再乘以-1变成负数.
+     * 2. 遍历数组, 如果idx所在的元素为整数, 则表示数组缺少idx+1.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        return null;
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            int idx = Math.abs(nums[i]) - 1;
+            if (nums[idx] > 0) {
+                nums[idx] *= -1;
+            }
+        }
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i <= n; i++) {
+            if (nums[i - 1] > 0) {
+                result.add(i);
+            }
+        }
+        return result;
     }
 }
