@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/3sum/">三数之和</a>
  *
@@ -40,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class ThreeSum {
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        return Collections.emptyList();
+    }
 }
