@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -36,7 +37,27 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ContainerWithMostWater {
 
+    /**
+     * 1. 维护左指针和右指针.
+     * 2. 计算左右指针之间的面积, 与之前的最大值比较取到一个最大值.
+     * 3. 如果左指针所在的元素比右指针小, 则左指针右移, 否则右指针左移.
+     * 4. 重复步骤2-3.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxArea(int[] height) {
-        return 0;
+        int left = 0;
+        int right = height.length - 1;
+
+        int max = 0;
+        while (left < right) {
+            max = Math.max(max, (right - left) * Math.min(height[left], height[right]));
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return max;
     }
 }
