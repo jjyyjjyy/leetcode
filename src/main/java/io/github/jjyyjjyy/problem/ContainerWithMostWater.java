@@ -35,4 +35,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class ContainerWithMostWater {
+
+    public int maxArea(int[] height) {
+        return 0;
+    }
 }
