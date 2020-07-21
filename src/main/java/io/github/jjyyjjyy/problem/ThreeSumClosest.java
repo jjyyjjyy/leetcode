@@ -28,4 +28,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class ThreeSumClosest {
+
+    public int threeSumClosest(int[] nums, int target) {
+        return 0;
+    }
 }
