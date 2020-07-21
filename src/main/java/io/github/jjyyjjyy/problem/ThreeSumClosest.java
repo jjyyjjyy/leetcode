@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/3sum-closest/">最接近的三数之和</a>
@@ -29,7 +32,57 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ThreeSumClosest {
 
+    /**
+     * 1. 排序数组
+     * 2. 依次遍历数组, 维护慢指针i和右侧左右两个指针.
+     * 3. 比较三指针之和与target的差值和之前的差值, 小于差值则暂存.
+     * 4. 如果和小于target, 则右指针向左移, 反之左指针向右移.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int threeSumClosest(int[] nums, int target) {
-        return 0;
+        Arrays.sort(nums);
+        int prev = Integer.MAX_VALUE / 2;
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int left = i + 1;
+            int right = nums.length - 1;
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+                if (sum == target) {
+                    return sum;
+                }
+                if (Math.abs(sum - target) < Math.abs(prev - target)) {
+                    prev = sum;
+                }
+                if (sum < target) {
+                    while (left < right && nums[left] == nums[++left]) ;
+                } else {
+                    while (left < right && nums[right] == nums[--right]) ;
+                }
+            }
+        }
+        return prev;
+    }
+
+    /**
+     * 三重循环依次求和算出差值, 然后比较找到最小的差值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_3)
+    public int threeSumClosest2(int[] nums, int target) {
+        int min = Integer.MAX_VALUE / 2;
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            for (int j = i + 1; j < nums.length - 1; j++) {
+                for (int k = j + 1; k < nums.length; k++) {
+                    int sum = nums[i] + nums[j] + nums[k];
+                    if (sum - target < min - target) {
+                        min = sum;
+                    }
+                }
+            }
+        }
+        return min;
     }
 }
