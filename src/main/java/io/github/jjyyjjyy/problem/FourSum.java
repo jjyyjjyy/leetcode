@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/4sum/">四数之和</a>
  *
@@ -40,4 +43,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.HASH_TABLE, Tag.TWO_POINTERS}
 )
 public class FourSum {
+
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        return Collections.emptyList();
+    }
+
 }
