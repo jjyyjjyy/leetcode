@@ -34,4 +34,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class NextPermutation {
+
+    public void nextPermutation(int[] nums) {
+    }
+
 }
