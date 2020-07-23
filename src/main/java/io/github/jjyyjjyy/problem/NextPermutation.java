@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -35,7 +36,37 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NextPermutation {
 
+    /**
+     * 1. 从右向左遍历, 找到位置i比i+1小的元素.
+     * 2. 如果找到i了, 再次从右向左遍历, 找到最右侧比i大的位置j, 交换i和j位置上的元素.
+     * 3. 翻转从i+1到最后一个元素.(因为i+1向后是逆序的, 翻转后可以变成顺序的)
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public void nextPermutation(int[] nums) {
+        int i = nums.length - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+        if (i >= 0) {
+            int j = nums.length - 1;
+            while (j > i && nums[j] <= nums[i]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+        reverse(nums, i + 1, nums.length - 1);
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            swap(nums, start++, end--);
+        }
+    }
+
+    private void swap(int[] arr, int a, int b) {
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
     }
 
 }
