@@ -41,5 +41,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
-public class SearchinRotatedSortedArray {
+public class SearchInRotatedSortedArray {
+
+    public int search(int[] nums, int target) {
+        return -1;
+    }
 }
