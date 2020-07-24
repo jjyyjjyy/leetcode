@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -43,7 +44,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SearchInRotatedSortedArray {
 
+    /**
+     * 1. 二分搜索, mid左右两侧至少有一侧是顺序的.
+     * 2. 如果mid等于target, 则返回mid.
+     * 3. 如果left小于等于mid, 说明左侧是顺序的. 如果target在left和mid中间, 说明target处于这个区间, right变成mid-1. 否则说明target在右侧, left变成mid+1.
+     * 4. 如果left大于mid, 说明右侧是顺序的. 如果target大于mid并且target小于right, 说明target处于这个区间内, left变成mid+1. 否则说明target在左侧, right变成mid-1.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int mid;
+        while (left <= right) {
+            mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            }
+            if (nums[left] <= nums[mid]) {
+                if (target >= nums[left] && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (target > nums[mid] && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
         return -1;
     }
 }
