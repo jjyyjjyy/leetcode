@@ -35,5 +35,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
-public class FindFirstandLastPositionofElementinSortedArray {
+public class FindFirstAndLastPositionOfElementInSortedArray {
+
+    public int[] searchRange(int[] nums, int target) {
+        return new int[]{-1, -1};
+    }
 }
