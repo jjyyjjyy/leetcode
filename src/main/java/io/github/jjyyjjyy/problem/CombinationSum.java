@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/combination-sum/">组合总和</a>
  *
@@ -56,4 +59,11 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.BACKTRACKING}
 )
 public class CombinationSum {
+
+    private final List<List<Integer>> result = new ArrayList<>();
+
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        return result;
+    }
+
 }
