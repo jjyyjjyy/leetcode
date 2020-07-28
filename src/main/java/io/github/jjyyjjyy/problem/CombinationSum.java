@@ -5,6 +5,7 @@ import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -62,8 +63,35 @@ public class CombinationSum {
 
     private final List<List<Integer>> result = new ArrayList<>();
 
+    /**
+     * 0. 将数组排下序.
+     * 1. 从当前位置向右遍历. 维护一个list, 加入当前元素.
+     * 2. 如果target小于0, 则表示后面的元素不需要遍历了, 则结束递归. 如果target=0则表示找到组合, 将list加入到结果集中.
+     * 3. target减去当前元素, 得到一个新的target, 重复步骤1.
+     * 4. 遍历完后减去list最后一个元素. (因为当前数组已经遍历结束一次, 需要去除最后一个元素来找到其他组合.)
+     */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        List<Integer> list = new ArrayList<>();
+        combinationSum(candidates, target, list, 0);
         return result;
+    }
+
+    private void combinationSum(int[] candidates, int target, List<Integer> list, int i) {
+        if (target < 0) {
+            return;
+        }
+        if (target == 0) {
+            result.add(new ArrayList<>(list));
+            return;
+        }
+
+        for (int j = i; j < candidates.length && target >= candidates[j]; j++) {
+            int candidate = candidates[j];
+            list.add(candidate);
+            combinationSum(candidates, target - candidate, list, j);
+            list.remove(list.size() - 1);
+        }
     }
 
 }
