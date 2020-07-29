@@ -5,6 +5,7 @@ import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -59,7 +60,27 @@ public class CombinationSumII {
     private List<List<Integer>> result = new ArrayList<>();
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        combinationSum2(candidates, target, new ArrayList<>(), 0);
         return result;
     }
 
+    private void combinationSum2(int[] candidates, int target, List<Integer> list, int i) {
+        if (target < 0) {
+            return;
+        }
+        if (target == 0) {
+            result.add(new ArrayList<>(list));
+            return;
+        }
+        for (int j = i; j < candidates.length && candidates[j] <= target; j++) {
+            if (j > i && candidates[j] == candidates[j - 1]) {
+                continue;
+            }
+            int candidate = candidates[j];
+            list.add(candidate);
+            combinationSum2(candidates, target - candidate, list, j + 1);
+            list.remove(list.size() - 1);
+        }
+    }
 }
