@@ -58,4 +58,7 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class RotateImage {
+
+    public void rotate(int[][] matrix) {
+    }
 }
