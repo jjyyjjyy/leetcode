@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -59,6 +60,29 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RotateImage {
 
+    /**
+     * 1. 先将原数组按对角线翻转.
+     * 2. 将数组每一行翻转.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public void rotate(int[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = i; j < matrix.length; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+        }
+
+        for (int[] row : matrix) {
+            int left = 0, right = matrix.length - 1;
+            while (left < right) {
+                int tmp = row[left];
+                row[left] = row[right];
+                row[right] = tmp;
+                left++;
+                right--;
+            }
+        }
     }
 }
