@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,8 +49,34 @@ import java.util.List;
 )
 public class SpiralMatrix {
 
+    /**
+     * 从上左到上右, 从上右到下右, 从下右到下左, 从下左到上左 依次遍历矩阵.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public List<Integer> spiralOrder(int[][] matrix) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        int m = matrix.length;
+        if (m == 0) {
+            return result;
+        }
+        int n = matrix[0].length;
+        int count = (Math.min(m, n) + 1) / 2;
+
+        for (int i = 0; i < count; i++) {
+            for (int j = i; j < n - i; j++) {
+                result.add(matrix[i][j]);
+            }
+            for (int j = i + 1; j < m - i; j++) {
+                result.add(matrix[j][n - 1 - i]);
+            }
+            for (int j = n - 1 - (i + 1); j >= i && (m - 1 - i) != i; j--) {
+                result.add(matrix[m - 1 - i][j]);
+            }
+            for (int j = m - 1 - (i + 1); j > i && (n - 1 - i) != i; j--) {
+                result.add(matrix[j][i]);
+            }
+        }
+        return result;
     }
 
 }
