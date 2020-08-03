@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/spiral-matrix/">螺旋矩阵</a>
  *
@@ -44,4 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class SpiralMatrix {
+
+    public List<Integer> spiralOrder(int[][] matrix) {
+        return null;
+    }
+
 }
