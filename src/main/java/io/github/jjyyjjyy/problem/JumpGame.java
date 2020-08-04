@@ -40,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.GREEDY, Tag.ARRAY}
 )
 public class JumpGame {
+
+    public boolean canJump(int[] nums) {
+        return false;
+    }
 }
