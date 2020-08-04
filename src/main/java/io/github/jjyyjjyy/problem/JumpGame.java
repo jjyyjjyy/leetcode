@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -41,7 +42,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class JumpGame {
 
+    /**
+     * 从左向右遍历, 如果i+nums[i]>=n-1, 则可以跳到.
+     * 如果i大于左侧最大的i+num[i], 则说明i不可达.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean canJump(int[] nums) {
+        int n = nums.length;
+        int max = 0;
+        for (int i = 0; i <= max && i < n; i++) {
+            max = Math.max(max, i + nums[i]);
+            if (max >= n - 1) {
+                return true;
+            }
+        }
         return false;
     }
 }
