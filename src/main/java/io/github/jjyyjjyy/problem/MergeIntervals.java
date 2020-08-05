@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/merge-intervals/">合并区间</a>
@@ -44,7 +49,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MergeIntervals {
 
+    /**
+     * 1. 将数据按左边元素排序.
+     * 2. 遍历数据, 一直遍历到后面的left比当前的right大, 则记录下当前的left和遍历出来最大的right.
+     * 3. 继续遍历, 重复步骤2.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[][] merge(int[][] intervals) {
-        return new int[0][0];
+        List<int[]> result = new ArrayList<>();
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        for (int i = 0; i < intervals.length; i++) {
+            int[] row = intervals[i];
+            int left = row[0];
+            int right = row[1];
+            while (i < intervals.length - 1 && intervals[i + 1][0] <= right) {
+                i++;
+                right = Math.max(right, intervals[i][1]);
+            }
+            result.add(new int[]{left, right});
+        }
+        return result.toArray(int[][]::new);
     }
 }
