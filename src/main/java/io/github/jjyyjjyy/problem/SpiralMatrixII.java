@@ -32,4 +32,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class SpiralMatrixII {
+
+    public int[][] generateMatrix(int n) {
+        return new int[0][0];
+    }
 }
