@@ -49,4 +49,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING}
 )
 public class UniquePathsII {
+
+    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+        return 0;
+    }
 }
