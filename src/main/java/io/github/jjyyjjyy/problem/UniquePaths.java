@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -51,7 +52,40 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class UniquePaths {
 
+    /**
+     * a[m][n] = a[m - 1][n] + a[m][n - 1]
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int uniquePaths(int m, int n) {
-        return 0;
+        int[][] dp = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            dp[i][0] = 1;
+        }
+        for (int i = 0; i < n; i++) {
+            dp[0][i] = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+        return dp[m - 1][n - 1];
+    }
+
+    public int uniquePaths1(int m, int n) {
+        return uniquePaths1(m, n, 0, 0, 0);
+    }
+
+    private int uniquePaths1(int m, int n, int row, int column, int count) {
+        if (row == m - 1 && column == n - 1) {
+            return ++count;
+        }
+        if (row < m) {
+            count = uniquePaths1(m, n, row + 1, column, count);
+        }
+        if (column < n) {
+            count = uniquePaths1(m, n, row, column + 1, count);
+        }
+        return count;
     }
 }
