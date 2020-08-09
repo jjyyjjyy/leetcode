@@ -50,4 +50,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING}
 )
 public class UniquePaths {
+
+    public int uniquePaths(int m, int n) {
+        return 0;
+    }
 }
