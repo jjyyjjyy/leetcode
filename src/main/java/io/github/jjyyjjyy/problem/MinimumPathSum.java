@@ -38,4 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING}
 )
 public class MinimumPathSum {
+
+    public int minPathSum(int[][] grid) {
+        return 0;
+    }
 }
