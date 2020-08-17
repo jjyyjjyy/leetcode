@@ -61,4 +61,7 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class SetMatrixZeroes {
+
+    public void setZeroes(int[][] matrix) {
+    }
 }
