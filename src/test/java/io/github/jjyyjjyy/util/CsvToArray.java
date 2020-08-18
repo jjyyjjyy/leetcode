@@ -24,7 +24,7 @@ public class CsvToArray extends SimpleArgumentConverter {
             String[] strings = sourceString.split("],\\s*");
             return Arrays.stream(strings)
                 .map(s -> s.replace("[", "").replace("]", ""))
-                .map(s -> Arrays.stream(s.split(ARRAY_SPLITTER_REGEX)).mapToInt(Integer::valueOf).toArray())
+                .map(s -> s.length() == 0 ? new int[0] : Arrays.stream(s.split(ARRAY_SPLITTER_REGEX)).mapToInt(Integer::valueOf).toArray())
                 .toArray(int[][]::new);
         }
         return sourceString;
