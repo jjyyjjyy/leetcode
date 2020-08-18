@@ -49,5 +49,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
-public class Searcha2DMatrix {
+public class Search2DMatrix {
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+        return false;
+    }
+
 }
