@@ -42,4 +42,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT, Tag.ARRAY, Tag.TWO_POINTERS}
 )
 public class SortColors {
+
+    public void sortColors(int[] nums) {
+    }
+
 }
