@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -43,7 +44,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SortColors {
 
+    /**
+     * 1. 维护两个指针p1和p2, p1指向最后一个0的右侧, p2指向第一个2的左侧.
+     * 2. 依次遍历数组:
+     * 2.1. 如果当前值等于1, 则继续遍历.
+     * 2.2. 如果当前值等于0, 则交换p1和当前值, p1前进一位, 继续遍历.
+     * 2.3. 如果当前值等于2, 则交换p2和当前值, p2后退一位.
+     * 2.4. 如果当前位置超过p2, 则结束遍历.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public void sortColors(int[] nums) {
+        int p1 = 0;
+        int p2 = nums.length - 1;
+        int current = 0;
+        while (current <= p2) {
+            int currentNum = nums[current];
+            if (currentNum == 1) {
+                current++;
+            } else if (currentNum == 0) {
+                swap(nums, current++, p1++);
+            } else {
+                swap(nums, current, p2--);
+            }
+        }
+    }
+
+    private void swap(int[] arr, int a, int b) {
+        int tmp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = tmp;
     }
 
 }
