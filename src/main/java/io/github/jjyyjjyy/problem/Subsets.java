@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,7 +46,29 @@ import java.util.List;
 )
 public class Subsets {
 
+    /**
+     * 依次遍历数组, 将已存在的每一个元素加上自身.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_EXPONENT)
     public List<List<Integer>> subsets(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+
+        for (int i = 0; i < nums.length; i++) {
+            subsets(nums, result, i);
+        }
+
+        return result;
+    }
+
+    private void subsets(int[] nums, List<List<Integer>> result, int end) {
+        int current = nums[end];
+        List<List<Integer>> subs = new ArrayList<>();
+        for (List<Integer> prevs : result) {
+            List<Integer> list = new ArrayList<>(prevs);
+            list.add(current);
+            subs.add(list);
+        }
+        result.addAll(subs);
     }
 }
