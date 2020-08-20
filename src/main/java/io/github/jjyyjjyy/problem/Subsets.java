@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/subsets/">子集</a>
  *
@@ -41,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.BACKTRACKING}
 )
 public class Subsets {
+
+    public List<List<Integer>> subsets(int[] nums) {
+        return null;
+    }
 }
