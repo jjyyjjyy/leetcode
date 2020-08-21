@@ -27,6 +27,13 @@ public class CsvToArray extends SimpleArgumentConverter {
                 .map(s -> s.length() == 0 ? new int[0] : Arrays.stream(s.split(ARRAY_SPLITTER_REGEX)).mapToInt(Integer::valueOf).toArray())
                 .toArray(int[][]::new);
         }
+        if (Objects.equals(targetType, char[][].class)) {
+            String[] strings = sourceString.split("],\\s*");
+            return Arrays.stream(strings)
+                .map(s -> s.replace("[", "").replace("]", ""))
+                .map(String::toCharArray)
+                .toArray(char[][]::new);
+        }
         return sourceString;
     }
 }

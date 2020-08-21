@@ -37,4 +37,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.BACKTRACKING}
 )
 public class WordSearch {
+
+    public boolean exist(char[][] board, String word) {
+        return false;
+    }
+
 }
