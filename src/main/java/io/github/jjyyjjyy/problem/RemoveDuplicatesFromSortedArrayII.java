@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -59,7 +60,21 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveDuplicatesFromSortedArrayII {
 
+    /**
+     * 1. 如果数组长度小于3, 则直接返回.
+     * 2. 初始化变量position=2, 标记当前位置.
+     * 3. 从位置2开始遍历, 如果当前元素值与position-2的值不相等, 则将当前值赋值到position处, position前进一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int removeDuplicates(int[] nums) {
-        return 0;
+        int n = nums.length;
+        int position = Math.min(2, n);
+
+        for (int i = 2; i < n; i++) {
+            if (nums[i] != nums[position - 2]) {
+                nums[position++] = nums[i];
+            }
+        }
+        return position;
     }
 }
