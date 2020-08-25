@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -45,7 +46,38 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SearchInRotatedSortedArrayII {
 
+    /**
+     * 1. 定义left, right, mid三个指针.
+     * 2. 如果mid元素与target相同, 则找到该元素.
+     * 3. 如果left元素与mid元素相同, 则无法判断左右两半部分是否偏序, 只能将left前进一位.
+     * 4. 如果left元素小于mid元素, 说明左侧偏序. 判断target是否满足left<=target<mid, 如果满足则说明在左半部分找(right=mid-1), 不满足则在右半部分找(left=mid+1).
+     * 5. 如果left元素大于等于mid元素, 说明右侧偏序. 判断target是否满足mid<target<=right, 如果满足则说明在右半部分找(left=mid+1), 不满足则在左半部分找(right=mid-1).
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public boolean search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return true;
+            }
+            if (nums[left] == nums[mid]) {
+                left++;
+            } else if (nums[left] < nums[mid]) {
+                if (nums[left] <= target && target < nums[mid]) {
+                    right = mid - 1;
+                } else {
+                    left = mid + 1;
+                }
+            } else {
+                if (nums[mid] < target && target <= nums[right]) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
         return false;
     }
 }
