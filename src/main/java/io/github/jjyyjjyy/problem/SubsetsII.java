@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/subsets-ii/">子集 II</a>
  *
@@ -37,4 +39,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.BACKTRACKING}
 )
 public class SubsetsII {
+
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        return null;
+    }
+
 }
