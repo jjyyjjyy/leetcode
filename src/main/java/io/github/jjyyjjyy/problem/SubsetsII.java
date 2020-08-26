@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -41,7 +43,22 @@ import java.util.List;
 public class SubsetsII {
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        subsetsWithDup(new ArrayList<>(), result, nums, 0);
+        return result;
     }
 
+    private void subsetsWithDup(List<Integer> done, List<List<Integer>> result, int[] nums, int i) {
+        result.add(new ArrayList<>(done));
+        for (int j = i; j < nums.length; j++) {
+            if (j > i && nums[j] == nums[j - 1]) {
+                continue;
+            }
+            done.add(nums[j]);
+            subsetsWithDup(done, result, nums, j + 1);
+            done.remove(done.size() - 1);
+        }
+    }
 }
