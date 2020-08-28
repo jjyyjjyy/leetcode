@@ -46,5 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.TWO_POINTERS, Tag.BINARY_SEARCH}
 )
-public class FindtheDuplicateNumber {
+public class FindTheDuplicateNumber {
+
+    public int findDuplicate(int[] nums) {
+        return -1;
+    }
 }
