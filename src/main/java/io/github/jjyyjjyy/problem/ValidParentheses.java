@@ -63,4 +63,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.STRING}
 )
 public class ValidParentheses {
+
+    public boolean isValid(String s) {
+        return false;
+    }
 }
