@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/valid-parentheses/">有效的括号</a>
@@ -64,7 +69,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ValidParentheses {
 
+    private static final Map<Character, Character> ref = new HashMap<>();
+
+    static {
+        ref.put('(', ')');
+        ref.put('[', ']');
+        ref.put('{', '}');
+    }
+
+    /**
+     * 1. 维护左右大括号的映射关系.
+     * 2. 依次遍历字符串, 如果当前字符属于左括号, 则将对应的右括号压入栈中; 否则将栈首弹出, 如果栈首元素与当前字符不相等或者栈为空则说明匹配失败.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isValid(String s) {
-        return false;
+        char[] chars = s.toCharArray();
+        int n = chars.length;
+        if (n % 2 == 1) {
+            return false;
+        }
+
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : chars) {
+            if (ref.containsKey(c)) {
+                stack.push(ref.get(c));
+            } else if (stack.isEmpty() || c != stack.pop()) {
+                return false;
+            }
+        }
+
+        return stack.isEmpty();
     }
 }
