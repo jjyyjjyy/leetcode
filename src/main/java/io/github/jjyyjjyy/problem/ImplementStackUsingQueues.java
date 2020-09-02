@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * <a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">用队列实现栈</a>
  *
@@ -38,31 +41,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ImplementStackUsingQueues {
 
+    private final Deque<Integer> deque = new ArrayDeque<>();
+
     /**
      * Push element x onto stack.
      */
     public void push(int x) {
-
+        deque.addLast(x);
     }
 
     /**
      * Removes the element on top of the stack and returns that element.
      */
     public int pop() {
-        return -1;
+        return deque.removeLast();
     }
 
     /**
      * Get the top element.
      */
     public int top() {
-        return -1;
+        return deque.getLast();
     }
 
     /**
      * Returns whether the stack is empty.
      */
     public boolean empty() {
-        return false;
+        return deque.isEmpty();
     }
 }
