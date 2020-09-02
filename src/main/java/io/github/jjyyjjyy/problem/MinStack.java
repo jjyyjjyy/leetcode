@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.Stack;
+
 /**
  * <a href="https://leetcode-cn.com/problems/min-stack/">最小栈</a>
  *
@@ -43,19 +45,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MinStack {
 
-    public void push(int x) {
+    private Stack<Integer> dataStack = new Stack<>();
 
+    private Stack<Integer> minStack = new Stack<>();
+
+    public void push(int x) {
+        dataStack.push(x);
+
+        if (minStack.isEmpty()) {
+            minStack.push(x);
+        } else {
+            Integer peek = minStack.peek();
+            minStack.push(Math.min(peek, x));
+        }
     }
 
     public void pop() {
-
+        dataStack.pop();
+        minStack.pop();
     }
 
     public int top() {
-        return -1;
+        return dataStack.peek();
     }
 
     public int getMin() {
-        return -1;
+        return minStack.peek();
     }
+
 }
