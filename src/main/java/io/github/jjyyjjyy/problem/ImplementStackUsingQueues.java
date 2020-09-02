@@ -36,5 +36,33 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.STACK, Tag.DESIGN}
 )
-public class ImplementStackusingQueues {
+public class ImplementStackUsingQueues {
+
+    /**
+     * Push element x onto stack.
+     */
+    public void push(int x) {
+
+    }
+
+    /**
+     * Removes the element on top of the stack and returns that element.
+     */
+    public int pop() {
+        return -1;
+    }
+
+    /**
+     * Get the top element.
+     */
+    public int top() {
+        return -1;
+    }
+
+    /**
+     * Returns whether the stack is empty.
+     */
+    public boolean empty() {
+        return false;
+    }
 }
