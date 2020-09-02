@@ -42,4 +42,20 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.DESIGN}
 )
 public class MinStack {
+
+    public void push(int x) {
+
+    }
+
+    public void pop() {
+
+    }
+
+    public int top() {
+        return -1;
+    }
+
+    public int getMin() {
+        return -1;
+    }
 }
