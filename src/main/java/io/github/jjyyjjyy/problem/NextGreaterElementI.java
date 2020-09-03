@@ -5,6 +5,10 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Stack;
+
 /**
  * <a href="https://leetcode-cn.com/problems/next-greater-element-i/">下一个更大元素 I</a>
  *
@@ -54,8 +58,33 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class NextGreaterElementI {
+
+    /**
+     * 1. 维护一个栈和一个哈希表.
+     * 2. 依次遍历数组, 如果当前元素大于栈顶, 说明符合条件, 保存两个元素的关系到哈希表中. 再将当前元素压入栈中.
+     * 3. 遍历完数组后, 将栈中所有元素和-1存到哈希表中.
+     * 4. 此时哈希表中存放着所有待查元素和其右侧最近的一个较大元素.
+     */
     @Complexity(Complexity.ComplexityType.O_N)
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
-        return new int[0];
+        Stack<Integer> stack = new Stack<>();
+        Map<Integer, Integer> map = new HashMap<>();
+
+        int[] result = new int[nums1.length];
+
+        for (int j : nums2) {
+            while (!stack.isEmpty() && j > stack.peek()) {
+                map.put(stack.pop(), j);
+            }
+            stack.push(j);
+        }
+        while (!stack.isEmpty()) {
+            map.put(stack.pop(), -1);
+        }
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = map.get(nums1[i]);
+        }
+        return result;
     }
 }
