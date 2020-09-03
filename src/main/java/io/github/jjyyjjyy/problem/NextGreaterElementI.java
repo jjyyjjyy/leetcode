@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -53,4 +54,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class NextGreaterElementI {
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        return new int[0];
+    }
 }
