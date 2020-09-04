@@ -60,4 +60,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.STRING}
 )
 public class SimplifyPath {
+
+    public String simplifyPath(String path) {
+        return null;
+    }
 }
