@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * <a href="https://leetcode-cn.com/problems/simplify-path/">简化路径</a>
@@ -61,7 +65,37 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SimplifyPath {
 
+    /**
+     * 1. 将字符串按/分割为数组.
+     * 2. 维护一个路径栈.
+     * 3. 依次遍历数组.
+     * 3.1. 如果当前元素为空或者点号则跳过.
+     * 3.2. 如果当前元素为..并且栈不为空, 则弹出栈顶.
+     * 3.3. 将当前字符串压入栈中.
+     * 4. 依次弹出栈底元素, 用/拼接字符串, 得到最后的路径.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String simplifyPath(String path) {
-        return null;
+        String[] split = path.split("/");
+        Deque<String> pathStack = new ArrayDeque<>();
+        for (String s : split) {
+            if ("..".equals(s)) {
+                if (!pathStack.isEmpty()) {
+                    pathStack.removeLast();
+                }
+                continue;
+            }
+            if (!s.isEmpty() && !".".equals(s)) {
+                pathStack.addLast(s);
+            }
+        }
+        if (pathStack.isEmpty()) {
+            return "/";
+        }
+        StringBuilder sb = new StringBuilder();
+        while (!pathStack.isEmpty()) {
+            sb.append("/").append(pathStack.removeFirst());
+        }
+        return sb.toString();
     }
 }
