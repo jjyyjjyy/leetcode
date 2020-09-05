@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -47,7 +45,19 @@ import java.util.List;
 )
 public class BinaryTreeInorderTraversal {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> inorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        inorderTraversal(root, result);
+        return result;
+    }
+
+    public void inorderTraversal(TreeNode root, List<Integer> result) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(root.left, result);
+        result.add(root.val);
+        inorderTraversal(root.right, result);
     }
 }
