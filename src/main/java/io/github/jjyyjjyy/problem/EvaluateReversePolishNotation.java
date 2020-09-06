@@ -59,4 +59,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class EvaluateReversePolishNotation {
+
+    public int evalRPN(String[] tokens) {
+        return -1;
+    }
 }
