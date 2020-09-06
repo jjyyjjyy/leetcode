@@ -34,6 +34,6 @@ public class CsvToArray extends SimpleArgumentConverter {
                 .map(String::toCharArray)
                 .toArray(char[][]::new);
         }
-        return sourceString;
+        return sourceString.split(ARRAY_SPLITTER_REGEX);
     }
 }
