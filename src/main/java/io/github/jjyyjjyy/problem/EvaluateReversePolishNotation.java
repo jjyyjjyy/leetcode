@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/">逆波兰表达式求值</a>
@@ -60,7 +63,39 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class EvaluateReversePolishNotation {
 
+    /**
+     * 1. 维护一个操作数栈.
+     * 2. 依次遍历数组.
+     * 2.1. 如果当前元素是操作符, 则弹出操作数栈上的两个元素, 执行操作符运算再压入栈中.
+     * 2.2. 否则当前元素为操作数, 直接压入栈中.
+     * 3. 操作数栈此时栈顶为运算的结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int evalRPN(String[] tokens) {
-        return -1;
+        Stack<Integer> operandStack = new Stack<>();
+
+        for (String token : tokens) {
+            switch (token) {
+                case "+":
+                    operandStack.push(operandStack.pop() + operandStack.pop());
+                    break;
+                case "-":
+                    Integer second = operandStack.pop();
+                    Integer first = operandStack.pop();
+                    operandStack.push(first - second);
+                    break;
+                case "*":
+                    operandStack.push(operandStack.pop() * operandStack.pop());
+                    break;
+                case "/":
+                    Integer s = operandStack.pop();
+                    Integer f = operandStack.pop();
+                    operandStack.push(f / s);
+                    break;
+                default:
+                    operandStack.push(Integer.valueOf(token));
+            }
+        }
+        return operandStack.pop();
     }
 }
