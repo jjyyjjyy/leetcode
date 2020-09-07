@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-search-tree-iterator/">二叉搜索树迭代器</a>
@@ -53,5 +54,16 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.STACK, Tag.TREE, Tag.DESIGN}
 )
-public class BinarySearchTreeIterator {
+public class BSTIterator {
+
+    public BSTIterator(TreeNode root) {
+    }
+
+    public int next() {
+        return -1;
+    }
+
+    public boolean hasNext() {
+        return false;
+    }
 }
