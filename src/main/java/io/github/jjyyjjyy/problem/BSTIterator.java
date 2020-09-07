@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-search-tree-iterator/">二叉搜索树迭代器</a>
@@ -56,14 +55,37 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class BSTIterator {
 
+    private final Stack<TreeNode> treeNodeStack = new Stack<>();
+
     public BSTIterator(TreeNode root) {
+        pushLeftestTreeNode(root);
     }
 
+    private void pushLeftestTreeNode(TreeNode root) {
+        while (root != null) {
+            treeNodeStack.push(root);
+            root = root.left;
+        }
+    }
+
+    /**
+     * 1. 维护一个栈.
+     * 2. 依次遍历根元素左侧左节点, 将所有左节点压入栈中.
+     * 3. next()方法弹出栈顶元素. 如果栈顶元素有右节点, 则对该元素执行步骤2.
+     *
+     * @return the next smallest number
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int next() {
-        return -1;
+        TreeNode treeNode = treeNodeStack.pop();
+        if (treeNode.right != null) {
+            pushLeftestTreeNode(treeNode.right);
+        }
+        return treeNode.val;
     }
 
     public boolean hasNext() {
-        return false;
+        return !treeNodeStack.isEmpty();
     }
+
 }
