@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.NestedInteger;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/mini-parser/">迷你语法分析器</a>
@@ -64,8 +63,52 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MiniParser {
 
+    /**
+     * 1. 创建一个栈, 维护NestInteger对象.
+     * 2. 创建一个StringBuilder对象.
+     * 3. 依次遍历字符串:
+     * 3.1. 如果为[, 则代表下一个是嵌套列表的NestInteger对象, 创建一个NestInteger空对象压入栈中.
+     * 3.2. 如果为负号或数字:
+     * 3.2.1. 如果栈为空则说明整个字符串为单纯的数字, 解析整个字符串即可.
+     * 3.2.2. 如果栈不为空, 则将当前字符拼接到StringBuilder中.
+     * 3.3. 如果为逗号, 则创建一个NestInteger对象, 设置值为StringBuilder中暂存的数字, add到栈顶元素元素的列表中.
+     * 3.4. 如果为]:
+     * 3.4.1. 如果StringBuilder中暂存过字符, 则创建一个NestInteger对象, 设置值为StringBuilder中暂存的数字, add到栈顶元素元素的列表中.
+     * 3.4.2. 如果栈中只有一个元素, 则说明遍历结束, 直接返回栈顶元素.
+     * 3.4.3. 如果栈中超过一个元素, 则将栈顶元素弹出, 并将该元素添加到新的栈顶元素的列表中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public NestedInteger deserialize(String s) {
-        return new NestedInteger();
-    }
+        Stack<NestedInteger> stack = new Stack<>();
+        char[] chars = s.toCharArray();
 
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : chars) {
+            if (c == '[') {
+                stack.push(new NestedInteger());
+            } else if (c == '-' || Character.isDigit(c)) {
+                if (stack.isEmpty()) {
+                    return new NestedInteger(Integer.parseInt(s));
+                } else {
+                    sb.append(c);
+                }
+            } else if (c == ',') {
+                stack.peek().add(new NestedInteger(Integer.parseInt(sb.toString())));
+                sb = new StringBuilder();
+            } else { // ]
+                if (sb.length() > 0) {
+                    stack.peek().add(new NestedInteger(Integer.parseInt(sb.toString())));
+                }
+                NestedInteger pop = stack.pop();
+                if (stack.isEmpty()) {
+                    return pop;
+                } else {
+                    stack.peek().add(pop);
+                }
+                sb = new StringBuilder();
+            }
+        }
+        return stack.pop();
+    }
 }
