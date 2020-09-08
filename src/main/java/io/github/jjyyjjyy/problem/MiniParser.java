@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.NestedInteger;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -62,4 +63,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.STRING}
 )
 public class MiniParser {
+
+    public NestedInteger deserialize(String s) {
+        return new NestedInteger();
+    }
+
 }
