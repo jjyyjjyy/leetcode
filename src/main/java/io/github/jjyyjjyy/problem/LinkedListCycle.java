@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/linked-list-cycle/">环形链表</a>
@@ -62,7 +62,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LinkedListCycle {
 
+    /**
+     * 依次遍历链表, 将每个元素暂存到哈希表中. 如果哈希表中存在当前元素, 则说明链表中有环.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean hasCycle(ListNode head) {
+        Set<ListNode> set = new HashSet<>();
+        while (head != null) {
+            if (set.contains(head)) {
+                return true;
+            }
+            set.add(head);
+            head = head.next;
+        }
         return false;
     }
 }
