@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/intersection-of-two-linked-lists/">相交链表</a>
@@ -75,8 +72,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class IntersectionofTwoLinkedLists {
 
+    /**
+     * 1. 维护两个指针分别指向两个链表头, 依次遍历两个链表.
+     * 2. 当两个指针指向的元素相同的时候, 则找到交点.
+     * 3. 如果某一个指针遍历完, 则指向另外一个链表的头以继续遍历.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        return null;
+        ListNode p1 = headA;
+        ListNode p2 = headB;
+        while (p1 != p2) {
+            p1 = p1 == null ? headB : p1.next;
+            p2 = p2 == null ? headA : p2.next;
+        }
+        return p1;
     }
-
 }
