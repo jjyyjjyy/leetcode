@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -73,4 +74,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.LINKED_LIST}
 )
 public class IntersectionofTwoLinkedLists {
+
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        return null;
+    }
+
 }
