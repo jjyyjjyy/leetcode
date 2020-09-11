@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/remove-linked-list-elements/">移除链表元素</a>
@@ -31,7 +28,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveLinkedListElements {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode removeElements(ListNode head, int val) {
-        return null;
+        ListNode sentinel = new ListNode(0);
+        sentinel.next = head;
+
+        ListNode prev = sentinel;
+        ListNode current = head;
+        while (current != null) {
+            if (current.val == val) {
+                prev.next = current.next;
+            } else {
+                prev = current;
+            }
+            current = current.next;
+        }
+
+        return sentinel.next;
     }
 }
