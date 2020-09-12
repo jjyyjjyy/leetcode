@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/reverse-linked-list/">反转链表</a>
@@ -34,8 +31,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseLinkedList {
 
+    /**
+     * 迭代法.
+     * 依次遍历链表, 使得当前节点的下一个节点指向前一个节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode reverseList(ListNode head) {
-        return null;
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    /**
+     * 递归法.
+     * 遍历链表, 使得p.next.next=p.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode p = reverseList2(head.next);
+        head.next.next = head;
+        head.next = null;
+        return p;
     }
 
 }
