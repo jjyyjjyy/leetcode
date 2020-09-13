@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">回文链表</a>
@@ -40,8 +37,60 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PalindromeLinkedList {
 
+    /**
+     * 1. 使用双指针找到链表中间的元素.
+     * 2. 翻转后半部分的链表.
+     * 3. 依次比较开头和后半部分的元素, 得到比较结果.
+     * 4. 再次翻转后半部分的链表, 恢复链表元素顺序.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isPalindrome(ListNode head) {
-        return false;
+        if (head == null) {
+            return true;
+        }
+        ListNode midNode = findMidNode(head);
+        ListNode second = reverseList(midNode.next);
+
+        boolean result = true;
+
+        ListNode p1 = head;
+        ListNode p2 = second;
+
+        while (result && p2 != null) {
+            if (p1.val != p2.val) {
+                result = false;
+                break;
+            }
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+
+        midNode.next = reverseList(second);
+
+        return result;
+
+    }
+
+    private ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    private ListNode findMidNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
 
     }
 
