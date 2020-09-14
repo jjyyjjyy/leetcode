@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/">删除链表中的节点</a>
@@ -55,6 +52,12 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DeleteNodeInALinkedList {
 
+    @Complexity(Complexity.ComplexityType.O_1)
     public void deleteNode(ListNode node) {
+        if (node == null || node.next == null) {
+            return;
+        }
+        node.val = node.next.val;
+        node.next = node.next.next;
     }
 }
