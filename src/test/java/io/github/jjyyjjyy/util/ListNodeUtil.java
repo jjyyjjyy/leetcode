@@ -19,4 +19,14 @@ public class ListNodeUtil {
             expect = expect.next;
         }
     }
+
+    public static ListNode get(ListNode head, int index) {
+        for (int i = 0; i < index; i++) {
+            if (head == null) {
+                return null;
+            }
+            head = head.next;
+        }
+        return head;
+    }
 }
