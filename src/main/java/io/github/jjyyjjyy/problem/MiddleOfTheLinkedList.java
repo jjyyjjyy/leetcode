@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/middle-of-the-linked-list/">链表的中间结点</a>
@@ -46,7 +43,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MiddleOfTheLinkedList {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode middleNode(ListNode head) {
-        return null;
+        if (head == null) {
+            return null;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 }
