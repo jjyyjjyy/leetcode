@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -52,5 +53,8 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.LINKED_LIST}
 )
-public class DeleteNodeinaLinkedList {
+public class DeleteNodeInALinkedList {
+
+    public void deleteNode(ListNode node) {
+    }
 }
