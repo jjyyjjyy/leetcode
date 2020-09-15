@@ -33,7 +33,29 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveNthNodeFromEndOfList {
 
+    /**
+     * 1. 维护一个空节点, 指向head.
+     * 2. 维护一个快指针和一个满指针指向空节点. 快指针首先向右移动n+1位.
+     * 3. 快慢指针同时向右移动, 直到快指针遍历完链表.
+     * 4. 此时慢指针的下一位即为要删除的那个元素, 将next指向next.next即可.
+     * 5. 返回空指针的下一个节点.
+     */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        return null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode left = dummy;
+        ListNode right = dummy;
+
+        for (int i = 0; i <= n; i++) {
+            right = right.next;
+        }
+        while (right != null) {
+            right = right.next;
+            left = left.next;
+        }
+
+        left.next = left.next.next;
+        return dummy.next;
     }
 }
