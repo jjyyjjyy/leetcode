@@ -20,8 +20,11 @@ public class CsvToListNode extends SimpleArgumentConverter {
             return null;
         }
         String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
-        int[] arr = Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
+        int[] arr = Arrays.stream(strings).filter(e -> e.length() > 0).mapToInt(Integer::valueOf).toArray();
 
+        if (arr.length == 0) {
+            return null;
+        }
         ListNode head = new ListNode(arr[0]);
         ListNode current = head;
         for (int i = 1; i < arr.length; i++) {

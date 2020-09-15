@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -30,5 +31,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.LINKED_LIST, Tag.TWO_POINTERS}
 )
-public class RemoveNthNodeFromEndofList {
+public class RemoveNthNodeFromEndOfList {
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        return null;
+    }
 }
