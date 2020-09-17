@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/rotate-list/">旋转链表</a>
@@ -44,7 +41,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RotateList {
 
+    /**
+     * 1. 先计算链表长度, 并找到尾结点, 将尾节点的next指向head.
+     * 2. 遍历到新尾结点(n-k%n-1), 将新尾结点的next置为null.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode rotateRight(ListNode head, int k) {
-        return null;
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode tail = head;
+        int length = 1;
+        while (tail.next != null) {
+            length++;
+            tail = tail.next;
+        }
+
+        tail.next = head;
+
+        ListNode newTail = head;
+        int tailIndex = (length - k % length) - 1;
+
+        for (int i = 0; i < tailIndex; i++) {
+            newTail = newTail.next;
+        }
+        ListNode newHead = newTail.next;
+
+        newTail.next = null;
+
+        return newHead;
     }
 }
