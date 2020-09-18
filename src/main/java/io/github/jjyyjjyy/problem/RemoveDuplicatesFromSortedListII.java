@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">删除排序链表中的重复元素 II</a>
@@ -35,7 +32,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveDuplicatesFromSortedListII {
 
+    /**
+     * 1. 创建一个dummy节点指向head节点.
+     * 2. 维护一个快指针prev指向dummy, 一个慢指针next指向head.
+     * 3. 如果prev.next不等于next.next, 那么快慢指针都向前进一步.
+     * 4. 如果prev.next等于next.next, 说明慢指针所在元素需要被删除. 将慢指针指向与自己相同的最右的节点, prev.next指向next.next, next指向next.next.
+     * 5. 返回dummy.next节点即为第一个非重复的节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode deleteDuplicates(ListNode head) {
-        return null;
+
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode prev = dummy;
+        ListNode next = head;
+
+        while (next != null && next.next != null) {
+            if (prev.next.val != next.next.val) {
+                prev = prev.next;
+                next = next.next;
+                continue;
+            }
+            while (next.next != null && next.val == next.next.val) {
+                next = next.next;
+            }
+            prev.next = next.next;
+            next = next.next;
+        }
+        return dummy.next;
     }
 }
