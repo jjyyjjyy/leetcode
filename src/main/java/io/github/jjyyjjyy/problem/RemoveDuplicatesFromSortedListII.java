@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -32,5 +33,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.LINKED_LIST}
 )
-public class RemoveDuplicatesfromSortedListII {
+public class RemoveDuplicatesFromSortedListII {
+
+    public ListNode deleteDuplicates(ListNode head) {
+        return null;
+    }
 }
