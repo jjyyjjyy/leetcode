@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -24,4 +25,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.LINKED_LIST, Tag.TWO_POINTERS}
 )
 public class PartitionList {
+
+    public ListNode partition(ListNode head, int x) {
+        return null;
+    }
 }
