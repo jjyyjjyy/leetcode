@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/partition-list/">分隔链表</a>
@@ -26,7 +23,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PartitionList {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode partition(ListNode head, int x) {
-        return null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode partitionNode = dummy;
+        while (partitionNode.next != null && partitionNode.next.val < x) {
+            partitionNode = partitionNode.next;
+        }
+        ListNode right = partitionNode;
+        while (right.next != null) {
+            ListNode next = right.next;
+            if (next.val >= x) {
+                right = next;
+            } else {
+                right.next = next.next;
+                next.next = partitionNode.next;
+                partitionNode.next = next;
+                partitionNode = next;
+            }
+        }
+
+        return dummy.next;
     }
 }
