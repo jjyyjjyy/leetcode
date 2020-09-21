@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/">反转链表 II</a>
@@ -32,7 +29,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseLinkedListII {
 
+    /**
+     * 1. 创建一个哑结点指向head.
+     * 2. 维护prev指针指向dummy, current指针指向head.
+     * 3. 将prev和current指针前进m-1位.
+     * 4. 遍历链表n-m次: current.next -> next.next, next.next -> prev.next, prev.next -> next.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode reverseBetween(ListNode head, int m, int n) {
-        return null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode prev = dummy;
+        ListNode current = head;
+
+        int start = m;
+        while (start > 1) {
+            prev = current;
+            current = current.next;
+            start--;
+        }
+
+        int delta = n - m;
+        while (delta > 0) {
+            ListNode next = current.next;
+            current.next = next.next;
+            next.next = prev.next;
+            prev.next = next;
+            delta--;
+        }
+        return dummy.next;
     }
 }
