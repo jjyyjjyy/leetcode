@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">环形链表 II</a>
@@ -63,7 +63,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LinkedListCycleII {
 
+    /**
+     * 维护一个集合, 保存已经遍历到的节点, 如果集合中包含已有节点则返回该节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode detectCycle(ListNode head) {
+        Set<ListNode> set = new HashSet<>();
+        while (head != null) {
+            if (set.contains(head)) {
+                return head;
+            }
+            set.add(head);
+            head = head.next;
+        }
         return null;
     }
 
