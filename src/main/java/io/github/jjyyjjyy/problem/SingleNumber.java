@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,15 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SingleNumber {
 
+    /**
+     * 依次遍历数组, 对每个元素异或, 最后得到出现一次的值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int singleNumber(int[] nums) {
-        return -1;
+        int sum = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            sum ^= nums[i];
+        }
+        return sum;
     }
 }
