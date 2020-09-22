@@ -41,4 +41,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION, Tag.HASH_TABLE}
 )
 public class SingleNumber {
+
+    public int singleNumber(int[] nums) {
+        return -1;
+    }
 }
