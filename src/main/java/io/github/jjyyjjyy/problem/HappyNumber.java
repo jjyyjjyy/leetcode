@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/happy-number/">快乐数</a>
@@ -38,7 +42,40 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HappyNumber {
 
+    /**
+     * 维护快慢两个指针判断是否形成环.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public boolean isHappy(int n) {
-        return false;
+        int slow = n;
+        int fast = getSum(n);
+        while (fast != 1 && fast != slow) {
+            slow = getSum(slow);
+            fast = getSum(getSum(fast));
+        }
+        return fast == 1;
+    }
+
+    private int getSum(int n) {
+        int sum = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n /= 10;
+            sum += d * d;
+        }
+        return sum;
+    }
+
+    /**
+     * 使用哈希表保存已经计算出来的值, 如果值已存在则退出.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
+    public boolean isHappy2(int n) {
+        Set<Integer> set = new HashSet<>();
+        while (n != 1 && !set.contains(n)) {
+            set.add(n);
+            n = getSum(n);
+        }
+        return n == 1;
     }
 }
