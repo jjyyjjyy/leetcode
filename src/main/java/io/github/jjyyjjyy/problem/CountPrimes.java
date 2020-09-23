@@ -31,4 +31,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE, Tag.MATH}
 )
 public class CountPrimes {
+
+    public int countPrimes(int n) {
+        return 0;
+    }
 }
