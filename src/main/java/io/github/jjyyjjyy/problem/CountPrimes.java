@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -32,7 +33,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CountPrimes {
 
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int countPrimes(int n) {
-        return 0;
+        if (n < 3) {
+            return 0;
+        }
+        int count = 1;
+        for (int i = 3; i < n; i++) {
+            if ((i & 1) == 0) {
+                continue;
+            }
+            boolean sign = true;
+            for (int j = 3; j * j <= i; j += 2) {
+                if (i % j == 0) {
+                    sign = false;
+                    break;
+                }
+            }
+            if (sign) {
+                count++;
+            }
+        }
+
+        return count;
     }
 }
