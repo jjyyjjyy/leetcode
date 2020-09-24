@@ -45,4 +45,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE}
 )
 public class IsomorphicStrings {
+
+    public boolean isIsomorphic(String s, String t) {
+        return false;
+    }
 }
