@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
-import lombok.SneakyThrows;
 
 import javax.lang.model.element.Modifier;
 import java.net.URI;
@@ -24,9 +23,13 @@ public class TagGenerator {
 
     private static final String PACKAGE_NAME = "io.github.jjyyjjyy.core";
 
-    @SneakyThrows
     static List<Topic> getTopics() {
-        TagResponse tagResponse = JSON.parseObject(HttpClient.newHttpClient().send(HttpRequest.newBuilder(URI.create(TAG_API)).build(), HttpResponse.BodyHandlers.ofString()).body(), TagResponse.class);
+        TagResponse tagResponse;
+        try {
+            tagResponse = JSON.parseObject(HttpClient.newHttpClient().send(HttpRequest.newBuilder(URI.create(TAG_API)).build(), HttpResponse.BodyHandlers.ofString()).body(), TagResponse.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return tagResponse.getTopics();
     }
 
