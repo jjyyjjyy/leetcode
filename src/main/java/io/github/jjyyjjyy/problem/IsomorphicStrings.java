@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/isomorphic-strings/">同构字符串</a>
@@ -46,7 +50,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class IsomorphicStrings {
 
+    /**
+     * 1. 创建一个哈希表.
+     * 2. 依次遍历两个字符串s,t:
+     * 2.1. 如果哈希表中存在s字符, 那么判断如果value和t字符不相等则返回false.
+     * 2.2. 如果哈希表中不存在s字符但values中存在t字符, 那么说明已经有另外一个字符映射到了t字符上了, 返回false.
+     * 2.3. 将s字符和t字符映射关系保存到哈希表上.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isIsomorphic(String s, String t) {
-        return false;
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        Map<Character, Character> characterMap = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+            if (characterMap.containsKey(sChar)) {
+                if (characterMap.get(sChar) != tChar) {
+                    return false;
+                }
+            } else if (characterMap.containsValue(tChar)) {
+                return false;
+            } else {
+                characterMap.put(sChar, tChar);
+            }
+        }
+
+        return true;
     }
 }
