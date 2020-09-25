@@ -41,4 +41,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT, Tag.HASH_TABLE}
 )
 public class ValidAnagram {
+
+    public boolean isAnagram(String s, String t) {
+        return false;
+    }
+
 }
