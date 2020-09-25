@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * <a href="https://leetcode-cn.com/problems/valid-anagram/">有效的字母异位词</a>
@@ -42,8 +48,47 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ValidAnagram {
 
+    /**
+     * 统计每个字符出现的次数, 然后比较各个字符出现的次数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isAnagram(String s, String t) {
-        return false;
+        Map<Character, Integer> sChars = count(s);
+        Map<Character, Integer> tChars = count(t);
+        if (sChars.size() != tChars.size()) {
+            return false;
+        }
+        for (Character key : sChars.keySet()) {
+            if (!Objects.equals(sChars.get(key), tChars.get(key))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 将字符先排序, 然后比较两个字符串是否相等.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
+    public boolean isAnagram2(String s, String t) {
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+        return Arrays.equals(sChars, tChars);
+    }
+
+    private Map<Character, Integer> count(String s) {
+        char[] chars = s.toCharArray();
+        Map<Character, Integer> counts = new HashMap<>();
+        for (char c : chars) {
+            if (counts.containsKey(c)) {
+                counts.put(c, counts.get(c) + 1);
+            } else {
+                counts.put(c, 1);
+            }
+        }
+        return counts;
     }
 
 }
