@@ -4,6 +4,10 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 /**
  * <a href="https://leetcode-cn.com/problems/word-pattern/">单词规律</a>
  *
@@ -50,6 +54,24 @@ import io.github.jjyyjjyy.core.Tag;
 public class WordPattern {
 
     public boolean wordPattern(String pattern, String s) {
+        String[] patterns = pattern.split("");
+        String[] strs = s.split("\\s");
+        if (pattern.length() != strs.length) {
+            return false;
+        }
+        Map<String, String> mapper = new HashMap<>();
+        for (int i = 0; i < pattern.length(); i++) {
+            String p = patterns[i];
+            String str = strs[i];
+            if (!mapper.containsKey(p)) {
+                if (mapper.containsValue(str)) {
+                    return false;
+                }
+                mapper.put(p, str);
+            } else if (!Objects.equals(str, mapper.get(p))) {
+                return false;
+            }
+        }
         return true;
     }
 }
