@@ -48,4 +48,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE}
 )
 public class WordPattern {
+
+    public boolean wordPattern(String pattern, String s) {
+        return true;
+    }
 }
