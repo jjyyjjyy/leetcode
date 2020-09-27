@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/intersection-of-two-arrays/">两个数组的交集</a>
@@ -42,7 +48,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class IntersectionOfTwoArrays {
 
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public int[] intersection(int[] nums1, int[] nums2) {
-        return new int[0];
+        List<Integer> result = new ArrayList<>();
+        Map<Integer, Boolean> founded = new HashMap<>();
+        for (int i : nums1) {
+            founded.put(i, false);
+        }
+        for (int i : nums2) {
+            if (founded.get(i) != null && !founded.get(i)) {
+                result.add(i);
+                founded.put(i, true);
+            }
+        }
+        return result.stream().mapToInt(i -> i).toArray();
     }
 }
