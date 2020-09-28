@@ -48,5 +48,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.SORT, Tag.HASH_TABLE, Tag.TWO_POINTERS, Tag.BINARY_SEARCH}
 )
-public class IntersectionofTwoArraysII {
+public class IntersectionOfTwoArraysII {
+
+    public int[] intersection(int[] nums1, int[] nums2) {
+        return new int[0];
+    }
+
 }
