@@ -4,6 +4,11 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * <a href="https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/">两个数组的交集 II</a>
  *
@@ -51,7 +56,27 @@ import io.github.jjyyjjyy.core.Tag;
 public class IntersectionOfTwoArraysII {
 
     public int[] intersection(int[] nums1, int[] nums2) {
-        return new int[0];
+        if (nums2.length == 0) {
+            return new int[0];
+        }
+        Map<Integer, Integer> count = new HashMap<>();
+        for (int i : nums1) {
+            count.put(i, count.getOrDefault(i, 0) + 1);
+        }
+        List<Integer> result = new ArrayList<>();
+        for (int i : nums2) {
+            if (!count.containsKey(i)) {
+                continue;
+            }
+            result.add(i);
+            Integer c = count.get(i);
+            if (c == 1) {
+                count.remove(i);
+            } else {
+                count.put(i, c - 1);
+            }
+        }
+        return result.stream().mapToInt(i -> i).toArray();
     }
 
 }
