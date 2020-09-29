@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">无重复字符的最长子串</a>
@@ -47,8 +51,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestSubstringWithoutRepeatingCharacters {
 
+    /**
+     * 1. 维护left, right两个指针, 初始化为0. 最大不包含重复元素的字符串长度, 初始化为0.
+     * 2. 创建一个集合保存当前不重复的字符.
+     * 3. 遍历字符串:
+     * 3.1. left指针前进一位时, 将当前left字符从集合中删除.
+     * 3.2. 将right指针向右移动, 一直到字符串末尾, 并且right指针所在的字符不在集合中.
+     * 3.3. 当前left和right中间的字符串即为当前不包含重复元素的字符串, 更新当前最大长度.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int lengthOfLongestSubstring(String s) {
-        return 0;
-    }
+        Set<Character> exists = new HashSet<>();
+        int n = s.length();
+        int maxLength = 0;
+        int right = 0;
 
+        for (int i = 0; i < n; i++) {
+            if (i != 0) {
+                exists.remove(s.charAt(i - 1));
+            }
+            while (right < n && !exists.contains(s.charAt(right))) {
+                exists.add(s.charAt(right++));
+            }
+            maxLength = Math.max(maxLength, right - i);
+        }
+
+        return maxLength;
+    }
 }
