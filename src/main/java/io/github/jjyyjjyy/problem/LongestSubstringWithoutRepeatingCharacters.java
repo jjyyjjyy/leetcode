@@ -46,4 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE, Tag.TWO_POINTERS, Tag.STRING, Tag.SLIDING_WINDOW}
 )
 public class LongestSubstringWithoutRepeatingCharacters {
+
+    public int lengthOfLongestSubstring(String s) {
+        return 0;
+    }
+
 }
