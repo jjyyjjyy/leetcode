@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -79,7 +80,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ValidSudoku {
 
+    /**
+     * 1. 创建三个数组, 保存所有的行&列&分组. 每个元素属于的分组编号为 stem:[i / 3 * 3 + j / 3] .
+     * 2. 遍历数组, 将每个非空数字所在行&列&分组的值加1. 如果所在行&列&分组的值大于1, 说明之前有重复的数字, 返回false.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isValidSudoku(char[][] board) {
-        return false;
+        int[][] rows = new int[9][9];
+        int[][] columns = new int[9][9];
+        int[][] boxes = new int[9][9];
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char c = board[i][j];
+                if (c == '.') {
+                    continue;
+                }
+                int num = c - '1';
+                rows[i][num]++;
+                columns[j][num]++;
+
+                int boxIndex = i / 3 * 3 + j / 3;
+                boxes[boxIndex][num]++;
+                if (rows[i][num] > 1 || columns[j][num] > 1 || boxes[boxIndex][num] > 1) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
