@@ -78,4 +78,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE}
 )
 public class ValidSudoku {
+
+    public boolean isValidSudoku(char[][] board) {
+        return false;
+    }
 }
