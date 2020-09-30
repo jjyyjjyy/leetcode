@@ -30,7 +30,7 @@ public class CsvToArray extends SimpleArgumentConverter {
         if (Objects.equals(targetType, char[][].class)) {
             String[] strings = sourceString.split("],\\s*");
             return Arrays.stream(strings)
-                .map(s -> s.replace("[", "").replace("]", ""))
+                .map(s -> s.replace("[", "").replace("]", "").replaceAll(ARRAY_SPLITTER_REGEX, ""))
                 .map(String::toCharArray)
                 .toArray(char[][]::new);
         }
