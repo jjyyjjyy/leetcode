@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/group-anagrams/">字母异位词分组</a>
@@ -43,7 +44,25 @@ import java.util.List;
 )
 public class GroupAnagrams {
 
+    /**
+     * 依次遍历数组, 统计每个字符串中字符出现的次数, 将统计结果转换成key, 最后按照key将字符串分组.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public List<List<String>> groupAnagrams(String[] strs) {
-        return null;
+        Map<String, List<String>> container = new HashMap<>();
+
+        int[] keyArr = new int[26];
+        for (String str : strs) {
+            Arrays.fill(keyArr, 0);
+            for (char c : str.toCharArray()) {
+                keyArr[c - 'a']++;
+            }
+            String key = Arrays.toString(keyArr);
+            if (!container.containsKey(key)) {
+                container.put(key, new ArrayList<>());
+            }
+            container.get(key).add(str);
+        }
+        return new ArrayList<>(container.values());
     }
 }
