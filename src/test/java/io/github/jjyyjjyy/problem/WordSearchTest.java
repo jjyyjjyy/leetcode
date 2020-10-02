@@ -15,7 +15,7 @@ class WordSearchTest {
     private static final WordSearch WORD_SEARCH = new WordSearch();
 
     @ParameterizedTest
-    @CsvSource({"'[ABCE],[SFCS],[ADEE]',ABCCED,true", "'[ABCE],[SFCS],[ADEE]',ABCB,false"})
+    @CsvSource({"'[A,B,C,E],[S,F,C,S],[A,D,E,E]',ABCCED,true", "'[A,B,C,E],[S,F,C,S],[A,D,E,E]',ABCB,false"})
     void exist(@ConvertWith(CsvToArray.class) char[][] board, String word, boolean expect) {
         assertEquals(expect, WORD_SEARCH.exist(board, word));
     }
