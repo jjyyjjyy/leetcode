@@ -7,3 +7,265 @@
 :sectnums:
 :stem:
 :tabsize: 4
+:package: src/main/java/io/github/jjyyjjyy/problem
+
+> BLOOD ALONE MOVES THE WHEEL OF HISTORY!
+
+[cols="1h,3*"]
+|===
+| | Easy | Medium | Hard
+
+| Array
+a|
+* link:{package}/TwoSum.java[two-sum]
+* link:{package}/RemoveDuplicatesFromSortedArray.java[remove-duplicates-from-sorted-array]
+* link:{package}/RemoveElement.java[remove-element]
+* link:{package}/SearchInsertPosition.java[search-insert-position]
+* link:{package}/MaximumSubarray.java[maximum-subarray]
+* link:{package}/PlusOne.java[plus-one]
+* link:{package}/MergeSortedArray.java[merge-sorted-array]
+* link:{package}/PascalsTriangle.java[pascals-triangle]
+* link:{package}/PascalsTriangleII.java[pascals-triangle-ii]
+* link:{package}/BestTimeToBuyAndSellStock.java[best-time-to-buy-and-sell-stock]
+* link:{package}/BestTimeToBuyAndSellStockII.java[best-time-to-buy-and-sell-stock-ii]
+* link:{package}/TwoSumIIInputArrayIsSorted.java[two-sum-ii-input-array-is-sorted]
+* link:{package}/MajorityElement.java[majority-element]
+* link:{package}/RotateArray.java[rotate-array]
+* link:{package}/ContainsDuplicate.java[contains-duplicate]
+* link:{package}/ContainsDuplicateII.java[contains-duplicate-ii]
+* link:{package}/MissingNumber.java[missing-number]
+* link:{package}/MoveZeroes.java[move-zeroes]
+* link:{package}/ThirdMaximumNumber.java[third-maximum-number]
+* link:{package}/FindAllNumbersDisappearedInAnArray.java[find-all-numbers-disappeared-in-an-array]
+* link:{package}/MaxConsecutiveOnes.java[max-consecutive-ones]
+a|
+* link:{package}/ContainerWithMostWater.java[container-with-most-water]
+* link:{package}/ThreeSum.java[3sum]
+* link:{package}/ThreeSumClosest.java[3sum-closest]
+* link:{package}/FourSum.java[4sum]
+* link:{package}/NextPermutation.java[next-permutation]
+* link:{package}/SearchInRotatedSortedArray.java[search-in-rotated-sorted-array]
+* link:{package}/FindFirstAndLastPositionOfElementInSortedArray.java[find-first-and-last-position-of-element-in-sorted-array]
+* link:{package}/CombinationSum.java[combination-sum]
+* link:{package}/CombinationSumII.java[combination-sum-ii]
+* link:{package}/RotateImage.java[rotate-image]
+* link:{package}/SpiralMatrix.java[spiral-matrix]
+* link:{package}/JumpGame.java[jump-game]
+* link:{package}/MergeIntervals.java[merge-intervals]
+* link:{package}/SpiralMatrixII.java[spiral-matrix-ii]
+* link:{package}/UniquePaths.java[unique-paths]
+* link:{package}/UniquePathsII.java[unique-paths-ii]
+* link:{package}/MinimumPathSum.java[minimum-path-sum]
+* link:{package}/SetMatrixZeroes.java[set-matrix-zeroes]
+* link:{package}/Search2DMatrix.java[search-a-2d-matrix]
+* link:{package}/SortColors.java[sort-colors]
+* link:{package}/Subsets.java[subsets]
+* link:{package}/WordSearch.java[word-search]
+* link:{package}/RemoveDuplicatesFromSortedArrayII.java[remove-duplicates-from-sorted-array-ii]
+* link:{package}/SearchInRotatedSortedArrayII.java[search-in-rotated-sorted-array-ii]
+* link:{package}/SubsetsII.java[subsets-ii]
+* link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
+|
+
+| String
+a|
+* link:{package}/ValidParentheses.java[valid-parentheses]
+* link:{package}/RomanToInteger.java[roman-to-integer]
+a|
+* link:{package}/SimplifyPath.java[simplify-path]
+* link:{package}/MiniParser.java[mini-parser]
+* link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+* link:{package}/GroupAnagrams.java[group-anagrams]
+|
+
+| LinkedList
+a|
+* link:{package}/LinkedListCycle.java[linked-list-cycle]
+* link:{package}/IntersectionofTwoLinkedLists.java[intersection-of-two-linked-lists]
+* link:{package}/RemoveLinkedListElements.java[remove-linked-list-elements]
+* link:{package}/ReverseLinkedList.java[reverse-linked-list]
+* link:{package}/PalindromeLinkedList.java[palindrome-linked-list]
+* link:{package}/DeleteNodeInALinkedList.java[delete-node-in-a-linked-list]
+* link:{package}/MiddleOfTheLinkedList.java[middle-of-the-linked-list]
+a|
+* link:{package}/RemoveNthNodeFromEndOfList.java[remove-nth-node-from-end-of-list]
+* link:{package}/SwapNodesInPairs.java[swap-nodes-in-pairs]
+* link:{package}/RotateList.java[rotate-list]
+* link:{package}/RemoveDuplicatesFromSortedListII.java[remove-duplicates-from-sorted-list-ii]
+* link:{package}/PartitionList.java[partition-list]
+* link:{package}/ReverseLinkedListII.java[reverse-linked-list-ii]
+* link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
+|
+
+| Math
+a|
+* link:{package}/MissingNumber.java[missing-number]
+* link:{package}/HappyNumber.java[happy-number]
+* link:{package}/CountPrimes.java[count-primes]
+* link:{package}/RomanToInteger.java[roman-to-integer]
+|
+|
+
+| BitManipulation
+a|
+* link:{package}/MajorityElement.java[majority-element]
+* link:{package}/MissingNumber.java[missing-number]
+* link:{package}/SingleNumber.java[single-number]
+a|
+* link:{package}/Subsets.java[subsets]
+|
+
+| Stack
+a|
+* link:{package}/ValidParentheses.java[valid-parentheses]
+* link:{package}/MinStack.java[min-stack]
+* link:{package}/ImplementStackUsingQueues.java[implement-stack-using-queues]
+* link:{package}/ImplementQueueUsingStacks.java[implement-queue-using-stacks]
+* link:{package}/NextGreaterElementI.java[next-greater-element-i]
+a|
+* link:{package}/SimplifyPath.java[simplify-path]
+* link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
+* link:{package}/EvaluateReversePolishNotation.java[evaluate-reverse-polish-notation]
+* link:{package}/BSTIterator.java[binary-search-tree-iterator]
+* link:{package}/MiniParser.java[mini-parser]
+|
+
+| HashTable
+a|
+* link:{package}/TwoSum.java[two-sum]
+* link:{package}/ContainsDuplicate.java[contains-duplicate]
+* link:{package}/ContainsDuplicateII.java[contains-duplicate-ii]
+* link:{package}/SingleNumber.java[single-number]
+* link:{package}/HappyNumber.java[happy-number]
+* link:{package}/CountPrimes.java[count-primes]
+* link:{package}/IsomorphicStrings.java[isomorphic-strings]
+* link:{package}/ValidAnagram.java[valid-anagram]
+* link:{package}/WordPattern.java[word-pattern]
+* link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
+* link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+a|
+* link:{package}/FourSum.java[4sum]
+* link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
+* link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+* link:{package}/ValidSudoku.java[valid-sudoku]
+* link:{package}/GroupAnagrams.java[group-anagrams]
+|
+
+| Graph
+|
+|
+|
+
+| Tree
+|
+a|
+* link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
+* link:{package}/BSTIterator.java[binary-search-tree-iterator]
+|
+
+| Sort
+|
+a|
+* link:{package}/MergeIntervals.java[merge-intervals]
+* link:{package}/SortColors.java[sort-colors]
+* link:{package}/ValidAnagram.java[valid-anagram]
+* link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
+* link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+|
+
+| DP
+a|
+* link:{package}/MaximumSubarray.java[maximum-subarray]
+* link:{package}/BestTimeToBuyAndSellStock.java[best-time-to-buy-and-sell-stock]
+a|
+* link:{package}/UniquePaths.java[unique-paths]
+* link:{package}/UniquePathsII.java[unique-paths-ii]
+* link:{package}/MinimumPathSum.java[minimum-path-sum]
+|
+
+| Greedy
+a|
+* link:{package}/BestTimeToBuyAndSellStockII.java[best-time-to-buy-and-sell-stock-ii]
+a|
+* link:{package}/JumpGame.java[jump-game]
+|
+
+| Recursion
+|
+|
+|
+
+| BinarySearch
+a|
+* link:{package}/SearchInsertPosition.java[search-insert-position]
+* link:{package}/TwoSumIIInputArrayIsSorted.java[two-sum-ii-input-array-is-sorted]
+* link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
+* link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+a|
+* link:{package}/SearchInRotatedSortedArray.java[search-in-rotated-sorted-array]
+* link:{package}/FindFirstAndLastPositionOfElementInSortedArray.java[find-first-and-last-position-of-element-in-sorted-array]
+* link:{package}/Search2DMatrix.java[search-a-2d-matrix]
+* link:{package}/SearchInRotatedSortedArrayII.java[search-in-rotated-sorted-array-ii]
+* link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
+|
+
+| TwoPointers
+a|
+* link:{package}/RemoveDuplicatesFromSortedArray.java[remove-duplicates-from-sorted-array]
+* link:{package}/RemoveElement.java[remove-element]
+* link:{package}/MergeSortedArray.java[merge-sorted-array]
+* link:{package}/TwoSumIIInputArrayIsSorted.java[two-sum-ii-input-array-is-sorted]
+* link:{package}/MoveZeroes.java[move-zeroes]
+* link:{package}/LinkedListCycle.java[linked-list-cycle]
+* link:{package}/PalindromeLinkedList.java[palindrome-linked-list]
+* link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
+* link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+a|
+* link:{package}/ContainerWithMostWater.java[container-with-most-water]
+* link:{package}/ThreeSum.java[3sum]
+* link:{package}/ThreeSumClosest.java[3sum-closest]
+* link:{package}/FourSum.java[4sum]
+* link:{package}/SortColors.java[sort-colors]
+* link:{package}/RemoveDuplicatesFromSortedArrayII.java[remove-duplicates-from-sorted-array-ii]
+* link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
+* link:{package}/RemoveNthNodeFromEndOfList.java[remove-nth-node-from-end-of-list]
+* link:{package}/RotateList.java[rotate-list]
+* link:{package}/PartitionList.java[partition-list]
+* link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
+* link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+|
+
+| DepthFirstSearch
+|
+|
+|
+
+| BreadthFirstSearch
+|
+|
+|
+
+| SlidingWindow
+|
+a|
+* link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+|
+
+| BackTracking
+|
+a|
+* link:{package}/CombinationSum.java[combination-sum]
+* link:{package}/CombinationSumII.java[combination-sum-ii]
+* link:{package}/Subsets.java[subsets]
+* link:{package}/WordSearch.java[word-search]
+* link:{package}/SubsetsII.java[subsets-ii]
+|
+
+| DivideAndConquer
+a|
+* link:{package}/MaximumSubarray.java[maximum-subarray]
+* link:{package}/MajorityElement.java[majority-element]
+|
+|
+
+|===
