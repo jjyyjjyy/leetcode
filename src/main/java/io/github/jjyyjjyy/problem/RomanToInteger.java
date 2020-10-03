@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/roman-to-integer/">罗马数字转整数</a>
@@ -72,7 +76,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RomanToInteger {
 
+    private static final Map<String, Integer> ROMAN_NUMERAL_MAP = new HashMap<>();
+
+    static {
+        ROMAN_NUMERAL_MAP.put("I", 1);
+        ROMAN_NUMERAL_MAP.put("V", 5);
+        ROMAN_NUMERAL_MAP.put("X", 10);
+        ROMAN_NUMERAL_MAP.put("L", 50);
+        ROMAN_NUMERAL_MAP.put("C", 100);
+        ROMAN_NUMERAL_MAP.put("D", 500);
+        ROMAN_NUMERAL_MAP.put("M", 1000);
+    }
+
+    /**
+     * 1. 维护一个罗马数字与阿拉伯数字的映射关系表.
+     * 2. 从右向左遍历字符串, 如果当前数值比上一个数值结果小, 则用计算结果减去当前数值, 否则加上数值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int romanToInt(String s) {
-        return 0;
+        String[] strings = s.split("");
+        int result = 0;
+        int lastNum = 0;
+        for (int i = strings.length - 1; i >= 0; i--) {
+            int num = ROMAN_NUMERAL_MAP.get(strings[i]);
+            if (num < lastNum) {
+                result -= num;
+            } else {
+                result += num;
+            }
+            lastNum = num;
+        }
+        return result;
     }
 }
