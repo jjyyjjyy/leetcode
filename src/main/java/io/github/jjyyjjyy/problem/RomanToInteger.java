@@ -70,5 +70,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.MATH, Tag.STRING}
 )
-public class RomantoInteger {
+public class RomanToInteger {
+
+    public int romanToInt(String s) {
+        return 0;
+    }
 }
