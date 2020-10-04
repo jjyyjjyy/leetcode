@@ -71,6 +71,7 @@ a|
 a|
 * link:{package}/ValidParentheses.java[valid-parentheses]
 * link:{package}/RomanToInteger.java[roman-to-integer]
+* link:{package}/LongestCommonPrefix.java[longest-common-prefix]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
