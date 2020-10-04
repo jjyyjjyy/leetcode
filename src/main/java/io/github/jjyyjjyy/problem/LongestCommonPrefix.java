@@ -37,8 +37,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestCommonPrefix {
 
+    /**
+     * 选取第一个字符串, 然后依次比较数组后面的字符串字符, 得到最长的相同字符串.
+     */
     @Complexity(Complexity.ComplexityType.O_M_N)
     public String longestCommonPrefix(String[] strs) {
-        return "";
+        if (strs.length == 0) {
+            return "";
+        }
+        String first = strs[0];
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < first.length(); i++) {
+            char currentChar = first.charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (strs[j].length() <= i || currentChar != strs[j].charAt(i)) {
+                    return result.toString();
+                }
+            }
+            result.append(currentChar);
+        }
+
+        return result.toString();
     }
 }
