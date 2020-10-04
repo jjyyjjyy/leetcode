@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -35,4 +36,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class LongestCommonPrefix {
+
+    @Complexity(Complexity.ComplexityType.O_M_N)
+    public String longestCommonPrefix(String[] strs) {
+        return "";
+    }
 }
