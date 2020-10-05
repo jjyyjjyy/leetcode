@@ -42,5 +42,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.TWO_POINTERS, Tag.STRING}
 )
-public class ImplementstrStr {
+public class ImplementStrStr {
+
+    public int strStr(String haystack, String needle) {
+        return -1;
+    }
+
 }

@@ -72,6 +72,7 @@ a|
 * link:{package}/ValidParentheses.java[valid-parentheses]
 * link:{package}/RomanToInteger.java[roman-to-integer]
 * link:{package}/LongestCommonPrefix.java[longest-common-prefix]
+* link:{package}/ImplementStrStr.java[implement-strstr]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
@@ -221,6 +222,7 @@ a|
 * link:{package}/PalindromeLinkedList.java[palindrome-linked-list]
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+* link:{package}/ImplementStrStr.java[implement-strstr]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
