@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -44,7 +45,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ImplementStrStr {
 
+    /**
+     * 1. 维护慢指针i.
+     * 2. 从i处依次遍历两个字符串, 如果字符不相等则跳出, 如果遍历到needle最后一位则返回i.
+     * 3. i前进一位, 重复步骤2.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int strStr(String haystack, String needle) {
+        char[] hayStacks = haystack.toCharArray();
+        char[] needles = needle.toCharArray();
+        if (needles.length == 0) {
+            return 0;
+        }
+        for (int i = 0; i <= hayStacks.length - needles.length; i++) {
+            for (int j = 0; j < needles.length; j++) {
+                if (hayStacks[i + j] != needles[j]) {
+                    break;
+                }
+                if (j == needles.length - 1) {
+                    return i;
+                }
+            }
+        }
         return -1;
     }
 
