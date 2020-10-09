@@ -9,7 +9,8 @@ import io.github.jjyyjjyy.core.Tag;
  *
  * <p>「外观数列」是一个整数序列，从数字 1 开始，序列中的每一项都是对前一项的描述。前五项如下：</p>
  *
- * <pre>1.     1
+ * <pre>
+ * 1.     1
  * 2.     11
  * 3.     21
  * 4.     1211
@@ -51,5 +52,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.STRING}
 )
-public class CountandSay {
+public class CountAndSay {
+
+    public String countAndSay(int n) {
+        return null;
+    }
 }
