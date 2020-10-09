@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -54,7 +55,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CountAndSay {
 
+    /**
+     * 遍历前一次的结果, 依次统计每个相邻的相同字符串出现的次数, 拼接结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String countAndSay(int n) {
-        return null;
+        String res = "1";
+
+        for (int i = 2; i <= n; i++) {
+            char[] chars = res.toCharArray();
+            char currentChar = chars[0];
+            int count = 1;
+            int p = 1;
+            StringBuilder currentRes = new StringBuilder();
+            while (true) {
+                if (p == chars.length) {
+                    currentRes.append(count).append(currentChar);
+                    break;
+                }
+                if (chars[p] == currentChar) {
+                    count++;
+                } else {
+                    currentRes.append(count).append(currentChar);
+                    currentChar = chars[p];
+                    count = 1;
+                }
+                p++;
+            }
+            res = currentRes.toString();
+        }
+
+        return res;
     }
 }
