@@ -75,6 +75,7 @@ a|
 * link:{package}/ImplementStrStr.java[implement-strstr]
 * link:{package}/CountAndSay.java[count-and-say]
 * link:{package}/LengthOfLastWord.java[length-of-last-word]
+* link:{package}/AddBinary.java[add-binary]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
@@ -107,6 +108,7 @@ a|
 * link:{package}/HappyNumber.java[happy-number]
 * link:{package}/CountPrimes.java[count-primes]
 * link:{package}/RomanToInteger.java[roman-to-integer]
+* link:{package}/AddBinary.java[add-binary]
 |
 |
 
