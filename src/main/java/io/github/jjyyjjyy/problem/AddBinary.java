@@ -37,4 +37,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.STRING}
 )
 public class AddBinary {
+
+    public String addBinary(String a, String b) {
+        return null;
+    }
 }
