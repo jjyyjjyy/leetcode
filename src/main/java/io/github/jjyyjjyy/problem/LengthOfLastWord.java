@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -31,7 +32,23 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LengthOfLastWord {
 
+    /**
+     * 先找到最后一个不为空的字符, 从这个字符开始向前遍历, 一直找到不为空的字符.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int lengthOfLastWord(String s) {
-        return 0;
+        char[] chars = s.toCharArray();
+        int result = 0;
+        int start = chars.length - 1;
+        while (start >= 0 && chars[start] == ' ') {
+            start--;
+        }
+        for (int i = start; i >= 0; i--) {
+            if (chars[i] == ' ') {
+                break;
+            }
+            result++;
+        }
+        return result;
     }
 }
