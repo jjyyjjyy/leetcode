@@ -29,5 +29,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.STRING}
 )
-public class LengthofLastWord {
+public class LengthOfLastWord {
+
+    public int lengthOfLastWord(String s) {
+        return 0;
+    }
 }
