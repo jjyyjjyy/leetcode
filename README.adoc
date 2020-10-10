@@ -74,6 +74,7 @@ a|
 * link:{package}/LongestCommonPrefix.java[longest-common-prefix]
 * link:{package}/ImplementStrStr.java[implement-strstr]
 * link:{package}/CountAndSay.java[count-and-say]
+* link:{package}/LengthOfLastWord.java[length-of-last-word]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
