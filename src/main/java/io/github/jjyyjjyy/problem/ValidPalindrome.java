@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -38,7 +39,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ValidPalindrome {
 
+    /**
+     * 同时从前向后和从后向前遍历, 比较字符是否相等.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isPalindrome(String s) {
-        return false;
+        int start = 0, end = s.length() - 1;
+        while (start <= end) {
+            char startChar = s.charAt(start);
+            char endChar = s.charAt(end);
+
+            if (!(Character.isLetter(startChar) || Character.isDigit(startChar))) {
+                start++;
+                continue;
+            }
+            if (!(Character.isLetter(endChar) || Character.isDigit(endChar))) {
+                end--;
+                continue;
+            }
+
+            if (!String.valueOf(startChar).toLowerCase().equals(String.valueOf(endChar).toLowerCase())) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
     }
 }
