@@ -40,4 +40,7 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TWO_POINTERS, Tag.STRING}
 )
 public class ReverseString {
+
+    public void reverseString(char[] s) {
+    }
 }
