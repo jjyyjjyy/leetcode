@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -41,6 +42,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseString {
 
+    /**
+     * 从前向后, 从后向前遍历, 交换首尾字符.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public void reverseString(char[] s) {
+        int start = 0;
+        int end = s.length - 1;
+        while (start < end) {
+            char tmp = s[start];
+            s[start] = s[end];
+            s[end] = tmp;
+            start++;
+            end--;
+        }
     }
 }
