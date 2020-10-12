@@ -37,4 +37,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TWO_POINTERS, Tag.STRING}
 )
 public class ValidPalindrome {
+
+    public boolean isPalindrome(String s) {
+        return false;
+    }
 }
