@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -38,7 +39,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseVowelsOfAString {
 
+    private static final String VOWEL_STRING = "aieouAIEOU";
+
+    /**
+     * 分别从前向后, 从后向前遍历, 过滤掉元音字符, 然后交换.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String reverseVowels(String s) {
-        return null;
+        char[] chars = s.toCharArray();
+        int start = 0;
+        int end = chars.length - 1;
+        while (true) {
+            while (start < end && !VOWEL_STRING.contains(String.valueOf(chars[start]))) {
+                start++;
+            }
+            while (start < end && !VOWEL_STRING.contains(String.valueOf(chars[end]))) {
+                end--;
+            }
+            if (start < end) {
+                char tmp = chars[start];
+                chars[start] = chars[end];
+                chars[end] = tmp;
+                start++;
+                end--;
+            } else {
+                break;
+            }
+        }
+        return new String(chars);
     }
 }
