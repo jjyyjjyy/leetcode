@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -35,8 +36,27 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RansomNote {
 
+    /**
+     * 1. 统计magazine每个字符出现的次数.
+     * 2. 遍历ransomNote, 将之前统计结果对应的字符出现次数减一, 如果减得的数字小于0, 则说明无法使用magazine拼出相应字符.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public boolean canConstruct(String ransomNote, String magazine) {
-        return false;
+        if (magazine.length() < ransomNote.length()) {
+            return false;
+        }
+        int[] count = new int[26];
+        char[] magazineChars = magazine.toCharArray();
+        for (char c : magazineChars) {
+            count[c - 'a']++;
+        }
+        char[] ransomNoteChars = ransomNote.toCharArray();
+        for (char c : ransomNoteChars) {
+            if (--count[c - 'a'] < 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
