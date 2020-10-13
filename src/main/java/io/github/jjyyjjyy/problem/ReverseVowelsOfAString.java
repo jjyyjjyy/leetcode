@@ -36,5 +36,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.TWO_POINTERS, Tag.STRING}
 )
-public class ReverseVowelsofaString {
+public class ReverseVowelsOfAString {
+
+    public String reverseVowels(String s) {
+        return null;
+    }
 }
