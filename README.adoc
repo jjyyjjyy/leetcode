@@ -78,6 +78,7 @@ a|
 * link:{package}/AddBinary.java[add-binary]
 * link:{package}/ValidPalindrome.java[valid-palindrome]
 * link:{package}/ReverseString.java[reverse-string]
+* link:{package}/ReverseVowelsOfAString.java[reverse-vowels-of-a-string]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
@@ -231,6 +232,7 @@ a|
 * link:{package}/ImplementStrStr.java[implement-strstr]
 * link:{package}/ValidPalindrome.java[valid-palindrome]
 * link:{package}/ReverseString.java[reverse-string]
+* link:{package}/ReverseVowelsOfAString.java[reverse-vowels-of-a-string]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
