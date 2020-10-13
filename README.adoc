@@ -79,6 +79,7 @@ a|
 * link:{package}/ValidPalindrome.java[valid-palindrome]
 * link:{package}/ReverseString.java[reverse-string]
 * link:{package}/ReverseVowelsOfAString.java[reverse-vowels-of-a-string]
+* link:{package}/RansomNote.java[ransom-note]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]

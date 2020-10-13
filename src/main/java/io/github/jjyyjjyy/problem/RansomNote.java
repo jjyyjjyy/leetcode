@@ -34,4 +34,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class RansomNote {
+
+    public boolean canConstruct(String ransomNote, String magazine) {
+        return false;
+    }
+
 }
