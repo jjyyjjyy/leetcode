@@ -80,6 +80,7 @@ a|
 * link:{package}/ReverseString.java[reverse-string]
 * link:{package}/ReverseVowelsOfAString.java[reverse-vowels-of-a-string]
 * link:{package}/RansomNote.java[ransom-note]
+* link:{package}/FirstUniqueCharacterInAString.java[first-unique-character-in-a-string]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
@@ -153,6 +154,7 @@ a|
 * link:{package}/WordPattern.java[word-pattern]
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+* link:{package}/FirstUniqueCharacterInAString.java[first-unique-character-in-a-string]
 a|
 * link:{package}/FourSum.java[4sum]
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]

@@ -35,5 +35,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.HASH_TABLE, Tag.STRING}
 )
-public class FirstUniqueCharacterinaString {
+public class FirstUniqueCharacterInAString {
+
+    public int firstUniqChar(String s) {
+        return -1;
+    }
 }
