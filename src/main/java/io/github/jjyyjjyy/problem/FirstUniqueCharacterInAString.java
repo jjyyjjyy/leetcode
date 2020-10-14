@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FirstUniqueCharacterInAString {
 
+    /**
+     * 1. 使用數組統計每個元素出現的次數.
+     * 2. 遍歷字符串, 如果統計出來的次數爲1, 則返回該字符的索引.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int firstUniqChar(String s) {
+        int[] summary = new int[26];
+        char[] chars = s.toCharArray();
+        for (char c : chars) {
+            summary[c - 'a']++;
+        }
+        for (int i = 0; i < chars.length; i++) {
+            if (summary[chars[i] - 'a'] == 1) {
+                return i;
+            }
+        }
         return -1;
     }
 }
