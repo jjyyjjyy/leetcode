@@ -33,4 +33,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class AddStrings {
+
+    public String addStrings(String num1, String num2) {
+        return null;
+    }
 }

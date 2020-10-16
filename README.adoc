@@ -81,6 +81,7 @@ a|
 * link:{package}/ReverseVowelsOfAString.java[reverse-vowels-of-a-string]
 * link:{package}/RansomNote.java[ransom-note]
 * link:{package}/FirstUniqueCharacterInAString.java[first-unique-character-in-a-string]
+* link:{package}/AddStrings.java[add-strings]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
