@@ -23,5 +23,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.STRING}
 )
-public class NumberofSegmentsinaString {
+public class NumberOfSegmentsInAString {
+
+    public int countSegments(String s) {
+        return 0;
+    }
+
 }
