@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -25,8 +26,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfSegmentsInAString {
 
+    /**
+     * 依次遍历字符串, 如果当前不是空字符并且前一位是空字符, 计数加1.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int countSegments(String s) {
-        return 0;
-    }
+        int result = 0;
 
+        for (int i = 0; i < s.length(); i++) {
+            if ((i == 0 || s.charAt(i - 1) == ' ') && s.charAt(i) != ' ') {
+                result++;
+            }
+        }
+
+        return result;
+    }
 }
