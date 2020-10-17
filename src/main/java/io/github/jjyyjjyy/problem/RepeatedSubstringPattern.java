@@ -51,4 +51,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class RepeatedSubstringPattern {
+
+    public boolean repeatedSubstringPattern(String s) {
+        return false;
+    }
 }
