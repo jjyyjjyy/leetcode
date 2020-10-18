@@ -42,4 +42,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class DetectCapital {
+
+    public boolean detectCapitalUse(String word) {
+        return false;
+    }
 }
