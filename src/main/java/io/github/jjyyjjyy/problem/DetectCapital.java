@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -43,7 +44,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DetectCapital {
 
+    /**
+     * 两种情况下不合法:
+     * 1. 前一个字符是小写, 后一个字符是大写.
+     * 2. 从三个字符开始, 前一个字符是大写, 后一个字符是小写.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean detectCapitalUse(String word) {
-        return false;
+        for (int i = 1; i < word.length(); i++) {
+            if (Character.isLowerCase(word.charAt(i - 1)) && Character.isUpperCase(word.charAt(i))
+                || i > 1 && Character.isUpperCase(word.charAt(i - 1)) && Character.isLowerCase(word.charAt(i))) {
+                return false;
+            }
+        }
+        return true;
     }
 }
