@@ -39,4 +39,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING, Tag.DYNAMIC_PROGRAMMING}
 )
 public class LongestPalindromicSubstring {
+
+    public String longestPalindrome(String s) {
+        return null;
+    }
 }

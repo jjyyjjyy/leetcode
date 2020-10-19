@@ -11,7 +11,8 @@ import io.github.jjyyjjyy.core.Tag;
  *
  * <p>比如输入字符串为 <code>&quot;LEETCODEISHIRING&quot;</code>&nbsp;行数为 3 时，排列如下：</p>
  *
- * <pre>L   C   I   R
+ * <pre>
+ * L   C   I   R
  * E T O E S I I G
  * E   D   H   N
  * </pre>
@@ -46,4 +47,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class ZigZagConversion {
+
+    public String convert(String s, int numRows) {
+        return null;
+    }
 }
