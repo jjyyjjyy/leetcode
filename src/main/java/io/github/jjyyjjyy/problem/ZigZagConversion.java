@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,7 +49,39 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ZigZagConversion {
 
+    /**
+     * 1. 按行输出结果.
+     * <p>
+     * 2. 第一行和最后一行的gap为 stem:["maxGap" = ("numRows" - 1) xx 2].
+     * <p>
+     * 3. 每行的gap依次为: stem:["maxGap" - i xx 2, i xx 2, "maxGap" - i xx 2, i xx 2, ...].
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String convert(String s, int numRows) {
-        return null;
+        if (numRows == 1) {
+            return s;
+        }
+
+        int maxGap = (numRows - 1) * 2;
+        char[] chars = s.toCharArray();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < numRows; i++) {
+            int gap = maxGap;
+
+            if (i > 0 && i < numRows - 1) {
+                gap = i * 2;
+            }
+
+            for (int j = i; j < chars.length; j += gap) {
+                result.append(chars[j]);
+                if (i > 0 && i < numRows - 1) {
+                    gap = maxGap - gap;
+                } else {
+                    gap = maxGap;
+                }
+            }
+        }
+        return result.toString();
     }
 }
