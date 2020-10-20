@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -74,7 +75,43 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class StringToIntegerAtoi {
 
+    /**
+     * 遍历字符串, 先确定符号位, 然后将后面的数字一直相加.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int myAtoi(String s) {
-        return 0;
+        int start = 0;
+        boolean negative = false;
+        while (start < s.length()) {
+            char c = s.charAt(start);
+            if (c == ' ') {
+                start++;
+            } else if (Character.isDigit(c)) {
+                break;
+            } else if (c == '+') {
+                start++;
+                break;
+            } else if (c == '-') {
+                start++;
+                negative = true;
+                break;
+            } else {
+                return 0;
+            }
+        }
+        long result = 0;
+        while (start < s.length()) {
+            char c = s.charAt(start);
+            if (!Character.isDigit(c)) {
+                break;
+            }
+            long add = result * 10 + c - '0';
+            if (add < 0 || add < result) {
+                return negative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+            result = add;
+            start++;
+        }
+        return (int) (negative ? Math.max(-result, Integer.MIN_VALUE) : Math.min(result, Integer.MAX_VALUE));
     }
 }
