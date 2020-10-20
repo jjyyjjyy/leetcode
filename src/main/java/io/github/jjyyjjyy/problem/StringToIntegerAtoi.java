@@ -72,5 +72,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.MATH, Tag.STRING}
 )
-public class StringtoIntegeratoi {
+public class StringToIntegerAtoi {
+
+    public int myAtoi(String s) {
+        return 0;
+    }
 }

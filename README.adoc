@@ -91,6 +91,7 @@ a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/GroupAnagrams.java[group-anagrams]
 * link:{package}/ZigZagConversion.java[zigzag-conversion]
+* link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 |
 
 | LinkedList
@@ -119,7 +120,8 @@ a|
 * link:{package}/CountPrimes.java[count-primes]
 * link:{package}/RomanToInteger.java[roman-to-integer]
 * link:{package}/AddBinary.java[add-binary]
-|
+a|
+* link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 |
 
 | BitManipulation
