@@ -92,6 +92,7 @@ a|
 * link:{package}/GroupAnagrams.java[group-anagrams]
 * link:{package}/ZigZagConversion.java[zigzag-conversion]
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
+* link:{package}/IntegerToRoman.java[integer-to-roman]
 |
 
 | LinkedList
@@ -122,6 +123,7 @@ a|
 * link:{package}/AddBinary.java[add-binary]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
+* link:{package}/IntegerToRoman.java[integer-to-roman]
 |
 
 | BitManipulation
