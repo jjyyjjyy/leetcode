@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -77,7 +78,19 @@ public class IntegerToRoman {
 
     private static final String[] SYMBOLS = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
+    /**
+     * 1. 依次遍历罗马数值.
+     * 2. 如果当前值比num小, 则一直扣除当前值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String intToRoman(int num) {
-        return null;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < VALUES.length && num >= 0; i++) {
+            while (VALUES[i] <= num) {
+                num -= VALUES[i];
+                result.append(SYMBOLS[i]);
+            }
+        }
+        return result.toString();
     }
 }
