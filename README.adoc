@@ -93,6 +93,7 @@ a|
 * link:{package}/ZigZagConversion.java[zigzag-conversion]
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
+* link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 |
 
 | LinkedList
@@ -284,6 +285,7 @@ a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/WordSearch.java[word-search]
 * link:{package}/SubsetsII.java[subsets-ii]
+* link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 |
 
 | DivideAndConquer

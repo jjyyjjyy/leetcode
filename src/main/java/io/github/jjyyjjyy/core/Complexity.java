@@ -15,7 +15,9 @@ public @interface Complexity {
 
     ComplexityType value();
 
-    public enum ComplexityType {
+    String complexity() default "";
+
+    enum ComplexityType {
 
         O_1("O(1)"),
         O_LOG_N("O(logn)"),
@@ -27,7 +29,8 @@ public @interface Complexity {
         O_N_EXPONENT("O(n*2^n)"),
         O_N_POW_2("O(n^2)"),
         O_N_POW_3("O(n^3)"),
-        O_N_FACTORIAL("O(n!)");
+        O_N_FACTORIAL("O(n!)"),
+        O_DEFINE("");
 
         private final String description;
 

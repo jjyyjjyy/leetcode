@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/">电话号码的字母组合</a>
  *
@@ -36,5 +38,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.STRING, Tag.BACKTRACKING}
 )
-public class LetterCombinationsofaPhoneNumber {
+public class LetterCombinationsOfAPhoneNumber {
+
+    public List<String> letterCombinations(String digits) {
+        return null;
+    }
+
 }
