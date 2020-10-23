@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,7 +39,27 @@ import java.util.List;
 )
 public class GenerateParentheses {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(4^n/sqrtn)")
     public List<String> generateParenthesis(int n) {
-        return null;
+        List<String> result = new ArrayList<>();
+        backTracking(result, new StringBuilder(), 0, 0, n);
+        return result;
+    }
+
+    private void backTracking(List<String> result, StringBuilder sb, int open, int close, int n) {
+        if (sb.length() == n * 2) {
+            result.add(sb.toString());
+            return;
+        }
+        if (open < n) {
+            sb.append("(");
+            backTracking(result, sb, open + 1, close, n);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        if (close < open) {
+            sb.append(")");
+            backTracking(result, sb, open, close + 1, n);
+            sb.deleteCharAt(sb.length() - 1);
+        }
     }
 }
