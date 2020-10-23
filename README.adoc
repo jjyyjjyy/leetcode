@@ -94,6 +94,7 @@ a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
+* link:{package}/GenerateParentheses.java[generate-parentheses]
 |
 
 | LinkedList
@@ -286,6 +287,7 @@ a|
 * link:{package}/WordSearch.java[word-search]
 * link:{package}/SubsetsII.java[subsets-ii]
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
+* link:{package}/GenerateParentheses.java[generate-parentheses]
 |
 
 | DivideAndConquer
