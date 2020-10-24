@@ -44,4 +44,10 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.STRING}
 )
 public class MultiplyStrings {
+
+    public String multiply(String num1, String num2) {
+        return null;
+    }
+
+
 }

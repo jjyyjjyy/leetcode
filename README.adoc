@@ -95,6 +95,7 @@ a|
 * link:{package}/IntegerToRoman.java[integer-to-roman]
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 * link:{package}/GenerateParentheses.java[generate-parentheses]
+* link:{package}/MultiplyStrings.java[multiply-strings]
 |
 
 | LinkedList
@@ -126,6 +127,7 @@ a|
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
+* link:{package}/MultiplyStrings.java[multiply-strings]
 |
 
 | BitManipulation
