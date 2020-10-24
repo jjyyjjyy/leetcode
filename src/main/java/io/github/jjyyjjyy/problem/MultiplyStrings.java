@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -45,9 +46,66 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MultiplyStrings {
 
+    /**
+     * 将第二个字符串从后向前遍历, 与第一个字符串相乘, 将每次的结果相加, 得到最终相乘后的结果.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m*n+n^2)")
     public String multiply(String num1, String num2) {
-        return null;
+
+        if ("0".equals(num1) || "0".equals(num2)) {
+            return "0";
+        }
+
+        int m = num1.length();
+        int n = num2.length();
+
+        String result = "0";
+
+        for (int i = n - 1; i >= 0; i--) {
+            StringBuilder current = new StringBuilder();
+            current.append("0".repeat(Math.max(0, n - 1 - i)));
+            int y = num2.charAt(i) - '0';
+            int add = 0;
+            for (int j = m - 1; j >= 0; j--) {
+                int x = num1.charAt(j) - '0';
+                int multipliedResult = x * y + add;
+                current.append(multipliedResult % 10);
+                add = multipliedResult / 10;
+            }
+            if (add > 0) {
+                current.append(add % 10);
+            }
+            result = addString(result, current.reverse().toString());
+        }
+
+        return result;
     }
 
+    private String addString(String a, String b) {
+
+        int aPosition = a.length() - 1;
+        int bPosition = b.length() - 1;
+
+        StringBuilder result = new StringBuilder();
+        int add = 0;
+        while (aPosition >= 0 || bPosition >= 0) {
+            int current;
+            if (aPosition < 0) {
+                current = b.charAt(bPosition) - '0' + add;
+            } else if (bPosition < 0) {
+                current = a.charAt(aPosition) - '0' + add;
+            } else {
+                current = a.charAt(aPosition) - '0' + add + b.charAt(bPosition) - '0';
+            }
+            result.append(current % 10);
+            add = current / 10;
+            aPosition--;
+            bPosition--;
+        }
+        if (add > 0) {
+            result.append(add);
+        }
+        return result.reverse().toString();
+    }
 
 }
