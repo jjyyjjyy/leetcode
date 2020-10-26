@@ -59,5 +59,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.STRING}
 )
-public class ReverseWordsinaString {
+public class ReverseWordsInAString {
+
+    public String reverseWords(String s) {
+        return null;
+    }
+
 }
