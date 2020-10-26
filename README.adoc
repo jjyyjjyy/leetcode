@@ -96,6 +96,7 @@ a|
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 * link:{package}/GenerateParentheses.java[generate-parentheses]
 * link:{package}/MultiplyStrings.java[multiply-strings]
+* link:{package}/DecodeWays.java[decode-ways]
 |
 
 | LinkedList
@@ -206,6 +207,7 @@ a|
 * link:{package}/UniquePaths.java[unique-paths]
 * link:{package}/UniquePathsII.java[unique-paths-ii]
 * link:{package}/MinimumPathSum.java[minimum-path-sum]
+* link:{package}/DecodeWays.java[decode-ways]
 |
 
 | Greedy
