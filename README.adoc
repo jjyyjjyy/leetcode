@@ -97,6 +97,7 @@ a|
 * link:{package}/GenerateParentheses.java[generate-parentheses]
 * link:{package}/MultiplyStrings.java[multiply-strings]
 * link:{package}/DecodeWays.java[decode-ways]
+* link:{package}/ReverseWordsInAString.java[reverse-words-in-a-string]
 |
 
 | LinkedList
