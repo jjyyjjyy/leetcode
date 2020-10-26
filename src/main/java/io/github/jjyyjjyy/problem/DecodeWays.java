@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -45,8 +46,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DecodeWays {
 
+    /**
+     * 1. 依次遍历数组.
+     * 2. 如果当前位为0且前一位也为0, 则直接返回0.
+     * 3. 如果前一位与当前位加起来在0~26范围内, 则当前的次数要加上前一位的次数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int numDecodings(String s) {
-        return 0;
+        if (s.charAt(0) == '0') {
+            return 0;
+        }
+        int pre = 1;
+        int current = 1;
+        for (int i = 1; i < s.length(); i++) {
+            int tmp = current;
+            if (s.charAt(i) == '0') {
+                if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2') {
+                    current = pre;
+                } else {
+                    return 0;
+                }
+            } else if (s.charAt(i - 1) == '1' || s.charAt(i - 1) == '2' && s.charAt(i) >= '1' && s.charAt(i) <= '6') {
+                current = current + pre;
+            }
+            pre = tmp;
+        }
+        return current;
     }
-
 }
