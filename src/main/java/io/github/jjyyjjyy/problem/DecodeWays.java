@@ -44,4 +44,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING, Tag.DYNAMIC_PROGRAMMING}
 )
 public class DecodeWays {
+
+    public int numDecodings(String s) {
+        return 0;
+    }
+
 }
