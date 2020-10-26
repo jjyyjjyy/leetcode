@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/reverse-words-in-a-string/">翻转字符串里的单词</a>
@@ -61,8 +64,43 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseWordsInAString {
 
+    /**
+     * 1. 找到起始位置, 遍历字符串.
+     * 2. 如果遍历到非空字符, 则暂存起来.
+     * 3. 如果遍历到空字符且有暂存到的字符串, 则将该字符串存储到栈中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String reverseWords(String s) {
-        return null;
-    }
+        int left = 0;
+        int right = s.length() - 1;
+        while (s.charAt(left) == ' ') {
+            left++;
+        }
+        while (s.charAt(right) == ' ') {
+            right--;
+        }
+        Stack<String> stack = new Stack<>();
+        StringBuilder current = new StringBuilder();
+        while (left <= right) {
+            if (s.charAt(left) != ' ') {
+                current.append(s.charAt(left));
+            } else {
+                if (current.length() > 0) {
+                    stack.push(current.toString());
+                }
+                current.setLength(0);
+            }
+            left++;
+        }
+        if (current.length() > 0) {
+            stack.push(current.toString());
+        }
 
+        StringBuilder result = new StringBuilder();
+        while (!stack.isEmpty()) {
+            result.append(stack.pop()).append(" ");
+        }
+
+        return result.substring(0, result.length() - 1);
+    }
 }
