@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -63,7 +64,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CompareVersionNumbers {
 
+    /**
+     * 依次遍历数组, 按照点号分割, 依次比较.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public int compareVersion(String version1, String version2) {
+
+        String[] version1Array = version1.split("\\.");
+        String[] version2Array = version2.split("\\.");
+        int p = 0;
+        while (p < version1Array.length && p < version2Array.length) {
+            int v1 = Integer.parseInt(version1Array[p]);
+            int v2 = Integer.parseInt(version2Array[p]);
+            if (v1 < v2) {
+                return -1;
+            }
+            if (v2 < v1) {
+                return 1;
+            }
+            p++;
+        }
+        while (p < version1Array.length) {
+            if (Integer.parseInt(version1Array[p++]) > 0) {
+                return 1;
+            }
+        }
+        while (p < version2Array.length) {
+            if (Integer.parseInt(version2Array[p++]) > 0) {
+                return -1;
+            }
+        }
         return 0;
     }
 }
