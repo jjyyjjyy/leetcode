@@ -62,4 +62,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class CompareVersionNumbers {
+
+    public int compareVersion(String version1, String version2) {
+        return 0;
+    }
 }
