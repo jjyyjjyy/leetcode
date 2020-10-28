@@ -99,6 +99,7 @@ a|
 * link:{package}/DecodeWays.java[decode-ways]
 * link:{package}/ReverseWordsInAString.java[reverse-words-in-a-string]
 * link:{package}/CompareVersionNumbers.java[compare-version-numbers]
+* link:{package}/StringCompressions.java[string-compressions]
 |
 
 | LinkedList
