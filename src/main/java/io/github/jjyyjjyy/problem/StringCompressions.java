@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -85,7 +86,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class StringCompressions {
 
+    /**
+     * 1. 维护两个指针, start标识第一个重复字符的位置, idx标识字符数组写入位置.
+     * 2. 依次遍历数组, 如果当前位置是最后一个字符或者当前字符与下一个字符不相等, 则将当前字符和字符数量写入到数组中, 将start重置为下一个位置.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int compress(char[] chars) {
-        return 0;
+        int start = 0;
+        int idx = 0;
+        for (int i = 0; i < chars.length; i++) {
+            if (i == chars.length - 1 || chars[i] != chars[i + 1]) {
+                chars[idx++] = chars[i];
+                int count = i - start + 1;
+                if (count > 1) {
+                    for (char c : (count + "").toCharArray()) {
+                        chars[idx++] = c;
+                    }
+                }
+                start = i + 1;
+            }
+        }
+        return idx;
     }
 }
