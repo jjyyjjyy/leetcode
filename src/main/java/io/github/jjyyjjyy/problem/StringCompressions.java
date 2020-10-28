@@ -79,9 +79,13 @@ import io.github.jjyyjjyy.core.Tag;
  */
 @Problem(
     id = 443,
-    name = "string-compression",
-    difficulty = Difficulty.EASY,
+    name = "string-compressions",
+    difficulty = Difficulty.MEDIUM,
     tags = {Tag.STRING}
 )
-public class StringCompression {
+public class StringCompressions {
+
+    public int compress(char[] chars) {
+        return 0;
+    }
 }
