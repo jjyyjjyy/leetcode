@@ -100,6 +100,7 @@ a|
 * link:{package}/ReverseWordsInAString.java[reverse-words-in-a-string]
 * link:{package}/CompareVersionNumbers.java[compare-version-numbers]
 * link:{package}/StringCompressions.java[string-compressions]
+* link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 |
 
 | LinkedList
@@ -156,6 +157,7 @@ a|
 * link:{package}/EvaluateReversePolishNotation.java[evaluate-reverse-polish-notation]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
 * link:{package}/MiniParser.java[mini-parser]
+* link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 |
 
 | HashTable
@@ -218,6 +220,7 @@ a|
 * link:{package}/BestTimeToBuyAndSellStockII.java[best-time-to-buy-and-sell-stock-ii]
 a|
 * link:{package}/JumpGame.java[jump-game]
+* link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 |
 
 | Recursion
