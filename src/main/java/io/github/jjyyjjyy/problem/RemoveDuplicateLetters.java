@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/remove-duplicate-letters/">去除重复字母</a>
@@ -28,7 +34,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveDuplicateLetters {
 
+    /**
+     * 1. 维护一个双端队列
+     * 2. 遍历字符串, 如果队列中存在该字符, 则略过.
+     * 3. 遍历队列已有元素, 将队列中比当前字符大的且在后面的字符串中会出现的字符删除, 再将当前字符插入到队列中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String removeDuplicateLetters(String s) {
-        return null;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i), i);
+        }
+        Deque<Character> list = new ArrayDeque<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!list.contains(c)) {
+                while (!list.isEmpty() && c < list.peekLast() && map.get(list.peekLast()) > i) {
+                    list.pollLast();
+                }
+                list.add(c);
+            }
+        }
+        StringBuilder result = new StringBuilder(list.size());
+        for (Character character : list) {
+            result.append(character);
+        }
+        return result.toString();
     }
 }
