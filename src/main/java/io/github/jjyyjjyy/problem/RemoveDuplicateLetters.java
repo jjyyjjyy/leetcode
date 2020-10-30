@@ -23,8 +23,12 @@ import io.github.jjyyjjyy.core.Tag;
 @Problem(
     id = 316,
     name = "remove-duplicate-letters",
-    difficulty = Difficulty.HARD,
-    tags = {Tag.STACK, Tag.GREEDY}
+    difficulty = Difficulty.MEDIUM,
+    tags = {Tag.STACK, Tag.GREEDY, Tag.STRING}
 )
 public class RemoveDuplicateLetters {
+
+    public String removeDuplicateLetters(String s) {
+        return null;
+    }
 }
