@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -46,7 +47,13 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseInteger {
 
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int reverse(int x) {
-        return 0;
+        long n = 0;
+        while (x != 0) {
+            n = n * 10 + x % 10;
+            x /= 10;
+        }
+        return (int) n == n ? (int) n : 0;
     }
 }
