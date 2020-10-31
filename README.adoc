@@ -129,6 +129,7 @@ a|
 * link:{package}/CountPrimes.java[count-primes]
 * link:{package}/RomanToInteger.java[roman-to-integer]
 * link:{package}/AddBinary.java[add-binary]
+* link:{package}/ReverseInteger.java[reverse-integer]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]

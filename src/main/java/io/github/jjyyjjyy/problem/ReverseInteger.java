@@ -45,4 +45,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH}
 )
 public class ReverseInteger {
+
+    public int reverse(int x) {
+        return 0;
+    }
 }
