@@ -48,6 +48,14 @@ import io.github.jjyyjjyy.core.Tag;
 public class PalindromeNumber {
 
     public boolean isPalindrome(int x) {
-        return false;
+        if (x < 0 || x % 10 == 0 && x != 0) {
+            return false;
+        }
+        int lastPart = 0;
+        while (x > lastPart) {
+            lastPart = lastPart * 10 + x % 10;
+            x /= 10;
+        }
+        return x == lastPart || x == lastPart / 10;
     }
 }
