@@ -46,4 +46,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH}
 )
 public class PalindromeNumber {
+
+    public boolean isPalindrome(int x) {
+        return false;
+    }
 }
