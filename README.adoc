@@ -130,6 +130,7 @@ a|
 * link:{package}/RomanToInteger.java[roman-to-integer]
 * link:{package}/AddBinary.java[add-binary]
 * link:{package}/ReverseInteger.java[reverse-integer]
+* link:{package}/PalindromeNumber.java[palindrome-number]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
