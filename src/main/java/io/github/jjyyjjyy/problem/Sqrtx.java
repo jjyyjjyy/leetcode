@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,51 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class Sqrtx {
 
+    /**
+     * stem:[x^(1/2)=e^(lnx^(1/2))]
+     */
     public int mySqrt(int x) {
-        return 0;
+        int candidate = (int) Math.exp(0.5 * Math.log(x));
+        return (long) (candidate + 1) * (candidate + 1) <= x ? candidate + 1 : candidate;
+    }
+
+    /**
+     * 牛顿迭代法
+     */
+    public int mySqrt2(int x) {
+        if (x == 0) {
+            return 0;
+        }
+
+        double x0 = x;
+        while (true) {
+            double xi = 0.5 * (x0 + (double) x / x0);
+            if (Math.abs(x0 - xi) < 1e-7) {
+                break;
+            }
+            x0 = xi;
+        }
+        return (int) x0;
+    }
+
+
+    /**
+     * 二分查找0和x区间.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
+    public int mySqrt3(int x) {
+        int start = 0;
+        int end = x;
+        int ans = -1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if ((long) mid * mid - x <= 0) {
+                ans = mid;
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return ans;
     }
 }
