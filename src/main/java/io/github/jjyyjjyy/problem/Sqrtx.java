@@ -41,4 +41,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.BINARY_SEARCH}
 )
 public class Sqrtx {
+
+    public int mySqrt(int x) {
+        return 0;
+    }
 }

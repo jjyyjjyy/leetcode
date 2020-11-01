@@ -131,6 +131,7 @@ a|
 * link:{package}/AddBinary.java[add-binary]
 * link:{package}/ReverseInteger.java[reverse-integer]
 * link:{package}/PalindromeNumber.java[palindrome-number]
+* link:{package}/Sqrtx.java[sqrtx]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
@@ -236,6 +237,7 @@ a|
 * link:{package}/TwoSumIIInputArrayIsSorted.java[two-sum-ii-input-array-is-sorted]
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+* link:{package}/Sqrtx.java[sqrtx]
 a|
 * link:{package}/SearchInRotatedSortedArray.java[search-in-rotated-sorted-array]
 * link:{package}/FindFirstAndLastPositionOfElementInSortedArray.java[find-first-and-last-position-of-element-in-sorted-array]
