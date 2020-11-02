@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -53,7 +54,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ExcelSheetColumnTitle {
 
+    /**
+     * 10进制转26进制(1~26).
+     * 因为不是从0开始映射, 所以要取模之前要先减一.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public String convertToTitle(int n) {
-        return null;
+        StringBuilder result = new StringBuilder();
+        while (n > 0) {
+            n--;
+            result.append((char) (n % 26 + 'A'));
+            n /= 26;
+        }
+        return result.reverse().toString();
     }
 }
