@@ -52,4 +52,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH}
 )
 public class ExcelSheetColumnTitle {
+
+    public String convertToTitle(int n) {
+        return null;
+    }
 }
