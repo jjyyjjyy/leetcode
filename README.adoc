@@ -134,6 +134,7 @@ a|
 * link:{package}/Sqrtx.java[sqrtx]
 * link:{package}/ExcelSheetColumnTitle.java[excel-sheet-column-title]
 * link:{package}/ExcelSheetColumnNumber.java[excel-sheet-column-number]
+* link:{package}/FactorialTrailingZeroes.java[factorial-trailing-zeroes]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]

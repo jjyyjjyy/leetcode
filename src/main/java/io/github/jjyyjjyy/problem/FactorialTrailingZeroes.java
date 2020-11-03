@@ -37,4 +37,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH}
 )
 public class FactorialTrailingZeroes {
+
+    public int trailingZeroes(int n) {
+        return 0;
+    }
 }
