@@ -133,6 +133,7 @@ a|
 * link:{package}/PalindromeNumber.java[palindrome-number]
 * link:{package}/Sqrtx.java[sqrtx]
 * link:{package}/ExcelSheetColumnTitle.java[excel-sheet-column-title]
+* link:{package}/ExcelSheetColumnNumber.java[excel-sheet-column-number]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
