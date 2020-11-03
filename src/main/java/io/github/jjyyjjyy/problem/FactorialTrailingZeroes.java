@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -38,7 +39,16 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FactorialTrailingZeroes {
 
+    /**
+     * 2*5=10, 所以需要找出5的倍数.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int trailingZeroes(int n) {
-        return 0;
+        int result = 0;
+        while (n > 0) {
+            n /= 5;
+            result += n;
+        }
+        return result;
     }
 }
