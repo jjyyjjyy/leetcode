@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -55,7 +56,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ExcelSheetColumnNumber {
 
+    /**
+     * 26进制转10进制.
+     * stem:[s=s_0*26^0+s_1*26^1+s_2*26^2+...+s_(n-1)*26^(n-1)]
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int titleToNumber(String s) {
-        return 0;
+        int result = 0;
+        int pow = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            result += (s.charAt(i) + 1 - 'A') * Math.pow(26, pow++);
+        }
+        return result;
     }
 }
