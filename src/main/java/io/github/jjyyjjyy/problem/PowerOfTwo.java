@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PowerOfTwo {
 
+    /**
+     * 2的幂为1000...000, 减一后为0111...111. 与运算后判断是否结果为0即可判断是否为2的幂.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public boolean isPowerOfTwo(int n) {
-        return false;
+        if (n <= 0) {
+            return false;
+        }
+        long x = (long) n;
+        return (x & (x - 1)) == 0;
+    }
+
+    /**
+     * 一直除以2, 判断对2取模后是否为1. 如果为1则不是2的幂.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
+    public boolean isPowerOfTwo2(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n > 1) {
+            if (n % 2 == 1) {
+                return false;
+            }
+            n /= 2;
+        }
+        return true;
     }
 }
