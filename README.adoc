@@ -136,6 +136,7 @@ a|
 * link:{package}/ExcelSheetColumnNumber.java[excel-sheet-column-number]
 * link:{package}/FactorialTrailingZeroes.java[factorial-trailing-zeroes]
 * link:{package}/PowerOfTwo.java[power-of-two]
+* link:{package}/AddDigits.java[add-digits]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
