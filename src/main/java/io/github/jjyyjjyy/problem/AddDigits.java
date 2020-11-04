@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -34,7 +35,11 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class AddDigits {
 
+    /**
+     * 0~9一个周期.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int addDigits(int num) {
-        return 0;
+        return (num - 1) % 9 + 1;
     }
 }
