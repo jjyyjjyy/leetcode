@@ -40,5 +40,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.BIT_MANIPULATION, Tag.MATH}
 )
-public class PowerofTwo {
+public class PowerOfTwo {
+
+    public boolean isPowerOfTwo(int n) {
+        return false;
+    }
 }

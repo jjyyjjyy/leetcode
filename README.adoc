@@ -135,6 +135,7 @@ a|
 * link:{package}/ExcelSheetColumnTitle.java[excel-sheet-column-title]
 * link:{package}/ExcelSheetColumnNumber.java[excel-sheet-column-number]
 * link:{package}/FactorialTrailingZeroes.java[factorial-trailing-zeroes]
+* link:{package}/PowerOfTwo.java[power-of-two]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
@@ -146,6 +147,7 @@ a|
 * link:{package}/MajorityElement.java[majority-element]
 * link:{package}/MissingNumber.java[missing-number]
 * link:{package}/SingleNumber.java[single-number]
+* link:{package}/PowerOfTwo.java[power-of-two]
 a|
 * link:{package}/Subsets.java[subsets]
 |
