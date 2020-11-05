@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,7 +49,14 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PowerOfThree {
 
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public boolean isPowerOfThree(int n) {
-        return false;
+        if (n < 1) {
+            return false;
+        }
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+        return n == 1;
     }
 }
