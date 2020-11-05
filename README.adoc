@@ -138,6 +138,7 @@ a|
 * link:{package}/PowerOfTwo.java[power-of-two]
 * link:{package}/AddDigits.java[add-digits]
 * link:{package}/UglyNumber.java[ugly-number]
+* link:{package}/PowerOfThree.java[power-of-three]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]

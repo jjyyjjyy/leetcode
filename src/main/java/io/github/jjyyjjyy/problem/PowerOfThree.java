@@ -46,5 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.MATH}
 )
-public class PowerofThree {
+public class PowerOfThree {
+
+    public boolean isPowerOfThree(int n) {
+        return false;
+    }
 }
