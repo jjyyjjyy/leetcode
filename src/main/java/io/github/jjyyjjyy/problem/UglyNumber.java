@@ -52,4 +52,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH}
 )
 public class UglyNumber {
+
+    public boolean isUgly(int num) {
+        return false;
+    }
 }
