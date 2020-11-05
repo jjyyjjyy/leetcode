@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -53,7 +54,23 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class UglyNumber {
 
+    /**
+     * 一直除以2/3/5, 除到余数不为0, 最后判断除的商是否为1.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public boolean isUgly(int num) {
-        return false;
+        if (num < 1) {
+            return false;
+        }
+        while (num % 2 == 0) {
+            num /= 2;
+        }
+        while (num % 3 == 0) {
+            num /= 3;
+        }
+        while (num % 5 == 0) {
+            num /= 5;
+        }
+        return num == 1;
     }
 }
