@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ValidPerfectSquare {
 
+    /**
+     * 牛顿迭代法
+     * stem:[x_(a+1)=(x_a+"num"/x_a)/2]
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public boolean isPerfectSquare(int num) {
-        return false;
+        if (num == 1) {
+            return true;
+        }
+        long x = num / 2;
+        while (x * x > num) {
+            x = (x + num / x) / 2;
+        }
+        return x * x == num;
     }
 }
