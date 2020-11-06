@@ -36,4 +36,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.BINARY_SEARCH}
 )
 public class ValidPerfectSquare {
+
+    public boolean isPerfectSquare(int num) {
+        return false;
+    }
 }
