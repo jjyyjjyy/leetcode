@@ -139,6 +139,7 @@ a|
 * link:{package}/AddDigits.java[add-digits]
 * link:{package}/UglyNumber.java[ugly-number]
 * link:{package}/PowerOfThree.java[power-of-three]
+* link:{package}/ValidPerfectSquare.java[valid-perfect-square]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
@@ -246,6 +247,7 @@ a|
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
 * link:{package}/Sqrtx.java[sqrtx]
+* link:{package}/ValidPerfectSquare.java[valid-perfect-square]
 a|
 * link:{package}/SearchInRotatedSortedArray.java[search-in-rotated-sorted-array]
 * link:{package}/FindFirstAndLastPositionOfElementInSortedArray.java[find-first-and-last-position-of-element-in-sorted-array]
