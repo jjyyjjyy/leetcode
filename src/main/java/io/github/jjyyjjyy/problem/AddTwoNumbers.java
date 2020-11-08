@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/add-two-numbers/">两数相加</a>
@@ -40,8 +37,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class AddTwoNumbers {
 
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        return null;
+        ListNode head = new ListNode(0);
+        ListNode current = head;
+        int tmp = 0;
+        while (l1 != null && l2 != null) {
+            int sum = l1.val + l2.val + tmp;
+            tmp = sum / 10;
+            ListNode next = new ListNode(sum % 10);
+            current.next = next;
+            current = next;
+            l1 = l1.next;
+            l2 = l2.next;
+        }
+        ListNode remainder = l1 == null ? l2 : l1;
+        while (remainder != null) {
+            int sum = remainder.val + tmp;
+            tmp = sum / 10;
+            ListNode next = new ListNode(sum % 10);
+            current.next = next;
+            current = next;
+            remainder = remainder.next;
+        }
+        if (tmp > 0) {
+            current.next = new ListNode(tmp);
+        }
+        return head.next;
     }
 
 }
