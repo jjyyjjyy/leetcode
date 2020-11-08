@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -38,4 +39,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.LINKED_LIST, Tag.MATH}
 )
 public class AddTwoNumbers {
+
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        return null;
+    }
+
 }
