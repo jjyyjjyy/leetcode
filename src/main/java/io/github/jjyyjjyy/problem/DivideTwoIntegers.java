@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DivideTwoIntegers {
 
+    /**
+     * 每次尽量减去2^n个divisor.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int divide(int dividend, int divisor) {
-        return 0;
+        if (divisor == -1) {
+            if (dividend == Integer.MAX_VALUE) {
+                return Integer.MIN_VALUE;
+            }
+            if (dividend == Integer.MIN_VALUE) {
+                return Integer.MAX_VALUE;
+            }
+        }
+        boolean isNegative = dividend < 0 && divisor > 0 || divisor < 0 && dividend > 0;
+        dividend = -Math.abs(dividend);
+        divisor = -Math.abs(divisor);
+
+        int result = 0;
+        while (dividend <= divisor) {
+            int tmp = divisor;
+            int count = 1;
+            while (dividend - tmp <= tmp) {
+                tmp = tmp << 1;
+                count = count << 1;
+            }
+            dividend -= tmp;
+            result += count;
+        }
+        return isNegative ? -result : result;
     }
 }
