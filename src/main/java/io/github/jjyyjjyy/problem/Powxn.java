@@ -48,4 +48,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.BINARY_SEARCH}
 )
 public class Powxn {
+
+    public double myPow(double x, int n) {
+        return 0;
+    }
 }
