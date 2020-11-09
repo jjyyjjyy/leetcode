@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -49,7 +50,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class Powxn {
 
+    /**
+     * 快速幂:
+     * 1. 如果n为奇数, 则ans乘以一次x, 再让x乘以一次x.
+     * 2. n/=2.
+     * 3. 重复步骤1.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public double myPow(double x, int n) {
-        return 0;
+        if (x == 0 || x == 1) {
+            return 1;
+        }
+        long n0 = Math.abs((long) n);
+
+        double ans = 1.0;
+        while (n0 > 0) {
+            if ((n0 & 1) == 1) {
+                ans *= x;
+            }
+            x *= x;
+            n0 >>= 1;
+        }
+
+        return n > 0 ? ans : 1 / ans;
     }
 }
