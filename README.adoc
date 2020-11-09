@@ -147,6 +147,7 @@ a|
 * link:{package}/MultiplyStrings.java[multiply-strings]
 * link:{package}/AddTwoNumbers.java[add-two-numbers]
 * link:{package}/DivideTwoIntegers.java[divide-two-integers]
+* link:{package}/Powxn.java[powx-n]
 |
 
 | BitManipulation
@@ -258,6 +259,7 @@ a|
 * link:{package}/SearchInRotatedSortedArrayII.java[search-in-rotated-sorted-array-ii]
 * link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
 * link:{package}/DivideTwoIntegers.java[divide-two-integers]
+* link:{package}/Powxn.java[powx-n]
 |
 
 | TwoPointers
