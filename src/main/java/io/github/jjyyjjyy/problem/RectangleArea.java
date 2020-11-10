@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -34,7 +35,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RectangleArea {
 
+    /**
+     * 1. 首先计算出两个矩形面积之和, 如果两个矩形不重叠, 则直接返回.
+     * 2. 计算出矩形重叠部分的上下左右坐标, 然后求得重叠部分的面积. 用总面积减去重叠部分的面积就得到了结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
-        return 0;
+        int total = Math.abs(C - A) * Math.abs(D - B) + Math.abs(G - E) * Math.abs(H - F);
+        if (E >= C || G <= A || H <= B || F >= D) {
+            return total;
+        }
+        int left = Math.max(A, E);
+        int right = Math.min(C, G);
+        int down = Math.max(B, F);
+        int top = Math.min(D, H);
+        return total - (right - left) * (top - down);
     }
 }
