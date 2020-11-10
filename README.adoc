@@ -148,6 +148,7 @@ a|
 * link:{package}/AddTwoNumbers.java[add-two-numbers]
 * link:{package}/DivideTwoIntegers.java[divide-two-integers]
 * link:{package}/Powxn.java[powx-n]
+* link:{package}/RectangleArea.java[rectangle-area]
 |
 
 | BitManipulation
