@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,42 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class UglyNumberII {
 
+    private static final int CAPACITY = 1690;
+
+    private static final int[] UGLY_NUMBERS = new int[CAPACITY];
+
+    static {
+        UGLY_NUMBERS[0] = 1;
+        int ugly;
+        int p2 = 0;
+        int p3 = 0;
+        int p5 = 0;
+
+        for (int i = 1; i < CAPACITY; i++) {
+            ugly = Math.min(Math.min(UGLY_NUMBERS[p2] * 2, UGLY_NUMBERS[p3] * 3), UGLY_NUMBERS[p5] * 5);
+            UGLY_NUMBERS[i] = ugly;
+
+            if (ugly == UGLY_NUMBERS[p2] * 2) {
+                p2++;
+            }
+            if (ugly == UGLY_NUMBERS[p3] * 3) {
+                p3++;
+            }
+            if (ugly == UGLY_NUMBERS[p5] * 5) {
+                p5++;
+            }
+        }
+    }
+
+    /**
+     * 计算出前1690个丑数, 然后根据索引直接取值即可.
+     * <p>
+     * 计算丑数的方法:
+     * 1. 首先确定第一个数是1.
+     * 2. 维护三个指针p2, p3, p5. 找到每个指针乘以因子的最小值, 放入数组中, 然后将该指针前进一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int nthUglyNumber(int n) {
-        return 0;
+        return UGLY_NUMBERS[n - 1];
     }
 }
