@@ -41,4 +41,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HEAP, Tag.MATH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class UglyNumberII {
+
+    public int nthUglyNumber(int n) {
+        return 0;
+    }
 }
