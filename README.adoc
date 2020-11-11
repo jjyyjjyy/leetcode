@@ -149,6 +149,7 @@ a|
 * link:{package}/DivideTwoIntegers.java[divide-two-integers]
 * link:{package}/Powxn.java[powx-n]
 * link:{package}/RectangleArea.java[rectangle-area]
+* link:{package}/UglyNumberII.java[ugly-number-ii]
 |
 
 | BitManipulation
@@ -211,6 +212,12 @@ a|
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
 |
 
+| Heap
+|
+a|
+* link:{package}/UglyNumberII.java[ugly-number-ii]
+|
+
 | Sort
 |
 a|
@@ -230,6 +237,7 @@ a|
 * link:{package}/UniquePathsII.java[unique-paths-ii]
 * link:{package}/MinimumPathSum.java[minimum-path-sum]
 * link:{package}/DecodeWays.java[decode-ways]
+* link:{package}/UglyNumberII.java[ugly-number-ii]
 |
 
 | Greedy
