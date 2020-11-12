@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,7 +41,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SuperUglyNumber {
 
+    /**
+     * 1. 维护一个从1到n的丑数数组.
+     * 2. 为每个prime维护一个单独的指针.
+     * 3. 遍历primes, 将当前丑数与每个prime相乘, 比较并得到一个最小的丑数, 加入到丑数数组中. 再将所有相乘结果等于这个最小丑数的指针前进一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int nthSuperUglyNumber(int n, int[] primes) {
-        return 0;
+        int[] dp = new int[n];
+        dp[0] = 1;
+
+        int length = primes.length;
+        int[] pointers = new int[length];
+
+        for (int i = 1; i < n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = 0; j < length; j++) {
+                min = Math.min(min, dp[pointers[j]] * primes[j]);
+            }
+            dp[i] = min;
+            for (int j = 0; j < length; j++) {
+                if (dp[pointers[j]] * primes[j] == min) {
+                    pointers[j]++;
+                }
+            }
+        }
+        return dp[n - 1];
     }
 }
