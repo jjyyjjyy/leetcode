@@ -150,6 +150,7 @@ a|
 * link:{package}/Powxn.java[powx-n]
 * link:{package}/RectangleArea.java[rectangle-area]
 * link:{package}/UglyNumberII.java[ugly-number-ii]
+* link:{package}/SuperUglyNumber.java[super-ugly-number]
 |
 
 | BitManipulation
@@ -216,6 +217,7 @@ a|
 |
 a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
+* link:{package}/SuperUglyNumber.java[super-ugly-number]
 |
 
 | Sort
