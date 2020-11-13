@@ -36,4 +36,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BRAINTEASER, Tag.MATH}
 )
 public class BulbSwitcher {
+
+    public int bulbSwitch(int n) {
+        return 0;
+    }
 }
