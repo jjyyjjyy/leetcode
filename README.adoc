@@ -151,6 +151,7 @@ a|
 * link:{package}/RectangleArea.java[rectangle-area]
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
+* link:{package}/BulbSwitcher.java[bulb-switcher]
 |
 
 | BitManipulation
