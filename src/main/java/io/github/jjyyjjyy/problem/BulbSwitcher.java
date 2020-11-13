@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BulbSwitcher {
 
+    @Complexity(Complexity.ComplexityType.O_1)
     public int bulbSwitch(int n) {
-        return 0;
+        return (int) Math.sqrt(n);
     }
 }
