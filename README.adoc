@@ -210,6 +210,7 @@ a|
 | Tree
 a|
 * link:{package}/SameTree.java[same-tree]
+* link:{package}/SymmetricTree.java[symmetric-tree]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
@@ -308,11 +309,13 @@ a|
 | DepthFirstSearch
 a|
 * link:{package}/SameTree.java[same-tree]
+* link:{package}/SymmetricTree.java[symmetric-tree]
 |
 |
 
 | BreadthFirstSearch
-|
+a|
+* link:{package}/SymmetricTree.java[symmetric-tree]
 |
 |
 
