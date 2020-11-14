@@ -5,14 +5,14 @@ package io.github.jjyyjjyy.core;
  */
 public class TreeNode {
 
-    public int val;
+    public Integer val;
     public TreeNode left;
     public TreeNode right;
 
     public TreeNode() {
     }
 
-    public TreeNode(int x) {
+    public TreeNode(Integer x) {
         val = x;
     }
 
