@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Objects;
 
 /**
  * <a href="https://leetcode-cn.com/problems/same-tree/">相同的树</a>
@@ -52,7 +51,17 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class SameTree {
 
+    /**
+     * 先判断根节点是否相同, 再分别递归判断左右子节点是否相同.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        return false;
+        if (p == null && q == null) {
+            return true;
+        }
+        if (p == null || q == null || !Objects.equals(p.val, q.val)) {
+            return false;
+        }
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 }
