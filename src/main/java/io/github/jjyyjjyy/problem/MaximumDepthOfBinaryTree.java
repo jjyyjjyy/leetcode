@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a>
@@ -41,8 +38,22 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class MaximumDepthOfBinaryTree {
 
+    /**
+     * 递归计算左子树和右子树的高度.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxDepth(TreeNode root) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        return maxDepth(root, 0);
     }
 
+    private int maxDepth(TreeNode root, int i) {
+        if (root == null) {
+            return i;
+        }
+        i++;
+        return Math.max(maxDepth(root.left, i), maxDepth(root.right, i));
+    }
 }
