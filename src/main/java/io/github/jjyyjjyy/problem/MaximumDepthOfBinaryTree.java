@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">二叉树的最大深度</a>
@@ -38,5 +39,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
-public class MaximumDepthofBinaryTree {
+public class MaximumDepthOfBinaryTree {
+
+    public int maxDepth(TreeNode root) {
+        return 0;
+    }
+
 }
