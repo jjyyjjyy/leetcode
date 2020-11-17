@@ -1,11 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">二叉树的层次遍历 II</a>
@@ -46,8 +46,36 @@ import java.util.List;
 )
 public class BinaryTreeLevelOrderTraversalII {
 
+    /**
+     * 1. 维护一个先进先出的队列, 将root放入队列.
+     * 2. 取出队列当前所有元素.
+     * 3. 遍历所有元素, 如果有左右子树, 则加入到队列中.
+     * 4. 重复步骤2.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        return null;
+        if (root == null) {
+            return new ArrayList<>();
+        }
+        LinkedList<List<Integer>> result = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            LinkedList<Integer> currentLevel = new LinkedList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                currentLevel.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            result.addFirst(currentLevel);
+        }
+        return result;
     }
 
 }
