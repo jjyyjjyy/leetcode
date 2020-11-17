@@ -29,7 +29,7 @@ public class CsvToTreeNode extends SimpleArgumentConverter {
     }
 
     private TreeNode buildTreeNode(TreeNode root, Integer[] arr, int idx) {
-        if (idx >= arr.length) {
+        if (idx >= arr.length || arr[idx] == null) {
             return null;
         }
         root.val = arr[idx];
