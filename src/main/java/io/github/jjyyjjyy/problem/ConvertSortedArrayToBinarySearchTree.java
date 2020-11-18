@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/">将有序数组转换为二叉搜索树</a>
@@ -39,8 +36,22 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class ConvertSortedArrayToBinarySearchTree {
 
+    /**
+     * 反向中序遍历: 左子树等于左半部分的中间节点, 右子树等于右半部分的中间节点
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode sortedArrayToBST(int[] nums) {
-        return null;
+        return buildTree(nums, 0, nums.length - 1);
     }
 
+    private TreeNode buildTree(int[] nums, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        int mid = start + (end - start) / 2;
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = buildTree(nums, start, mid - 1);
+        root.right = buildTree(nums, mid + 1, end);
+        return root;
+    }
 }
