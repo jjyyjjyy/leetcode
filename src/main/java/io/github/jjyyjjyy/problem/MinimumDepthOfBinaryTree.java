@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">二叉树的最小深度</a>
@@ -41,8 +38,25 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class MinimumDepthOfBinaryTree {
 
+    /**
+     * 递归遍历左由子树高度, 取最小值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int minDepth(TreeNode root) {
-        return 0;
+        return minDepth(root, 0);
     }
 
+    public int minDepth(TreeNode root, int depth) {
+        if (root == null) {
+            return depth;
+        }
+        depth++;
+        if (root.left == null) {
+            return minDepth(root.right, depth);
+        }
+        if (root.right == null) {
+            return minDepth(root.left, depth);
+        }
+        return Math.min(minDepth(root.left, depth), minDepth(root.right, depth));
+    }
 }
