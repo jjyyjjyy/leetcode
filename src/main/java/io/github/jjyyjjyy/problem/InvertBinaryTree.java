@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a>
@@ -41,7 +38,18 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class InvertBinaryTree {
 
+    /**
+     * 递归将左子树赋值给right, 右子树赋值给left.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode invertTree(TreeNode root) {
-        return null;
+        if (root == null) {
+            return null;
+        }
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        root.left = invertTree(right);
+        root.right = invertTree(left);
+        return root;
     }
 }
