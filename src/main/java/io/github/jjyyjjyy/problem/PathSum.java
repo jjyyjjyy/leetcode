@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/path-sum/">路径总和</a>
@@ -42,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
 public class PathSum {
+
+    public boolean hasPathSum(TreeNode root, int sum) {
+        return false;
+    }
 }
