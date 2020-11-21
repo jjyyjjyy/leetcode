@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/path-sum/">路径总和</a>
@@ -44,7 +41,19 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class PathSum {
 
+    /**
+     * 1. 先减去当前节点的数值, 判断差值是否为0并且当前节点为叶子节点.
+     * 2. 递归遍历左右子树, 分别重复步骤1.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean hasPathSum(TreeNode root, int sum) {
-        return false;
+        if (root == null) {
+            return false;
+        }
+        int remainder = sum - root.val;
+        if (remainder == 0 && root.left == null && root.right == null) {
+            return true;
+        }
+        return hasPathSum(root.left, remainder) || hasPathSum(root.right, remainder);
     }
 }
