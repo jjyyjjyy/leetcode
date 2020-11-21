@@ -216,6 +216,7 @@ a|
 * link:{package}/ConvertSortedArrayToBinarySearchTree.java[convert-sorted-array-to-binary-search-tree]
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
 * link:{package}/PathSum.java[path-sum]
+* link:{package}/InvertBinaryTree.java[invert-binary-tree]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]

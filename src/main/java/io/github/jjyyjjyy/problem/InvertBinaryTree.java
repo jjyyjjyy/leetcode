@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/invert-binary-tree/">翻转二叉树</a>
@@ -39,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE}
 )
 public class InvertBinaryTree {
+
+    public TreeNode invertTree(TreeNode root) {
+        return null;
+    }
 }
