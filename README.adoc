@@ -215,6 +215,7 @@ a|
 * link:{package}/BinaryTreeLevelOrderTraversalII.java[binary-tree-level-order-traversal-ii]
 * link:{package}/ConvertSortedArrayToBinarySearchTree.java[convert-sorted-array-to-binary-search-tree]
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
+* link:{package}/PathSum.java[path-sum]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
@@ -317,6 +318,7 @@ a|
 * link:{package}/MaximumDepthOfBinaryTree.java[maximum-depth-of-binary-tree]
 * link:{package}/ConvertSortedArrayToBinarySearchTree.java[convert-sorted-array-to-binary-search-tree]
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
+* link:{package}/PathSum.java[path-sum]
 |
 |
 
