@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Objects;
 
 /**
  * <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">二叉搜索树的最近公共祖先</a>
@@ -55,7 +54,33 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class LowestCommonAncestorOfABinarySearchTree {
 
+    /**
+     * 1. 如果root比最大值大, 则遍历左子树.
+     * 2. 如果root比最小值小, 则遍历右子树.
+     * 3. 否则p和q分布在左右子树里, root即为最小公共祖先.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        Integer pVal = p.val;
+        Integer qVal = q.val;
+
+        Integer minVal = pVal < qVal ? pVal : qVal;
+        Integer maxVal = pVal < qVal ? qVal : pVal;
+
+        while (root != null) {
+            Integer rootVal = root.val;
+            if (Objects.equals(pVal, rootVal) || Objects.equals(qVal, rootVal)) {
+                return root;
+            }
+            if (rootVal < minVal) {
+                root = root.right;
+            } else if (rootVal > maxVal) {
+                root = root.left;
+            } else {
+                return root;
+            }
+        }
         return null;
     }
 }
