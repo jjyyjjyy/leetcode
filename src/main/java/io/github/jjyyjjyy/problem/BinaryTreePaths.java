@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,7 +41,31 @@ import java.util.List;
 )
 public class BinaryTreePaths {
 
+    /**
+     * 1. 遍历左右子树.
+     * 2. 如果左右子树都为空, 则说明当前节点是叶子节点, 收集拼出来的结果.
+     * 3. 分别判断左右子树是否不为空, 如果哪个子树不为空, 则遍历那个子树.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<String> binaryTreePaths(TreeNode root) {
-        return null;
+        List<String> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        binaryTreePaths(result, root, root.val + "");
+        return result;
+    }
+
+    private void binaryTreePaths(List<String> result, TreeNode root, String prefix) {
+        if (root.left == null && root.right == null) {
+            result.add(prefix);
+            return;
+        }
+        if (root.left != null) {
+            binaryTreePaths(result, root.left, prefix + "->" + root.left.val);
+        }
+        if (root.right != null) {
+            binaryTreePaths(result, root.right, prefix + "->" + root.right.val);
+        }
     }
 }
