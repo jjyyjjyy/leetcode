@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-paths/">二叉树的所有路径</a>
@@ -39,4 +42,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
 public class BinaryTreePaths {
+
+    public List<String> binaryTreePaths(TreeNode root) {
+        return null;
+    }
 }
