@@ -219,6 +219,7 @@ a|
 * link:{package}/InvertBinaryTree.java[invert-binary-tree]
 * link:{package}/LowestCommonAncestorOfABinarySearchTree.java[lowest-common-ancestor-of-a-binary-search-tree]
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
+* link:{package}/SumOfLeftLeaves.java[sum-of-left-leaves]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]

@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">左叶子之和</a>
@@ -28,5 +29,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.TREE}
 )
-public class SumofLeftLeaves {
+public class SumOfLeftLeaves {
+
+    public int sumOfLeftLeaves(TreeNode root) {
+        return 0;
+    }
+
 }
