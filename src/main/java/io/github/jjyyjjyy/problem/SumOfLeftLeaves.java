@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">左叶子之和</a>
@@ -31,8 +28,37 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class SumOfLeftLeaves {
 
+    /**
+     * 1. 递归遍历子树.
+     * 2. 如果左子树为叶子节点, 则加上左子树的值. 否则递归遍历左子树, 重复步骤2.
+     * 3. 如果右子树不为空且不是叶子节点, 则递归遍历右子树, 重复步骤2.
+     * 4. 将左右子树结果相加得到所有左边叶子节点之和.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int sumOfLeftLeaves(TreeNode root) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        return dfs(root);
+    }
+
+    private int dfs(TreeNode root) {
+        int val = 0;
+        if (root.left != null) {
+            if (isLeaf(root.left)) {
+                val += root.left.val;
+            } else {
+                val += dfs(root.left);
+            }
+        }
+        if (root.right != null && !isLeaf(root.right)) {
+            val += dfs(root.right);
+        }
+        return val;
+    }
+
+    private boolean isLeaf(TreeNode root) {
+        return root.left == null && root.right == null;
     }
 
 }
