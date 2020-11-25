@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii/">不同的二叉搜索树 II</a>
@@ -44,4 +47,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DYNAMIC_PROGRAMMING}
 )
 public class UniqueBinarySearchTreesII {
+
+    public List<TreeNode> generateTrees(int n) {
+        return null;
+    }
 }
