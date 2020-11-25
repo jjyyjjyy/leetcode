@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,7 +46,36 @@ import java.util.List;
 )
 public class UniqueBinarySearchTreesII {
 
+    /**
+     * 1. 依次遍历数字, 当前元素为root节点.
+     * 2. 分别递归遍历左侧数字和右侧数字, 并分别从左右两侧遍历的结果和root组装成一个树.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "4^n/(sqrtn)")
     public List<TreeNode> generateTrees(int n) {
-        return null;
+        if (n == 0) {
+            return new ArrayList<>();
+        }
+        return generateTrees(1, n);
+    }
+
+    private List<TreeNode> generateTrees(int start, int end) {
+        List<TreeNode> result = new ArrayList<>();
+        if (start > end) {
+            result.add(null);
+            return result;
+        }
+        for (int i = start; i <= end; i++) {
+            List<TreeNode> leftResult = generateTrees(start, i - 1);
+            List<TreeNode> rightResult = generateTrees(i + 1, end);
+            for (TreeNode leftNode : leftResult) {
+                for (TreeNode rightNode : rightResult) {
+                    TreeNode root = new TreeNode(i);
+                    root.left = leftNode;
+                    root.right = rightNode;
+                    result.add(root);
+                }
+            }
+        }
+        return result;
     }
 }
