@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -36,7 +37,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class UniqueBinarySearchTrees {
 
+    /**
+     * 当前节点的个数等于左边节点的个数乘以右侧节点的个数.
+     * a[i]=a[i-1]*a[n-i]
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int numTrees(int n) {
-        return 0;
+        int[] nums = new int[n + 1];
+        nums[0] = 1;
+        nums[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                nums[i] += nums[j - 1] * nums[i - j];
+            }
+        }
+        return nums[n];
     }
 }
