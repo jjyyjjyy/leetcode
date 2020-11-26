@@ -35,4 +35,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DYNAMIC_PROGRAMMING}
 )
 public class UniqueBinarySearchTrees {
+
+    public int numTrees(int n) {
+        return 0;
+    }
 }

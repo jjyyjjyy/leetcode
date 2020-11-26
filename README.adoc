@@ -224,6 +224,7 @@ a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
+* link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 |
 
 | Heap
@@ -254,6 +255,7 @@ a|
 * link:{package}/DecodeWays.java[decode-ways]
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
+* link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 |
 
 | Greedy
