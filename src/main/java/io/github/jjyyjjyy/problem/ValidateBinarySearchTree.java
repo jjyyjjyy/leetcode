@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a>
@@ -53,4 +54,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
 public class ValidateBinarySearchTree {
+
+    public boolean isValidBST(TreeNode root) {
+        return false;
+    }
+
 }
