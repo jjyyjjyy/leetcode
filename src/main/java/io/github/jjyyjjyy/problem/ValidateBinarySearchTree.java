@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a>
@@ -55,8 +52,31 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class ValidateBinarySearchTree {
 
+    /**
+     * 1. 递归判断left<root<right.
+     * 2. 找到左子树的最大值和右子树的最小值, 判断leftMax<root<rightMin.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isValidBST(TreeNode root) {
-        return false;
-    }
+        if (root == null) {
+            return true;
+        }
+        if (root.left != null && root.left.val >= root.val || root.right != null && root.right.val <= root.val) {
+            return false;
+        }
+        if (!(isValidBST(root.left) && isValidBST(root.right))) {
+            return false;
+        }
 
+        TreeNode leftMax = root.left;
+        while (leftMax != null && leftMax.right != null) {
+            leftMax = leftMax.right;
+        }
+
+        TreeNode rightMin = root.right;
+        while (rightMin != null && rightMin.left != null) {
+            rightMin = rightMin.left;
+        }
+        return (leftMax == null || leftMax.val < root.val) && (rightMin == null || rightMin.val > root.val);
+    }
 }
