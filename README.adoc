@@ -225,6 +225,7 @@ a|
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
+* link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 |
 
 | Heap
@@ -328,7 +329,8 @@ a|
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
 * link:{package}/PathSum.java[path-sum]
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
-|
+a|
+* link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 |
 
 | BreadthFirstSearch
