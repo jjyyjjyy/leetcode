@@ -1,11 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">二叉树的层次遍历</a>
@@ -51,7 +51,29 @@ import java.util.List;
 )
 public class BinaryTreeLevelOrderTraversal {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            List<Integer> current = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                current.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            result.add(current);
+        }
+        return result;
     }
 }
