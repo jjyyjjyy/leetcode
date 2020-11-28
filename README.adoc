@@ -226,6 +226,7 @@ a|
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
+* link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
 |
 
 | Heap
@@ -338,7 +339,8 @@ a|
 * link:{package}/SymmetricTree.java[symmetric-tree]
 * link:{package}/BinaryTreeLevelOrderTraversalII.java[binary-tree-level-order-traversal-ii]
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
-|
+a|
+* link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
 |
 
 | SlidingWindow
