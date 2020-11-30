@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">从前序与中序遍历序列构造二叉树</a>
@@ -37,5 +38,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH, Tag.ARRAY}
 )
-public class ConstructBinaryTreefromPreorderandInorderTraversal {
+public class ConstructBinaryTreeFromPreorderAndInorderTraversal {
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return null;
+    }
 }

@@ -65,6 +65,7 @@ a|
 * link:{package}/SearchInRotatedSortedArrayII.java[search-in-rotated-sorted-array-ii]
 * link:{package}/SubsetsII.java[subsets-ii]
 * link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
+* link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 |
 
 | String
@@ -229,6 +230,7 @@ a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
+* link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 |
 
 | Heap
@@ -334,6 +336,7 @@ a|
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
 a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
+* link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 |
 
 | BreadthFirstSearch
