@@ -178,6 +178,7 @@ a|
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
 * link:{package}/MiniParser.java[mini-parser]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
+* link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
 |
 
 | HashTable
@@ -227,6 +228,7 @@ a|
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
+* link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
 |
 
 | Heap
@@ -341,6 +343,7 @@ a|
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
 a|
 * link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
+* link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
 |
 
 | SlidingWindow

@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/">二叉树的锯齿形层次遍历</a>
@@ -41,4 +44,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.TREE, Tag.BREADTH_FIRST_SEARCH}
 )
 public class BinaryTreeZigzagLevelOrderTraversal {
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        return null;
+    }
 }
