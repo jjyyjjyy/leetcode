@@ -1,11 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/">二叉树的锯齿形层次遍历</a>
@@ -45,7 +45,35 @@ import java.util.List;
 )
 public class BinaryTreeZigzagLevelOrderTraversal {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        boolean seq = true;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            LinkedList<Integer> currentLevel = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode currentNode = queue.poll();
+                if (seq) {
+                    currentLevel.add(currentNode.val);
+                } else {
+                    currentLevel.addFirst(currentNode.val);
+                }
+                if (currentNode.left != null) {
+                    queue.add(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    queue.add(currentNode.right);
+                }
+            }
+            seq = !seq;
+            result.add(currentLevel);
+        }
+        return result;
     }
 }
