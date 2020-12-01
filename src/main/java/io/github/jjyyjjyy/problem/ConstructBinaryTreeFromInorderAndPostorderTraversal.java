@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">从中序与后序遍历序列构造二叉树</a>
@@ -19,7 +20,8 @@ import io.github.jjyyjjyy.core.Tag;
  *
  * <p>返回如下的二叉树：</p>
  *
- * <pre>    3
+ * <pre>
+ *     3
  *    / \
  *   9  20
  *     /  \
@@ -38,5 +40,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH, Tag.ARRAY}
 )
-public class ConstructBinaryTreefromInorderandPostorderTraversal {
+public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        return null;
+    }
+
 }
