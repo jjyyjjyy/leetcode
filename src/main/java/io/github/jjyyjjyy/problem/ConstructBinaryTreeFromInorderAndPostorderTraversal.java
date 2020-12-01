@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">从中序与后序遍历序列构造二叉树</a>
@@ -42,8 +42,35 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 
+    private final Map<Integer, Integer> indexes = new HashMap<>();
+
+    /**
+     * 中序遍历: 左根右
+     * 后序遍历: 左右根
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        return null;
+        indexes.clear();
+        int n = inorder.length;
+        for (int i = 0; i < n; i++) {
+            indexes.put(inorder[i], i);
+        }
+        return buildTree(postorder, 0, n - 1, 0, n - 1);
     }
 
+    private TreeNode buildTree(int[] postorder, int inorderLeft, int inorderRight, int postorderLeft, int postorderRight) {
+        if (inorderLeft > inorderRight) {
+            return null;
+        }
+        int rootVal = postorder[postorderRight];
+        TreeNode root = new TreeNode(rootVal);
+
+        int rootIndex = indexes.get(rootVal);
+        int leftCount = rootIndex - inorderLeft;
+        int rightCount = inorderRight - rootIndex;
+
+        root.left = buildTree(postorder, inorderLeft, rootIndex - 1, postorderLeft, postorderLeft + leftCount - 1);
+        root.right = buildTree(postorder, rootIndex + 1, inorderRight, postorderRight - rightCount, postorderRight - 1);
+        return root;
+    }
 }
