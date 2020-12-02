@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,7 +49,27 @@ import java.util.List;
 )
 public class PathSumII {
 
+    /**
+     * 递归遍历左右子树, 减去当前节点的值, 判断sum是否为0且当前节点为叶子节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        dfs(result, new ArrayList<>(), root, sum);
+        return result;
+    }
+
+    public void dfs(List<List<Integer>> result, List<Integer> current, TreeNode root, int sum) {
+        if (root == null) {
+            return;
+        }
+        sum -= root.val;
+        current.add(root.val);
+        if (root.left == null && root.right == null && sum == 0) {
+            result.add(current);
+            return;
+        }
+        dfs(result, new ArrayList<>(current), root.left, sum);
+        dfs(result, new ArrayList<>(current), root.right, sum);
     }
 }
