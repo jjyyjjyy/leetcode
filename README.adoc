@@ -233,6 +233,7 @@ a|
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
+* link:{package}/PathSumII.java[path-sum-ii]
 |
 
 | Heap
@@ -340,6 +341,7 @@ a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
+* link:{package}/PathSumII.java[path-sum-ii]
 |
 
 | BreadthFirstSearch
