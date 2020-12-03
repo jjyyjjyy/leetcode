@@ -234,6 +234,7 @@ a|
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
 * link:{package}/PathSumII.java[path-sum-ii]
+* link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 |
 
 | Heap
@@ -342,6 +343,7 @@ a|
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
 * link:{package}/PathSumII.java[path-sum-ii]
+* link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 |
 
 | BreadthFirstSearch

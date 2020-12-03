@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">二叉树展开为链表</a>
@@ -11,7 +12,8 @@ import io.github.jjyyjjyy.core.Tag;
  *
  * <p>例如，给定二叉树</p>
  *
- * <pre>    1
+ * <pre>
+ *     1
  *    / \
  *   2   5
  *  / \   \
@@ -19,7 +21,8 @@ import io.github.jjyyjjyy.core.Tag;
  *
  * <p>将其展开为：</p>
  *
- * <pre>1
+ * <pre>
+ * 1
  *  \
  *   2
  *    \
@@ -43,5 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
-public class FlattenBinaryTreetoLinkedList {
+public class FlattenBinaryTreeToLinkedList {
+
+    public void flatten(TreeNode root) {
+    }
+
 }
