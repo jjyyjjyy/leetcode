@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/">二叉树展开为链表</a>
@@ -48,7 +45,28 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class FlattenBinaryTreeToLinkedList {
 
+    /**
+     * 1. flatten左子树.
+     * 2. 找到左子树最右的节点.
+     * 3. flatten右子树.
+     * 4. root的右子树=root原来的左子树, 左子树最右的节点的右子树=root原来的右子树.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        TreeNode left = root.left;
+        flatten(left);
+        TreeNode right = root.right;
+        root.right = left;
+        root.left = null;
+
+        while (root.right != null) {
+            root = root.right;
+        }
+        flatten(right);
+        root.right = right;
     }
 
 }
