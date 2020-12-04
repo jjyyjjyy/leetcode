@@ -235,6 +235,7 @@ a|
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
 * link:{package}/PathSumII.java[path-sum-ii]
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
+* link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 |
 
 | Heap
@@ -344,6 +345,7 @@ a|
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
 * link:{package}/PathSumII.java[path-sum-ii]
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
+* link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 |
 
 | BreadthFirstSearch
