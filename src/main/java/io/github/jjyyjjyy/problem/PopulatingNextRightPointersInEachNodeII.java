@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Node;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/">填充每个节点的下一个右侧节点指针 II</a>
@@ -68,7 +65,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PopulatingNextRightPointersInEachNodeII {
 
+    /**
+     * 每一层维护一个单链表维护左右子树的顺序
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public Node connect(Node root) {
-        return null;
+        if (root == null) {
+            return null;
+        }
+        Node current = root;
+        while (current != null) {
+            // 每一层初始化一个哑元节点, dummy.next即为下一层的最左的节点.
+            Node dummy = new Node(0);
+            Node pre = dummy;
+            while (current != null) {
+                if (current.left != null) {
+                    pre.next = current.left;
+                    pre = pre.next;
+                }
+                if (current.right != null) {
+                    pre.next = current.right;
+                    pre = pre.next;
+                }
+                current = current.next;
+            }
+            current = dummy.next;
+        }
+        return root;
     }
 }
