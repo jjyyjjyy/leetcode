@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.util;
 
+import io.github.jjyyjjyy.core.Node;
 import io.github.jjyyjjyy.core.TreeNode;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
@@ -25,7 +26,17 @@ public class CsvToTreeNode extends SimpleArgumentConverter {
         if (arr.length == 0) {
             return null;
         }
-        return buildTreeNode(new TreeNode(), arr, 0);
+        return targetType == Node.class ? buildNode(new Node(), arr, 0) : buildTreeNode(new TreeNode(), arr, 0);
+    }
+
+    private Node buildNode(Node root, Integer[] arr, int idx) {
+        if (idx >= arr.length || arr[idx] == null) {
+            return null;
+        }
+        root.val = arr[idx];
+        root.left = buildNode(new Node(), arr, idx * 2 + 1);
+        root.right = buildNode(new Node(), arr, idx * 2 + 2);
+        return root;
     }
 
     private TreeNode buildTreeNode(TreeNode root, Integer[] arr, int idx) {
