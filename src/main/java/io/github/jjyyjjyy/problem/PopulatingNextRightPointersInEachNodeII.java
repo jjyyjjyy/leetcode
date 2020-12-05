@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.Node;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -65,5 +66,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH}
 )
-public class PopulatingNextRightPointersinEachNodeII {
+public class PopulatingNextRightPointersInEachNodeII {
+
+    public Node connect(Node root) {
+        return null;
+    }
 }

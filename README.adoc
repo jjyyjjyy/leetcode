@@ -236,6 +236,7 @@ a|
 * link:{package}/PathSumII.java[path-sum-ii]
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
+* link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
 |
 
 | Heap
@@ -346,6 +347,7 @@ a|
 * link:{package}/PathSumII.java[path-sum-ii]
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
+* link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
 |
 
 | BreadthFirstSearch
