@@ -237,6 +237,7 @@ a|
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 * link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
+* link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
 |
 
 | Heap
@@ -348,6 +349,7 @@ a|
 * link:{package}/FlattenBinaryTreeToLinkedList.java[flatten-binary-tree-to-linked-list]
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 * link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
+* link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
 |
 
 | BreadthFirstSearch
