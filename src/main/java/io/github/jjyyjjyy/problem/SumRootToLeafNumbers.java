@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/">求根到叶子节点数字之和</a>
@@ -59,7 +56,22 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class SumRootToLeafNumbers {
 
+    /**
+     * 每个节点的值=当前节点的val加上上一个节点的值*10
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int sumNumbers(TreeNode root) {
-        return 0;
+        return sumNumbers(0, root);
+    }
+
+    private int sumNumbers(int sum, TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        sum = sum * 10 + root.val;
+        if (root.left == null && root.right == null) {
+            return sum;
+        }
+        return sumNumbers(sum, root.left) + sumNumbers(sum, root.right);
     }
 }
