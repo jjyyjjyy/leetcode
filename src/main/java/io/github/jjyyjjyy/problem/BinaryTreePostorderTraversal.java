@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -40,7 +38,22 @@ import java.util.List;
 )
 public class BinaryTreePostorderTraversal {
 
+    /**
+     * 后序遍历: 左右根
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> postorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        postorderTraversal(result, root);
+        return result;
+    }
+
+    private void postorderTraversal(List<Integer> result, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        postorderTraversal(result, root.left);
+        postorderTraversal(result, root.right);
+        result.add(root.val);
     }
 }
