@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">二叉树的前序遍历</a>
@@ -38,4 +41,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.TREE}
 )
 public class BinaryTreePreorderTraversal {
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        return null;
+    }
+
 }
