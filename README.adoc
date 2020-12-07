@@ -181,6 +181,7 @@ a|
 * link:{package}/MiniParser.java[mini-parser]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
+* link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 |
 
 | HashTable
@@ -238,6 +239,7 @@ a|
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 * link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
 * link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
+* link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 |
 
 | Heap

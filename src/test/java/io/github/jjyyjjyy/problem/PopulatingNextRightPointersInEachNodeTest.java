@@ -1,6 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.Node;
 import io.github.jjyyjjyy.util.CsvToTreeNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -19,14 +19,14 @@ class PopulatingNextRightPointersInEachNodeTest {
 
     @ParameterizedTest
     @CsvSource({"'1,2,3,4,5,6,7'"})
-    void connect(@ConvertWith(CsvToTreeNode.class) TreeNode root) {
+    void connect(@ConvertWith(CsvToTreeNode.class) Node root) {
         POPULATING_NEXT_RIGHT_POINTERS_IN_EACH_NODE.connect(root);
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
-                TreeNode current = queue.poll();
+                Node current = queue.poll();
                 if (current == null) {
                     break;
                 }
