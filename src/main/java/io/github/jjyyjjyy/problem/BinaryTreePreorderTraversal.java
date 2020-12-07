@@ -1,10 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,8 +40,22 @@ import java.util.List;
 )
 public class BinaryTreePreorderTraversal {
 
+    /**
+     * 前序遍历: 根左右
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> preorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        preorderTraversal(result, root);
+        return result;
     }
 
+    private void preorderTraversal(List<Integer> result, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        result.add(root.val);
+        preorderTraversal(result, root.left);
+        preorderTraversal(result, root.right);
+    }
 }
