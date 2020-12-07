@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">二叉树的后序遍历</a>
@@ -36,4 +39,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.TREE}
 )
 public class BinaryTreePostorderTraversal {
+
+    public List<Integer> postorderTraversal(TreeNode root) {
+        return null;
+    }
 }
