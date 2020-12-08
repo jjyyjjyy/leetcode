@@ -242,6 +242,7 @@ a|
 * link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
 * link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 * link:{package}/BinaryTreePostorderTraversal.java[binary-tree-postorder-traversal]
+* link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 |
 
 | Heap
@@ -354,6 +355,7 @@ a|
 * link:{package}/PopulatingNextRightPointersInEachNode.java[populating-next-right-pointers-in-each-node]
 * link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
 * link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
+* link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 |
 
 | BreadthFirstSearch
@@ -364,6 +366,7 @@ a|
 a|
 * link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
+* link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 |
 
 | SlidingWindow
