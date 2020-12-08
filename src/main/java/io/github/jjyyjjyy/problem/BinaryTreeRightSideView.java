@@ -1,11 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">二叉树的右视图</a>
@@ -40,7 +40,57 @@ import java.util.List;
 )
 public class BinaryTreeRightSideView {
 
+    /**
+     * BFS
+     * 层序遍历, 找到每一层最后一个元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> rightSideView(TreeNode root) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode current = queue.poll();
+                if (i == size - 1) {
+                    result.add(current.val);
+                }
+                if (current.left != null) {
+                    queue.add(current.left);
+                }
+                if (current.right != null) {
+                    queue.add(current.right);
+                }
+            }
+        }
+        return result;
+    }
+
+    /**
+     * DFS
+     * 1. 递归先遍历右子树, 再遍历左子树.
+     * 2. 如果当前深度与size相同, 则说明还没有加入元素, 将当前节点元素加入到结果集中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public List<Integer> rightSideView2(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        dfs(result, root, 0);
+        return result;
+    }
+
+    private void dfs(List<Integer> result, TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (result.size() == depth) {
+            result.add(root.val);
+        }
+        depth++;
+        dfs(result, root.right, depth);
+        dfs(result, root.left, depth);
     }
 }
