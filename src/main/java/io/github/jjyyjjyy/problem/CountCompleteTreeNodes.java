@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">完全二叉树的节点个数</a>
@@ -39,7 +39,35 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class CountCompleteTreeNodes {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public int countNodes(TreeNode root) {
-        return 0;
+        if (root == null) {
+            return 0;
+        }
+        return 1 + countNodes(root.left) + countNodes(root.right);
+    }
+
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int countNodes2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int result = 0;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode current = queue.poll();
+                result++;
+                if (current.left != null) {
+                    queue.add(current.left);
+                }
+                if (current.right != null) {
+                    queue.add(current.right);
+                }
+            }
+        }
+        return result;
     }
 }
