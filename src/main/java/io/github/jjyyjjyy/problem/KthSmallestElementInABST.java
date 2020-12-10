@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/">二叉搜索树中第K小的元素</a>
@@ -50,5 +51,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE, Tag.BINARY_SEARCH}
 )
-public class KthSmallestElementinaBST {
+public class KthSmallestElementInABST {
+
+    public int kthSmallest(TreeNode root, int k) {
+        return -1;
+    }
 }
