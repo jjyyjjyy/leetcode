@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/">二叉搜索树中第K小的元素</a>
@@ -53,7 +52,25 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class KthSmallestElementInABST {
 
+    /**
+     * 1. 维护一个栈.
+     * 2. 将左节点依次放入栈中.
+     * 3. 弹出栈顶元素, 如果是第k个元素, 则返回该元素值. 否则将右子节点压入栈中. (中序遍历)
+     * 4. 重复步骤2.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "log(n)+k")
     public int kthSmallest(TreeNode root, int k) {
-        return -1;
+        Stack<TreeNode> stack = new Stack<>();
+        while (true) {
+            while (root != null) {
+                stack.add(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (--k == 0) {
+                return root.val;
+            }
+            root = root.right;
+        }
     }
 }
