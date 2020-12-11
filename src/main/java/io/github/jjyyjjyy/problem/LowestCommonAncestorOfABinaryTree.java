@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">二叉树的最近公共祖先</a>
@@ -53,5 +54,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TREE}
 )
-public class LowestCommonAncestorofaBinaryTree {
+public class LowestCommonAncestorOfABinaryTree {
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        return null;
+    }
 }
