@@ -1,9 +1,8 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.Objects;
 
 /**
  * <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">二叉树的最近公共祖先</a>
@@ -56,7 +55,27 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class LowestCommonAncestorOfABinaryTree {
 
+    /**
+     * 1. 从root开始递归遍历整个树.
+     * 2. 如果当前节点属于p/q, 则返回当前节点.
+     * 3. 递归遍历左右子树.
+     * 3.1. 如果遍历结果都不为空, 说明p/q分布在左右子树里, 返回当前节点.
+     * 3.2. 有一个不为空, 则返回那个节点.
+     * 3.3. 全为空, 返回null.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        return null;
+        if (root == null) {
+            return null;
+        }
+        if (Objects.equals(root.val, p.val) || Objects.equals(root.val, q.val)) {
+            return root;
+        }
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null) {
+            return root;
+        }
+        return left == null ? right : left;
     }
 }
