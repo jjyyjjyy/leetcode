@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/insertion-sort-list/">对链表进行插入排序</a>
@@ -53,7 +50,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class InsertionSortList {
 
+    /**
+     * 1. 维护一个哑元节点指向head, 维护一个变量sortedTail记录已排序好的链表的最后一个节点.
+     * 2. 依次遍历链表, 将当前节点插入到前面已排序好的链表合适的位置, 再更新sortedTail.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public ListNode insertionSortList(ListNode head) {
-        return null;
+        if (head == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode sortedTail = head;
+        ListNode current = sortedTail.next;
+        while (current != null) {
+            if (current.val >= sortedTail.val) {
+                sortedTail = sortedTail.next;
+            } else {
+                ListNode prev = dummy;
+                while (prev.next.val <= current.val) {
+                    prev = prev.next;
+                }
+                sortedTail.next = current.next;
+                current.next = prev.next;
+                prev.next = current;
+            }
+            current = sortedTail.next;
+        }
+        return dummy.next;
     }
 }
