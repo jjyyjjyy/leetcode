@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.ListNode;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -51,4 +52,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT, Tag.LINKED_LIST}
 )
 public class InsertionSortList {
+
+    public ListNode insertionSortList(ListNode head) {
+        return null;
+    }
 }
