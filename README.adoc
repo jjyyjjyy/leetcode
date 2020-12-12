@@ -123,6 +123,7 @@ a|
 * link:{package}/ReverseLinkedListII.java[reverse-linked-list-ii]
 * link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
 * link:{package}/AddTwoNumbers.java[add-two-numbers]
+* link:{package}/InsertionSortList.java[insertion-sort-list]
 |
 
 | Math
@@ -207,11 +208,6 @@ a|
 * link:{package}/GroupAnagrams.java[group-anagrams]
 |
 
-| Graph
-|
-|
-|
-
 | Tree
 a|
 * link:{package}/SameTree.java[same-tree]
@@ -263,6 +259,7 @@ a|
 * link:{package}/ValidAnagram.java[valid-anagram]
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
+* link:{package}/InsertionSortList.java[insertion-sort-list]
 |
 
 | DP
@@ -285,11 +282,6 @@ a|
 a|
 * link:{package}/JumpGame.java[jump-game]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
-|
-
-| Recursion
-|
-|
 |
 
 | BinarySearch
