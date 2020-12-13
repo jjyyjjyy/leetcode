@@ -124,6 +124,7 @@ a|
 * link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
 * link:{package}/AddTwoNumbers.java[add-two-numbers]
 * link:{package}/InsertionSortList.java[insertion-sort-list]
+* link:{package}/SortList.java[sort-list]
 |
 
 | Math
@@ -260,6 +261,7 @@ a|
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
 * link:{package}/InsertionSortList.java[insertion-sort-list]
+* link:{package}/SortList.java[sort-list]
 |
 
 | DP
