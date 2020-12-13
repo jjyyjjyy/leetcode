@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sort-list/">排序链表</a>
@@ -37,8 +34,55 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SortList {
 
+    /**
+     * 归并排序
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public ListNode sortList(ListNode head) {
-        return null;
+        return sortList(head, null);
     }
 
+    private ListNode sortList(ListNode head, ListNode tail) {
+        if (head == null) {
+            return null;
+        }
+        if (head.next == tail) {
+            head.next = null;
+            return head;
+        }
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != tail) {
+            slow = slow.next;
+            fast = fast.next;
+            if (fast != tail) {
+                fast = fast.next;
+            }
+        }
+        ListNode left = sortList(head, slow);
+        ListNode right = sortList(slow, tail);
+        return merge(left, right);
+    }
+
+    private ListNode merge(ListNode left, ListNode right) {
+        ListNode dummy = new ListNode(0);
+        ListNode current = dummy;
+        while (left != null && right != null) {
+            if (left.val <= right.val) {
+                current.next = left;
+                left = left.next;
+            } else {
+                current.next = right;
+                right = right.next;
+            }
+            current = current.next;
+        }
+        if (left != null) {
+            current.next = left;
+        }
+        if (right != null) {
+            current.next = right;
+        }
+        return dummy.next;
+    }
 }
