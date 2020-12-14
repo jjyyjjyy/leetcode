@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/largest-number/">最大数</a>
@@ -29,7 +32,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LargestNumber {
 
+    /**
+     * 将数字按照字符串两两组合的顺序排序, 然后删除前导0.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public String largestNumber(int[] nums) {
-        return null;
+        String[] result = Arrays.stream(nums)
+            .mapToObj(String::valueOf)
+            .sorted((a, b) -> (b + a).compareTo(a + b))
+            .toArray(String[]::new);
+        if (result.length > 0 && "0".equals(result[0])) {
+            return "0";
+        }
+        return String.join("", result);
     }
 }
