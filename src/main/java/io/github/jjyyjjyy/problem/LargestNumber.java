@@ -28,4 +28,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT}
 )
 public class LargestNumber {
+
+    public String largestNumber(int[] nums) {
+        return null;
+    }
 }
