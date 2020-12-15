@@ -38,4 +38,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT, Tag.ORDERED_MAP}
 )
 public class ContainsDuplicateIII {
+
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        return false;
+    }
+
 }

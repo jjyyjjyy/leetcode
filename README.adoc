@@ -263,6 +263,7 @@ a|
 * link:{package}/InsertionSortList.java[insertion-sort-list]
 * link:{package}/SortList.java[sort-list]
 * link:{package}/LargestNumber.java[largest-number]
+* link:{package}/ContainsDuplicateIII.java[contains-duplicate-iii]
 |
 
 | DP
