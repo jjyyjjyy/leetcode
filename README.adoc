@@ -207,6 +207,7 @@ a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/ValidSudoku.java[valid-sudoku]
 * link:{package}/GroupAnagrams.java[group-anagrams]
+* link:{package}/HIndex.java[h-index]
 |
 
 | Tree
@@ -264,6 +265,7 @@ a|
 * link:{package}/SortList.java[sort-list]
 * link:{package}/LargestNumber.java[largest-number]
 * link:{package}/ContainsDuplicateIII.java[contains-duplicate-iii]
+* link:{package}/HIndex.java[h-index]
 |
 
 | DP
