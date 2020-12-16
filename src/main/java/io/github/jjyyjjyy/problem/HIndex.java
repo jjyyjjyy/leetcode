@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/h-index/">H指数</a>
@@ -38,8 +41,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HIndex {
 
+    /**
+     * 1. 将数组降序排序.
+     * 2. 找到数组值比索引大的最大下标, 加1即为最大引用次数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int hIndex(int[] citations) {
-        return 0;
+        Arrays.sort(citations);
+        int result = 0;
+        while (result < citations.length && citations[citations.length - 1 - result] > result) {
+            result++;
+        }
+        return result;
     }
 
+    /**
+     * 1. 维护一个数组对citations计数排序.
+     * 2. 从右向左遍历, 将计数累加, 直到数组下标>=计数累加值.
+     * 3. 此时下标即为最大引用次数.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
+    public int hIndex2(int[] citations) {
+        int n = citations.length;
+        int[] counts = new int[n + 1];
+        for (int citation : citations) {
+            counts[Math.min(n, citation)]++;
+        }
+        int result = n;
+        for (int i = counts[n]; i < result; i += counts[result]) {
+            result--;
+        }
+        return result;
+    }
 }
