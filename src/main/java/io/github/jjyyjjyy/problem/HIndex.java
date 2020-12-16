@@ -37,4 +37,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SORT, Tag.HASH_TABLE}
 )
 public class HIndex {
+
+    public int hIndex(int[] citations) {
+        return 0;
+    }
+
 }
