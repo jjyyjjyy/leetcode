@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -54,7 +55,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseBits {
 
+    /**
+     * n&1 得到最后一位的值, 再左移pow位即为当前值. 累加后将n无符号右移一位, 直到n不为0.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int reverseBits(int n) {
-        return 0;
+        int result = 0;
+        int power = 31;
+        while (n != 0) {
+            result += (n & 1) << power;
+            n = n >>> 1;
+            power--;
+        }
+        return result;
+    }
+
+    /**
+     * 借助神的力量.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int reverseBits2(int n) {
+        return Integer.reverse(n);
     }
 }
