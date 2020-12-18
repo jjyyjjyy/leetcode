@@ -5,6 +5,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
  * @author jy
  */
@@ -15,6 +17,6 @@ class HIndexTest {
     @ParameterizedTest
     @CsvSource({"'3,0,6,1,5',3"})
     void hIndex(@ConvertWith(CsvToArray.class) int[] citations, int expect) {
-        assertEquals(expect, H_INDEX.hIndex2(citations));
+        assertEquals(expect, H_INDEX.hIndex(citations));
     }
 }

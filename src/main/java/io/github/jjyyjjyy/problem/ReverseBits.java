@@ -53,4 +53,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION}
 )
 public class ReverseBits {
+
+    public int reverseBits(int n) {
+        return 0;
+    }
 }
