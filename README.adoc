@@ -167,6 +167,7 @@ a|
 * link:{package}/ReverseBits.java[reverse-bits]
 a|
 * link:{package}/Subsets.java[subsets]
+* link:{package}/NumberOf1Bits.java[number-of-1-bits]
 |
 
 | Stack

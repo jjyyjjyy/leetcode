@@ -63,5 +63,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.BIT_MANIPULATION}
 )
-public class Numberof1Bits {
+public class NumberOf1Bits {
+
+    public int hammingWeight(int n) {
+        return 0;
+    }
 }
