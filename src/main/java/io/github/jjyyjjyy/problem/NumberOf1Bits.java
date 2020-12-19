@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -65,7 +66,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOf1Bits {
 
+    /**
+     * 循环12次, 校验每一位是否为1, 统计个数.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int hammingWeight(int n) {
-        return 0;
+        int result = 0;
+        int mask = 1;
+        for (int i = 0; i < 32; i++) {
+            if ((n & mask) != 0) {
+                result++;
+            }
+            mask <<= 1;
+        }
+        return result;
     }
 }
