@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -47,7 +48,27 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HouseRobber {
 
+    /**
+     * stem:[a_n="max"(a_(n-2),a_(n-3))+"nums"[n]]
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int rob(int[] nums) {
-        return 0;
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return nums[0];
+        }
+        int[] result = new int[n];
+        result[0] = nums[0];
+        result[1] = nums[1];
+        if (n > 2) {
+            result[2] = nums[0] + nums[2];
+            for (int i = 3; i < n; i++) {
+                result[i] = Math.max(result[i - 2], result[i - 3]) + nums[i];
+            }
+        }
+        return Math.max(result[n - 1], result[n - 2]);
     }
 }
