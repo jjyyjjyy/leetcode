@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/summary-ranges/">汇总区间</a>
  *
@@ -31,8 +33,12 @@ import io.github.jjyyjjyy.core.Tag;
 @Problem(
     id = 228,
     name = "summary-ranges",
-    difficulty = Difficulty.MEDIUM,
+    difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
 public class SummaryRanges {
+
+    public List<String> summaryRanges(int[] nums) {
+        return null;
+    }
 }
