@@ -1,9 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,7 +41,34 @@ import java.util.List;
 )
 public class SummaryRanges {
 
+    /**
+     * 1. 依次遍历, 判断当前值与数组下一个值是否相差1.
+     * 1.1. 如果相差1, 则继续循环.
+     * 1.2. 如果与上次记录的区间起始值相同, 则该值加入到结果集里.
+     * 1.3. 如果不同, 则将记录的区间起始值和当前值拼接, 加入到结果集里.
+     * 2. 记录下一位的值为区间起始值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<String> summaryRanges(int[] nums) {
-        return null;
+        int n = nums.length;
+        if (n == 0) {
+            return Collections.emptyList();
+        }
+        List<String> result = new ArrayList<>();
+        int prev = nums[0];
+        for (int i = 0; i < n; i++) {
+            if (i < n - 1 && nums[i + 1] - nums[i] == 1) {
+                continue;
+            }
+            if (nums[i] == prev) {
+                result.add(String.valueOf(prev));
+            } else {
+                result.add(prev + "->" + nums[i]);
+            }
+            if (i < n - 1) {
+                prev = nums[i + 1];
+            }
+        }
+        return result;
     }
 }
