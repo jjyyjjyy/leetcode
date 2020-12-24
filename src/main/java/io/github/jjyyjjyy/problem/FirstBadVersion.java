@@ -38,4 +38,12 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BINARY_SEARCH}
 )
 public class FirstBadVersion {
+
+    public int firstBadVersion(int n) {
+        return 0;
+    }
+
+    private boolean isBadVersion(int version) {
+        return version > 3;
+    }
 }
