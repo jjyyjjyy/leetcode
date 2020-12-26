@@ -402,4 +402,10 @@ a|
 |
 |
 
+| BrainTester
+a|
+* link:{package}/NimGame.java[nim-game]
+|
+|
+
 |===

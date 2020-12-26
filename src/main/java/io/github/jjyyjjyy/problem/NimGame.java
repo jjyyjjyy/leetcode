@@ -32,4 +32,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BRAINTEASER, Tag.MINIMAX}
 )
 public class NimGame {
+
+    public boolean canWinNim(int n) {
+        return false;
+    }
 }
