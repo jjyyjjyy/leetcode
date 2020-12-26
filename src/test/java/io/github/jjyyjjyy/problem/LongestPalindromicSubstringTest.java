@@ -13,7 +13,7 @@ class LongestPalindromicSubstringTest {
     private static final LongestPalindromicSubstring LONGEST_PALINDROMIC_SUBSTRING = new LongestPalindromicSubstring();
 
     @ParameterizedTest
-    @CsvSource({"babad,bab", "cbbd,bb"})
+    @CsvSource({"babad,bab", "cbbd,bb", "ac,a"})
     void longestPalindrome(String s, String expect) {
         assertEquals(expect, LONGEST_PALINDROMIC_SUBSTRING.longestPalindrome(s));
     }

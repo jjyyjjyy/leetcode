@@ -104,6 +104,7 @@ a|
 * link:{package}/CompareVersionNumbers.java[compare-version-numbers]
 * link:{package}/StringCompressions.java[string-compressions]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
+* link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
 |
 
 | LinkedList
@@ -284,6 +285,7 @@ a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
+* link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
 |
 
 | Greedy
