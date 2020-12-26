@@ -1,4 +1,4 @@
-= LeetCode
+= LeetCode image:https://leetcode-badge.haozibi.dev/v1cn/jiangy.svg[window="_blank", link="https://leetcode-cn.com/u/jiangy/"] image:https://leetcode-badge.haozibi.dev/v1cn/solved/jiangy.svg[window="_blank", link="https://leetcode-cn.com/u/jiangy/"] image:https://leetcode-badge.haozibi.dev/v1cn/ranking/jiangy.svg[window="_blank", link="https://leetcode-cn.com/u/jiangy/"]
 :icons: font
 :source-highlighter: highlightjs
 :highlightjs-theme: idea
