@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -33,7 +34,11 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NimGame {
 
+    /**
+     * 只要不能被4整除就能赢.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public boolean canWinNim(int n) {
-        return false;
+        return n % 4 != 0;
     }
 }
