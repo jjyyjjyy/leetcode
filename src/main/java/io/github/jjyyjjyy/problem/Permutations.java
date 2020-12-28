@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/permutations/">全排列</a>
  *
@@ -38,4 +40,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BACKTRACKING}
 )
 public class Permutations {
+
+    public List<List<Integer>> permute(int[] nums) {
+        return null;
+    }
+
 }
