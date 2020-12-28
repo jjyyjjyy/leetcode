@@ -395,6 +395,7 @@ a|
 * link:{package}/SubsetsII.java[subsets-ii]
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 * link:{package}/GenerateParentheses.java[generate-parentheses]
+* link:{package}/Permutations.java[permutations]
 |
 
 | DivideAndConquer
