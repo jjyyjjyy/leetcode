@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,49 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MedianOfTwoSortedArrays {
 
+    /**
+     * 1. 计算中位数所在的位置.
+     * 2. 维护p1,p2两个指针, 遍历并比较两个数组所在元素的值.
+     * 3. 计算中位值.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        return 0;
+        int totalNum = nums1.length + nums2.length;
+        int median = (totalNum + 1) / 2;
+        boolean isDualMedian = (totalNum & 1) == 0;
+        int p1 = 0;
+        int p2 = 0;
+        int min = 0;
+        while (p1 + p2 < median) {
+            if (p1 >= nums1.length) {
+                min = nums2[p2];
+                p2++;
+                continue;
+            }
+            if (p2 >= nums2.length) {
+                min = nums1[p1];
+                p1++;
+                continue;
+            }
+            if (nums1[p1] < nums2[p2]) {
+                min = nums1[p1];
+                p1++;
+            } else {
+                min = nums2[p2];
+                p2++;
+            }
+        }
+        if (!isDualMedian) {
+            return min;
+        }
+        int right = 0;
+        if (p2 >= nums2.length) {
+            right = nums1[p1];
+        } else if (p1 >= nums1.length) {
+            right = nums2[p2];
+        } else {
+            right = Math.min(nums1[p1], nums2[p2]);
+        }
+        return (min + right) / 2.0;
     }
 }
