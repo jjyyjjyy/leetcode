@@ -68,7 +68,8 @@ a|
 * link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
-|
+a|
+* link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 
 | String
 a|
@@ -315,7 +316,8 @@ a|
 * link:{package}/Powxn.java[powx-n]
 * link:{package}/CountCompleteTreeNodes.java[count-complete-tree-nodes]
 * link:{package}/KthSmallestElementInABST.java[kth-smallest-element-in-a-bst]
-|
+a|
+* link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 
 | TwoPointers
 a|
@@ -403,7 +405,8 @@ a|
 * link:{package}/MaximumSubarray.java[maximum-subarray]
 * link:{package}/MajorityElement.java[majority-element]
 |
-|
+a|
+* link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 
 | BrainTester
 a|

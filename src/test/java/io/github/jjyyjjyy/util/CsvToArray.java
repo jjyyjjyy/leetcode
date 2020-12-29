@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.util;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -18,6 +19,9 @@ public class CsvToArray extends SimpleArgumentConverter {
     @Override
     protected Object convert(Object source, Class<?> targetType) throws ArgumentConversionException {
         String sourceString = source.toString();
+        if (sourceString.isEmpty()) {
+            return Array.newInstance(targetType.getComponentType(), 0);
+        }
         if (Objects.equals(targetType, int[].class)) {
             String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
             return Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
