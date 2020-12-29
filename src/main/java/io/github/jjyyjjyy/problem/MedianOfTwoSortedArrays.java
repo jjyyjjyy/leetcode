@@ -35,5 +35,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH, Tag.DIVIDE_AND_CONQUER}
 )
-public class MedianofTwoSortedArrays {
+public class MedianOfTwoSortedArrays {
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        return 0;
+    }
 }
