@@ -106,7 +106,8 @@ a|
 * link:{package}/StringCompressions.java[string-compressions]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
-|
+a|
+* link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 
 | LinkedList
 a|
@@ -287,7 +288,8 @@ a|
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
-|
+a|
+* link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 
 | Greedy
 a|
@@ -398,7 +400,8 @@ a|
 * link:{package}/LetterCombinationsOfAPhoneNumber.java[letter-combinations-of-a-phone-number]
 * link:{package}/GenerateParentheses.java[generate-parentheses]
 * link:{package}/Permutations.java[permutations]
-|
+a|
+* link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 
 | DivideAndConquer
 a|
