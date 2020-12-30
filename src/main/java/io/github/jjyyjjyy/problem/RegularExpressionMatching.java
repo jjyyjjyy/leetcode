@@ -78,4 +78,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING, Tag.DYNAMIC_PROGRAMMING, Tag.BACKTRACKING}
 )
 public class RegularExpressionMatching {
+
+    public boolean isMatch(String s, String p) {
+        return false;
+    }
 }
