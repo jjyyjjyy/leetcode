@@ -1,9 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -38,8 +41,29 @@ import java.util.List;
 )
 public class PermutationsII {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n*n!)")
     public List<List<Integer>> permuteUnique(int[] nums) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        boolean[] marks = new boolean[nums.length];
+        Arrays.sort(nums);
+        backTrack(result, nums, marks, new ArrayList<>(), 0);
+        return result;
     }
 
+    private void backTrack(List<List<Integer>> result, int[] nums, boolean[] marks, List<Integer> target, int current) {
+        if (current == nums.length) {
+            result.add(new ArrayList<>(target));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (marks[i] || i > 0 && nums[i] == nums[i - 1] && !marks[i - 1]) {
+                continue;
+            }
+            target.add(nums[i]);
+            marks[i] = true;
+            backTrack(result, nums, marks, target, current + 1);
+            marks[i] = false;
+            target.remove(current);
+        }
+    }
 }
