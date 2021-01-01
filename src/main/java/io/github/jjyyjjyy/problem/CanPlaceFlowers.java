@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,7 +49,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CanPlaceFlowers {
 
+    /**
+     * 依次遍历数组, 判断当前位&前一位&后一位是否都为0, 如果为0则将当前位置位1, 并统计种花的个数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        return false;
+        int length = flowerbed.length;
+        if (length == 1 && flowerbed[0] == 0) {
+            return true;
+        }
+        int count = 0;
+        if (length > 1) {
+            if (flowerbed[0] == 0 && flowerbed[1] == 0) {
+                flowerbed[0] = 1;
+                count++;
+            }
+            if (flowerbed[length - 1] == 0 && flowerbed[length - 2] == 0) {
+                flowerbed[length - 1] = 1;
+                count++;
+            }
+            for (int i = 1; i < length - 1; i++) {
+                if (flowerbed[i] == 0 && flowerbed[i + 1] == 0 && flowerbed[i - 1] == 0) {
+                    flowerbed[i] = 1;
+                    count++;
+                    if (n <= count) { // 可以提前退出循环
+                        return true;
+                    }
+                }
+            }
+        }
+        return n <= count;
     }
 }
