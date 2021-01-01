@@ -39,6 +39,7 @@ a|
 * link:{package}/FindAllNumbersDisappearedInAnArray.java[find-all-numbers-disappeared-in-an-array]
 * link:{package}/MaxConsecutiveOnes.java[max-consecutive-ones]
 * link:{package}/SummaryRanges.java[summary-ranges]
+* link:{package}/CanPlaceFlowers.java[can-place-flowers]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
