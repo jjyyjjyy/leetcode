@@ -47,4 +47,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class CanPlaceFlowers {
+
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        return false;
+    }
 }
