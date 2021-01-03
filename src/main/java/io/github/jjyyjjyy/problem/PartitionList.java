@@ -23,28 +23,35 @@ import io.github.jjyyjjyy.core.*;
 )
 public class PartitionList {
 
+    /**
+     * 1. 创建一个小链表哑元和一个大链表哑元.
+     * 2. 依次遍历链表:
+     * 2.1. 如果当前元素小于x, 则将当前节点加入到小链表中, 否则则将当前节点加入到大链表中
+     * 3. 清空大链表尾部节点的next, 防止该节点又指向小链表里.
+     * 4. 将小链表尾部节点next指向大链表哑元的next节点().
+     * 5. 返回小链表哑元的next节点(即小链表的头部节点).
+     */
     @Complexity(Complexity.ComplexityType.O_N)
     public ListNode partition(ListNode head, int x) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
+        ListNode dummySmall = new ListNode(0);
+        ListNode small = dummySmall;
+        ListNode dummyLarge = new ListNode(0);
+        ListNode large = dummyLarge;
 
-        ListNode partitionNode = dummy;
-        while (partitionNode.next != null && partitionNode.next.val < x) {
-            partitionNode = partitionNode.next;
-        }
-        ListNode right = partitionNode;
-        while (right.next != null) {
-            ListNode next = right.next;
-            if (next.val >= x) {
-                right = next;
+        while (head != null) {
+            if (head.val < x) {
+                small.next = head;
+                small = small.next;
             } else {
-                right.next = next.next;
-                next.next = partitionNode.next;
-                partitionNode.next = next;
-                partitionNode = next;
+                large.next = head;
+                large = large.next;
             }
+            head = head.next;
         }
 
-        return dummy.next;
+        // 清空next
+        large.next = null;
+        small.next = dummyLarge.next;
+        return dummySmall.next;
     }
 }
