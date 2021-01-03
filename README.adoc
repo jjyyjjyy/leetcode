@@ -258,7 +258,8 @@ a|
 a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
-|
+a|
+* link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 
 | Sort
 |
@@ -388,7 +389,8 @@ a|
 |
 a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
-|
+a|
+* link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 
 | BackTracking
 |
