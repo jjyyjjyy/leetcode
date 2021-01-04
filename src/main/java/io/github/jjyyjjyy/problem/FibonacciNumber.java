@@ -61,4 +61,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class FibonacciNumber {
+
+    public int fib(int n) {
+        return 0;
+    }
 }
