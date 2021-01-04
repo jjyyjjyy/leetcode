@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -62,7 +63,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FibonacciNumber {
 
+    /**
+     * 1. 维护一个存放历史计算结果的数组, 其中f(0)=0, f(1)=1.
+     * 2. 从2开始遍历到n, f(n)=f(n-2)+f(n-1).
+     * 3. f(n)即为最后的结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int fib(int n) {
-        return 0;
+        if (n < 2) {
+            return n;
+        }
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 2] + dp[i - 1];
+        }
+        return dp[n];
     }
 }
