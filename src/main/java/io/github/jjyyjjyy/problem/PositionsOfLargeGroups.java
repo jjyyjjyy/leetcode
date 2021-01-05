@@ -1,9 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -49,7 +52,29 @@ import java.util.List;
 )
 public class PositionsOfLargeGroups {
 
+    /**
+     * 1. 维护重复字符子串的起始位置.
+     * 2. 依次遍历数组, 判断当前值是否与起始位置是否相等
+     * 2.1. 如果不相等则判断当前位置与起始位置是否相差大于3, 则加入到结果集中, 将起始位置改成当前位置.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<List<Integer>> largeGroupPositions(String s) {
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+
+        int start = 0;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) != s.charAt(start)) {
+                if (i - start >= 3) {
+                    result.add(Arrays.asList(start, i - 1));
+                }
+                start = i;
+            }
+        }
+
+        if (start <= s.length() - 3) {
+            result.add(Arrays.asList(start, s.length() - 1));
+        }
+
+        return result;
     }
 }
