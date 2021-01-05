@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/positions-of-large-groups/">较大分组的位置</a>
  *
@@ -45,5 +47,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class PositionsofLargeGroups {
+public class PositionsOfLargeGroups {
+
+    public List<List<Integer>> largeGroupPositions(String s) {
+        return null;
+    }
 }
