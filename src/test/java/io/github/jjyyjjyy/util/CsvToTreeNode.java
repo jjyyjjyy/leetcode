@@ -29,7 +29,7 @@ public class CsvToTreeNode extends SimpleArgumentConverter {
         return targetType == Node.class ? buildNode(new Node(), arr, 0) : buildTreeNode(new TreeNode(), arr, 0);
     }
 
-    private Node buildNode(Node root, Integer[] arr, int idx) {
+    private static Node buildNode(Node root, Integer[] arr, int idx) {
         if (idx >= arr.length || arr[idx] == null) {
             return null;
         }
@@ -39,7 +39,7 @@ public class CsvToTreeNode extends SimpleArgumentConverter {
         return root;
     }
 
-    private TreeNode buildTreeNode(TreeNode root, Integer[] arr, int idx) {
+    private static TreeNode buildTreeNode(TreeNode root, Integer[] arr, int idx) {
         if (idx >= arr.length || arr[idx] == null) {
             return null;
         }

@@ -92,8 +92,7 @@ public class ProblemGenerator {
 
 
                 } catch (Exception e) {
-                    System.err.println(name);
-                    throw new RuntimeException(e);
+                    throw new RuntimeException(name, e);
                 }
             });
     }
