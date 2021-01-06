@@ -263,6 +263,18 @@ a|
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 
+| Graph
+|
+a|
+* link:{package}/EvaluateDivision.java[evaluate-division]
+|
+
+| UnionFind
+|
+a|
+* link:{package}/EvaluateDivision.java[evaluate-division]
+|
+
 | Sort
 |
 a|

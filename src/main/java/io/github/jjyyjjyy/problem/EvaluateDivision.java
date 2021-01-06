@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/evaluate-division/">除法求值</a>
  *
@@ -33,4 +35,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.UNION_FIND, Tag.GRAPH}
 )
 public class EvaluateDivision {
+
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        return null;
+    }
+
 }

@@ -73,7 +73,7 @@ public class FirstBadVersion {
         return n;
     }
 
-    private boolean isBadVersion(int version) {
+    private static boolean isBadVersion(int version) {
         return version > 3;
     }
 }
