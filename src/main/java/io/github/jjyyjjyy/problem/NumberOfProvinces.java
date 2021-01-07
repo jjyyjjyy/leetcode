@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -66,8 +67,30 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfProvinces {
 
+    /**
+     * 1. 创建一个boolean数组维护每个城市是否被记录到过.
+     * 2. 依次先按行遍历数组, 每个元素DFS遍历列, 判断isConnected[i][j]是否为1并且没有被记录过, 并记录下该城市.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int findCircleNum(int[][] isConnected) {
-        return 0;
+        int n = isConnected.length;
+        boolean[] visited = new boolean[n];
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            if (!visited[i]) {
+                dfs(isConnected, visited, n, i);
+                result++;
+            }
+        }
+        return result;
     }
 
+    private void dfs(int[][] isConnected, boolean[] visited, int n, int i) {
+        for (int j = 0; j < n; j++) {
+            if (isConnected[i][j] == 1 && !visited[j]) {
+                visited[j] = true;
+                dfs(isConnected, visited, n, j);
+            }
+        }
+    }
 }
