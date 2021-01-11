@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/smallest-string-with-swaps/">交换字符串中的元素</a>
  *
@@ -61,4 +63,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.UNION_FIND, Tag.ARRAY}
 )
 public class SmallestStringWithSwaps {
+
+    public String smallestStringWithSwaps(String s, List<List<Integer>> pairs) {
+        return null;
+    }
+
 }
