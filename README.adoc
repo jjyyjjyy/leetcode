@@ -110,6 +110,7 @@ a|
 * link:{package}/StringCompressions.java[string-compressions]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
+* link:{package}/SmallestStringWithSwaps.java[smallest-string-with-swaps]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 
@@ -275,6 +276,7 @@ a|
 a|
 * link:{package}/EvaluateDivision.java[evaluate-division]
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
+* link:{package}/SmallestStringWithSwaps.java[smallest-string-with-swaps]
 |
 
 | Sort
