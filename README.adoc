@@ -270,7 +270,8 @@ a|
 a|
 * link:{package}/EvaluateDivision.java[evaluate-division]
 * link:{package}/CourseSchedule.java[course-schedule]
-|
+a|
+* link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
 | UnionFind
 |
@@ -394,7 +395,8 @@ a|
 * link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/CourseSchedule.java[course-schedule]
-|
+a|
+* link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
 | BreadthFirstSearch
 a|
