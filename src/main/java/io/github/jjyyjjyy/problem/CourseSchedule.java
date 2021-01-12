@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/course-schedule/">课程表</a>
@@ -59,8 +63,49 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CourseSchedule {
 
+    private boolean valid = true;
+
+    /**
+     * 1. 维护一个状态数组, 标记每个course的状态(0=未访问,1=正在访问,2=已访问).
+     * 2. 创建一个二维数组(图), 维护边的关系.
+     * 3. 遍历numCourses:
+     * 3.1. 判断状态数组里当前状态是否为未访问, 如果是未访问则从该点开始dfs遍历.
+     * 3.2. 从图里找到下一个顶点, 如果当前顶点状态为正在访问, 说明出现了环, 直接返回.
+     * 3.3. 如果顶点状态为未访问, 那么dfs递归遍历该顶点, 重复步骤3.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        return false;
+        List<List<Integer>> edges = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++) {
+            edges.add(new ArrayList<>());
+        }
+        int[] visited = new int[numCourses];
+        for (int[] prerequisite : prerequisites) {
+            edges.get(prerequisite[1]).add(prerequisite[0]);
+        }
+        for (int i = 0; i < numCourses && valid; i++) {
+            if (visited[i] == 0) {
+                dfs(edges, visited, i);
+            }
+        }
+        return valid;
+    }
+
+    private void dfs(List<List<Integer>> edges, int[] visited, int i) {
+        visited[i] = 1;
+        for (int edge : edges.get(i)) {
+            if (visited[edge] == 1) {
+                valid = false;
+                return;
+            }
+            if (visited[edge] == 0) {
+                dfs(edges, visited, edge);
+                if (!valid) {
+                    return;
+                }
+            }
+        }
+        visited[i] = 2;
     }
 
 }
