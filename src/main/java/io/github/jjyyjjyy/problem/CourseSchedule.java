@@ -58,4 +58,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.BREADTH_FIRST_SEARCH, Tag.GRAPH, Tag.TOPOLOGICAL_SORT}
 )
 public class CourseSchedule {
+
+    public boolean canFinish(int numCourses, int[][] prerequisites) {
+        return false;
+    }
+
 }
