@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/">项目管理</a>
  *
@@ -60,5 +62,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.GRAPH, Tag.TOPOLOGICAL_SORT}
 )
-public class SortItemsbyGroupsRespectingDependencies {
+public class SortItemsByGroupsRespectingDependencies {
+
+    public int[] sortItems(int n, int m, int[] group, List<List<Integer>> beforeItems) {
+        return null;
+    }
 }
