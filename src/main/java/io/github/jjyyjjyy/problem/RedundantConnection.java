@@ -59,4 +59,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.UNION_FIND, Tag.GRAPH}
 )
 public class RedundantConnection {
+
+    public int[] findRedundantConnection(int[][] edges) {
+        return null;
+    }
 }
