@@ -255,6 +255,7 @@ a|
 * link:{package}/CountCompleteTreeNodes.java[count-complete-tree-nodes]
 * link:{package}/KthSmallestElementInABST.java[kth-smallest-element-in-a-bst]
 * link:{package}/LowestCommonAncestorOfABinaryTree.java[lowest-common-ancestor-of-a-binary-tree]
+* link:{package}/RedundantConnection.java[redundant-connection]
 |
 
 | Heap
@@ -270,6 +271,7 @@ a|
 a|
 * link:{package}/EvaluateDivision.java[evaluate-division]
 * link:{package}/CourseSchedule.java[course-schedule]
+* link:{package}/RedundantConnection.java[redundant-connection]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
@@ -279,6 +281,7 @@ a|
 * link:{package}/EvaluateDivision.java[evaluate-division]
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/SmallestStringWithSwaps.java[smallest-string-with-swaps]
+* link:{package}/RedundantConnection.java[redundant-connection]
 |
 
 | Sort
