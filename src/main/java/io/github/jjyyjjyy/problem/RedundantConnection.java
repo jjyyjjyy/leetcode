@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -60,7 +61,35 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RedundantConnection {
 
+    /**
+     * Quick Union 找到环.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int[] findRedundantConnection(int[][] edges) {
-        return null;
+        int n = edges.length;
+        int[] id = new int[n + 1];
+        for (int i = 0; i <= n; i++) {
+            id[i] = i;
+        }
+        for (int[] edge : edges) {
+            int node1 = edge[0];
+            int node2 = edge[1];
+            int node1Id = find(id, node1);
+            int node2Id = find(id, node2);
+            if (node1Id == node2Id) {
+                // 两个id相等则说明存在环.
+                return edge;
+            } else {
+                id[node1Id] = node2Id;
+            }
+        }
+        return new int[0];
+    }
+
+    private int find(int[] id, int i) {
+        if (i != id[i]) {
+            id[i] = find(id, id[i]);
+        }
+        return id[i];
     }
 }
