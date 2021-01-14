@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author jy
@@ -29,6 +26,16 @@ public class ArrayUtil {
             list.add(Arrays.asList(ts));
         }
         return list;
+    }
+
+    public static boolean[] toPrimitiveBooleanArray(Collection<Boolean> collection) {
+        Object[] boxedArray = collection.toArray();
+        int len = boxedArray.length;
+        boolean[] array = new boolean[len];
+        for (int i = 0; i < len; i++) {
+            array[i] = (Boolean) boxedArray[i];
+        }
+        return array;
     }
 
     public static boolean isSame(Object[][] result, Object[][] expect) {
