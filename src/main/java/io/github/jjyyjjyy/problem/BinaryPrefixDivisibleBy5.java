@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/">可被 5 整除的二进制前缀</a>
  *
@@ -55,4 +57,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class BinaryPrefixDivisibleBy5 {
+
+    public List<Boolean> prefixesDivBy5(int[] A) {
+        return null;
+    }
 }

@@ -6,6 +6,7 @@ import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author jy
@@ -29,6 +30,10 @@ public class CsvToArray extends SimpleArgumentConverter {
         if (Objects.equals(targetType, double[].class)) {
             String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
             return Arrays.stream(strings).mapToDouble(Double::valueOf).toArray();
+        }
+        if (Objects.equals(targetType, boolean[].class)) {
+            String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
+            return ArrayUtil.toPrimitiveBooleanArray(Arrays.stream(strings).map(Boolean::valueOf).collect(Collectors.toList()));
         }
         if (Objects.equals(targetType, char[].class)) {
             return sourceString.replaceAll(ARRAY_SPLITTER_REGEX, "").toCharArray();
