@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -58,7 +60,19 @@ import java.util.List;
 )
 public class BinaryPrefixDivisibleBy5 {
 
+    /**
+     * (a + b) % p = (a % p + b % p) % p
+     * <p>
+     * 依次遍历数组, 判断当前值对5取模的结果是否为0, 加入到结果集中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Boolean> prefixesDivBy5(int[] A) {
-        return null;
+        List<Boolean> result = new ArrayList<>(A.length);
+        int num = 0;
+        for (int i : A) {
+            num = ((num << 1) % 5 + i % 5) % 5;
+            result.add(num == 0);
+        }
+        return result;
     }
 }
