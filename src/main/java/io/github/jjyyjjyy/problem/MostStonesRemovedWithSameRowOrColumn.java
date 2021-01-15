@@ -48,5 +48,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND}
 )
-public class MostStonesRemovedwithSameRoworColumn {
+public class MostStonesRemovedWithSameRowOrColumn {
+
+    public int removeStones(int[][] stones) {
+        return -1;
+    }
+
 }
