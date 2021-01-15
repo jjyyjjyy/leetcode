@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -50,8 +51,49 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MostStonesRemovedWithSameRowOrColumn {
 
+    /**
+     * 连通图的顶点可以减小到最后1个点, 所以最多可删除的点数等于点总数减去连通图中联通分量的个数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int removeStones(int[][] stones) {
-        return -1;
+        UnionFind unionFind = new UnionFind();
+        int n = stones.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (stones[i][0] == stones[j][0] || stones[i][1] == stones[j][1]) {
+                    unionFind.union(i, j);
+                }
+            }
+        }
+        int points = 0;
+        for (int i = 0; i < n; i++) {
+            if (unionFind.id[i] == i) {
+                points++;
+            }
+        }
+        return n - points;
+    }
+
+    private static class UnionFind {
+        private final int[] id;
+
+        public UnionFind() {
+            this.id = new int[1000];
+            for (int i = 0; i < 1000; i++) {
+                id[i] = i;
+            }
+        }
+
+        public void union(int x, int y) {
+            id[find(x)] = find(y);
+        }
+
+        public int find(int i) {
+            if (i != id[i]) {
+                id[i] = find(id[i]);
+            }
+            return id[i];
+        }
     }
 
 }
