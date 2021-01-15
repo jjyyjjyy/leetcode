@@ -283,6 +283,7 @@ a|
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/SmallestStringWithSwaps.java[smallest-string-with-swaps]
 * link:{package}/RedundantConnection.java[redundant-connection]
+* link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
 |
 
 | Sort
@@ -399,6 +400,7 @@ a|
 * link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/CourseSchedule.java[course-schedule]
+* link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
