@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -46,8 +47,126 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BricksFallingWhenHit {
 
-    public int[] hitBricks(int[][] grid, int[][] hits) {
-        return null;
+    private static final int[][] DIRECTIONS = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
+    private int rows;
+    private int cols;
 
+    /**
+     * 1. 复制出来一个新的grid, 将hits中对应的坐标值设置为0.
+     * 2. 创建一个并查集:
+     * 2.1. 将第0行的砖头和一个特殊的屋顶索引(size)关联到并查集里.
+     * 2.2. 将下方的砖头和左边/上方的砖头关联起来.
+     * 3. 从右向左遍历hits, 如果对应的坐标在原数组中值为1:
+     * 3.1. 先计算屋顶的秩.
+     * 3.2. 如果为第0行, 则和屋顶索引(size)关联到并查集里.
+     * 3.3. 遍历当前坐标的上下左右四个方向, 如果对方值为1则关联到并查集里.
+     * 3.4. 再计算一次屋顶的秩, 两次秩相差的值减去1(当前坐标不算)即为会掉落的砖头数.
+     * 3.5. 将复制出来的grid当前坐标的值恢复成1.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
+    public int[] hitBricks(int[][] grid, int[][] hits) {
+
+        rows = grid.length;
+        cols = grid[0].length;
+        int[][] gridCopy = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                gridCopy[i][j] = grid[i][j];
+            }
+        }
+        for (int[] hit : hits) {
+            gridCopy[hit[0]][hit[1]] = 0;
+        }
+
+        int size = rows * cols;
+        UnionFind unionFind = new UnionFind(size + 1);
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (gridCopy[i][j] == 1) {
+                    if (i == 0) {
+                        unionFind.union(getIndex(i, j), size);
+                    }
+                    if (i > 0 && gridCopy[i - 1][j] == 1) {
+                        unionFind.union(getIndex(i - 1, j), getIndex(i, j));
+                    }
+                    if (j > 0 && gridCopy[i][j - 1] == 1) {
+                        unionFind.union(getIndex(i, j - 1), getIndex(i, j));
+                    }
+                }
+            }
+        }
+
+        int hitsLength = hits.length;
+        int[] result = new int[hitsLength];
+
+        for (int i = hitsLength - 1; i >= 0; i--) {
+            int x = hits[i][0];
+            int y = hits[i][1];
+            if (grid[x][y] == 0) {
+                continue;
+            }
+            int origin = unionFind.getSize(size);
+            if (x == 0) {
+                unionFind.union(getIndex(x, y), size);
+            }
+
+            for (int[] direction : DIRECTIONS) {
+                int newX = direction[0] + x;
+                int newY = direction[1] + y;
+                if (inArea(newX, newY) && gridCopy[newX][newY] == 1) {
+                    unionFind.union(getIndex(x, y), getIndex(newX, newY));
+                }
+            }
+            int current = unionFind.getSize(size);
+            result[i] = Math.max(0, current - origin - 1);
+            gridCopy[x][y] = 1;
+        }
+        return result;
+
+    }
+
+    private boolean inArea(int x, int y) {
+        return x >= 0 && y >= 0 && x < rows && y < cols;
+    }
+
+    private int getIndex(int x, int y) {
+        return x * cols + y;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] size;
+
+        public UnionFind(int n) {
+            this.ids = new int[n];
+            this.size = new int[n];
+            for (int i = 0; i < n; i++) {
+                ids[i] = i;
+                size[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public void union(int x, int y) {
+            int xId = find(x);
+            int yId = find(y);
+            if (xId == yId) {
+                return;
+            }
+            ids[xId] = yId;
+            size[yId] += size[xId];
+        }
+
+        public int getSize(int x) {
+            return size[find(x)];
+        }
     }
 }
