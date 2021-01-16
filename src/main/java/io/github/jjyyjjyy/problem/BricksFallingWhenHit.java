@@ -45,4 +45,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.UNION_FIND}
 )
 public class BricksFallingWhenHit {
+
+    public int[] hitBricks(int[][] grid, int[][] hits) {
+        return null;
+
+    }
 }
