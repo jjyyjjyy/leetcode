@@ -43,6 +43,7 @@ a|
 * link:{package}/FibonacciNumber.java[fibonacci-number]
 * link:{package}/PositionsOfLargeGroups.java[positions-of-large-groups]
 * link:{package}/BinaryPrefixDivisibleBy5.java[binary-prefix-divisible-by-5]
+* link:{package}/CheckIfItIsAStraightLine.java[check-if-it-is-a-straight-line]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
@@ -155,6 +156,7 @@ a|
 * link:{package}/UglyNumber.java[ugly-number]
 * link:{package}/PowerOfThree.java[power-of-three]
 * link:{package}/ValidPerfectSquare.java[valid-perfect-square]
+* link:{package}/CheckIfItIsAStraightLine.java[check-if-it-is-a-straight-line]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
