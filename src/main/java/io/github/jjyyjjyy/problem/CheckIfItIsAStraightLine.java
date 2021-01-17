@@ -46,5 +46,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.GEOMETRY, Tag.ARRAY, Tag.MATH}
 )
-public class CheckIfItIsaStraightLine {
+public class CheckIfItIsAStraightLine {
+
+    public boolean checkStraightLine(int[][] coordinates) {
+        return false;
+    }
 }
