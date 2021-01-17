@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,7 +49,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CheckIfItIsAStraightLine {
 
+    /**
+     * 二元一次方程表示: Ax+By+C=0
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean checkStraightLine(int[][] coordinates) {
-        return false;
+        for (int i = 1; i < coordinates.length - 1; i++) {
+            int[] left = coordinates[i - 1];
+            int[] mid = coordinates[i];
+            int[] right = coordinates[i + 1];
+            if ((mid[0] - left[0]) * (right[1] - mid[1]) != (right[0] - mid[0]) * (mid[1] - left[1])) {
+                return false;
+            }
+        }
+        return true;
     }
 }
