@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/accounts-merge/">账户合并</a>
  *
@@ -50,4 +52,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND}
 )
 public class AccountsMerge {
+
+    public List<List<String>> accountsMerge(List<List<String>> accounts) {
+        return null;
+    }
 }

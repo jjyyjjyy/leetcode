@@ -286,6 +286,7 @@ a|
 * link:{package}/SmallestStringWithSwaps.java[smallest-string-with-swaps]
 * link:{package}/RedundantConnection.java[redundant-connection]
 * link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
+* link:{package}/AccountsMerge.java[accounts-merge]
 a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
 
@@ -404,6 +405,7 @@ a|
 * link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/CourseSchedule.java[course-schedule]
 * link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
+* link:{package}/AccountsMerge.java[accounts-merge]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
