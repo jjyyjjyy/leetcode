@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/accounts-merge/">账户合并</a>
@@ -53,7 +54,79 @@ import java.util.List;
 )
 public class AccountsMerge {
 
+    /**
+     * 1. 建立邮箱->索引, 邮箱->姓名的对应关系.
+     * 2. 创建一个并查集, 遍历输入的账户, 将每个账户的邮箱的索引加入到并查集里.
+     * 3. 遍历邮箱, 从并查集里找到相同id的邮箱加入到同一组里, 然后根据第一个邮箱对应的姓名组装成结果集.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        return null;
+        int emailCount = 0;
+        Map<String, Integer> mailIndex = new HashMap<>();
+        Map<String, String> mailName = new HashMap<>();
+
+        for (List<String> account : accounts) {
+            String name = account.get(0);
+            for (int i = 1; i < account.size(); i++) {
+                String email = account.get(i);
+                mailIndex.put(email, emailCount++);
+                mailName.put(email, name);
+            }
+        }
+
+        UnionFind unionFind = new UnionFind(emailCount);
+        for (List<String> account : accounts) {
+            String firstEmail = account.get(1);
+            int firstEmailIndex = mailIndex.get(firstEmail);
+            int size = account.size();
+            for (int i = 2; i < size; i++) {
+                String email = account.get(i);
+                unionFind.union(firstEmailIndex, mailIndex.get(email));
+            }
+        }
+        Map<Integer, List<String>> indexToMails = new HashMap<>();
+
+        for (String mail : mailIndex.keySet()) {
+            int index = unionFind.find(mailIndex.get(mail));
+            List<String> existedMails = indexToMails.getOrDefault(index, new ArrayList<>());
+            existedMails.add(mail);
+            indexToMails.put(index, existedMails);
+        }
+
+        List<List<String>> result = new ArrayList<>();
+
+        for (List<String> mails : indexToMails.values()) {
+            Collections.sort(mails);
+            String name = mailName.get(mails.get(0));
+            List<String> currentResult = new ArrayList<>();
+            currentResult.add(name);
+            currentResult.addAll(mails);
+
+            result.add(currentResult);
+        }
+
+        return result;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+
+        private UnionFind(int n) {
+            this.ids = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public void union(int x, int y) {
+            ids[find(x)] = find(y);
+        }
     }
 }
