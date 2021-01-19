@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/min-cost-to-connect-all-points/">连接所有点的最小费用</a>
@@ -74,7 +79,92 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MinCostToConnectAllPoints {
 
+    private static int distance(int[][] points, int x, int y) {
+        return Math.abs(points[x][0] - points[y][0]) + Math.abs(points[x][1] - points[y][1]);
+    }
+
+    /**
+     * 最小生成树-Kruskal算法.
+     * <p>
+     * 1. 计算每个点的距离, 并将每个点之间的边按照长度排好序.
+     * 2. 创建一个并查集.
+     * 3. 遍历边, 尝试将边上的两点加入到并查集里.
+     * 3.1. 如果已经加入过, 则不作处理.
+     * 3.2. 如果将两点成功加入到并查集里, 则累加当前边的长度.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2_LOG_N)
     public int minCostConnectPoints(int[][] points) {
-        return 0;
+        int n = points.length;
+        List<Edge> edges = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                edges.add(new Edge(i, j, distance(points, i, j)));
+            }
+        }
+        UnionFind unionFind = new UnionFind(n);
+        edges.sort(Comparator.comparingInt(a -> a.length));
+        int result = 0;
+        int num = 1;
+
+        for (Edge edge : edges) {
+            if (unionFind.union(edge.x, edge.y)) {
+                result += edge.length;
+                if (++num == n) {
+                    // 此时已经遍历结束, 后面union肯定全返回false 可以提前退出.
+                    break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    private static class Edge {
+        private final int x;
+        private final int y;
+        private final int length;
+
+        private Edge(int x, int y, int length) {
+            this.x = x;
+            this.y = y;
+            this.length = length;
+        }
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+
+        public UnionFind(int n) {
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+                this.ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public boolean union(int x, int y) {
+            int xId = find(x);
+            int yId = find(y);
+            if (xId == yId) {
+                return false;
+            }
+            if (ranks[xId] < ranks[yId]) {
+                int tmp = xId;
+                xId = yId;
+                yId = tmp;
+            }
+            ranks[xId] += ranks[yId];
+            ids[yId] = xId;
+            return true;
+        }
     }
 }
