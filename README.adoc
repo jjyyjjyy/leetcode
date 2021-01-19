@@ -287,6 +287,7 @@ a|
 * link:{package}/RedundantConnection.java[redundant-connection]
 * link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
 * link:{package}/AccountsMerge.java[accounts-merge]
+* link:{package}/MinCostToConnectAllPoints.java[min-cost-to-connect-all-points]
 a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
 
