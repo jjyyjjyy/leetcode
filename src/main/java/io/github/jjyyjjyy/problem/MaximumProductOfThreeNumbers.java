@@ -42,5 +42,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY, Tag.MATH}
 )
-public class MaximumProductofThreeNumbers {
+public class MaximumProductOfThreeNumbers {
+
+    public int maximumProduct(int[] nums) {
+        return -1;
+    }
+
 }
