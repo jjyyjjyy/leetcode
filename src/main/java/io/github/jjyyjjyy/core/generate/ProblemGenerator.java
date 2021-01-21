@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("min-cost-to-connect-all-points");
+        dumpToFile("find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree");
     }
 
     private static String capitalize(char cap) {
