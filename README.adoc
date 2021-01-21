@@ -292,6 +292,7 @@ a|
 * link:{package}/MinCostToConnectAllPoints.java[min-cost-to-connect-all-points]
 a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
+* link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
 
 | Sort
 |
@@ -411,6 +412,7 @@ a|
 * link:{package}/AccountsMerge.java[accounts-merge]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
+* link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
 
 | BreadthFirstSearch
 a|
