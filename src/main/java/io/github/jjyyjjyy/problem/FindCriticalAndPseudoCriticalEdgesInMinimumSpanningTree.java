@@ -1,9 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -60,7 +64,101 @@ import java.util.List;
 )
 public class FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m^2*α(n)")
     public List<List<Integer>> findCriticalAndPseudoCriticalEdges(int n, int[][] edges) {
-        return null;
+        int m = edges.length;
+        int[][] newEdges = new int[m][4];
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                newEdges[i][j] = edges[i][j];
+            }
+            newEdges[i][3] = i;
+        }
+        Arrays.sort(newEdges, Comparator.comparingInt(u -> u[2]));
+
+        // 计算 value
+        UnionFind ufStd = new UnionFind(n);
+        int value = 0;
+        for (int i = 0; i < m; ++i) {
+            if (ufStd.union(newEdges[i][0], newEdges[i][1])) {
+                value += newEdges[i][2];
+            }
+        }
+
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i < 2; ++i) {
+            ans.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < m; ++i) {
+            // 判断是否是关键边
+            UnionFind uf = new UnionFind(n);
+            int v = 0;
+            for (int j = 0; j < m; ++j) {
+                if (i != j && uf.union(newEdges[j][0], newEdges[j][1])) {
+                    v += newEdges[j][2];
+                }
+            }
+            if (uf.setCount != 1 || v > value) {
+                ans.get(0).add(newEdges[i][3]);
+                continue;
+            }
+
+            // 判断是否是伪关键边
+            uf = new UnionFind(n);
+            uf.union(newEdges[i][0], newEdges[i][1]);
+            v = newEdges[i][2];
+            for (int j = 0; j < m; ++j) {
+                if (i != j && uf.union(newEdges[j][0], newEdges[j][1])) {
+                    v += newEdges[j][2];
+                }
+            }
+            if (v == value) {
+                ans.get(1).add(newEdges[i][3]);
+            }
+        }
+
+        return ans;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+        // 连通分量数量
+        private int setCount;
+
+        public UnionFind(int n) {
+            this.setCount = n;
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+                this.ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public boolean union(int x, int y) {
+            int xId = find(x);
+            int yId = find(y);
+            if (xId == yId) {
+                return false;
+            }
+            if (ranks[xId] < ranks[xId]) {
+                int tmp = xId;
+                xId = yId;
+                yId = tmp;
+            }
+            ids[yId] = xId;
+            ranks[xId] += ranks[yId];
+            setCount--;
+            return true;
+        }
     }
 }
