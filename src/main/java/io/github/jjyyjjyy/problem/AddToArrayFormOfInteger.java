@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -74,7 +76,25 @@ import java.util.List;
 )
 public class AddToArrayFormOfInteger {
 
+    /**
+     * 从后向前遍历, 相加得到结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> addToArrayForm(int[] A, int K) {
-        return null;
+        LinkedList<Integer> result = new LinkedList<>();
+        int t = 0;
+        for (int i = A.length - 1; i >= 0; i--) {
+            int current = A[i] + K % 10 + t;
+            result.addFirst(current % 10);
+            t = current / 10;
+            K /= 10;
+        }
+        while (K > 0 || t > 0) {
+            int current = K % 10 + t;
+            result.addFirst(current % 10);
+            t = current / 10;
+            K /= 10;
+        }
+        return result;
     }
 }
