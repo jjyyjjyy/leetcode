@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/add-to-array-form-of-integer/">数组形式的整数加法</a>
  *
@@ -70,5 +72,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class AddtoArrayFormofInteger {
+public class AddToArrayFormOfInteger {
+
+    public List<Integer> addToArrayForm(int[] A, int K) {
+        return null;
+    }
 }
