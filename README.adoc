@@ -294,6 +294,7 @@ a|
 a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
 * link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
+* link:{package}/NumberOfOperationsToMakeNetworkConnected.java[number-of-operations-to-make-network-connected]
 
 | Sort
 |
@@ -407,13 +408,9 @@ a|
 * link:{package}/PopulatingNextRightPointersInEachNodeII.java[populating-next-right-pointers-in-each-node-ii]
 * link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
 * link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
-* link:{package}/NumberOfProvinces.java[number-of-provinces]
 * link:{package}/CourseSchedule.java[course-schedule]
-* link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
-* link:{package}/AccountsMerge.java[accounts-merge]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
-* link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
 
 | BreadthFirstSearch
 a|
