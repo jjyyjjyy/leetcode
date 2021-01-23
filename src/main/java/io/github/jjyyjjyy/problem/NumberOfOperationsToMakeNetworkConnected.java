@@ -65,5 +65,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.BREADTH_FIRST_SEARCH, Tag.UNION_FIND}
 )
-public class NumberofOperationstoMakeNetworkConnected {
+public class NumberOfOperationsToMakeNetworkConnected {
+
+    public int makeConnected(int n, int[][] connections) {
+        return -1;
+    }
+
 }
