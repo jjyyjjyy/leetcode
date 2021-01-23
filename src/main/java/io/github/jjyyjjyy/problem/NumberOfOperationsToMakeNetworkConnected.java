@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -67,8 +68,60 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfOperationsToMakeNetworkConnected {
 
+    /**
+     * 1. n个节点至少需要n-1条边才能连通, 所以先判断如果边的数量不够, 直接返回-1.
+     * 2. 使用并查集计算连通分量的数量, 减1即得到还需要移动的边的个数.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m*α(n))")
     public int makeConnected(int n, int[][] connections) {
-        return -1;
+        if (connections.length < n - 1) {
+            return -1;
+        }
+
+        UnionFind unionFind = new UnionFind(n);
+        for (int[] connection : connections) {
+            unionFind.union(connection[0], connection[1]);
+        }
+        return unionFind.setCount - 1;
     }
 
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+        private int setCount;
+
+        public UnionFind(int n) {
+            this.setCount = n;
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+                this.ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public void union(int x, int y) {
+            int xId = find(x);
+            int yId = find(y);
+            if (xId == yId) {
+                return;
+            }
+
+            if (ranks[xId] < ranks[yId]) {
+                int tmp = xId;
+                xId = yId;
+                yId = tmp;
+            }
+            ids[yId] = xId;
+            ranks[xId] += ranks[yId];
+            setCount--;
+        }
+    }
 }
