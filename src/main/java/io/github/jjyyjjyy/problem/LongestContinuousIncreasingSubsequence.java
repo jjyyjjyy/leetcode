@@ -42,4 +42,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class LongestContinuousIncreasingSubsequence {
+
+    public int findLengthOfLCIS(int[] nums) {
+        return 0;
+    }
+
 }
