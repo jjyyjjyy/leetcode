@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -43,8 +44,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestContinuousIncreasingSubsequence {
 
+    /**
+     * 依次遍歷統計當前的最大遞增子序列長度
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int findLengthOfLCIS(int[] nums) {
-        return 0;
+        if (nums.length == 0) {
+            return 0;
+        }
+        int current = 1;
+        int result = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                current++;
+            } else {
+                result = Math.max(current, result);
+                current = 1;
+            }
+        }
+        return Math.max(current, result);
     }
-
 }
