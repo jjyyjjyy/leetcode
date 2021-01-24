@@ -46,6 +46,7 @@ a|
 * link:{package}/CheckIfItIsAStraightLine.java[check-if-it-is-a-straight-line]
 * link:{package}/MaximumProductOfThreeNumbers.java[maximum-product-of-three-numbers]
 * link:{package}/AddToArrayFormOfInteger.java[add-to-array-form-of-integer]
+* link:{package}/LongestContinuousIncreasingSubsequence.java[longest-continuous-increasing-subsequence]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
