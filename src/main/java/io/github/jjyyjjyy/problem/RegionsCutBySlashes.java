@@ -92,4 +92,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND, Tag.GRAPH}
 )
 public class RegionsCutBySlashes {
+
+    public int regionsBySlashes(String[] grid) {
+        return -1;
+    }
 }

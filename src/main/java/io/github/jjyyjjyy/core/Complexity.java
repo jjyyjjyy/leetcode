@@ -23,7 +23,7 @@ public @interface Complexity {
         O_LOG_N("O(logn)"),
         O_N("O(n)"),
         O_N_LOG_N("O(nlogn)"),
-        O_N_POW_2_LOG_N("O(nlogn)"),
+        O_N_POW_2_LOG_N("O(n^2*logn)"),
         O_M_N("O(m*n)"),
         O_M_AND_N("O(m+n)"),
         O_LOG_M_N("O(log(mn))"),
