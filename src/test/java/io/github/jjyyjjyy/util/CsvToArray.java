@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  */
 public class CsvToArray extends SimpleArgumentConverter {
 
-    public static final String ARRAY_SPLITTER_REGEX = "\\s*,\\s*";
+    public static final String ARRAY_SPLITTER_REGEX = ",";
 
     public static final String BRACKET_REGEX = "],\\s*";
 

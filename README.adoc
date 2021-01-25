@@ -281,6 +281,7 @@ a|
 * link:{package}/RedundantConnection.java[redundant-connection]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
+* link:{package}/RegionsCutBySlashes.java[regions-cut-by-slashes]
 
 | UnionFind
 |
@@ -296,6 +297,7 @@ a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
 * link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
 * link:{package}/NumberOfOperationsToMakeNetworkConnected.java[number-of-operations-to-make-network-connected]
+* link:{package}/RegionsCutBySlashes.java[regions-cut-by-slashes]
 
 | Sort
 |
