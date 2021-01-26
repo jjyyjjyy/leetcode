@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,7 +41,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfEquivalentDominoPairs {
 
+    /**
+     * 1. 遍历数组.
+     * 2. 将每对多米诺牌计算出来一个因子: 10x+y, 然后使用数组对因子计数.
+     * 3. 累加计数得到结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int numEquivDominoPairs(int[][] dominoes) {
-        return -1;
+        int[] nums = new int[100];
+        int result = 0;
+
+        for (int[] dominoe : dominoes) {
+            int a0 = Math.max(dominoe[0], dominoe[1]);
+            int a1 = Math.min(dominoe[0], dominoe[1]);
+            int factor = a0 * 10 + a1;
+            result += nums[factor];
+            nums[factor]++;
+        }
+
+        return result;
     }
 }
