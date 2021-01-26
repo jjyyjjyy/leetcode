@@ -38,5 +38,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class NumberofEquivalentDominoPairs {
+public class NumberOfEquivalentDominoPairs {
+
+    public int numEquivDominoPairs(int[][] dominoes) {
+        return -1;
+    }
 }
