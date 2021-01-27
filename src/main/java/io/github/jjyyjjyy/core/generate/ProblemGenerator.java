@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree");
+        dumpToFile("remove-max-number-of-edges-to-keep-graph-fully-traversable");
     }
 
     private static String capitalize(char cap) {

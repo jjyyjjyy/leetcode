@@ -299,6 +299,7 @@ a|
 * link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
 * link:{package}/NumberOfOperationsToMakeNetworkConnected.java[number-of-operations-to-make-network-connected]
 * link:{package}/RegionsCutBySlashes.java[regions-cut-by-slashes]
+* link:{package}/RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java[remove-max-number-of-edges-to-keep-graph-fully-traversable]
 
 | Sort
 |
