@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -68,7 +69,84 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable {
 
+    /**
+     * 1. 分别为alice和bob维护两个并查集.
+     * 2. 首先遍历共享边, 先尝试在alice中加入, 如果已经属于一个连通分量, 则结果+1并在bob中加入该边.
+     * 3. 然后遍历特殊边, 尝试在各自的并查集里加入边, 如果已经属于一个连通分量, 则结果+1.
+     * 4. 遍历结束, 如果alice或bob的连通分量不为1, 则说明不能遍历完整个图, 返回-1.
+     * 5. 返回累加的结果.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m*α(n))")
     public int maxNumEdgesToRemove(int n, int[][] edges) {
-        return -1;
+        UnionFind alice = new UnionFind(n);
+        UnionFind bob = new UnionFind(n);
+
+        int result = 0;
+
+        for (int[] edge : edges) {
+            edge[1]--;
+            edge[2]--;
+            if (edge[0] == 3) {
+                if (!alice.union(edge[1], edge[2])) {
+                    result++;
+                } else {
+                    bob.union(edge[1], edge[2]);
+                    // 如果alice.union返回true, 那么这条边在bob中一定不属于同一个连通分量, 所以此处不需要result++.
+                }
+            }
+        }
+        for (int[] edge : edges) {
+            if (edge[0] == 1 && !alice.union(edge[1], edge[2])) {
+                result++;
+            }
+            if (edge[0] == 2 && !bob.union(edge[1], edge[2])) {
+                result++;
+            }
+        }
+
+        if (alice.setCount != 1 || bob.setCount != 1) {
+            return -1;
+        }
+        return result;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+        private int setCount;
+
+        public UnionFind(int n) {
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            this.setCount = n;
+            for (int i = 0; i < n; i++) {
+                ids[i] = i;
+                ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public boolean union(int x, int y) {
+            int xId = find(x);
+            int yId = find(y);
+            if (xId == yId) {
+                return false;
+            }
+            if (ranks[xId] < ranks[yId]) {
+                int tmp = xId;
+                xId = yId;
+                yId = tmp;
+            }
+            ids[yId] = xId;
+            ranks[xId] += ranks[yId];
+            setCount--;
+            return true;
+        }
     }
 }
