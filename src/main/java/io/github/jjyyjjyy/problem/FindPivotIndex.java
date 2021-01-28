@@ -53,4 +53,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class FindPivotIndex {
+
+    public int pivotIndex(int[] nums) {
+        return -1;
+    }
 }
