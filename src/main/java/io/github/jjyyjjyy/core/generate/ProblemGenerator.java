@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("remove-max-number-of-edges-to-keep-graph-fully-traversable");
+        dumpToFile("path-with-minimum-effort");
     }
 
     private static String capitalize(char cap) {

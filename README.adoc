@@ -281,6 +281,7 @@ a|
 * link:{package}/EvaluateDivision.java[evaluate-division]
 * link:{package}/CourseSchedule.java[course-schedule]
 * link:{package}/RedundantConnection.java[redundant-connection]
+* link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 * link:{package}/RegionsCutBySlashes.java[regions-cut-by-slashes]
@@ -295,6 +296,7 @@ a|
 * link:{package}/MostStonesRemovedWithSameRowOrColumn.java[most-stones-removed-with-same-row-or-column]
 * link:{package}/AccountsMerge.java[accounts-merge]
 * link:{package}/MinCostToConnectAllPoints.java[min-cost-to-connect-all-points]
+* link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/BricksFallingWhenHit.java[bricks-falling-when-hit]
 * link:{package}/FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTree.java[find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree]
@@ -362,6 +364,7 @@ a|
 * link:{package}/Powxn.java[powx-n]
 * link:{package}/CountCompleteTreeNodes.java[count-complete-tree-nodes]
 * link:{package}/KthSmallestElementInABST.java[kth-smallest-element-in-a-bst]
+* link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 
@@ -415,6 +418,7 @@ a|
 * link:{package}/SumRootToLeafNumbers.java[sum-root-to-leaf-numbers]
 * link:{package}/BinaryTreeRightSideView.java[binary-tree-right-side-view]
 * link:{package}/CourseSchedule.java[course-schedule]
+* link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 
