@@ -52,7 +52,12 @@ import io.github.jjyyjjyy.core.Tag;
     id = 794,
     name = "swim-in-rising-water",
     difficulty = Difficulty.HARD,
-    tags = {Tag.HEAP, Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND, Tag.BINARY_SEARCH}
+    tags = {Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND, Tag.BINARY_SEARCH}
 )
-public class SwiminRisingWater {
+public class SwimInRisingWater {
+
+    public int swimInWater(int[][] grid) {
+        return -1;
+    }
+
 }
