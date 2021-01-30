@@ -303,6 +303,7 @@ a|
 * link:{package}/NumberOfOperationsToMakeNetworkConnected.java[number-of-operations-to-make-network-connected]
 * link:{package}/RegionsCutBySlashes.java[regions-cut-by-slashes]
 * link:{package}/RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java[remove-max-number-of-edges-to-keep-graph-fully-traversable]
+* link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 
 | Sort
 |
@@ -367,6 +368,7 @@ a|
 * link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
+* link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 
 | TwoPointers
 a|
@@ -421,6 +423,7 @@ a|
 * link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
+* link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 
 | BreadthFirstSearch
 a|
