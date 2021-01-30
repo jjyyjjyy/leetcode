@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/swim-in-rising-water/">水位上升的泳池中游泳</a>
@@ -56,8 +61,78 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SwimInRisingWater {
 
+    /**
+     * 1. 收集上下/左右边权重较大值, 按照权重大小排序.
+     * 2. 依次遍历边, 加入到并查集里, 如果第一个和最后一个顶点在一个连通分量里, 则当前权重就是最后的结果.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(mn*log(mn))")
     public int swimInWater(int[][] grid) {
-        return -1;
+        int m = grid.length;
+        int n = grid[0].length;
+        List<int[]> edges = new ArrayList<>();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int id = i * n + j;
+                if (i > 0) {
+                    edges.add(new int[]{id - n, id, Math.max(grid[i][j], grid[i - 1][j])});
+                }
+                if (j > 0) {
+                    edges.add(new int[]{id - 1, id, Math.max(grid[i][j], grid[i][j - 1])});
+                }
+            }
+        }
+        edges.sort(Comparator.comparingInt(a -> a[2]));
+
+        UnionFind unionFind = new UnionFind(m * n);
+        int result = 0;
+        for (int[] edge : edges) {
+            unionFind.union(edge[0], edge[1]);
+            if (unionFind.isConnected(0, m * n - 1)) {
+                result = edge[2];
+                break;
+            }
+        }
+
+        return result;
     }
 
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+
+        public UnionFind(int n) {
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+                this.ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public void union(int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (x == y) {
+                return;
+            }
+            if (ranks[x] < ranks[y]) {
+                int tmp = x;
+                x = y;
+                y = tmp;
+            }
+            ids[y] = x;
+            ranks[x] += ranks[y];
+        }
+
+        public boolean isConnected(int x, int y) {
+            return find(x) == find(y);
+        }
+    }
 }
