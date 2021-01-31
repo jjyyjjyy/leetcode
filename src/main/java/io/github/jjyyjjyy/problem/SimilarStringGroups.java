@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -49,7 +50,79 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SimilarStringGroups {
 
+    /**
+     * 1. 遍历每个字符串, 和其后面的字符串比较, 如果是相似的(不同的字符数量为0或2), 将索引加入到并查集里.
+     * 2. 并查集里的连通分量即为结果.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "(n^2*m+nlogn)")
     public int numSimilarGroups(String[] strs) {
-        return -1;
+        int n = strs.length;
+        UnionFind unionFind = new UnionFind(n);
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (!unionFind.isConnected(i, j) && isSimilar(strs[i], strs[j])) {
+                    unionFind.union(i, j);
+                }
+            }
+        }
+        return unionFind.setCount;
+    }
+
+    private boolean isSimilar(String a, String b) {
+        int n = a.length();
+        int diffCount = 0;
+        for (int i = 0; i < n; i++) {
+            if (a.charAt(i) != b.charAt(i)) {
+                diffCount++;
+            }
+            if (diffCount > 2) {
+                break;
+            }
+        }
+        return diffCount == 0 || diffCount == 2;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+        private int setCount;
+
+        public UnionFind(int n) {
+            this.setCount = n;
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                this.ids[i] = i;
+                this.ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public boolean union(int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (x == y) {
+                return false;
+            }
+            if (ranks[x] < ranks[y]) {
+                int tmp = x;
+                x = y;
+                y = tmp;
+            }
+            ids[y] = x;
+            ranks[x] += ranks[y];
+            setCount--;
+            return true;
+        }
+
+        public boolean isConnected(int x, int y) {
+            return find(x) == find(y);
+        }
     }
 }
