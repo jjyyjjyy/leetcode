@@ -48,4 +48,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.UNION_FIND, Tag.GRAPH}
 )
 public class SimilarStringGroups {
+
+    public int numSimilarGroups(String[] strs) {
+        return -1;
+    }
 }
