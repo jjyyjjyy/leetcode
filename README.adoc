@@ -49,6 +49,7 @@ a|
 * link:{package}/LongestContinuousIncreasingSubsequence.java[longest-continuous-increasing-subsequence]
 * link:{package}/NumberOfEquivalentDominoPairs.java[number-of-equivalent-domino-pairs]
 * link:{package}/FindPivotIndex.java[find-pivot-index]
+* link:{package}/FairCandySwap.java[fair-candy-swap]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]

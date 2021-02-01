@@ -61,4 +61,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class FairCandySwap {
+
+    public int[] fairCandySwap(int[] A, int[] B) {
+        return null;
+    }
 }
