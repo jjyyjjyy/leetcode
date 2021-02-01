@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/fair-candy-swap/">公平的糖果交换</a>
@@ -62,7 +67,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FairCandySwap {
 
+    /**
+     * sumA-x+y=sumB+x-y => x=y+(sumA-sumB)/2
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public int[] fairCandySwap(int[] A, int[] B) {
-        return null;
+        int sumA = Arrays.stream(A).sum();
+        int sumB = Arrays.stream(B).sum();
+        int delta = (sumA - sumB) / 2;
+        Set<Integer> setA = new HashSet<>();
+        Arrays.stream(A).forEach(setA::add);
+        int[] result = new int[2];
+        for (int i : B) {
+            int a = i + delta;
+            if (setA.contains(a)) {
+                result[0] = a;
+                result[1] = i;
+                break;
+            }
+        }
+        return result;
     }
 }
