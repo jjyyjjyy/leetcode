@@ -401,6 +401,7 @@ a|
 * link:{package}/PartitionList.java[partition-list]
 * link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+* link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 |
 
 | DepthFirstSearch
@@ -447,6 +448,7 @@ a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
+* link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 
 | BackTracking
 |

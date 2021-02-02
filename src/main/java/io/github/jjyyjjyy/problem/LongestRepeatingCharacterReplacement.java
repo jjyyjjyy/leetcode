@@ -51,4 +51,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TWO_POINTERS, Tag.SLIDING_WINDOW}
 )
 public class LongestRepeatingCharacterReplacement {
+
+    public int characterReplacement(String s, int k) {
+        return -1;
+    }
 }
