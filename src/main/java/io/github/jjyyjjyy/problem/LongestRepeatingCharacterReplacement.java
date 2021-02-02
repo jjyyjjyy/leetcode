@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -52,7 +53,30 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestRepeatingCharacterReplacement {
 
+    /**
+     * 1. 维护左指针, 右指针, 历史字符出现最大次数max, 和一个长度为26的数组维护窗口内每个字符出现的次数. 窗口长度即为最后结果.
+     * 2. 右指针向右移:
+     * 2.1. 右指针所属的字符次数+1.
+     * 2.2. 更新最大次数.
+     * 2.3. 如果窗口长度-max大于k, 说明当前窗口需要替换的字符数超过了k, 不满足条件, 左指针向右移一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int characterReplacement(String s, int k) {
-        return -1;
+        int n = s.length();
+        int left = 0;
+        int max = 0;
+        int[] nums = new int[26];
+
+        int right = 0;
+        while (right < n) {
+            int index = s.charAt(right) - 'A';
+            max = Math.max(max, ++nums[index]);
+            if (right - left + 1 - max > k) {
+                nums[s.charAt(left) - 'A']--;
+                left++;
+            }
+            right++;
+        }
+        return right - left;
     }
 }
