@@ -50,4 +50,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.SLIDING_WINDOW}
 )
 public class SlidingWindowMedian {
+
+    public double[] medianSlidingWindow(int[] nums, int k) {
+        return null;
+    }
 }
