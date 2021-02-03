@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sliding-window-median/">滑动窗口中位数</a>
@@ -51,7 +57,106 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SlidingWindowMedian {
 
+    /**
+     * 1. 创建一个双堆数据结构来维护滑动窗口的元素, 分别存放较小的一般元素和较大的一半元素, 其中保证small的长度大于等于large的长度.
+     * 2. 依次遍历数组, 将窗口内数组元素放入双堆中, 并删除窗口左边的元素, 保存当前的中位数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public double[] medianSlidingWindow(int[] nums, int k) {
-        return null;
+        DualHeap dualHeap = new DualHeap(k);
+        for (int i = 0; i < k; i++) {
+            dualHeap.insert(nums[i]);
+        }
+        double[] result = new double[nums.length - k + 1];
+        result[0] = dualHeap.getMedian();
+        for (int i = k; i < nums.length; i++) {
+            dualHeap.insert(nums[i]);
+            dualHeap.erase(nums[i - k]);
+            result[i - k + 1] = dualHeap.getMedian();
+        }
+        return result;
+    }
+
+    private static class DualHeap {
+
+        private final int k;
+
+        private PriorityQueue<Integer> small = new PriorityQueue<>(Comparator.reverseOrder());
+        private PriorityQueue<Integer> large = new PriorityQueue<>(Integer::compareTo);
+        private Map<Integer, Integer> deleted = new HashMap<>();
+        private int smallSize;
+        private int largeSize;
+
+        private DualHeap(int k) {
+            this.k = k;
+        }
+
+        public void insert(int num) {
+            if (small.isEmpty() || num <= small.element()) {
+                // 元素比small堆顶元素还小, 则加入small堆中
+                small.add(num);
+                smallSize++;
+            } else {
+                large.add(num);
+                largeSize++;
+            }
+            makeBalance();
+        }
+
+        private void makeBalance() {
+            if (smallSize < largeSize) {
+                // large - small = 1
+                small.add(large.poll());
+                smallSize++;
+                largeSize--;
+                prune(large);
+            } else if (smallSize > largeSize + 1) {
+                // small - large = 2
+                large.add(small.poll());
+                smallSize--;
+                largeSize++;
+                prune(small);
+            }
+        }
+
+        private void prune(PriorityQueue<Integer> heap) {
+            while (!heap.isEmpty()) {
+                int top = heap.element();
+                if (!deleted.containsKey(top)) {
+                    break;
+                }
+                deleted.put(top, deleted.get(top) - 1);
+                if (deleted.get(top) == 0) {
+                    deleted.remove(top);
+                }
+                heap.poll();
+            }
+
+        }
+
+
+        public void erase(int num) {
+            deleted.put(num, deleted.getOrDefault(num, 0) + 1);
+            if (num <= small.element()) {
+                smallSize--;
+                if (small.element() == num) {
+                    prune(small);
+                }
+            } else {
+                largeSize--;
+                if (large.element() == num) {
+                    prune(large);
+                }
+            }
+            makeBalance();
+        }
+
+        public double getMedian() {
+            if ((k & 1) == 1) {
+                return small.element();
+            } else {
+                return ((double) small.element() + large.element()) / 2;
+            }
+        }
     }
 }
