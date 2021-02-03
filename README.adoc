@@ -449,6 +449,7 @@ a|
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
+* link:{package}/SlidingWindowMedian.java[sliding-window-median]
 
 | BackTracking
 |
