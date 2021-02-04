@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -39,7 +40,21 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaximumAverageSubarrayI {
 
+    /**
+     * 遍历数组, 计算当前窗口的总和, 记录当前最大的总和, 然后窗口向右移, 直到数组末尾.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public double findMaxAverage(int[] nums, int k) {
-        return 0;
+        double result;
+        double sum = 0;
+        for (int i = 0; i < k; i++) {
+            sum += nums[i];
+        }
+        result = sum;
+        for (int i = k; i < nums.length; i++) {
+            sum = sum + nums[i] - nums[i - k];
+            result = Math.max(result, sum);
+        }
+        return result / k;
     }
 }
