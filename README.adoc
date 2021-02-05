@@ -80,6 +80,7 @@ a|
 * link:{package}/FindTheDuplicateNumber.java[find-the-duplicate-number]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
+* link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -447,6 +448,7 @@ a|
 |
 a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
+* link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]

@@ -50,10 +50,14 @@ import io.github.jjyyjjyy.core.Tag;
  * </ul>
  */
 @Problem(
-    id = 1321,
+    id = 1208,
     name = "get-equal-substrings-within-budget",
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.SLIDING_WINDOW}
 )
 public class GetEqualSubstringsWithinBudget {
+
+    public int equalSubstring(String s, String t, int maxCost) {
+        return -1;
+    }
 }
