@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -57,7 +58,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class GetEqualSubstringsWithinBudget {
 
+    /**
+     * 1. 维护左右两个指针
+     * 2. 依次遍历数组:
+     * 2.1. 计算当前的cost, 如果比maxCost大, 则将左指针向右移一位, 重新计算cost直到比maxCost小, 记录此时的窗口长度.
+     * 2.2. 右指针向右移一位.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int equalSubstring(String s, String t, int maxCost) {
-        return -1;
+        int left = 0, right = 0, totalCost = 0, max = 0;
+
+        while (right < s.length()) {
+            totalCost += Math.abs(s.charAt(right) - t.charAt(right));
+            while (totalCost > maxCost) {
+                totalCost -= Math.abs(s.charAt(left) - t.charAt(left));
+                left++;
+            }
+            max = Math.max(max, right - left + 1);
+            right++;
+        }
+        return max;
     }
 }
