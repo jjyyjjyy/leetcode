@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/">可获得的最大点数</a>
@@ -69,7 +72,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaximumPointsYouCanObtainFromCards {
 
+    /**
+     * 两种滑动窗口方法:
+     * 1. 取出k张牌, 剩下n-k张牌, 使用滑动窗口计算剩下来牌的最小值, 用数组总和减去这个最小值就得到k张牌的最大值.
+     * 2. 遍历最后k张牌加上前k张牌, 使用滑动窗口计算窗口内牌的最大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxScore(int[] cardPoints, int k) {
-        return -1;
+        if (cardPoints.length <= k) {
+            return Arrays.stream(cardPoints).sum();
+        }
+        int sum = 0;
+        for (int i = cardPoints.length - k; i < cardPoints.length; i++) {
+            sum += cardPoints[i];
+        }
+        int max = sum;
+        for (int i = 0; i < k; i++) {
+            sum = sum + cardPoints[i] - cardPoints[cardPoints.length - k + i];
+            max = Math.max(max, sum);
+        }
+        return max;
     }
 }
