@@ -35,5 +35,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class NondecreasingArray {
+public class NonDecreasingArray {
+
+    public boolean checkPossibility(int[] nums) {
+        return false;
+    }
 }
