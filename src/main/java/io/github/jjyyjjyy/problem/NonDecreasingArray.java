@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -37,7 +38,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NonDecreasingArray {
 
+    /**
+     * 1. 维护一个最大次数变量, 依次遍历数组.
+     * 1.1. 如果当前元素比下一个元素大, 则次数减一, 次数小于0则超出最大替换次数, 返回false.
+     * 1.2. 如果当前位置的左边元素比当前位置的右边元素大, 则要将右边元素替换成当前元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean checkPossibility(int[] nums) {
-        return false;
+        int times = 1;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                times--;
+                if (times < 0) {
+                    return false;
+                }
+                if (i > 0 && nums[i - 1] > nums[i + 1]) {
+                    nums[i + 1] = nums[i];
+                }
+            }
+        }
+        return true;
     }
 }
