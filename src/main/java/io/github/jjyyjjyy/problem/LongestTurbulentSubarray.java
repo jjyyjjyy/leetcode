@@ -61,4 +61,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING, Tag.SLIDING_WINDOW}
 )
 public class LongestTurbulentSubarray {
+
+    public int maxTurbulenceSize(int[] arr) {
+        return 0;
+    }
 }
