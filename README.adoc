@@ -83,6 +83,7 @@ a|
 * link:{package}/ConstructBinaryTreeFromInorderAndPostorderTraversal.java[construct-binary-tree-from-inorder-and-postorder-traversal]
 * link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 * link:{package}/MaximumPointsYouCanObtainFromCards.java[maximum-points-you-can-obtain-from-cards]
+* link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -341,6 +342,7 @@ a|
 * link:{package}/UniqueBinarySearchTreesII.java[unique-binary-search-trees-ii]
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
+* link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -452,6 +454,7 @@ a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 * link:{package}/MaximumPointsYouCanObtainFromCards.java[maximum-points-you-can-obtain-from-cards]
+* link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
