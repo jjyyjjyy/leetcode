@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -62,7 +63,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestTurbulentSubarray {
 
+    /**
+     * 1. 维护窗口左右两个指针.
+     * 2. 依次遍历数组:
+     * 2.1. 如果左指针和右指针在同一个位置, 如果当前位置和下一个位置元素相等, 则左右指针都右移一位, 否则只有右指针向右移一位.
+     * 2.2. 如果当前位置符合湍流, 则右指针右移一位, 否则左指针移到当前位置.
+     * 2.3. 计算当前窗口大小, 记录最大窗口长度.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxTurbulenceSize(int[] arr) {
-        return 0;
+        int max = 1;
+        int left = 0;
+        int right = 0;
+        while (right < arr.length - 1) {
+            if (right == left) {
+                if (arr[left] == arr[left + 1]) {
+                    left++;
+                }
+                right++;
+            } else {
+                if (arr[right - 1] < arr[right] && arr[right] > arr[right + 1] || arr[right - 1] > arr[right] && arr[right] < arr[right + 1]) {
+                    right++;
+                } else {
+                    left = right;
+                }
+            }
+            max = Math.max(max, right - left + 1);
+        }
+        return max;
     }
 }
