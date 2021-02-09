@@ -408,7 +408,8 @@ a|
 * link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
-|
+a|
+* link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 
 | DepthFirstSearch
 a|
@@ -459,6 +460,7 @@ a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 * link:{package}/SlidingWindowMedian.java[sliding-window-median]
+* link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 
 | BackTracking
 |
