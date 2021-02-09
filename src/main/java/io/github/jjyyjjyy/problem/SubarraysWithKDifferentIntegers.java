@@ -51,7 +51,12 @@ import io.github.jjyyjjyy.core.Tag;
     id = 1034,
     name = "subarrays-with-k-different-integers",
     difficulty = Difficulty.HARD,
-    tags = {Tag.HASH_TABLE, Tag.TWO_POINTERS, Tag.SLIDING_WINDOW}
+    tags = {Tag.TWO_POINTERS, Tag.SLIDING_WINDOW}
 )
-public class SubarrayswithKDifferentIntegers {
+public class SubarraysWithKDifferentIntegers {
+
+    public int subarraysWithKDistinct(int[] A, int K) {
+        return -1;
+    }
+
 }
