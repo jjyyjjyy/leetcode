@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -55,8 +56,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SubarraysWithKDifferentIntegers {
 
+    /**
+     * K个不同子数组的数量 = 最多K个不同子数组的数量 - 最多K-1个不同子数组的数量
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int subarraysWithKDistinct(int[] A, int K) {
-        return -1;
+        return mostSubArrayWithKDistinct(A, K) - mostSubArrayWithKDistinct(A, K - 1);
     }
 
+    private int mostSubArrayWithKDistinct(int[] arr, int k) {
+        int result = 0;
+
+        // 统计区间内不相同的数字个数
+        int[] freq = new int[arr.length + 1];
+
+        int left = 0;
+        int right = 0;
+        int count = 0;
+        while (right < arr.length) {
+            if (freq[arr[right]]++ == 0) {
+                count++;
+            }
+            right++;
+            while (count > k) {
+                if (--freq[arr[left]] == 0) {
+                    count--;
+                }
+                left++;
+            }
+            result += right - left;
+        }
+        return result;
+    }
 }
