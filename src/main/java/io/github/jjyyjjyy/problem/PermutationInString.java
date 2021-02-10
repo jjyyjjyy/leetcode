@@ -50,5 +50,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TWO_POINTERS, Tag.SLIDING_WINDOW}
 )
-public class PermutationinString {
+public class PermutationInString {
+
+    public boolean checkInclusion(String s1, String s2) {
+        return false;
+    }
 }
