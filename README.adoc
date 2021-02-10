@@ -408,6 +408,7 @@ a|
 * link:{package}/LinkedListCycleII.java[linked-list-cycle-ii]
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
+* link:{package}/PermutationInString.java[permutation-in-string]
 a|
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 
@@ -456,6 +457,7 @@ a|
 * link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 * link:{package}/MaximumPointsYouCanObtainFromCards.java[maximum-points-you-can-obtain-from-cards]
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
+* link:{package}/PermutationInString.java[permutation-in-string]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
