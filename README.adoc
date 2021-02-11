@@ -278,6 +278,7 @@ a|
 a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
+* link:{package}/KthLargest.java[kth-largest-element-in-a-stream]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 
