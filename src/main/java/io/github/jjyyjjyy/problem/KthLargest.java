@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.PriorityQueue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">数据流中的第K大元素</a>
@@ -41,10 +44,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class KthLargest {
 
+    private final int k;
+    private final PriorityQueue<Integer> queue;
+
     public KthLargest(int k, int[] nums) {
+        this.k = k;
+        this.queue = new PriorityQueue<>();
+        for (int i : nums) {
+            add(i);
+        }
     }
 
+    /**
+     * 维护一个固定长度的最大堆, 每次add元素后返回堆顶元素.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int add(int val) {
-        return -1;
+        queue.add(val);
+        while (queue.size() > k) {
+            queue.poll();
+        }
+        return queue.element();
     }
 }
