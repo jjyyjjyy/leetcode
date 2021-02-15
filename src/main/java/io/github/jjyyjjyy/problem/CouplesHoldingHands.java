@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -52,7 +53,56 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CouplesHoldingHands {
 
+    /**
+     * 最少交换次数=情侣对数-连通分量数
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int minSwapsCouples(int[] row) {
-        return -1;
+        int n = row.length;
+        UnionFind unionFind = new UnionFind(n / 2);
+
+        for (int i = 0; i < n; i += 2) {
+            unionFind.union(row[i] / 2, row[i + 1] / 2);
+        }
+        return n / 2 - unionFind.setCount;
+    }
+
+    private static class UnionFind {
+        private final int[] ids;
+        private final int[] ranks;
+        private int setCount;
+
+        public UnionFind(int n) {
+            this.setCount = n;
+            this.ids = new int[n];
+            this.ranks = new int[n];
+            for (int i = 0; i < n; i++) {
+                ids[i] = i;
+                ranks[i] = 1;
+            }
+        }
+
+        public int find(int x) {
+            if (x != ids[x]) {
+                ids[x] = find(ids[x]);
+            }
+            return ids[x];
+        }
+
+        public void union(int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (x == y) {
+                return;
+            }
+            if (ranks[x] < ranks[y]) {
+                int tmp = x;
+                x = y;
+                y = tmp;
+            }
+            ids[y] = x;
+            ranks[x] += ranks[y];
+            setCount--;
+        }
     }
 }
