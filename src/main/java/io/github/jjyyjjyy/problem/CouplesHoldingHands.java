@@ -48,7 +48,11 @@ import io.github.jjyyjjyy.core.Tag;
     id = 770,
     name = "couples-holding-hands",
     difficulty = Difficulty.HARD,
-    tags = {Tag.GREEDY, Tag.UNION_FIND, Tag.GRAPH}
+    tags = {Tag.UNION_FIND}
 )
 public class CouplesHoldingHands {
+
+    public int minSwapsCouples(int[] row) {
+        return -1;
+    }
 }

@@ -313,6 +313,7 @@ a|
 * link:{package}/RemoveMaxNumberOfEdgesToKeepGraphFullyTraversable.java[remove-max-number-of-edges-to-keep-graph-fully-traversable]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 * link:{package}/SimilarStringGroups.java[similar-string-groups]
+* link:{package}/CouplesHoldingHands.java[couples-holding-hands]
 
 | Sort
 |
