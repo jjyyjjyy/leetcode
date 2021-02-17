@@ -52,6 +52,7 @@ a|
 * link:{package}/FairCandySwap.java[fair-candy-swap]
 * link:{package}/MaximumAverageSubarrayI.java[maximum-average-subarray-i]
 * link:{package}/NonDecreasingArray.java[non-decreasing-array]
+* link:{package}/ArrayPartitionI.java[array-partition-i]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
