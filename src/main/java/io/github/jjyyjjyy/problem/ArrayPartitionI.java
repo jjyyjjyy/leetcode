@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/array-partition-i/">数组拆分 I</a>
@@ -33,7 +36,13 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ArrayPartitionI {
 
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int arrayPairSum(int[] nums) {
-        return -1;
+        Arrays.sort(nums);
+        int sum = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            sum += nums[i];
+        }
+        return sum;
     }
 }
