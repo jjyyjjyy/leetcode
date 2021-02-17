@@ -38,6 +38,23 @@ public class ArrayUtil {
         return array;
     }
 
+    public static boolean isSame(int[][] result, int[][] expect) {
+        if (expect.length != result.length) {
+            return false;
+        }
+        for (int i = 0; i < expect.length; i++) {
+            if (result[i].length != expect[i].length) {
+                return false;
+            }
+            for (int j = 0; j < expect[i].length; j++) {
+                if (result[i][j] != expect[i][j]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public static boolean isSame(Object[][] result, Object[][] expect) {
         if (result == null && expect == null) {
             return true;

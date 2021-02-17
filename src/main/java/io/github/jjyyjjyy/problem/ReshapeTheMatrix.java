@@ -57,5 +57,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class ReshapetheMatrix {
+public class ReshapeTheMatrix {
+
+    public int[][] matrixReshape(int[][] nums, int r, int c) {
+        return null;
+    }
 }

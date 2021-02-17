@@ -53,6 +53,7 @@ a|
 * link:{package}/MaximumAverageSubarrayI.java[maximum-average-subarray-i]
 * link:{package}/NonDecreasingArray.java[non-decreasing-array]
 * link:{package}/ArrayPartitionI.java[array-partition-i]
+* link:{package}/ReshapeTheMatrix.java[reshape-the-matrix]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
