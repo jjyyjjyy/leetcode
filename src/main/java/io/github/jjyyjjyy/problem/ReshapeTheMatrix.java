@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -59,7 +60,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReshapeTheMatrix {
 
+    /**
+     * 依次遍历数组, 将当前元素的序号转换成新的数组的行号和列号.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int[][] matrixReshape(int[][] nums, int r, int c) {
-        return null;
+        int rows = nums.length;
+        int cols = nums[0].length;
+        if (rows * cols != r * c) {
+            return nums;
+        }
+
+        int[][] result = new int[r][c];
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                int idx = i * nums[i].length + j;
+                result[idx / c][idx % c] = nums[i][j];
+            }
+        }
+        return result;
     }
 }
