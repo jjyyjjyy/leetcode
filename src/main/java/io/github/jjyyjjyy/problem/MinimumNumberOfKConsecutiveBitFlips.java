@@ -58,5 +58,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.GREEDY, Tag.SLIDING_WINDOW}
 )
-public class MinimumNumberofKConsecutiveBitFlips {
+public class MinimumNumberOfKConsecutiveBitFlips {
+
+    public int minKBitFlips(int[] A, int K) {
+        return -1;
+    }
+
 }
