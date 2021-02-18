@@ -357,7 +357,8 @@ a|
 a|
 * link:{package}/JumpGame.java[jump-game]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
-|
+a|
+* link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
 
 | BinarySearch
 a|
@@ -467,6 +468,7 @@ a|
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 * link:{package}/SlidingWindowMedian.java[sliding-window-median]
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
+* link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
 
 | BackTracking
 |
