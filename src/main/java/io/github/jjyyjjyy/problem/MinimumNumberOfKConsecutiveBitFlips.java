@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -60,8 +61,46 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MinimumNumberOfKConsecutiveBitFlips {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public int minKBitFlips(int[] A, int K) {
-        return -1;
+        int n = A.length;
+        int ans = 0, revCnt = 0;
+        for (int i = 0; i < n; ++i) {
+            if (i >= K && A[i - K] > 1) {
+                revCnt ^= 1;
+            }
+            if (A[i] == revCnt) {
+                if (i + K > n) {
+                    return -1;
+                }
+                ++ans;
+                revCnt ^= 1;
+                A[i] += 2;
+            }
+        }
+        return ans;
     }
 
+    /**
+     * 依次遍历数组, 如果当前元素是0则翻转后面K个元素
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
+    public int minKBitFlips2(int[] A, int K) {
+        int result = 0;
+        for (int i = 0; i < A.length - K + 1; i++) {
+            if (A[i] == 1) {
+                continue;
+            }
+            for (int j = 0; j < K; j++) {
+                A[i + j] = 1 - A[i + j];
+            }
+            result++;
+        }
+        for (int i = 0; i < K; i++) {
+            if (A[A.length - i - 1] == 0) {
+                return -1;
+            }
+        }
+        return result;
+    }
 }
