@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -56,7 +57,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaxConsecutiveOnesIII {
 
+    /**
+     * 1. 维护左右两个指针, 和两个指针左侧0的个数.
+     * 2. 移动右指针:
+     * 2.1. 更新右指针左侧0的个数.
+     * 2.2. 如果左右两个指针中间0的个数大于K, 则移动左指针, 直到两个指针之间0的个数小于K, 同时更新左指针左侧0的个数.
+     * 2.3. 计算左右两个指针之间的距离, 比较并更新最大值结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int longestOnes(int[] A, int K) {
-        return -1;
+        int result = 0;
+
+        int left = 0;
+        int right = 0;
+        // 左指针左侧0的个数
+        int leftCount = 0;
+        // 右指针左侧0的个数
+        int rightCount = 0;
+
+        while (right < A.length) {
+            rightCount += 1 - A[right];
+            while (rightCount - leftCount > K) {
+                leftCount += 1 - A[left++];
+            }
+            result = Math.max(result, right - left + 1);
+            right++;
+        }
+        return result;
     }
 }
