@@ -414,6 +414,7 @@ a|
 * link:{package}/LongestSubstringWithoutRepeatingCharacters.java[longest-substring-without-repeating-characters]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 * link:{package}/PermutationInString.java[permutation-in-string]
+* link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
 a|
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 
@@ -463,6 +464,7 @@ a|
 * link:{package}/MaximumPointsYouCanObtainFromCards.java[maximum-points-you-can-obtain-from-cards]
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 * link:{package}/PermutationInString.java[permutation-in-string]
+* link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]

@@ -49,10 +49,14 @@ import io.github.jjyyjjyy.core.Tag;
  * </ul>
  */
 @Problem(
-    id = 1046,
+    id = 1004,
     name = "max-consecutive-ones-iii",
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.TWO_POINTERS, Tag.SLIDING_WINDOW}
 )
 public class MaxConsecutiveOnesIII {
+
+    public int longestOnes(int[] A, int K) {
+        return -1;
+    }
 }
