@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/degree-of-an-array/">数组的度</a>
@@ -51,7 +55,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DegreeOfAnArray {
 
+    /**
+     * 1. 遍历数组, 计算每个元素出现的次数以及起始位置.
+     * 2. 遍历统计出来的结果, 得到最大的元素出现的次数, 并比较得到这些元素中最小的区间.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int findShortestSubArray(int[] nums) {
-        return -1;
+        Map<Integer, int[]> counts = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (counts.containsKey(nums[i])) {
+                counts.get(nums[i])[0]++;
+                counts.get(nums[i])[2] = i;
+            } else {
+                counts.put(nums[i], new int[]{1, i, i});
+            }
+        }
+        int max = 0;
+        int result = 0;
+
+        for (Map.Entry<Integer, int[]> entry : counts.entrySet()) {
+            int[] count = entry.getValue();
+            if (max < count[0]) {
+                result = count[2] - count[1] + 1;
+                max = count[0];
+            } else if (max == count[0]) {
+                result = Math.min(result, count[2] - count[1] + 1);
+            }
+        }
+        return result;
     }
 }
