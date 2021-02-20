@@ -49,5 +49,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class DegreeofanArray {
+public class DegreeOfAnArray {
+
+    public int findShortestSubArray(int[] nums) {
+        return -1;
+    }
 }
