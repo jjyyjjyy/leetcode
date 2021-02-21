@@ -87,6 +87,7 @@ a|
 * link:{package}/GetEqualSubstringsWithinBudget.java[get-equal-substrings-within-budget]
 * link:{package}/MaximumPointsYouCanObtainFromCards.java[maximum-points-you-can-obtain-from-cards]
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
+* link:{package}/LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java[longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -466,6 +467,7 @@ a|
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 * link:{package}/PermutationInString.java[permutation-in-string]
 * link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
+* link:{package}/LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java[longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
