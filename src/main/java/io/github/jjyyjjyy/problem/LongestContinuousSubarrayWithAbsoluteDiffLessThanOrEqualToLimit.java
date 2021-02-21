@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * <a href="https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/">绝对差不超过限制的最长连续子数组</a>
@@ -62,7 +66,38 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public int longestSubarray(int[] nums, int limit) {
-        return -1;
+
+        int result = 0;
+
+        Deque<Integer> maxQueue = new LinkedList<>();
+        Deque<Integer> minQueue = new LinkedList<>();
+
+        int left = 0;
+        for (int i = 0; i < nums.length; i++) {
+            while (!maxQueue.isEmpty() && maxQueue.peekLast() < nums[i]) {
+                maxQueue.pollLast();
+            }
+            while (!minQueue.isEmpty() && minQueue.peekLast() > nums[i]) {
+                minQueue.pollLast();
+            }
+            maxQueue.addLast(nums[i]);
+            minQueue.addLast(nums[i]);
+
+            while (!maxQueue.isEmpty() && !minQueue.isEmpty() && maxQueue.peekFirst() - minQueue.peekFirst() > limit) {
+                if (nums[left] == minQueue.peekFirst()) {
+                    minQueue.pollFirst();
+                }
+                if (nums[left] == maxQueue.peekFirst()) {
+                    maxQueue.pollFirst();
+                }
+                left++;
+            }
+
+            result = Math.max(result, i - left + 1);
+        }
+
+        return result;
     }
 }
