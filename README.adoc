@@ -55,6 +55,7 @@ a|
 * link:{package}/ArrayPartitionI.java[array-partition-i]
 * link:{package}/ReshapeTheMatrix.java[reshape-the-matrix]
 * link:{package}/DegreeOfAnArray.java[degree-of-an-array]
+* link:{package}/ToeplitzMatrix.java[toeplitz-matrix]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
