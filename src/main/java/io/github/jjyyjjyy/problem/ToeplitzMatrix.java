@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -67,7 +68,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ToeplitzMatrix {
 
+    /**
+     * 从左到右, 从上到下依次遍历矩阵, 判断matrix[i][j]是否等于matrix[i + 1][j + 1]
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public boolean isToeplitzMatrix(int[][] matrix) {
-        return false;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        for (int i = 0; i < m - 1; i++) {
+            for (int j = 0; j < n - 1; j++) {
+                if (matrix[i][j] != matrix[i + 1][j + 1]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
