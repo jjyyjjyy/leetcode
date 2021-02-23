@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -43,8 +44,31 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class GrumpyBookstoreOwner {
 
+    /**
+     * 1. 计算所有不生气时间段的顾客总和.
+     * 2. 使用长度为X的滑动窗口计算窗口内生气时间段顾客总和, 统计找到最大的顾客.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int maxSatisfied(int[] customers, int[] grumpy, int X) {
-        return -1;
-    }
+        int noneGrumpyCustomers = 0;
+        for (int i = 0; i < customers.length; i++) {
+            if (grumpy[i] == 0) {
+                noneGrumpyCustomers += customers[i];
+            }
+        }
+        int grumpyCustomers = 0;
+        for (int i = 0; i < X; i++) {
+            grumpyCustomers += customers[i] * grumpy[i];
+        }
 
+        int maxGrumpyCustomers = grumpyCustomers;
+
+        for (int i = X; i < customers.length; i++) {
+            int excludedIndex = i - X;
+            grumpyCustomers = grumpyCustomers - customers[excludedIndex] * grumpy[excludedIndex] + customers[i] * grumpy[i];
+            maxGrumpyCustomers = Math.max(maxGrumpyCustomers, grumpyCustomers);
+        }
+
+        return noneGrumpyCustomers + maxGrumpyCustomers;
+    }
 }
