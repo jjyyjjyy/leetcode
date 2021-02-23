@@ -42,4 +42,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY, Tag.SLIDING_WINDOW}
 )
 public class GrumpyBookstoreOwner {
+
+    public int maxSatisfied(int[] customers, int[] grumpy, int X) {
+        return -1;
+    }
+
 }
