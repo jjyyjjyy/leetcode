@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -46,7 +47,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FlippingAnImage {
 
+    /**
+     * 依次遍历行, 将首尾置换并异或1.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int[][] flipAndInvertImage(int[][] A) {
-        return null;
+        for (int[] ints : A) {
+            int right = ints.length - 1;
+            int left = 0;
+            while (left < right) {
+                int tmp = ints[right];
+                ints[right] = ints[left] ^ 1;
+                ints[left] = tmp ^ 1;
+                left++;
+                right--;
+            }
+            if (left == right) {
+                ints[left] = ints[right] ^ 1;
+            }
+        }
+        return A;
     }
 }
