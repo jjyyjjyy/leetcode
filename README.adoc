@@ -56,6 +56,7 @@ a|
 * link:{package}/ReshapeTheMatrix.java[reshape-the-matrix]
 * link:{package}/DegreeOfAnArray.java[degree-of-an-array]
 * link:{package}/ToeplitzMatrix.java[toeplitz-matrix]
+* link:{package}/FlippingAnImage.java[flipping-an-image]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]

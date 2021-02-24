@@ -44,5 +44,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.ARRAY}
 )
-public class FlippinganImage {
+public class FlippingAnImage {
+
+    public int[][] flipAndInvertImage(int[][] A) {
+        return null;
+    }
 }
