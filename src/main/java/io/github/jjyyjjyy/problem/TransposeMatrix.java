@@ -41,4 +41,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class TransposeMatrix {
+
+    public int[][] transpose(int[][] matrix) {
+        return null;
+    }
 }
