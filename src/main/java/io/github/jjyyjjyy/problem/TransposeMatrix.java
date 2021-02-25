@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TransposeMatrix {
 
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int[][] transpose(int[][] matrix) {
-        return null;
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int[][] result = new int[n][m];
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                result[j][i] = matrix[i][j];
+            }
+        }
+        return result;
     }
 }
