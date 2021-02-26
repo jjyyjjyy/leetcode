@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/">猜字谜</a>
  *
@@ -55,5 +57,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.BIT_MANIPULATION, Tag.HASH_TABLE}
 )
-public class NumberofValidWordsforEachPuzzle {
+public class NumberOfValidWordsForEachPuzzle {
+
+    public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
+        return null;
+    }
+
 }

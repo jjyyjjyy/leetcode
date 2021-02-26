@@ -200,7 +200,8 @@ a|
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
-|
+a|
+* link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
 | Stack
 a|
@@ -242,7 +243,8 @@ a|
 * link:{package}/ValidSudoku.java[valid-sudoku]
 * link:{package}/GroupAnagrams.java[group-anagrams]
 * link:{package}/HIndex.java[h-index]
-|
+a|
+* link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
 | Tree
 a|

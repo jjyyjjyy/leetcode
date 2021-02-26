@@ -27,6 +27,10 @@ public class CsvToArray extends SimpleArgumentConverter {
             String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
             return Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
         }
+        if (Objects.equals(targetType, Integer[].class)) {
+            String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
+            return Arrays.stream(strings).map(Integer::valueOf).toArray(Integer[]::new);
+        }
         if (Objects.equals(targetType, double[].class)) {
             String[] strings = sourceString.split(ARRAY_SPLITTER_REGEX);
             return Arrays.stream(strings).mapToDouble(Double::valueOf).toArray();
