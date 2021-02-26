@@ -1,10 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/">猜字谜</a>
@@ -59,8 +63,80 @@ import java.util.List;
 )
 public class NumberOfValidWordsForEachPuzzle {
 
+    /**
+     * 1. 计算每个单词的二进制编码, 统计每个编码出现的频率.
+     * 2. 遍历puzzles, 计算puzzle的二进制编码, 然后遍历puzzle编码的每一个子集, 从单词的频率表中找到次数累加即可.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m*∣w∣+n*2^∣p∣)")
     public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
-        return null;
+        Map<Integer, Integer> wordFreq = new HashMap<>();
+        for (String word : words) {
+            int mask = 0;
+            for (int i = 0; i < word.length(); i++) {
+                mask |= 1 << (word.charAt(i) - 'a');
+            }
+            wordFreq.put(mask, wordFreq.getOrDefault(mask, 0) + 1);
+        }
+
+        List<Integer> result = new ArrayList<>();
+        for (String puzzle : puzzles) {
+            int count = 0;
+            int mask = 0;
+            for (int i = 1; i < puzzle.length(); ++i) {
+                mask |= 1 << (puzzle.charAt(i) - 'a');
+            }
+            int subset = mask;
+            do {
+                int s = subset | 1 << (puzzle.charAt(0) - 'a');
+                count += wordFreq.getOrDefault(s, 0);
+                subset = (subset - 1) & mask;
+            } while (subset != mask);
+
+            result.add(count);
+        }
+        return result;
     }
 
+    @Complexity(Complexity.ComplexityType.O_M_N)
+    public List<Integer> findNumOfValidWords2(String[] words, String[] puzzles) {
+        int[][] wordsFreq = new int[words.length][];
+        for (int i = 0; i < words.length; i++) {
+            wordsFreq[i] = new int[26];
+            int length = words[i].length();
+            for (int j = 0; j < length; j++) {
+                wordsFreq[i][words[i].charAt(j) - 'a']++;
+            }
+        }
+        int[][] puzzlesFreq = new int[puzzles.length][];
+        for (int i = 0; i < puzzles.length; i++) {
+            puzzlesFreq[i] = new int[26];
+            int length = puzzles[i].length();
+            for (int j = 0; j < length; j++) {
+                puzzlesFreq[i][puzzles[i].charAt(j) - 'a']++;
+            }
+        }
+
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 0; i < puzzles.length; i++) {
+            int[] puzzleFreq = puzzlesFreq[i];
+            String puzzle = puzzles[i];
+            int count = 0;
+            p:
+            for (int j = 0; j < words.length; j++) {
+                int[] wordFreq = wordsFreq[j];
+                if (wordFreq[puzzle.charAt(0) - 'a'] == 0) {
+                    continue;
+                }
+                for (int index = 0; index < wordFreq.length; index++) {
+                    if (wordFreq[index] > 0 && puzzleFreq[index] == 0) {
+                        continue p;
+                    }
+                }
+                count++;
+            }
+            result.add(count);
+        }
+        return result;
+    }
 }
