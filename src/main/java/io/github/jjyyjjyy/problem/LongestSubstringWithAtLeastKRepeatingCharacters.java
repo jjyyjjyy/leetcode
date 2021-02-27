@@ -2,6 +2,7 @@ package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
+import io.github.jjyyjjyy.core.Tag;
 
 /**
  * <a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/">至少有K个重复字符的最长子串</a>
@@ -36,7 +37,12 @@ import io.github.jjyyjjyy.core.Problem;
     id = 395,
     name = "longest-substring-with-at-least-k-repeating-characters",
     difficulty = Difficulty.MEDIUM,
-    tags = {}
+    tags = {Tag.DIVIDE_AND_CONQUER}
 )
-public class LongestSubstringwithAtLeastKRepeatingCharacters {
+public class LongestSubstringWithAtLeastKRepeatingCharacters {
+
+    public int longestSubstring(String s, int k) {
+        return -1;
+    }
+
 }
