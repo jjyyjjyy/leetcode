@@ -501,7 +501,8 @@ a|
 a|
 * link:{package}/MaximumSubarray.java[maximum-subarray]
 * link:{package}/MajorityElement.java[majority-element]
-|
+a|
+* link:{package}/LongestSubstringWithAtLeastKRepeatingCharacters.java[longest-substring-with-at-least-k-repeating-characters]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 
