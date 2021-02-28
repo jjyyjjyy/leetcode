@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -65,7 +66,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MonotonicArray {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isMonotonic(int[] A) {
-        return false;
+        boolean increased = true;
+        boolean decreased = true;
+        for (int i = 0; i < A.length - 1; i++) {
+            if (A[i] > A[i + 1]) {
+                increased = false;
+            }
+            if (A[i] < A[i + 1]) {
+                decreased = false;
+            }
+        }
+        return increased || decreased;
     }
 }
