@@ -58,6 +58,7 @@ a|
 * link:{package}/ToeplitzMatrix.java[toeplitz-matrix]
 * link:{package}/FlippingAnImage.java[flipping-an-image]
 * link:{package}/TransposeMatrix.java[transpose-matrix]
+* link:{package}/MonotonicArray.java[monotonic-array]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]

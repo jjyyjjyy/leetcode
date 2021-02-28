@@ -64,4 +64,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class MonotonicArray {
+
+    public boolean isMonotonic(int[] A) {
+        return false;
+    }
 }
