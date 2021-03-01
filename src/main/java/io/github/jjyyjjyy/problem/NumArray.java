@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,10 +41,21 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumArray {
 
+    private final int[] sums;
+
     public NumArray(int[] nums) {
+        int n = nums.length;
+        this.sums = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            this.sums[i + 1] = this.sums[i] + nums[i];
+        }
     }
 
+    /**
+     * 提前计算好数组的前缀和, 区间内的数字总和等于j+1的前缀和减去i的前缀和.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int sumRange(int i, int j) {
-        return -1;
+        return sums[j + 1] - sums[i];
     }
 }
