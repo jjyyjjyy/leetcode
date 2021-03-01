@@ -38,5 +38,12 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
-public class RangeSumQueryImmutable {
+public class NumArray {
+
+    public NumArray(int[] nums) {
+    }
+
+    public int sumRange(int i, int j) {
+        return -1;
+    }
 }

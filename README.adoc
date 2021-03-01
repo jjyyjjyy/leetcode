@@ -346,6 +346,7 @@ a|
 * link:{package}/MaximumSubarray.java[maximum-subarray]
 * link:{package}/BestTimeToBuyAndSellStock.java[best-time-to-buy-and-sell-stock]
 * link:{package}/HouseRobber.java[house-robber]
+* link:{package}/NumArray.java[range-sum-query-immutable]
 a|
 * link:{package}/UniquePaths.java[unique-paths]
 * link:{package}/UniquePathsII.java[unique-paths-ii]
