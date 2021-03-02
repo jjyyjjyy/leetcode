@@ -357,6 +357,7 @@ a|
 * link:{package}/UniqueBinarySearchTrees.java[unique-binary-search-trees]
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
+* link:{package}/NumMatrix.java[range-sum-query-2d-immutable]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
