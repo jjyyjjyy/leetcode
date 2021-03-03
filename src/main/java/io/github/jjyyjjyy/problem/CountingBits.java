@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -41,7 +42,16 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CountingBits {
 
+    /**
+     * i & (i - 1) 将i的二进制数中的最后一个1变成0, 查表得到该数的1的数量, 再加1就得到i的二进制表示数中1的数量.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] countBits(int num) {
-        return null;
+        int[] dp = new int[num + 1];
+        dp[0] = 0;
+        for (int i = 1; i <= num; i++) {
+            dp[i] = dp[i & (i - 1)] + 1;
+        }
+        return dp;
     }
 }
