@@ -40,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION, Tag.DYNAMIC_PROGRAMMING}
 )
 public class CountingBits {
+
+    public int[] countBits(int num) {
+        return null;
+    }
 }
