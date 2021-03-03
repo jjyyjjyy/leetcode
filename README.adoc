@@ -201,6 +201,7 @@ a|
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
+* link:{package}/CountingBits.java[counting-bits]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
@@ -358,6 +359,7 @@ a|
 * link:{package}/LongestPalindromicSubstring.java[longest-palindromic-substring]
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 * link:{package}/NumMatrix.java[range-sum-query-2d-immutable]
+* link:{package}/CountingBits.java[counting-bits]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
