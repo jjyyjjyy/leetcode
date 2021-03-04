@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/russian-doll-envelopes/">俄罗斯套娃信封问题</a>
@@ -35,7 +38,33 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RussianDollEnvelopes {
 
+    /**
+     * 1. 将数组第一维从小到大, 第二维从大到小排序.
+     * 2. 定义状态数组dp, 设置每一位为1, 表示选择当前信封.
+     * 3. 遍历数组:
+     * 3.1. 遍历当前位置之前的元素, 如果第二维比当前小, 则说明可以被选择, dp[i]=max(dp[i],dp[j]+1)
+     * 3.2. 比较并更新得到dp数组中最大的数值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int maxEnvelopes(int[][] envelopes) {
-        return -1;
+        int n = envelopes.length;
+        if (n == 0) {
+            return 0;
+        }
+        Arrays.sort(envelopes, (e1, e2) -> e1[0] == e2[0] ? e2[1] - e1[1] : e1[0] - e2[0]);
+
+        int[] dp = new int[n];
+        Arrays.fill(dp, 1);
+
+        int result = 1;
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                if (envelopes[j][1] < envelopes[i][1]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            result = Math.max(result, dp[i]);
+        }
+        return result;
     }
 }
