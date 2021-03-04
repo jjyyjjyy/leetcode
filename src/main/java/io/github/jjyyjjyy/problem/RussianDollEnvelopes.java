@@ -34,4 +34,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BINARY_SEARCH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class RussianDollEnvelopes {
+
+    public int maxEnvelopes(int[][] envelopes) {
+        return -1;
+    }
 }
