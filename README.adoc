@@ -363,6 +363,7 @@ a|
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
+* link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
 
 | Greedy
 a|
@@ -396,6 +397,7 @@ a|
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
+* link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
 
 | TwoPointers
 a|
