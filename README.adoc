@@ -222,6 +222,7 @@ a|
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]
 * link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 * link:{package}/BinaryTreePostorderTraversal.java[binary-tree-postorder-traversal]
+* link:{package}/NextGreaterElementII.java[next-greater-element-ii]
 |
 
 | HashTable

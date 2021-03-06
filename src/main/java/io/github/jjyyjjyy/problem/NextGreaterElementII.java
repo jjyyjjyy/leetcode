@@ -35,4 +35,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class NextGreaterElementII {
+
+    public int[] nextGreaterElements(int[] nums) {
+        return null;
+    }
 }
