@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/next-greater-element-ii/">下一个更大元素 II</a>
@@ -36,7 +40,27 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NextGreaterElementII {
 
+    /**
+     * 1. 维护一个单调栈, 存放数组元素的索引, 从栈顶到栈底索引对应的元素递增.
+     * 2. 从头到尾遍历两次数组:
+     * 2.1. 判断栈顶索引对应的元素是否比当前元素大, 如果小, 说明当前元素就是栈顶索引元素的下一个更大的元素, 记录病弹出栈.
+     * 2.2. 重复步骤2.1.
+     * 2.3. 将当前元素索引压入栈中, 此时栈中只存在大于等于当前元素的索引.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] nextGreaterElements(int[] nums) {
-        return null;
+        int n = nums.length;
+        int[] result = new int[n];
+        Arrays.fill(result, -1);
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < n * 2; i++) {
+            int index = i % n;
+            int num = nums[index];
+            while (!stack.isEmpty() && nums[stack.peek()] < num) {
+                result[stack.pop()] = num;
+            }
+            stack.push(index);
+        }
+        return result;
     }
 }
