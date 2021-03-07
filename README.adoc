@@ -502,6 +502,7 @@ a|
 * link:{package}/GenerateParentheses.java[generate-parentheses]
 * link:{package}/Permutations.java[permutations]
 * link:{package}/PermutationsII.java[permutations-ii]
+* link:{package}/PalindromePartitioning.java[palindrome-partitioning]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 
