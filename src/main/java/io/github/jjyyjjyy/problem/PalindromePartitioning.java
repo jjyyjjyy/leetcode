@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/palindrome-partitioning/">分割回文串</a>
@@ -33,4 +36,10 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BACKTRACKING}
 )
 public class PalindromePartitioning {
+
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "n*2^n")
+    public List<List<String>> partition(String s) {
+        return null;
+    }
+
 }
