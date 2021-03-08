@@ -31,4 +31,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class PalindromePartitioningII {
+
+    public int minCut(String s) {
+        return -1;
+    }
 }

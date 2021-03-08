@@ -365,6 +365,7 @@ a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
 * link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
+* link:{package}/PalindromePartitioningII.java[palindrome-partitioning-ii]
 
 | Greedy
 a|
