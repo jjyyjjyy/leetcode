@@ -212,6 +212,7 @@ a|
 * link:{package}/ImplementStackUsingQueues.java[implement-stack-using-queues]
 * link:{package}/ImplementQueueUsingStacks.java[implement-queue-using-stacks]
 * link:{package}/NextGreaterElementI.java[next-greater-element-i]
+* link:{package}/RemoveAllAdjacentDuplicatesInString.java[remove-all-adjacent-duplicates-in-string]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]

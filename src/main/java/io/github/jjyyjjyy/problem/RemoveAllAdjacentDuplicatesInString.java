@@ -39,4 +39,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class RemoveAllAdjacentDuplicatesInString {
+
+    public String removeDuplicates(String S) {
+        return null;
+    }
 }
