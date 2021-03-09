@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,7 +41,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveAllAdjacentDuplicatesInString {
 
+    /**
+     * 1. 维护左右两个指针.
+     * 2. 右指针从左到右遍历字符串:
+     * 2.1. 如果左右指针所在字符相等, 则左指针左移, 删除结果集中该字符.
+     * 2.2. 否则左指针右移, 并将当前字符加入到结果集中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public String removeDuplicates(String S) {
-        return null;
+        StringBuilder result = new StringBuilder();
+        int left = -1;
+        for (int i = 0; i < S.length(); i++) {
+            if (left >= 0 && S.charAt(i) == result.charAt(left)) {
+                result.deleteCharAt(left--);
+            } else {
+                result.append(S.charAt(i));
+                left++;
+            }
+        }
+        return result.toString();
     }
 }
