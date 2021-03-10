@@ -51,4 +51,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK, Tag.MATH}
 )
 public class BasicCalculator {
+
+    public int calculate(String s) {
+        return -1;
+    }
 }

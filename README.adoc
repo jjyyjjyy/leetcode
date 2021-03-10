@@ -189,7 +189,8 @@ a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
 * link:{package}/BulbSwitcher.java[bulb-switcher]
-|
+a|
+* link:{package}/BasicCalculator.java[basic-calculator]
 
 | BitManipulation
 a|
@@ -224,7 +225,8 @@ a|
 * link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 * link:{package}/BinaryTreePostorderTraversal.java[binary-tree-postorder-traversal]
 * link:{package}/NextGreaterElementII.java[next-greater-element-ii]
-|
+a|
+* link:{package}/BasicCalculator.java[basic-calculator]
 
 | HashTable
 a|
