@@ -50,4 +50,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING}
 )
 public class BasicCalculatorII {
+
+    public int calculate(String s) {
+        return -1;
+    }
 }
