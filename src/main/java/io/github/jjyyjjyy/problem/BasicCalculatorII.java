@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/basic-calculator-ii/">基本计算器 II</a>
@@ -51,7 +54,50 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BasicCalculatorII {
 
+    /**
+     * 1. 维护一个操作数栈.
+     * 2. 记录前一个操作符, 方便计算乘法和除法.
+     * 3. 记录当前操作数, 用来计算大于9的操作数.
+     * 4. 遍历字符串:
+     * 4.1. 如果当前是数字, 则更新当前的操作数.
+     * 4.2. 如果当前是符号, 或者是最后一位, 则用上一个操作符计算当前操作数的结果, 压入栈中.
+     * 5. 遍历栈, 将栈中所有的数字相加得到计算结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int calculate(String s) {
-        return -1;
+        int n = s.length();
+        Stack<Integer> operands = new Stack<>();
+        char preSign = '+';
+        int preNum = 0;
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (Character.isDigit(ch)) {
+                preNum = preNum * 10 + (ch - '0');
+            }
+            if (!Character.isDigit(ch) && ch != ' ' || i == n - 1) {
+                switch (preSign) {
+                    case '+':
+                        operands.push(preNum);
+                        break;
+                    case '-':
+                        operands.push(-preNum);
+                        break;
+                    case '*':
+                        operands.push(operands.pop() * preNum);
+                        break;
+                    case '/':
+                        operands.push(operands.pop() / preNum);
+                        break;
+                    default:
+                }
+                preSign = ch;
+                preNum = 0;
+            }
+        }
+        int result = 0;
+        while (!operands.isEmpty()) {
+            result += operands.pop();
+        }
+        return result;
     }
 }
