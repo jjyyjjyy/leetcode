@@ -226,6 +226,7 @@ a|
 * link:{package}/BinaryTreePreorderTraversal.java[binary-tree-preorder-traversal]
 * link:{package}/BinaryTreePostorderTraversal.java[binary-tree-postorder-traversal]
 * link:{package}/NextGreaterElementII.java[next-greater-element-ii]
+* link:{package}/VerifyPreorderSerializationOfABinaryTree.java[verify-preorder-serialization-of-a-binary-tree]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 
