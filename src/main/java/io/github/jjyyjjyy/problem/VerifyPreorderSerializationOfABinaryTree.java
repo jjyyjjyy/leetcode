@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -50,7 +51,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class VerifyPreorderSerializationOfABinaryTree {
 
+    /**
+     * 1. 将字符串按照逗号分割, 维护树的出入度, 如果不是一颗空树, 则初始根节点的出度为2.
+     * 2. 遍历分割后的字符串数组:
+     * 2.1. 入度加1
+     * 2.2. 判断是否不为空节点, 如果不是则出度加2.
+     * 2.3. 遍历到最后一个字符串之前的时候如果入度大于等于出度则说明不合法.
+     * 3. 遍历结束, 判断入度是否和出度相等.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isValidSerialization(String preorder) {
-        return false;
+        if ("#".equals(preorder)) {
+            return true;
+        }
+        if (preorder.charAt(0) == '#') {
+            return false;
+        }
+        int in = 0;
+        int out = 2;
+
+        String[] segments = preorder.split(",");
+        for (int i = 1; i < segments.length; i++) {
+            String c = segments[i];
+            in += 1;
+            if (!"#".equals(c)) {
+                out += 2;
+            }
+            if (i < segments.length - 1 && in >= out) {
+                return false;
+            }
+        }
+        return in == out;
     }
 }
