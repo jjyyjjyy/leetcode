@@ -48,5 +48,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.STACK}
 )
-public class VerifyPreorderSerializationofaBinaryTree {
+public class VerifyPreorderSerializationOfABinaryTree {
+
+    public boolean isValidSerialization(String preorder) {
+        return false;
+    }
 }
