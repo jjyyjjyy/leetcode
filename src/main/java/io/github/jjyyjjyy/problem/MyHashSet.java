@@ -4,6 +4,9 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <a href="https://leetcode-cn.com/problems/design-hashset/">设计哈希集合</a>
  *
@@ -54,16 +57,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MyHashSet {
 
+    private static final Object PLACEHOLDER = new Object();
+
+    private final Map<Integer, Object> map = new HashMap<>();
+
     public MyHashSet() {
     }
 
     public void add(int key) {
+        map.put(key, PLACEHOLDER);
     }
 
     public void remove(int key) {
+        map.remove(key);
     }
 
     public boolean contains(int key) {
-        return false;
+        return map.containsKey(key);
     }
 }
