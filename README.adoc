@@ -244,6 +244,7 @@ a|
 * link:{package}/IntersectionOfTwoArrays.java[intersection-of-two-arrays]
 * link:{package}/IntersectionOfTwoArraysII.java[intersection-of-two-arrays-ii]
 * link:{package}/FirstUniqueCharacterInAString.java[first-unique-character-in-a-string]
+* link:{package}/MyHashSet.java[design-hashset]
 a|
 * link:{package}/FourSum.java[4sum]
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]

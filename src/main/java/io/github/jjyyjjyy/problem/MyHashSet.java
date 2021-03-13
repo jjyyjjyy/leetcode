@@ -52,5 +52,18 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.DESIGN, Tag.HASH_TABLE}
 )
-public class DesignHashSet {
+public class MyHashSet {
+
+    public MyHashSet() {
+    }
+
+    public void add(int key) {
+    }
+
+    public void remove(int key) {
+    }
+
+    public boolean contains(int key) {
+        return false;
+    }
 }
