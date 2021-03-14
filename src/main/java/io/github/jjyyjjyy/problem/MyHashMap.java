@@ -55,6 +55,10 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MyHashMap {
 
+    private int capacity = 16;
+
+    private Entry[] nodes = new Entry[capacity];
+
     public MyHashMap() {
 
     }
@@ -63,12 +67,37 @@ public class MyHashMap {
      * value will always be non-negative.
      */
     public void put(int key, int value) {
+        int idx = indexOf(key);
+        Entry entry = nodes[idx];
+        if (entry == null) {
+            nodes[idx] = new Entry(key, value, null);
+            return;
+        }
+        Entry prev = new Entry();
+        prev.next = entry;
+        while (prev.next != null) {
+            Entry next = prev.next;
+            if (next.key == key) {
+                next.value = value;
+                return;
+            }
+            prev = prev.next;
+        }
+        prev.next = new Entry(key, value, null);
     }
 
     /**
      * Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
      */
     public int get(int key) {
+        int idx = indexOf(key);
+        Entry current = nodes[idx];
+        while (current != null) {
+            if (current.key == key) {
+                return current.value;
+            }
+            current = current.next;
+        }
         return -1;
     }
 
@@ -77,6 +106,41 @@ public class MyHashMap {
      * Removes the mapping of the specified value key if this map contains a mapping for the key
      */
     public void remove(int key) {
+        int idx = indexOf(key);
+        Entry dummy = new Entry();
+        dummy.next = nodes[idx];
+        Entry prev = dummy;
+        Entry current = prev.next;
+        while (current != null) {
+            if (current.key == key) {
+                prev.next = current.next;
+                current = null;
+                break;
+            }
+            prev = current;
+            current = current.next;
+        }
+        nodes[idx] = dummy.next;
+    }
+
+    private int indexOf(int key) {
+        return key % capacity;
+    }
+
+    private static class Entry {
+        private int key;
+        private int value;
+        private Entry next;
+
+        public Entry() {
+
+        }
+
+        public Entry(int key, int value, Entry next) {
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
     }
 
 }
