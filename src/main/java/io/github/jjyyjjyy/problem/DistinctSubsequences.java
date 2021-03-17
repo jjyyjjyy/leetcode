@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -56,7 +57,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DistinctSubsequences {
 
+    /**
+     * 1. 维护一个二维dp数组(m+1 x n+1), dp[i][j]标识 s[i:]中有多少个t[j:]的子序列.
+     * 2. 最后一列标识t为空字符串, 所以第j列全为1.
+     * 3. 从下往上, 从右到左遍历:
+     * 3.1. 如果s[i]和t[j]不相等, 那么s[i]和s[i+1]的子序列相等, 此时dp[i][j]=dp[i+1][j].
+     * 3.2. 如果s[i]和t[j]相等, 此时dp[i][j]=dp[i+1][j]+dp[i+1][j+1].
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int numDistinct(String s, String t) {
-        return -1;
+        int m = s.length();
+        int n = t.length();
+        if (m < n) {
+            return 0;
+        }
+
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 0; i < m + 1; i++) {
+            dp[i][n] = 1;
+        }
+
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                if (s.charAt(i) == t.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j] + dp[i + 1][j + 1];
+                } else {
+                    dp[i][j] = dp[i + 1][j];
+
+                }
+            }
+        }
+        return dp[0][0];
     }
 }
