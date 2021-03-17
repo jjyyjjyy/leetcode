@@ -136,6 +136,7 @@ a|
 * link:{package}/BasicCalculatorII.java[basic-calculator-ii]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
+* link:{package}/DistinctSubsequences.java[distinct-subsequences]
 
 | LinkedList
 a|
@@ -373,6 +374,7 @@ a|
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
 * link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
 * link:{package}/PalindromePartitioningII.java[palindrome-partitioning-ii]
+* link:{package}/DistinctSubsequences.java[distinct-subsequences]
 
 | Greedy
 a|

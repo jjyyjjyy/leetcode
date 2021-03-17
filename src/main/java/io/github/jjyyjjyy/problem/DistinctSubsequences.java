@@ -55,4 +55,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING, Tag.DYNAMIC_PROGRAMMING}
 )
 public class DistinctSubsequences {
+
+    public int numDistinct(String s, String t) {
+        return -1;
+    }
 }
