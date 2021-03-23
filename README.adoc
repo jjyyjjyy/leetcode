@@ -228,6 +228,7 @@ a|
 * link:{package}/BinaryTreePostorderTraversal.java[binary-tree-postorder-traversal]
 * link:{package}/NextGreaterElementII.java[next-greater-element-ii]
 * link:{package}/VerifyPreorderSerializationOfABinaryTree.java[verify-preorder-serialization-of-a-binary-tree]
+* link:{package}/NestedIterator.java[flatten-nested-list-iterator]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 
