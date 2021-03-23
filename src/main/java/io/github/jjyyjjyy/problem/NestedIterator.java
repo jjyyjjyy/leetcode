@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.NestedInteger;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/flatten-nested-list-iterator/">扁平化嵌套列表迭代器</a>
@@ -39,5 +43,19 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.STACK, Tag.DESIGN}
 )
-public class FlattenNestedListIterator {
+public class NestedIterator implements Iterator<Integer> {
+
+    public NestedIterator(List<NestedInteger> nestedList) {
+
+    }
+
+    @Override
+    public Integer next() {
+        return null;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return false;
+    }
 }
