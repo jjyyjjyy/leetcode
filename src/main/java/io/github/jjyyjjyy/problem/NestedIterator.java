@@ -5,6 +5,7 @@ import io.github.jjyyjjyy.core.NestedInteger;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -45,17 +46,33 @@ import java.util.List;
 )
 public class NestedIterator implements Iterator<Integer> {
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    private final Iterator<Integer> iterator;
 
+    public NestedIterator(List<NestedInteger> nestedList) {
+        List<Integer> list = new ArrayList<>();
+        for (NestedInteger i : nestedList) {
+            addInteger(list, i);
+        }
+        iterator = list.iterator();
+    }
+
+    private void addInteger(List<Integer> list, NestedInteger i) {
+        if (i.isInteger()) {
+            list.add(i.getInteger());
+        } else {
+            for (NestedInteger nestedInteger : i.getList()) {
+                addInteger(list, nestedInteger);
+            }
+        }
     }
 
     @Override
     public Integer next() {
-        return null;
+        return iterator.next();
     }
 
     @Override
     public boolean hasNext() {
-        return false;
+        return iterator.hasNext();
     }
 }
