@@ -48,4 +48,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class OneThreeTwoPattern {
+
+    public boolean find132pattern(int[] nums) {
+        return false;
+    }
 }
