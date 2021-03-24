@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/132-pattern/">132模式</a>
@@ -49,7 +52,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class OneThreeTwoPattern {
 
+    /**
+     * 1. 创建一个数组, 记录从0~i的最小值.
+     * 2. 创建一个栈, 保存比从0~i的最小值大的元素.
+     * 3. 从后向前遍历数组:
+     * 3.1. 如果数组当前元素比最小值还小, 跳过.
+     * 3.2. 将栈中比最小值小的元素弹出, 如果栈顶元素比当前元素大, 则找到132模式的子序列, 否则压入栈中.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean find132pattern(int[] nums) {
+        int n = nums.length;
+        int[] mins = new int[n];
+        mins[0] = nums[0];
+        for (int i = 1; i < n; i++) {
+            mins[i] = Math.min(mins[i - 1], nums[i]);
+        }
+        Stack<Integer> maxs = new Stack<>();
+        for (int i = n - 1; i >= 0; i--) {
+            if (nums[i] <= mins[i]) {
+                continue;
+            }
+            while (!maxs.isEmpty() && maxs.peek() <= mins[i]) {
+                maxs.pop();
+            }
+            if (!maxs.isEmpty() && maxs.peek() < nums[i]) {
+                return true;
+            }
+            maxs.push(nums[i]);
+        }
         return false;
     }
 }
