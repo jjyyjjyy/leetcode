@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.ListNode;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/">删除排序链表中的重复元素</a>
@@ -35,7 +32,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RemoveDuplicatesFromSortedList {
 
+    /**
+     * 遍历链表, 如果下一个节点与当前节点相同, 则将当前节点的next指向下一个节点的next.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public ListNode deleteDuplicates(ListNode head) {
-        return null;
+        ListNode current = head;
+        while (current != null && current.next != null) {
+            ListNode next = current.next;
+            if (next.val == current.val) {
+                current.next = next.next;
+            } else {
+                current = current.next;
+            }
+        }
+        return head;
     }
 }
