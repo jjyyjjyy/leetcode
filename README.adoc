@@ -147,6 +147,7 @@ a|
 * link:{package}/PalindromeLinkedList.java[palindrome-linked-list]
 * link:{package}/DeleteNodeInALinkedList.java[delete-node-in-a-linked-list]
 * link:{package}/MiddleOfTheLinkedList.java[middle-of-the-linked-list]
+* link:{package}/RemoveDuplicatesFromSortedList.java[remove-duplicates-from-sorted-list]
 a|
 * link:{package}/RemoveNthNodeFromEndOfList.java[remove-nth-node-from-end-of-list]
 * link:{package}/SwapNodesInPairs.java[swap-nodes-in-pairs]
