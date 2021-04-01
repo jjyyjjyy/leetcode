@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -50,7 +51,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ClumsyFactorial {
 
+    private static final int[] DIFF = new int[]{1, 2, 2, -1};
+
+    @Complexity(Complexity.ComplexityType.O_1)
     public int clumsy(int N) {
-        return -1;
+        if (N > 4) {
+            return N + DIFF[N & 3];
+        }
+        return switch (N) {
+            case 1 -> 1;
+            case 2 -> 2;
+            case 3 -> 6;
+            case 4 -> 7;
+            default -> N;
+        };
     }
 }
