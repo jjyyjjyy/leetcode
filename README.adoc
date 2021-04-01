@@ -192,6 +192,7 @@ a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
 * link:{package}/BulbSwitcher.java[bulb-switcher]
+* link:{package}/ClumsyFactorial.java[clumsy-factorial]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 
