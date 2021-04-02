@@ -27,8 +27,29 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class VolumeOfHistogramLcci {
 
+    /**
+     * 1. 维护左右两个指针, 和左右两侧的最大值.
+     * 2. 如果左指针所在元素比右指针所在元素小, 则当前可以倒leftMax-height[left]的水, 左指针右移一位. 否则当前可以倒rightMax-height[right]的水, 右指针左移一位.
+     * 3. 如果左右指针相遇, 退出循环.
+     */
     @Complexity(Complexity.ComplexityType.O_N)
     public int trap(int[] height) {
-        return -1;
+        int left = 0;
+        int right = height.length - 1;
+        int leftMax = 0;
+        int rightMax = 0;
+        int result = 0;
+        while (left < right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+            if (height[left] < height[right]) {
+                result += leftMax - height[left];
+                left++;
+            } else {
+                result += rightMax - height[right];
+                right--;
+            }
+        }
+        return result;
     }
 }
