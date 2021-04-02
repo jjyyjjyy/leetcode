@@ -96,6 +96,7 @@ a|
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
+* link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
 
 | String
 a|
@@ -234,6 +235,7 @@ a|
 * link:{package}/OneThreeTwoPattern.java[132-pattern]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
+* link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
 
 | HashTable
 a|
@@ -447,6 +449,7 @@ a|
 * link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
 a|
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
+* link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
 
 | DepthFirstSearch
 a|
