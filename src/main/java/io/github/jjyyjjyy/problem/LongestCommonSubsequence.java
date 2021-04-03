@@ -54,4 +54,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class LongestCommonSubsequence {
+
+    public int longestCommonSubsequence(String text1, String text2) {
+        return -1;
+    }
 }
