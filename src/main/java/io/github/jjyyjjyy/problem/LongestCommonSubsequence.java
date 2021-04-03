@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -55,7 +56,29 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LongestCommonSubsequence {
 
+    /**
+     * 1. 创建一个二维数组, 存储当前位置的最长公共子序列.
+     * 2. 遍历两个字符串:
+     * 2.1. 如果当前字符相等, 则当前的最长子序列大小等于前一位加上1, 即dp[i-1][j-1]+1.
+     * 2.2. 如果当前字符不相等, 则当前的最长子序列大小等于前一位长度的最大值, 即max(dp[i-1][j],dp[i][j-1]).
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int longestCommonSubsequence(String text1, String text2) {
-        return -1;
+        int m = text1.length();
+        int n = text2.length();
+        int[][] dp = new int[m + 1][n + 1];
+
+        for (int i = 1; i <= m; i++) {
+            char c1 = text1.charAt(i - 1);
+            for (int j = 1; j <= n; j++) {
+                char c2 = text2.charAt(j - 1);
+                if (c1 == c2) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[m][n];
     }
 }
