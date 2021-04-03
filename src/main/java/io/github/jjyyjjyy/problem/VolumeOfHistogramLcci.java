@@ -1,6 +1,5 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -27,7 +26,6 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class VolumeOfHistogramLcci {
 
-    @Complexity(Complexity.ComplexityType.O_N)
     public int trap(int[] height) {
         return -1;
     }
