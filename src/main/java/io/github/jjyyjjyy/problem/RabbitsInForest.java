@@ -42,5 +42,11 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.HASH_TABLE, Tag.MATH}
 )
-public class RabbitsinForest {
+public class RabbitsInForest {
+
+    public int numRabbits(int[] answers) {
+        return -1;
+    }
+
+
 }
