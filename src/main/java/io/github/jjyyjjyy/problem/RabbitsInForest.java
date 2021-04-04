@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/rabbits-in-forest/">森林中的兔子</a>
@@ -44,9 +48,71 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RabbitsInForest {
 
+    /**
+     * 每种兔子颜色的数量等于总数/权重*权重
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int numRabbits(int[] answers) {
-        return -1;
+        Map<Integer, Integer> count = new HashMap<>();
+        for (int answer : answers) {
+            count.put(answer, count.getOrDefault(answer, 0) + 1);
+        }
+        int result = 0;
+        for (Map.Entry<Integer, Integer> entry : count.entrySet()) {
+            int x = entry.getKey();
+            int y = entry.getValue();
+            result += (x + y) / (x + 1) * (x + 1);
+        }
+        return result;
     }
 
+    /**
+     * 计算每个颜色的数量, 累加得到总数
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int numRabbits2(int[] answers) {
+        int result = 0;
+        int[] count = new int[1000];
+        for (int answer : answers) {
+            if (count[answer] > 0) {
+                count[answer]--;
+            } else {
+                count[answer] = answer;
+                result += answer + 1;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 计算每个颜色的数量, 累加得到总数
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int numRabbits3(int[] answers) {
+        int result = 0;
+        Map<Integer, Integer> colorMap = new HashMap<>();
+        for (int answer : answers) {
+            if (answer == 0) {
+                result++;
+            } else {
+                if (colorMap.containsKey(answer)) {
+                    int v = colorMap.get(answer);
+                    v--;
+                    if (v == 0) {
+                        result += answer + 1;
+                        colorMap.remove(answer);
+                    } else {
+                        colorMap.put(answer, v);
+                    }
+                } else {
+                    colorMap.put(answer, answer);
+                }
+            }
+        }
+        for (Map.Entry<Integer, Integer> entry : colorMap.entrySet()) {
+            result += entry.getKey() + 1;
+        }
+        return result;
+    }
 
 }
