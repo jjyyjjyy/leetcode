@@ -93,6 +93,7 @@ a|
 * link:{package}/LongestTurbulentSubarray.java[longest-turbulent-subarray]
 * link:{package}/LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java[longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit]
 * link:{package}/GrumpyBookstoreOwner.java[grumpy-bookstore-owner]
+* link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -414,6 +415,7 @@ a|
 * link:{package}/CountCompleteTreeNodes.java[count-complete-tree-nodes]
 * link:{package}/KthSmallestElementInABST.java[kth-smallest-element-in-a-bst]
 * link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
+* link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
