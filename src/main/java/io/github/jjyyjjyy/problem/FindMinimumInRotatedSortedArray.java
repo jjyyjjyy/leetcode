@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,7 +41,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FindMinimumInRotatedSortedArray {
 
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int findMin(int[] nums) {
-        return -1;
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] < nums[right]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return nums[left];
     }
 }
