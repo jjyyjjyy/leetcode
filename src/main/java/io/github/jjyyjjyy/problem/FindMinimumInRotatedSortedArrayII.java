@@ -44,5 +44,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
-public class FindMinimuminRotatedSortedArrayII {
+public class FindMinimumInRotatedSortedArrayII {
+
+    public int findMin(int[] nums) {
+        return -1;
+    }
+
 }
