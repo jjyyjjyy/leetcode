@@ -98,6 +98,7 @@ a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
 * link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
+* link:{package}/FindMinimuminRotatedSortedArrayII.java[find-minimum-in-rotated-sorted-array-ii]
 
 | String
 a|
@@ -420,6 +421,7 @@ a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 * link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
+* link:{package}/FindMinimuminRotatedSortedArrayII.java[find-minimum-in-rotated-sorted-array-ii]
 
 | TwoPointers
 a|
