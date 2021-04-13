@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/">二叉搜索树结点最小距离</a>
@@ -47,4 +48,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.RECURSION}
 )
 public class MinimumDistanceBetweenBSTNodes {
+
+    public int minDiffInBST(TreeNode root) {
+        return -1;
+    }
+
 }
