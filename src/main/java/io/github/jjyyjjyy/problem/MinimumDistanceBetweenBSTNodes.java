@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/">二叉搜索树结点最小距离</a>
@@ -49,8 +46,34 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class MinimumDistanceBetweenBSTNodes {
 
+    /**
+     * 计算当前节点与子节点相差的最小值要找左子树的最大值和右子树的最小值, 与根节点相减, 比较再得到最小差值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int minDiffInBST(TreeNode root) {
-        return -1;
+        int min = Integer.MAX_VALUE;
+        if (root.left != null) {
+            min = Math.min(min, Math.abs(root.val - findMax(root.left)));
+            min = Math.min(min, minDiffInBST(root.left));
+        }
+        if (root.right != null) {
+            min = Math.min(min, Math.abs(root.val - findMin(root.right)));
+            min = Math.min(min, minDiffInBST(root.right));
+        }
+        return min;
     }
 
+    private int findMin(TreeNode root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root.val;
+    }
+
+    private int findMax(TreeNode root) {
+        while (root.right != null) {
+            root = root.right;
+        }
+        return root.val;
+    }
 }
