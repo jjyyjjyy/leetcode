@@ -381,6 +381,7 @@ a|
 * link:{package}/NumMatrix.java[range-sum-query-2d-immutable]
 * link:{package}/CountingBits.java[counting-bits]
 * link:{package}/LongestCommonSubsequence.java[longest-common-subsequence]
+* link:{package}/HouseRobberII.java[house-robber-ii]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
