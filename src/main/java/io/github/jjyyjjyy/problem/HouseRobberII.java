@@ -43,4 +43,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class HouseRobberII {
+
+    public int rob(int[] nums) {
+        return -1;
+    }
+
 }
