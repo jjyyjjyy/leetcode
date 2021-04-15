@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -44,8 +45,27 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HouseRobberII {
 
+    /**
+     * 遍历数组, 计算当前抢和不抢两种方法的最大值, 遍历到最后得到能抢到的最大值.
+     * 因为不能同时抢首尾, 所以从0~n-2和1~n-1遍历两次得到最大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int rob(int[] nums) {
-        return -1;
+        if (nums.length < 2) {
+            return nums[0];
+        }
+        return Math.max(rob(nums, 1, nums.length - 1), rob(nums, 0, nums.length - 2));
+    }
+
+    public int rob(int[] nums, int start, int end) {
+        int nRob = 0;
+        int rob = 0;
+        for (int i = start; i <= end; i++) {
+            int tmp = rob;
+            rob = Math.max(nRob + nums[i], rob);
+            nRob = tmp;
+        }
+        return rob;
     }
 
 }
