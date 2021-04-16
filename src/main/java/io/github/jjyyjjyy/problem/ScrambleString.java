@@ -68,4 +68,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STRING, Tag.DYNAMIC_PROGRAMMING}
 )
 public class ScrambleString {
+
+    public boolean isScramble(String s1, String s2) {
+        return false;
+    }
+
 }

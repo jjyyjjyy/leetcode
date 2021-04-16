@@ -30,6 +30,7 @@ public @interface Complexity {
         O_N_EXPONENT("O(n*2^n)"),
         O_N_POW_2("O(n^2)"),
         O_N_POW_3("O(n^3)"),
+        O_N_POW_4("O(n^4)"),
         O_N_FACTORIAL("O(n!)"),
         O_DEFINE("");
 
