@@ -140,6 +140,7 @@ a|
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/DistinctSubsequences.java[distinct-subsequences]
+* link:{package}/ScrambleString.java[scramble-string]
 
 | LinkedList
 a|
@@ -388,6 +389,7 @@ a|
 * link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
 * link:{package}/PalindromePartitioningII.java[palindrome-partitioning-ii]
 * link:{package}/DistinctSubsequences.java[distinct-subsequences]
+* link:{package}/ScrambleString.java[scramble-string]
 
 | Greedy
 a|
