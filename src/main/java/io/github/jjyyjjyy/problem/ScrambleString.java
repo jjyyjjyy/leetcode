@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * <a href="https://leetcode-cn.com/problems/scramble-string/">扰乱字符串</a>
@@ -69,8 +74,49 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ScrambleString {
 
+    @Complexity(Complexity.ComplexityType.O_N_POW_4)
     public boolean isScramble(String s1, String s2) {
+        int n = s1.length();
+        int[][][] dp = new int[n][n][n + 1];
+        return dfs(dp, s1, s2, 0, 0, n);
+    }
+
+    private boolean dfs(int[][][] dp, String s1, String s2, int i1, int i2, int n) {
+        if (dp[i1][i2][n] != 0) {
+            return dp[i1][i2][n] == 1;
+        }
+        String s1Sub = s1.substring(i1, i1 + n);
+        String s2Sub = s2.substring(i2, i2 + n);
+        if (Objects.equals(s1Sub, s2Sub)) {
+            dp[i1][i2][n] = 1;
+            return true;
+        }
+        if (!isSimilar(s1Sub, s2Sub)) {
+            dp[i1][i2][n] = -1;
+            return false;
+        }
+        for (int i = 1; i < n; i++) {
+            if (dfs(dp, s1, s2, i1, i2, i) && dfs(dp, s1, s2, i1 + i, i2 + i, n - i)
+                || dfs(dp, s1, s2, i1, i2 + n - i, i) && dfs(dp, s1, s2, i1 + i, i2, n - i)) {
+                dp[i1][i2][n] = 1;
+                return true;
+            }
+        }
+        dp[i1][i2][n] = -1;
         return false;
     }
 
+    private boolean isSimilar(String s1Sub, String s2Sub) {
+        Map<Character, Integer> count = new HashMap<>();
+        for (int i = 0; i < s1Sub.length(); i++) {
+            count.put(s1Sub.charAt(i), count.getOrDefault(s1Sub.charAt(i), 0) + 1);
+            count.put(s2Sub.charAt(i), count.getOrDefault(s2Sub.charAt(i), 0) - 1);
+        }
+        for (Map.Entry<Character, Integer> entry : count.entrySet()) {
+            if (entry.getValue() != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
