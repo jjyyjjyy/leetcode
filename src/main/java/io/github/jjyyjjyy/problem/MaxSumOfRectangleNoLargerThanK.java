@@ -27,7 +27,11 @@ import io.github.jjyyjjyy.core.Tag;
     id = 363,
     name = "max-sum-of-rectangle-no-larger-than-k",
     difficulty = Difficulty.HARD,
-    tags = {Tag.QUEUE, Tag.BINARY_SEARCH, Tag.DYNAMIC_PROGRAMMING}
+    tags = {Tag.BINARY_SEARCH, Tag.DYNAMIC_PROGRAMMING}
 )
-public class MaxSumofRectangleNoLargerThanK {
+public class MaxSumOfRectangleNoLargerThanK {
+
+    public int maxSumSubmatrix(int[][] matrix, int k) {
+        return -1;
+    }
 }
