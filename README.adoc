@@ -390,6 +390,7 @@ a|
 * link:{package}/PalindromePartitioningII.java[palindrome-partitioning-ii]
 * link:{package}/DistinctSubsequences.java[distinct-subsequences]
 * link:{package}/ScrambleString.java[scramble-string]
+* link:{package}/MaxSumOfRectangleNoLargerThanK.java[max-sum-of-rectangle-no-larger-than-k]
 
 | Greedy
 a|
@@ -426,6 +427,7 @@ a|
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 * link:{package}/RussianDollEnvelopes.java[russian-doll-envelopes]
 * link:{package}/FindMinimuminRotatedSortedArrayII.java[find-minimum-in-rotated-sorted-array-ii]
+* link:{package}/MaxSumOfRectangleNoLargerThanK.java[max-sum-of-rectangle-no-larger-than-k]
 
 | TwoPointers
 a|
