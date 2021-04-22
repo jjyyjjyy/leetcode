@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.TreeSet;
 
 /**
  * <a href="https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/">矩形区域不超过 K 的最大数值和</a>
@@ -31,7 +34,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaxSumOfRectangleNoLargerThanK {
 
+    /**
+     * 1. 按行依次遍历.
+     * 2. 按列依次遍历: 从当前列遍历到最后一列, 遍历每一行的时候计算每一列的和, 找到最大值.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m^2*n*logn)")
     public int maxSumSubmatrix(int[][] matrix, int k) {
-        return -1;
+        int result = Integer.MIN_VALUE;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        for (int i = 0; i < m; i++) {
+            int[] sum = new int[n];
+            for (int j = i; j < m; j++) {
+                for (int l = 0; l < n; l++) {
+                    sum[l] += matrix[j][l];
+                }
+                TreeSet<Integer> set = new TreeSet<>();
+                set.add(0);
+                int s = 0;
+                for (int v : sum) {
+                    s += v;
+                    Integer ceiling = set.ceiling(s - k);
+                    if (ceiling != null) {
+                        result = Math.max(result, s - ceiling);
+                    }
+                    set.add(s);
+                }
+            }
+        }
+        return result;
     }
 }
