@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/largest-divisible-subset/">最大整除子集</a>
  *
@@ -32,4 +34,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class LargestDivisibleSubset {
+
+    public List<Integer> largestDivisibleSubset(int[] nums) {
+        return null;
+    }
 }
