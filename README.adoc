@@ -198,6 +198,7 @@ a|
 * link:{package}/BulbSwitcher.java[bulb-switcher]
 * link:{package}/ClumsyFactorial.java[clumsy-factorial]
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
+* link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 
@@ -383,6 +384,7 @@ a|
 * link:{package}/CountingBits.java[counting-bits]
 * link:{package}/LongestCommonSubsequence.java[longest-common-subsequence]
 * link:{package}/HouseRobberII.java[house-robber-ii]
+* link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
