@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/increasing-order-search-tree/">递增顺序查找树</a>
@@ -61,8 +61,32 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class IncreasingOrderSearchTree {
 
+    /**
+     * 1. 左中右遍历树, 插入到集合里.
+     * 2. 遍历集合, 一直向右添加节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public TreeNode increasingBST(TreeNode root) {
-        return null;
+        List<TreeNode> list = new ArrayList<>();
+        inorder(list, root);
+
+        TreeNode dummyNode = new TreeNode();
+        TreeNode currentNode = dummyNode;
+        for (TreeNode treeNode : list) {
+            currentNode.right = treeNode;
+            currentNode = treeNode;
+            currentNode.left = null;
+        }
+        return dummyNode.right;
+    }
+
+    private void inorder(List<TreeNode> list, TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inorder(list, root.left);
+        list.add(root);
+        inorder(list, root.right);
     }
 
 }
