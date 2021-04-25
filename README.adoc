@@ -283,6 +283,7 @@ a|
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
 * link:{package}/SumOfLeftLeaves.java[sum-of-left-leaves]
 * link:{package}/MinimumDistanceBetweenBSTNodes.java[minimum-distance-between-bst-nodes]
+* link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
@@ -475,6 +476,7 @@ a|
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
 * link:{package}/PathSum.java[path-sum]
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
+* link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
 a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
