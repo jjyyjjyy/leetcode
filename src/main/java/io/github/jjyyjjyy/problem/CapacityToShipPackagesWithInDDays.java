@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days/">在 D 天内送达包裹的能力</a>
@@ -69,7 +72,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CapacityToShipPackagesWithInDDays {
 
+    /**
+     * 1. 找到数组最大值, 计算数据之和. 分别为二分查找的左右边界.
+     * 2. 计算中间值所需要的天数, 如果小于等于D, 则继续搜索左半部分, 否则搜索右半部分, 直到左右边界重合.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(nlog(sumW))")
     public int shipWithinDays(int[] weights, int D) {
-        return -1;
+        int left = Arrays.stream(weights).max().getAsInt();
+        int right = Arrays.stream(weights).sum();
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            int need = 1;
+            int current = 0;
+            for (int weight : weights) {
+                if (current + weight > mid) {
+                    need++;
+                    current = 0;
+                }
+                current += weight;
+            }
+            if (need <= D) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
     }
 }
