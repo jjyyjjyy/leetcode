@@ -67,5 +67,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY, Tag.BINARY_SEARCH}
 )
-public class CapacityToShipPackagesWithinDDays {
+public class CapacityToShipPackagesWithInDDays {
+
+    public int shipWithinDays(int[] weights, int D) {
+        return -1;
+    }
 }
