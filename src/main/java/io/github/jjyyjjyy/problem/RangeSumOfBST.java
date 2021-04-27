@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/range-sum-of-bst/">二叉搜索树的范围和</a>
@@ -43,7 +40,22 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class RangeSumOfBST {
 
+    /**
+     * 1. 如果当前节点比high大, 遍历左子树.
+     * 2. 如果当前节点比low小, 遍历右子树.
+     * 3. 将当前节点的值+左右子树的和.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int rangeSumBST(TreeNode root, int low, int high) {
-        return -1;
+        if (root == null) {
+            return 0;
+        }
+        if (root.val > high) {
+            return rangeSumBST(root.left, low, high);
+        }
+        if (root.val < low) {
+            return rangeSumBST(root.right, low, high);
+        }
+        return root.val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
     }
 }
