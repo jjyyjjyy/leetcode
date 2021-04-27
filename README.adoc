@@ -285,6 +285,7 @@ a|
 * link:{package}/SumOfLeftLeaves.java[sum-of-left-leaves]
 * link:{package}/MinimumDistanceBetweenBSTNodes.java[minimum-distance-between-bst-nodes]
 * link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
+* link:{package}/RangeSumOfBST.java[range-sum-of-bst]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
