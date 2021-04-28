@@ -35,8 +35,13 @@ import io.github.jjyyjjyy.core.Tag;
 @Problem(
     id = 633,
     name = "sum-of-square-numbers",
-    difficulty = Difficulty.EASY,
+    difficulty = Difficulty.MEDIUM,
     tags = {Tag.MATH}
 )
-public class SumofSquareNumbers {
+public class SumOfSquareNumbers {
+
+    public boolean judgeSquareSum(int c) {
+        return false;
+    }
+
 }
