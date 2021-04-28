@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -40,8 +41,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SumOfSquareNumbers {
 
+    /**
+     * 双指针遍历0到sqrt(c)之间的数, 求和判断是否等于c.
+     */
+    @Complexity(Complexity.ComplexityType.O_SQRT_N)
     public boolean judgeSquareSum(int c) {
+        int left = 0;
+        int right = (int) Math.sqrt(c);
+        while (left <= right) {
+            long sum = (long) left * left + (long) right * right;
+            if (sum == c) {
+                return true;
+            }
+            if (sum < c) {
+                left++;
+            } else {
+                right--;
+            }
+        }
         return false;
     }
-
 }
