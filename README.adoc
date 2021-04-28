@@ -200,6 +200,7 @@ a|
 * link:{package}/ClumsyFactorial.java[clumsy-factorial]
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
 * link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
+* link:{package}/SumOfSquareNumbers.java[sum-of-square-numbers]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 

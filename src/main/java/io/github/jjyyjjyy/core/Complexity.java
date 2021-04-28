@@ -20,6 +20,7 @@ public @interface Complexity {
     enum ComplexityType {
 
         O_1("O(1)"),
+        O_SQRT_N("O(sqrtn)"),
         O_LOG_N("O(logn)"),
         O_N("O(n)"),
         O_N_LOG_N("O(nlogn)"),
