@@ -53,4 +53,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class FrogJump {
+
+    public boolean canCross(int[] stones) {
+        return false;
+    }
+
 }

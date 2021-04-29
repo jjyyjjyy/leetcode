@@ -397,6 +397,7 @@ a|
 * link:{package}/DistinctSubsequences.java[distinct-subsequences]
 * link:{package}/ScrambleString.java[scramble-string]
 * link:{package}/MaxSumOfRectangleNoLargerThanK.java[max-sum-of-rectangle-no-larger-than-k]
+* link:{package}/FrogJump.java[frog-jump]
 
 | Greedy
 a|
