@@ -38,4 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION}
 )
 public class SingleNumberII {
+
+    public int singleNumber(int[] nums) {
+        return -1;
+    }
 }
