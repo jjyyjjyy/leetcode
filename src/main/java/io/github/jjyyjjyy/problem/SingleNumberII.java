@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -39,7 +40,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SingleNumberII {
 
+    /**
+     * 计算每个数的二进制出现次数, 将每个二进制位对3求模, 得到出现1次的数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int singleNumber(int[] nums) {
-        return -1;
+        int a1 = 0;
+        int a2 = 0;
+        for (int num : nums) {
+            a2 = a2 ^ num & ~a1;
+            a1 = a1 ^ num & ~a2;
+        }
+        return a2;
     }
 }
