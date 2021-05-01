@@ -50,4 +50,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class CombinationSumIV {
+
+    public int combinationSum4(int[] nums, int target) {
+        return -1;
+    }
 }
