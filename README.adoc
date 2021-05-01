@@ -391,6 +391,7 @@ a|
 * link:{package}/LongestCommonSubsequence.java[longest-common-subsequence]
 * link:{package}/HouseRobberII.java[house-robber-ii]
 * link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
+* link:{package}/CombinationSumIV.java[combination-sum-iv]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
