@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Employee;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 import java.util.List;
 
@@ -46,7 +43,16 @@ import java.util.List;
 )
 public class EmployeeImportance {
 
+    /**
+     * DFS求和
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int getImportance(List<Employee> employees, int id) {
-        return -1;
+        if (employees.isEmpty()) {
+            return 0;
+        }
+        Employee employee = employees.parallelStream()
+            .filter(e -> e.id == id).findFirst().get();
+        return employee.importance + employee.subordinates.parallelStream().mapToInt(i -> getImportance(employees, i)).sum();
     }
 }
