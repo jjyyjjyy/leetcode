@@ -261,6 +261,7 @@ a|
 * link:{package}/FirstUniqueCharacterInAString.java[first-unique-character-in-a-string]
 * link:{package}/MyHashSet.java[design-hashset]
 * link:{package}/MyHashMap.java[design-hashmap]
+* link:{package}/EmployeeImportance.java[employee-importance]
 a|
 * link:{package}/FourSum.java[4sum]
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
@@ -483,6 +484,7 @@ a|
 * link:{package}/PathSum.java[path-sum]
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
 * link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
+* link:{package}/EmployeeImportance.java[employee-importance]
 a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
@@ -505,6 +507,7 @@ a|
 * link:{package}/SymmetricTree.java[symmetric-tree]
 * link:{package}/BinaryTreeLevelOrderTraversalII.java[binary-tree-level-order-traversal-ii]
 * link:{package}/MinimumDepthOfBinaryTree.java[minimum-depth-of-binary-tree]
+* link:{package}/EmployeeImportance.java[employee-importance]
 a|
 * link:{package}/BinaryTreeLevelOrderTraversal.java[binary-tree-level-order-traversal]
 * link:{package}/BinaryTreeZigzagLevelOrderTraversal.java[binary-tree-zigzag-level-order-traversal]

@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.Employee;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/employee-importance/">员工的重要性</a>
@@ -42,4 +45,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.BREADTH_FIRST_SEARCH, Tag.HASH_TABLE}
 )
 public class EmployeeImportance {
+
+    public int getImportance(List<Employee> employees, int id) {
+        return -1;
+    }
 }
