@@ -270,6 +270,7 @@ a|
 * link:{package}/GroupAnagrams.java[group-anagrams]
 * link:{package}/HIndex.java[h-index]
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
+* link:{package}/BrickWall.java[brick-wall]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
