@@ -1,10 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/brick-wall/">砖墙</a>
@@ -51,7 +54,23 @@ import java.util.List;
 )
 public class BrickWall {
 
+    /**
+     * 最少经过的边数=总边数-边出现最多的次数
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int leastBricks(List<List<Integer>> wall) {
-        return -1;
+        Map<Integer, Integer> count = new HashMap<>();
+        for (List<Integer> w : wall) {
+            int sum = 0;
+            for (int i = 0; i < w.size() - 1; i++) {
+                sum += w.get(i);
+                count.put(sum, count.getOrDefault(sum, 0) + 1);
+            }
+        }
+        int max = 0;
+        for (Map.Entry<Integer, Integer> entry : count.entrySet()) {
+            max = Math.max(max, entry.getValue());
+        }
+        return wall.size() - max;
     }
 }
