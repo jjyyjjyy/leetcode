@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/brick-wall/">砖墙</a>
  *
@@ -48,4 +50,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE}
 )
 public class BrickWall {
+
+    public int leastBricks(List<List<Integer>> wall) {
+        return -1;
+    }
 }
