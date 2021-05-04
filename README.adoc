@@ -402,6 +402,7 @@ a|
 * link:{package}/ScrambleString.java[scramble-string]
 * link:{package}/MaxSumOfRectangleNoLargerThanK.java[max-sum-of-rectangle-no-larger-than-k]
 * link:{package}/FrogJump.java[frog-jump]
+* link:{package}/PaintHouseIII.java[paint-house-iii]
 
 | Greedy
 a|

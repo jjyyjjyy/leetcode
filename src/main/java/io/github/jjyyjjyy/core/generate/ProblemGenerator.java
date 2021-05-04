@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("path-with-minimum-effort");
+        dumpToFile("paint-house-iii");
     }
 
     private static String capitalize(char cap) {
