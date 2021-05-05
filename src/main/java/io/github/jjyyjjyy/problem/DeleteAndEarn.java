@@ -53,5 +53,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
-public class DeleteandEarn {
+public class DeleteAndEarn {
+
+    public int deleteAndEarn(int[] nums) {
+        return -1;
+    }
+
 }
