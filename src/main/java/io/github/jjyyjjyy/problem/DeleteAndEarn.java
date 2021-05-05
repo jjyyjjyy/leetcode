@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.stream.IntStream;
 
 /**
  * <a href="https://leetcode-cn.com/problems/delete-and-earn/">删除与获得点数</a>
@@ -55,8 +58,29 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DeleteAndEarn {
 
+    /**
+     * 1. 创建一个dp数组, 保存每个位置元素的总和.
+     * 2. 依次遍历dp数组, 将n-2位置的结果加上当前元素的和与n-1位置的结果作比较取较大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public int deleteAndEarn(int[] nums) {
-        return -1;
+        int max = IntStream.of(nums).max().getAsInt();
+        int[] dp = new int[max + 1];
+        for (int num : nums) {
+            dp[num] += num;
+        }
+        return rob(dp);
     }
 
+    private int rob(int[] dp) {
+        int n = dp.length;
+        int first = dp[0];
+        int second = Math.max(dp[0], dp[1]);
+        for (int i = 2; i < n; i++) {
+            int tmp = second;
+            second = Math.max(first + dp[i], second);
+            first = tmp;
+        }
+        return second;
+    }
 }
