@@ -211,6 +211,7 @@ a|
 * link:{package}/SingleNumber.java[single-number]
 * link:{package}/PowerOfTwo.java[power-of-two]
 * link:{package}/ReverseBits.java[reverse-bits]
+* link:{package}/DecodeXoredArray.java[decode-xored-array]
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
