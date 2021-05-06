@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -51,7 +52,16 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DecodeXoredArray {
 
+    /**
+     * a^b=c => a^a^b=a^c=b
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] decode(int[] encoded, int first) {
-        return null;
+        int[] result = new int[encoded.length + 1];
+        result[0] = first;
+        for (int i = 1; i < result.length; i++) {
+            result[i] = result[i - 1] ^ encoded[i - 1];
+        }
+        return result;
     }
 }
