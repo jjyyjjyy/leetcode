@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("decode-xored-array");
+        dumpToFile("xor-operation-in-an-array");
     }
 
     private static String capitalize(char cap) {
