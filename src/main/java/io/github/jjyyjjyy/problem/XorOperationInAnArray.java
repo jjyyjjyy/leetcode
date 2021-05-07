@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -59,7 +60,12 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class XorOperationInAnArray {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public int xorOperation(int n, int start) {
-        return -1;
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            result ^= (start + i * 2);
+        }
+        return result;
     }
 }
