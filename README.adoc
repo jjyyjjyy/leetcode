@@ -59,6 +59,7 @@ a|
 * link:{package}/FlippingAnImage.java[flipping-an-image]
 * link:{package}/TransposeMatrix.java[transpose-matrix]
 * link:{package}/MonotonicArray.java[monotonic-array]
+* link:{package}/XorOperationInAnArray.java[xor-operation-in-an-array]
 a|
 * link:{package}/ContainerWithMostWater.java[container-with-most-water]
 * link:{package}/ThreeSum.java[3sum]
@@ -212,6 +213,7 @@ a|
 * link:{package}/PowerOfTwo.java[power-of-two]
 * link:{package}/ReverseBits.java[reverse-bits]
 * link:{package}/DecodeXoredArray.java[decode-xored-array]
+* link:{package}/XorOperationInAnArray.java[xor-operation-in-an-array]
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
