@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/">制作 m 束花所需的最少天数</a>
@@ -80,8 +83,45 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MinimumNumberOfDaysToMakeMBouquets {
 
+    /**
+     * 使用二分查找找到最小天数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int minDays(int[] bloomDay, int m, int k) {
-        return -1;
+        if (m * k > bloomDay.length) {
+            return -1;
+        }
+        int low = 1;
+        int high = Arrays.stream(bloomDay).max().getAsInt();
+        while (low < high) {
+            int days = low + (high - low) / 2;
+            if (canMake(bloomDay, days, m, k)) {
+                high = days;
+            } else {
+                low = days + 1;
+            }
+        }
+        return low;
     }
 
+    /**
+     * 1. 遍历数组, 如果数据连续一段<=days的元素数量等于k, 则说明这些元素可以变成一束花, 记一次数.
+     * 2. 判断花束的数量是否>=m.
+     */
+    private boolean canMake(int[] bloomDay, int days, int m, int k) {
+        int current = 0;
+        int flowerCount = 0;
+        for (int i = 0; i < bloomDay.length && flowerCount < m; i++) {
+            if (bloomDay[i] <= days) {
+                current++;
+                if (current == k) {
+                    flowerCount++;
+                    current = 0;
+                }
+            } else {
+                current = 0;
+            }
+        }
+        return flowerCount >= m;
+    }
 }
