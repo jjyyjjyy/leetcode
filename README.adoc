@@ -96,6 +96,7 @@ a|
 * link:{package}/GrumpyBookstoreOwner.java[grumpy-bookstore-owner]
 * link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 * link:{package}/CapacityToShipPackagesWithInDDays.java[capacity-to-ship-packages-within-d-days]
+* link:{package}/MinimumNumberOfDaysToMakeMBouquets.java[minimum-number-of-days-to-make-m-bouquets]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
