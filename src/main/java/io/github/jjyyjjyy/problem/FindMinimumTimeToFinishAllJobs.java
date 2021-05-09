@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/find-minimum-time-to-finish-all-jobs/">完成所有工作的最短时间</a>
@@ -50,8 +54,30 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FindMinimumTimeToFinishAllJobs {
 
+    private int result = Integer.MAX_VALUE;
+
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int minimumTimeRequired(int[] jobs, int k) {
-        return -1;
+        backtrack(jobs, 0, new int[k], 0);
+        return result;
     }
 
+    private void backtrack(int[] jobs, int index, int[] workers, int max) {
+        if (index == jobs.length) {
+            result = Math.min(result, max);
+            return;
+        }
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < workers.length; i++) {
+            if (!set.add(workers[i])) {
+                continue;
+            }
+            if (workers[i] + jobs[index] >= result) {
+                continue;
+            }
+            workers[i] += jobs[index];
+            backtrack(jobs, index + 1, workers, Math.max(max, workers[i]));
+            workers[i] -= jobs[index];
+        }
+    }
 }
