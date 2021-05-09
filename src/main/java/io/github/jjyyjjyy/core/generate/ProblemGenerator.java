@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("minimum-number-of-days-to-make-m-bouquets");
+        dumpToFile("find-minimum-time-to-finish-all-jobs");
     }
 
     private static String capitalize(char cap) {

@@ -556,6 +556,7 @@ a|
 * link:{package}/PalindromePartitioning.java[palindrome-partitioning]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
+* link:{package}/FindMinimumTimeToFinishAllJobs.java[find-minimum-time-to-finish-all-jobs]
 
 | DivideAndConquer
 a|
