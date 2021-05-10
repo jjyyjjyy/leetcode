@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/leaf-similar-trees/">叶子相似的树</a>
@@ -34,8 +34,32 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class LeafSimilarTrees {
 
+    /**
+     * 分别dfs遍历取到两个树的叶子节点, 放到列表里, 比较两个列表是否相同.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
-        return false;
+        List<Integer> root1Leaves = new ArrayList<>();
+        if (root1 != null) {
+            dfs(root1Leaves, root1);
+        }
+        List<Integer> root2Leaves = new ArrayList<>();
+        if (root2 != null) {
+            dfs(root2Leaves, root2);
+        }
+        return root1Leaves.equals(root2Leaves);
     }
 
+    private void dfs(List<Integer> leaves, TreeNode root) {
+        if (root.left == null && root.right == null) {
+            leaves.add(root.val);
+            return;
+        }
+        if (root.left != null) {
+            dfs(leaves, root.left);
+        }
+        if (root.right != null) {
+            dfs(leaves, root.right);
+        }
+    }
 }
