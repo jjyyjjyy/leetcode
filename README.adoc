@@ -294,6 +294,7 @@ a|
 * link:{package}/MinimumDistanceBetweenBSTNodes.java[minimum-distance-between-bst-nodes]
 * link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
 * link:{package}/RangeSumOfBST.java[range-sum-of-bst]
+* link:{package}/LeafSimilarTrees.java[leaf-similar-trees]
 a|
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
 * link:{package}/BSTIterator.java[binary-search-tree-iterator]
@@ -493,6 +494,7 @@ a|
 * link:{package}/BinaryTreePaths.java[binary-tree-paths]
 * link:{package}/IncreasingOrderSearchTree.java[increasing-order-search-tree]
 * link:{package}/EmployeeImportance.java[employee-importance]
+* link:{package}/LeafSimilarTrees.java[leaf-similar-trees]
 a|
 * link:{package}/ValidateBinarySearchTree.java[validate-binary-search-tree]
 * link:{package}/ConstructBinaryTreeFromPreorderAndInorderTraversal.java[construct-binary-tree-from-preorder-and-inorder-traversal]
