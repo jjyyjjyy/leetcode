@@ -220,6 +220,7 @@ a|
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
 * link:{package}/CountingBits.java[counting-bits]
 * link:{package}/SingleNumberII.java[single-number-ii]
+* link:{package}/DecodeXoredPermutation.java[decode-xored-permutation]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
