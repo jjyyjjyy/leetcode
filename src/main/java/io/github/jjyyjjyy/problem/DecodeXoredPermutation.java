@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -46,7 +47,28 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DecodeXoredPermutation {
 
+    /**
+     * 1. encoded所有奇数位下标元素异或的结果等于第二位到n的异或结果, 再和1~n异或, 就得到第一个数.
+     * 2. a ^ b = c => a ^ c = a ^ b ^ a = b, 所以找到第一个数, 就可以推断出后面的数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] decode(int[] encoded) {
-        return null;
+        int n = encoded.length + 1;
+
+        int total = 0;
+        for (int i = 1; i <= n; i++) {
+            total ^= i;
+        }
+        int odd = 0;
+        for (int i = 1; i < n - 1; i += 2) {
+            odd ^= encoded[i];
+        }
+
+        int[] result = new int[n];
+        result[0] = total ^ odd;
+        for (int i = 0; i < n - 1; i++) {
+            result[i + 1] = result[i] ^ encoded[i];
+        }
+        return result;
     }
 }
