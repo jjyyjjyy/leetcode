@@ -56,5 +56,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.BIT_MANIPULATION}
 )
-public class XORQueriesofaSubarray {
+public class XorQueriesOfASubarray {
+
+    public int[] xorQueries(int[] arr, int[][] queries) {
+        return null;
+    }
 }
