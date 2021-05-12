@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -58,7 +59,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class XorQueriesOfASubarray {
 
+    /**
+     * 1. 先计算出每个位置的前缀异或值.
+     * 2. 遍历queries, 每个区间的前缀异或值等于右侧元素的前缀异或值异或左侧元素的前缀异或值.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public int[] xorQueries(int[] arr, int[][] queries) {
-        return null;
+        int n = arr.length;
+        int[] prefixSum = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            prefixSum[i + 1] = prefixSum[i] ^ arr[i];
+        }
+        int m = queries.length;
+        int[] result = new int[m];
+        for (int i = 0; i < m; i++) {
+            result[i] = prefixSum[queries[i][0]] ^ prefixSum[queries[i][1] + 1];
+        }
+        return result;
     }
 }
