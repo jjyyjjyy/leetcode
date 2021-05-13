@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -60,7 +61,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfWaysToStayInTheSamePlaceAfterSomeSteps {
 
+    private static final int MODULO = 1000000007;
+
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int numWays(int steps, int arrLen) {
-        return -1;
+        int maxColumn = Math.min(arrLen - 1, steps);
+        int[] dp = new int[maxColumn + 1];
+        dp[0] = 1;
+        for (int i = 1; i <= steps; i++) {
+            int[] dpNext = new int[maxColumn + 1];
+            for (int j = 0; j <= maxColumn; j++) {
+                dpNext[j] = dp[j];
+                if (j - 1 >= 0) {
+                    dpNext[j] = (dpNext[j] + dp[j - 1]) % MODULO;
+                }
+                if (j + 1 <= maxColumn) {
+                    dpNext[j] = (dpNext[j] + dp[j + 1]) % MODULO;
+                }
+            }
+            dp = dpNext;
+        }
+        return dp[0];
     }
 }
