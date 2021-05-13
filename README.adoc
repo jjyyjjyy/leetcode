@@ -411,6 +411,7 @@ a|
 * link:{package}/MaxSumOfRectangleNoLargerThanK.java[max-sum-of-rectangle-no-larger-than-k]
 * link:{package}/FrogJump.java[frog-jump]
 * link:{package}/PaintHouseIII.java[paint-house-iii]
+* link:{package}/NumberOfWaysToStayInTheSamePlaceAfterSomeSteps.java[number-of-ways-to-stay-in-the-same-place-after-some-steps]
 
 | Greedy
 a|

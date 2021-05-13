@@ -58,5 +58,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
-public class NumberofWaystoStayintheSamePlaceAfterSomeSteps {
+public class NumberOfWaysToStayInTheSamePlaceAfterSomeSteps {
+
+    public int numWays(int steps, int arrLen) {
+        return -1;
+    }
 }
