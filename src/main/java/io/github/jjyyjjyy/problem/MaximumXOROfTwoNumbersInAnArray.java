@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/">数组中两个数的最大异或值</a>
@@ -31,7 +35,30 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaximumXOROfTwoNumbersInAnArray {
 
+    private static final int BITS = 30;
+
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int findMaximumXOR(int[] nums) {
-        return -1;
+        int x = 0;
+        for (int i = BITS; i >= 0; i--) {
+            Set<Integer> set = new HashSet<>();
+            for (int num : nums) {
+                set.add(num >> i);
+            }
+            int xNext = x * 2 + 1;
+            boolean found = false;
+            for (int num : nums) {
+                if (set.contains(xNext ^ (num >> i))) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                x = xNext;
+            } else {
+                x = xNext - 1;
+            }
+        }
+        return x;
     }
 }
