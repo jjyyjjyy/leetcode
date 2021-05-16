@@ -222,6 +222,7 @@ a|
 * link:{package}/SingleNumberII.java[single-number-ii]
 * link:{package}/DecodeXoredPermutation.java[decode-xored-permutation]
 * link:{package}/XorQueriesOfASubarray.java[xor-queries-of-a-subarray]
+* link:{package}/MaximumXOROfTwoNumbersInAnArray.java[maximum-xor-of-two-numbers-in-an-array]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 

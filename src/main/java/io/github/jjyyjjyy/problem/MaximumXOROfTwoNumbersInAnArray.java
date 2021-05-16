@@ -29,5 +29,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.BIT_MANIPULATION, Tag.TRIE}
 )
-public class MaximumXORofTwoNumbersinanArray {
+public class MaximumXOROfTwoNumbersInAnArray {
+
+    public int findMaximumXOR(int[] nums) {
+        return -1;
+    }
 }
