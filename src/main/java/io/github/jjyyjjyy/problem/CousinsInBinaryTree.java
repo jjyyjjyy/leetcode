@@ -1,9 +1,9 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * <a href="https://leetcode-cn.com/problems/cousins-in-binary-tree/">二叉树的堂兄弟节点</a>
@@ -64,7 +64,49 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class CousinsInBinaryTree {
 
+    /**
+     * BFS遍历树, 找到x和y的深度和父节点, 比较深度是否相同, 父节点是否不同
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean isCousins(TreeNode root, int x, int y) {
-        return false;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        int depthX = 0;
+        int depthY = 0;
+        TreeNode xParent = null;
+        TreeNode yParent = null;
+
+        int depth = 1;
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode parent = queue.poll();
+                if (parent.left != null) {
+                    if (parent.left.val == x) {
+                        depthX = depth;
+                        xParent = parent;
+                    }
+                    if (parent.left.val == y) {
+                        depthY = depth;
+                        yParent = parent;
+                    }
+                    queue.add(parent.left);
+                }
+                if (parent.right != null) {
+                    if (parent.right.val == x) {
+                        depthX = depth;
+                        xParent = parent;
+                    }
+                    if (parent.right.val == y) {
+                        depthY = depth;
+                        yParent = parent;
+                    }
+                    queue.add(parent.right);
+                }
+            }
+            depth++;
+        }
+        return depthX == depthY && xParent != yParent;
     }
 }
