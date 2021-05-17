@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/cousins-in-binary-tree/">二叉树的堂兄弟节点</a>
@@ -61,5 +62,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.TREE, Tag.BREADTH_FIRST_SEARCH}
 )
-public class CousinsinBinaryTree {
+public class CousinsInBinaryTree {
+
+    public boolean isCousins(TreeNode root, int x, int y) {
+        return false;
+    }
 }
