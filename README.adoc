@@ -97,6 +97,7 @@ a|
 * link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 * link:{package}/CapacityToShipPackagesWithInDDays.java[capacity-to-ship-packages-within-d-days]
 * link:{package}/MinimumNumberOfDaysToMakeMBouquets.java[minimum-number-of-days-to-make-m-bouquets]
+* link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -203,6 +204,7 @@ a|
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
 * link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
 * link:{package}/SumOfSquareNumbers.java[sum-of-square-numbers]
+* link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 
@@ -223,6 +225,7 @@ a|
 * link:{package}/DecodeXoredPermutation.java[decode-xored-permutation]
 * link:{package}/XorQueriesOfASubarray.java[xor-queries-of-a-subarray]
 * link:{package}/MaximumXOROfTwoNumbersInAnArray.java[maximum-xor-of-two-numbers-in-an-array]
+* link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
