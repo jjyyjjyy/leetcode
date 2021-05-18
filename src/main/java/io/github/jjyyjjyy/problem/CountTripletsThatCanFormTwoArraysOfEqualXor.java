@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -72,7 +73,25 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CountTripletsThatCanFormTwoArraysOfEqualXor {
 
+    /**
+     * 1. 计算前缀和
+     * 2. a==b => s[i] == s[k+1] , i到k+1中间任意一个数字都可以作为j, 累加得到结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public int countTriplets(int[] arr) {
-        return -1;
+        int n = arr.length;
+        int[] s = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            s[i + 1] = s[i] ^ arr[i];
+        }
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            for (int k = i + 1; k < n; k++) {
+                if (s[i] == s[k + 1]) {
+                    result += k - i;
+                }
+            }
+        }
+        return result;
     }
 }
