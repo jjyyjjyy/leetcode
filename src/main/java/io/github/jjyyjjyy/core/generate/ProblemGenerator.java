@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("xor-queries-of-a-subarray");
+        dumpToFile("count-triplets-that-can-form-two-arrays-of-equal-xor");
     }
 
     private static String capitalize(char cap) {
