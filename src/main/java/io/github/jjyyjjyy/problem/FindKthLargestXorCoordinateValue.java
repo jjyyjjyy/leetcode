@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/find-kth-largest-xor-coordinate-value/">找出第 K 大的异或坐标值</a>
@@ -59,8 +63,23 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FindKthLargestXorCoordinateValue {
 
+    /**
+     * 1. 计算二维数组的前缀和.
+     * 2. 排序, 找到k-1位置的前缀和.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(mnlog(mn))")
     public int kthLargestValue(int[][] matrix, int k) {
-        return -1;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] pre = new int[m + 1][n + 1];
+        List<Integer> result = new ArrayList<>();
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                pre[i][j] = pre[i - 1][j] ^ pre[i][j - 1] ^ pre[i - 1][j - 1] ^ matrix[i - 1][j - 1];
+                result.add(pre[i][j]);
+            }
+        }
+        result.sort((a, b) -> b - a);
+        return result.get(k - 1);
     }
-
 }
