@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("count-triplets-that-can-form-two-arrays-of-equal-xor");
+        dumpToFile("find-kth-largest-xor-coordinate-value");
     }
 
     private static String capitalize(char cap) {
