@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/top-k-frequent-words/">前K个高频单词</a>
@@ -65,7 +66,18 @@ import java.util.List;
 )
 public class TopKFrequentWords {
 
+    /**
+     * 1. 统计每个单词出现的次数.
+     * 2. 将单词按照次数排序, 取前k个单词.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n+nlogn)")
     public List<String> topKFrequent(String[] words, int k) {
-        return null;
+        Map<String, Integer> counts = new HashMap<>();
+        for (String word : words) {
+            counts.put(word, counts.getOrDefault(word, 0) + 1);
+        }
+        List<String> result = new ArrayList<>(counts.keySet());
+        result.sort((a, b) -> Objects.equals(counts.get(b), counts.get(a)) ? a.compareTo(b) : counts.get(b) - counts.get(a));
+        return result.subList(0, k);
     }
 }
