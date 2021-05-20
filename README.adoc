@@ -282,6 +282,7 @@ a|
 * link:{package}/HIndex.java[h-index]
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
 * link:{package}/BrickWall.java[brick-wall]
+* link:{package}/TopKFrequentWords.java[top-k-frequent-words]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
@@ -333,6 +334,7 @@ a|
 * link:{package}/UglyNumberII.java[ugly-number-ii]
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
 * link:{package}/KthLargest.java[kth-largest-element-in-a-stream]
+* link:{package}/TopKFrequentWords.java[top-k-frequent-words]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 

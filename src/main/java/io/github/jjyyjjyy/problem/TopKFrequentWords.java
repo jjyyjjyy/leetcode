@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/top-k-frequent-words/">前K个高频单词</a>
  *
@@ -62,4 +64,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HEAP, Tag.TRIE, Tag.HASH_TABLE}
 )
 public class TopKFrequentWords {
+
+    public List<String> topKFrequent(String[] words, int k) {
+        return null;
+    }
 }
