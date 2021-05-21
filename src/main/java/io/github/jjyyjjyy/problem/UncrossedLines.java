@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -62,7 +63,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class UncrossedLines {
 
+    /**
+     * 1. 维护一个二维数组dp保存从1到m/n的连接数.
+     * 2. 依次遍历两个数组,如果当前元素相等, 则当前连接数等于上一个位置的连接数加1, 否则等于i-1连j和i连j-1的最大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int maxUncrossedLines(int[] nums1, int[] nums2) {
-        return -1;
+        int m = nums1.length;
+        int n = nums2.length;
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 1; i <= m; i++) {
+            int n1 = nums1[i - 1];
+            for (int j = 1; j <= n; j++) {
+                int n2 = nums2[j - 1];
+                if (n1 == n2) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[m][n];
     }
 }
