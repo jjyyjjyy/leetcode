@@ -61,4 +61,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.ARRAY}
 )
 public class UncrossedLines {
+
+    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+        return -1;
+    }
 }
