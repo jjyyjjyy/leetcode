@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -42,7 +43,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ChalkboardXORGame {
 
+    /**
+     * 1. 数组长度为偶数时, 总能找到一个数使得异或结果不等于0.
+     * 2. 如果全部异或结果为0, Alice擦掉后就能使得结果不为0, Alice胜利.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public boolean xorGame(int[] nums) {
-        return false;
+        if ((nums.length & 1) == 0) {
+            return true;
+        }
+        int sum = 0;
+        for (int num : nums) {
+            sum ^= num;
+        }
+        return sum == 0;
     }
 }
