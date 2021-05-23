@@ -231,6 +231,7 @@ a|
 * link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
+* link:{package}/MaximumXorWithAnElementFromArray.java[maximum-xor-with-an-element-from-array]
 
 | Stack
 a|

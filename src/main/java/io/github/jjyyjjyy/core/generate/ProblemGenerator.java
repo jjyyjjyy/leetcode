@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("find-kth-largest-xor-coordinate-value");
+        dumpToFile("maximum-xor-with-an-element-from-array");
     }
 
     private static String capitalize(char cap) {
