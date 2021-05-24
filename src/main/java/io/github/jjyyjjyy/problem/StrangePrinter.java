@@ -46,4 +46,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DEPTH_FIRST_SEARCH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class StrangePrinter {
+
+    public int strangePrinter(String s) {
+        return -1;
+    }
 }

@@ -423,6 +423,7 @@ a|
 * link:{package}/FrogJump.java[frog-jump]
 * link:{package}/PaintHouseIII.java[paint-house-iii]
 * link:{package}/NumberOfWaysToStayInTheSamePlaceAfterSomeSteps.java[number-of-ways-to-stay-in-the-same-place-after-some-steps]
+* link:{package}/StrangePrinter.java[strange-printer]
 
 | Greedy
 a|
@@ -525,6 +526,7 @@ a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
 * link:{package}/SimilarStringGroups.java[similar-string-groups]
+* link:{package}/StrangePrinter.java[strange-printer]
 
 | BreadthFirstSearch
 a|
