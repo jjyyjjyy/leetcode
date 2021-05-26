@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Stack;
 
 /**
  * <a href="https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/">反转每对括号间的子串</a>
@@ -57,8 +60,62 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ReverseSubstringsBetweenEachPairofParentheses {
 
+    /**
+     * 1. 依次遍历字符串.
+     * 2. 如果遍历到左括号, 则将当前遍历过的字符压入栈中.
+     * 3. 如果遍历到右括号, 则将当前遍历过的字符翻转, 将栈顶字符放到当前字符最前面.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public String reverseParentheses(String s) {
-        return null;
+        Stack<String> stack = new Stack<>();
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '(') {
+                stack.push(result.toString());
+                result.setLength(0);
+            } else if (ch == ')') {
+                result.reverse();
+                result.insert(0, stack.pop());
+            } else {
+                result.append(ch);
+            }
+        }
+        return result.toString();
     }
 
+    /**
+     * 1. 遍历字符串, 找到配对的索引.
+     * 2. 遍历字符串, 如果遍历到左括号或者右括号, 则跳转到配对的索引处, 如果跳到右括号则倒序遍历, 一直遍历到左括号处, 然后跳到原来的右括号右侧.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public String reverseParentheses2(String s) {
+        int n = s.length();
+        int[] pair = new int[n];
+        Stack<Integer> pairStack = new Stack<>();
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (ch == '(') {
+                pairStack.push(i);
+            } else if (ch == ')') {
+                int j = pairStack.pop();
+                pair[i] = j;
+                pair[j] = i;
+            }
+        }
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+        int step = 1;
+        while (index < n) {
+            char ch = s.charAt(index);
+            if (ch == '(' || ch == ')') {
+                index = pair[index];
+                step = -step;
+            } else {
+                result.append(ch);
+            }
+            index += step;
+        }
+        return result.toString();
+    }
 }
