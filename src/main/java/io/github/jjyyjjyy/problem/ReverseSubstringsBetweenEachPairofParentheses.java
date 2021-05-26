@@ -56,4 +56,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.STACK}
 )
 public class ReverseSubstringsBetweenEachPairofParentheses {
+
+    public String reverseParentheses(String s) {
+        return null;
+    }
+
 }
