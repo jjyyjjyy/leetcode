@@ -43,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BIT_MANIPULATION}
 )
 public class HammingDistance {
+
+    public int hammingDistance(int x, int y) {
+        return -1;
+    }
 }

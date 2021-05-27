@@ -220,6 +220,7 @@ a|
 * link:{package}/ReverseBits.java[reverse-bits]
 * link:{package}/DecodeXoredArray.java[decode-xored-array]
 * link:{package}/XorOperationInAnArray.java[xor-operation-in-an-array]
+* link:{package}/HammingDistance.java[hamming-distance]
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
