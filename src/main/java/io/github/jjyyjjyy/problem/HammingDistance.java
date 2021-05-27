@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -44,7 +45,11 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HammingDistance {
 
+    /**
+     * x和y异或, 再统计1的数量.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public int hammingDistance(int x, int y) {
-        return -1;
+        return Integer.bitCount(x ^ y);
     }
 }
