@@ -230,6 +230,7 @@ a|
 * link:{package}/XorQueriesOfASubarray.java[xor-queries-of-a-subarray]
 * link:{package}/MaximumXOROfTwoNumbersInAnArray.java[maximum-xor-of-two-numbers-in-an-array]
 * link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
+* link:{package}/TotalHammingDistance.java[total-hamming-distance]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaximumXorWithAnElementFromArray.java[maximum-xor-with-an-element-from-array]
