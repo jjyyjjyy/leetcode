@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -44,7 +45,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TotalHammingDistance {
 
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int totalHammingDistance(int[] nums) {
-        return -1;
+        int n = nums.length;
+        int result = 0;
+
+        for (int i = 0; i < 30; i++) {
+            int c = 0;
+            for (int num : nums) {
+                c += (num >> i) & 1;
+            }
+            result += c * (n - c);
+        }
+        return result;
     }
 }
