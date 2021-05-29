@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/number-of-submatrices-that-sum-to-target/">元素和为目标值的子矩阵数量</a>
@@ -48,8 +52,40 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfSubmatricesThatSumToTarget {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(m^2*n)")
     public int numSubmatrixSumTarget(int[][] matrix, int target) {
-        return -1;
+        int result = 0;
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        for (int i = 0; i < m; i++) {
+            int[] sum = new int[n];
+            for (int j = i; j < m; j++) {
+                for (int k = 0; k < n; k++) {
+                    sum[k] += matrix[j][k];
+                }
+                result += subArraySum(sum, target);
+            }
+        }
+        return result;
     }
 
+    /**
+     * 1. 依次遍历数组, 使用哈希表统计子数组和等于target的数量.
+     * 2. 如果当前值与target差值在哈希表中存在, 计数加1.
+     * 3. 将前缀和保存到哈希表中.
+     */
+    private int subArraySum(int[] sum, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, 1);
+        int count = 0;
+        int pre = 0;
+        for (int x : sum) {
+            pre += x;
+            count += map.getOrDefault(pre - target, 0);
+            map.put(pre, map.getOrDefault(pre, 0) + 1);
+        }
+        return count;
+    }
 }
