@@ -46,5 +46,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING, Tag.SLIDING_WINDOW}
 )
-public class NumberofSubmatricesThatSumtoTarget {
+public class NumberOfSubmatricesThatSumToTarget {
+
+    public int numSubmatrixSumTarget(int[][] matrix, int target) {
+        return -1;
+    }
+
 }

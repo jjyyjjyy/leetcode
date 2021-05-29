@@ -105,6 +105,7 @@ a|
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
 * link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
 * link:{package}/FindMinimuminRotatedSortedArrayII.java[find-minimum-in-rotated-sorted-array-ii]
+* link:{package}/NumberOfSubmatricesThatSumToTarget.java[number-of-submatrices-that-sum-to-target]
 
 | String
 a|
@@ -428,6 +429,7 @@ a|
 * link:{package}/NumberOfWaysToStayInTheSamePlaceAfterSomeSteps.java[number-of-ways-to-stay-in-the-same-place-after-some-steps]
 * link:{package}/StrangePrinter.java[strange-printer]
 * link:{package}/MakeTheXorOfAllSegmentsEqualToZero.java[make-the-xor-of-all-segments-equal-to-zero]
+* link:{package}/NumberOfSubmatricesThatSumToTarget.java[number-of-submatrices-that-sum-to-target]
 
 | Greedy
 a|
@@ -563,6 +565,7 @@ a|
 * link:{package}/SlidingWindowMedian.java[sliding-window-median]
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 * link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
+* link:{package}/NumberOfSubmatricesThatSumToTarget.java[number-of-submatrices-that-sum-to-target]
 
 | BackTracking
 |
