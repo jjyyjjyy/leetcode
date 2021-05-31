@@ -36,5 +36,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.BIT_MANIPULATION}
 )
-public class PowerofFour {
+public class PowerOfFour {
+
+    public boolean isPowerOfFour(int n) {
+        return false;
+    }
 }
