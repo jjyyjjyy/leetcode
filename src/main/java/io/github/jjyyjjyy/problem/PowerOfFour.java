@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -38,7 +39,11 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PowerOfFour {
 
+    /**
+     * 如果一个数是4的幂, 那么这个数的二进制表示中有且仅有一个1 => (n & n - 1) == 0, 并且在偶数位上 => (n & 0xaaaaaaaa) == 0.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public boolean isPowerOfFour(int n) {
-        return false;
+        return n > 0 && (n & n - 1) == 0 && (n & 0xaaaaaaaa) == 0;
     }
 }
