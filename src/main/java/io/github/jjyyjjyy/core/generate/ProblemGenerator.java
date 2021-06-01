@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("make-the-xor-of-all-segments-equal-to-zero");
+        dumpToFile("can-you-eat-your-favorite-candy-on-your-favorite-day");
     }
 
     private static String capitalize(char cap) {
