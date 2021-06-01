@@ -208,6 +208,7 @@ a|
 * link:{package}/LargestDivisibleSubset.java[largest-divisible-subset]
 * link:{package}/SumOfSquareNumbers.java[sum-of-square-numbers]
 * link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
+* link:{package}/CanYouEatYourFavoriteCandyOnYourFavoriteDay.java[can-you-eat-your-favorite-candy-on-your-favorite-day]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 * link:{package}/ChalkboardXORGame.java[chalkboard-xor-game]
