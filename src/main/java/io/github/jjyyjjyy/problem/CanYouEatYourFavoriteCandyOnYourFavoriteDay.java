@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -63,7 +64,32 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CanYouEatYourFavoriteCandyOnYourFavoriteDay {
 
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public boolean[] canEat(int[] candiesCount, int[][] queries) {
-        return null;
+        int n = candiesCount.length;
+
+        long[] sum = new long[n];
+        sum[0] = candiesCount[0];
+        for (int i = 1; i < n; i++) {
+            sum[i] = sum[i - 1] + candiesCount[i];
+        }
+        int q = queries.length;
+        boolean[] result = new boolean[q];
+
+        for (int i = 0; i < q; i++) {
+            int[] query = queries[i];
+            int type = query[0];
+            int day = query[1];
+            int cap = query[2];
+
+            int x1 = day + 1;
+            long y1 = (long) (day + 1) * cap;
+            long x2 = type == 0 ? 1 : sum[type - 1] + 1;
+            long y2 = sum[type];
+
+            result[i] = !(x1 > y2 || y1 < x2);
+        }
+
+        return result;
     }
 }
