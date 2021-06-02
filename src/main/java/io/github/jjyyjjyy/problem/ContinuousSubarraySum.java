@@ -43,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class ContinuousSubarraySum {
+
+    public boolean checkSubarraySum(int[] nums, int k) {
+        return false;
+    }
 }
