@@ -293,6 +293,7 @@ a|
 * link:{package}/RabbitsInForest.java[rabbits-in-forest]
 * link:{package}/BrickWall.java[brick-wall]
 * link:{package}/TopKFrequentWords.java[top-k-frequent-words]
+* link:{package}/ContiguousArray.java[contiguous-array]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 
