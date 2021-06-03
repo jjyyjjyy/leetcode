@@ -40,4 +40,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE}
 )
 public class ContiguousArray {
+
+    public int findMaxLength(int[] nums) {
+        return -1;
+    }
 }
