@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/contiguous-array/">连续数组</a>
@@ -41,7 +45,30 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ContiguousArray {
 
+    /**
+     * 计算数组的前缀和(0当成-1看待), 判断如果两个前缀和相等, 则中间的元素符合条件.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int findMaxLength(int[] nums) {
-        return -1;
+        int result = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        int counter = 0;
+        map.put(counter, -1);
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
+            int num = nums[i];
+            if (num == 1) {
+                counter++;
+            } else {
+                counter--;
+            }
+            if (map.containsKey(counter)) {
+                int prev = map.get(counter);
+                result = Math.max(result, i - prev);
+            } else {
+                map.put(counter, i);
+            }
+        }
+        return result;
     }
 }
