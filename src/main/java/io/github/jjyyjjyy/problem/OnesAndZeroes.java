@@ -50,5 +50,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
-public class OnesandZeroes {
+public class OnesAndZeroes {
+
+    public int findMaxForm(String[] strs, int m, int n) {
+        return -1;
+    }
+
 }
