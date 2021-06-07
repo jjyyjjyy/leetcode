@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,8 +49,34 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TargetSum {
 
+    /**
+     * 1. 维护一个dp数组标识前i个元素等于j的方案数.
+     * 2. 如果j小于num, 则即使所有元素都为正数都无法得到num, dp[i][j] = dp[i-1][j], 否则dp[i][j]等于前i-1个数等于j的方案数加上前i-1个数等于j-num的方案数, 即dp[i-1][j] + dp[i-1][j-num].
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n×(sum−target))")
     public int findTargetSumWays(int[] nums, int target) {
-        return -1;
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        int diff = sum - target;
+        if (diff < 0 || (diff & 1) == 1) {
+            return 0;
+        }
+        int n = nums.length;
+        int neg = diff / 2;
+        int[][] dp = new int[n + 1][neg + 1];
+        dp[0][0] = 1;
+        for (int i = 1; i <= n; i++) {
+            int num = nums[i - 1];
+            for (int j = 0; j <= neg; j++) {
+                dp[i][j] = dp[i - 1][j];
+                if (num <= j) {
+                    dp[i][j] += dp[i - 1][j - num];
+                }
+            }
+        }
+        return dp[n][neg];
     }
 
 }
