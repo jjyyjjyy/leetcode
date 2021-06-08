@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,7 +49,24 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LastStoneWeightII {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n*sum)")
     public int lastStoneWeightII(int[] stones) {
-        return -1;
+        int sum = 0;
+        for (int weight : stones) {
+            sum += weight;
+        }
+        int m = sum / 2;
+        boolean[] dp = new boolean[m + 1];
+        dp[0] = true;
+        for (int weight : stones) {
+            for (int j = m; j >= weight; --j) {
+                dp[j] = dp[j] || dp[j - weight];
+            }
+        }
+        for (int j = m; ; --j) {
+            if (dp[j]) {
+                return sum - 2 * j;
+            }
+        }
     }
 }
