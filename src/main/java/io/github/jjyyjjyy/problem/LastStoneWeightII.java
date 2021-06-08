@@ -47,4 +47,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class LastStoneWeightII {
+
+    public int lastStoneWeightII(int[] stones) {
+        return -1;
+    }
 }

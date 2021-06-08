@@ -422,6 +422,7 @@ a|
 * link:{package}/DeleteAndEarn.java[delete-and-earn]
 * link:{package}/OnesAndZeroes.java[ones-and-zeroes]
 * link:{package}/TargetSum.java[target-sum]
+* link:{package}/LastStoneWeightII.java[last-stone-weight-ii]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
