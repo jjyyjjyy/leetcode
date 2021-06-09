@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -57,7 +58,21 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ProfitableSchemes {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(len×n×minProfit)")
     public int profitableSchemes(int n, int minProfit, int[] group, int[] profit) {
-        return -1;
+        int[][] dp = new int[n + 1][minProfit + 1];
+        for (int i = 0; i <= n; i++) {
+            dp[i][0] = 1;
+        }
+        int len = group.length, MOD = (int) 1e9 + 7;
+        for (int i = 1; i <= len; i++) {
+            int members = group[i - 1], earn = profit[i - 1];
+            for (int j = n; j >= members; j--) {
+                for (int k = minProfit; k >= 0; k--) {
+                    dp[j][k] = (dp[j][k] + dp[j - members][Math.max(0, k - earn)]) % MOD;
+                }
+            }
+        }
+        return dp[n][minProfit];
     }
 }
