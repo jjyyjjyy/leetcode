@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -59,7 +60,15 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CoinChange2 {
 
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int change(int amount, int[] coins) {
-        return -1;
+        int[] dp = new int[amount + 1];
+        dp[0] = 1;
+        for (int coin : coins) {
+            for (int i = coin; i <= amount; i++) {
+                dp[i] += dp[i - coin];
+            }
+        }
+        return dp[amount];
     }
 }
