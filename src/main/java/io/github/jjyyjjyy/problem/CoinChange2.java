@@ -2,6 +2,7 @@ package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
+import io.github.jjyyjjyy.core.Tag;
 
 /**
  * <a href="https://leetcode-cn.com/problems/coin-change-2/">零钱兑换 II</a>
@@ -54,7 +55,11 @@ import io.github.jjyyjjyy.core.Problem;
     id = 518,
     name = "coin-change-2",
     difficulty = Difficulty.MEDIUM,
-    tags = {}
+    tags = {Tag.DYNAMIC_PROGRAMMING}
 )
 public class CoinChange2 {
+
+    public int change(int amount, int[] coins) {
+        return -1;
+    }
 }
