@@ -210,6 +210,7 @@ a|
 * link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 * link:{package}/CanYouEatYourFavoriteCandyOnYourFavoriteDay.java[can-you-eat-your-favorite-candy-on-your-favorite-day]
 * link:{package}/ContinuousSubarraySum.java[continuous-subarray-sum]
+* link:{package}/PerfectSquares.java[perfect-squares]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 * link:{package}/ChalkboardXORGame.java[chalkboard-xor-game]
@@ -424,6 +425,7 @@ a|
 * link:{package}/TargetSum.java[target-sum]
 * link:{package}/LastStoneWeightII.java[last-stone-weight-ii]
 * link:{package}/CoinChange2.java[coin-change-2]
+* link:{package}/PerfectSquares.java[perfect-squares]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
