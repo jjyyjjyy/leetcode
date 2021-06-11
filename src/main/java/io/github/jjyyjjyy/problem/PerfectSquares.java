@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -36,7 +37,16 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PerfectSquares {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n*sqrtn)")
     public int numSquares(int n) {
-        return -1;
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            int minn = Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                minn = Math.min(minn, dp[i - j * j]);
+            }
+            dp[i] = minn + 1;
+        }
+        return dp[n];
     }
 }
