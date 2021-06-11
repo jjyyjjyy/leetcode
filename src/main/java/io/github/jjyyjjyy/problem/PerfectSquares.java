@@ -35,4 +35,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BREADTH_FIRST_SEARCH, Tag.MATH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class PerfectSquares {
+
+    public int numSquares(int n) {
+        return -1;
+    }
 }
