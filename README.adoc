@@ -441,6 +441,7 @@ a|
 * link:{package}/MakeTheXorOfAllSegmentsEqualToZero.java[make-the-xor-of-all-segments-equal-to-zero]
 * link:{package}/NumberOfSubmatricesThatSumToTarget.java[number-of-submatrices-that-sum-to-target]
 * link:{package}/ProfitableSchemes.java[profitable-schemes]
+* link:{package}/FormLargestIntegerWithDigitsThatAddUpToTarget.java[form-largest-integer-with-digits-that-add-up-to-target]
 
 | Greedy
 a|
