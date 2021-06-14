@@ -1,6 +1,7 @@
 package io.github.jjyyjjyy.problem;
 
 import io.github.jjyyjjyy.core.Difficulty;
+import io.github.jjyyjjyy.core.GuessGame;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
@@ -36,5 +37,13 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.BINARY_SEARCH}
 )
-public class GuessNumberHigherorLower {
+public class GuessNumberHigherOrLower extends GuessGame {
+
+    public GuessNumberHigherOrLower(int pick) {
+        super(pick);
+    }
+
+    public int guessNumber(int n) {
+        return -1;
+    }
 }
