@@ -1,9 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.GuessGame;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/guess-number-higher-or-lower/">猜数字大小</a>
@@ -43,7 +40,25 @@ public class GuessNumberHigherOrLower extends GuessGame {
         super(pick);
     }
 
+    /**
+     * 二分查找到0~n
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int guessNumber(int n) {
-        return -1;
+        int left = 0;
+        int right = n;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            int guess = guess(mid);
+            if (guess == 0) {
+                return mid;
+            }
+            if (guess > 0) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return left;
     }
 }
