@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -55,7 +56,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class PeakIndexInAMountainArray {
 
+    /**
+     * 二分查找
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int peakIndexInMountainArray(int[] arr) {
-        return -1;
+        int result = 0;
+        int left = 1;
+        int right = arr.length - 2;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] < arr[mid + 1]) {
+                left = mid + 1;
+            } else {
+                result = mid;
+                right = mid - 1;
+            }
+        }
+        return result;
     }
+
+    /**
+     * 依次遍历数组, 直到arr[i]>=arr[i+1]
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int peakIndexInMountainArray2(int[] arr) {
+        int i = 0;
+        while (i < arr.length - 1 && arr[i] < arr[i + 1]) {
+            i++;
+        }
+        return i;
+    }
+
 }
