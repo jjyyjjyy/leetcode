@@ -53,5 +53,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.EASY,
     tags = {Tag.BINARY_SEARCH}
 )
-public class PeakIndexinaMountainArray {
+public class PeakIndexInAMountainArray {
+
+    public int peakIndexInMountainArray(int[] arr) {
+        return -1;
+    }
 }
