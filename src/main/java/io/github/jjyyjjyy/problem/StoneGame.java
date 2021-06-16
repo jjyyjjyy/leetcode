@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -48,6 +49,11 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class StoneGame {
 
+    /**
+     * 石子可以区分为奇数组和偶数组, 当Alex取走奇数组的石子后, lee只能取走偶数组的石子.
+     * Alex可以提前计算好奇数组和偶数组的石子数量, 所以Alex先手就可以一定赢.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public boolean stoneGame(int[] piles) {
         return true;
     }
