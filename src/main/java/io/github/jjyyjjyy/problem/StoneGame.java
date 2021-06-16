@@ -47,4 +47,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MINIMAX, Tag.MATH, Tag.DYNAMIC_PROGRAMMING}
 )
 public class StoneGame {
+
+    public boolean stoneGame(int[] piles) {
+        return true;
+    }
 }
