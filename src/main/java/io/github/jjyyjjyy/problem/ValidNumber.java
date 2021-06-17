@@ -53,4 +53,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.MATH, Tag.STRING}
 )
 public class ValidNumber {
+
+    public boolean isNumber(String s) {
+        return false;
+    }
 }
