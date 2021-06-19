@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,7 +55,33 @@ import java.util.List;
 )
 public class MaximumLengthOfAConcatenatedStringWithUniqueCharacters {
 
+    @Complexity(Complexity.ComplexityType.O_2_EXPONENT)
     public int maxLength(List<String> arr) {
-        return -1;
+        int result = 0;
+        List<Integer> masks = new ArrayList<>();
+        masks.add(0);
+        for (String s : arr) {
+            int mask = 0;
+            for (int i = 0; i < s.length(); i++) {
+                int ch = s.charAt(i) - 'a';
+                if (((mask >> ch) & 1) != 0) {
+                    mask = 0;
+                    break;
+                }
+                mask |= 1 << ch;
+            }
+            if (mask == 0) {
+                continue;
+            }
+            int n = masks.size();
+            for (int i = 0; i < n; i++) {
+                int m = masks.get(i);
+                if ((m & mask) == 0) {
+                    masks.add(m | mask);
+                    result = Math.max(result, Integer.bitCount(m | mask));
+                }
+            }
+        }
+        return result;
     }
 }
