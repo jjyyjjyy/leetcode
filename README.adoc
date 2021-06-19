@@ -238,6 +238,7 @@ a|
 * link:{package}/MaximumXOROfTwoNumbersInAnArray.java[maximum-xor-of-two-numbers-in-an-array]
 * link:{package}/CountTripletsThatCanFormTwoArraysOfEqualXor.java[count-triplets-that-can-form-two-arrays-of-equal-xor]
 * link:{package}/TotalHammingDistance.java[total-hamming-distance]
+* link:{package}/MaximumLengthOfAConcatenatedStringWithUniqueCharacters.java[maximum-length-of-a-concatenated-string-with-unique-characters]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaximumXorWithAnElementFromArray.java[maximum-xor-with-an-element-from-array]
@@ -598,6 +599,7 @@ a|
 * link:{package}/Permutations.java[permutations]
 * link:{package}/PermutationsII.java[permutations-ii]
 * link:{package}/PalindromePartitioning.java[palindrome-partitioning]
+* link:{package}/MaximumLengthOfAConcatenatedStringWithUniqueCharacters.java[maximum-length-of-a-concatenated-string-with-unique-characters]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/FindMinimumTimeToFinishAllJobs.java[find-minimum-time-to-finish-all-jobs]

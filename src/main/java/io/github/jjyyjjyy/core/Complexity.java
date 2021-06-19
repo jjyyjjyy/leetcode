@@ -29,6 +29,7 @@ public @interface Complexity {
         O_M_AND_N("O(m+n)"),
         O_LOG_M_N("O(log(mn))"),
         O_N_EXPONENT("O(n*2^n)"),
+        O_2_EXPONENT("O(2^n)"),
         O_N_POW_2("O(n^2)"),
         O_N_POW_3("O(n^3)"),
         O_N_POW_4("O(n^4)"),
