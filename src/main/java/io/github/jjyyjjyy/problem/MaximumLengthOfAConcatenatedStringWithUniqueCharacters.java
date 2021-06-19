@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/">串联字符串的最大长度</a>
  *
@@ -49,5 +51,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.BIT_MANIPULATION, Tag.BACKTRACKING}
 )
-public class MaximumLengthofaConcatenatedStringwithUniqueCharacters {
+public class MaximumLengthOfAConcatenatedStringWithUniqueCharacters {
+
+    public int maxLength(List<String> arr) {
+        return -1;
+    }
 }

@@ -5,6 +5,7 @@ import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -69,6 +70,9 @@ public class CsvToArray extends SimpleArgumentConverter {
                 .map(s -> s.replace("[", "").replace("]", ""))
                 .map(s -> s.split(ARRAY_SPLITTER_REGEX))
                 .toArray(String[][]::new);
+        }
+        if (Objects.equals(targetType, List.class)) {
+            return Arrays.asList(sourceString.split(ARRAY_SPLITTER_REGEX));
         }
         return sourceString.split(ARRAY_SPLITTER_REGEX);
     }
