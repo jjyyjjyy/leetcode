@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("form-largest-integer-with-digits-that-add-up-to-target");
+        dumpToFile("throne-inheritance");
     }
 
     private static String capitalize(char cap) {
