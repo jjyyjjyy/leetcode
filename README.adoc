@@ -341,6 +341,7 @@ a|
 * link:{package}/KthSmallestElementInABST.java[kth-smallest-element-in-a-bst]
 * link:{package}/LowestCommonAncestorOfABinaryTree.java[lowest-common-ancestor-of-a-binary-tree]
 * link:{package}/RedundantConnection.java[redundant-connection]
+* link:{package}/ThroneInheritance.java[throne-inheritance]
 |
 
 | Heap
