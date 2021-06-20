@@ -1,10 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/throne-inheritance/">皇位继承顺序</a>
@@ -86,18 +87,42 @@ import java.util.List;
 )
 public class ThroneInheritance {
 
+    private final Map<String, List<String>> edges = new HashMap<>();
+    private final Set<String> dead = new HashSet<>();
+    private final String king;
+
     public ThroneInheritance(String kingName) {
+        king = kingName;
     }
 
     public void birth(String parentName, String childName) {
+        List<String> children = edges.getOrDefault(parentName, new ArrayList<>());
+        children.add(childName);
+        edges.put(parentName, children);
     }
 
     public void death(String name) {
+        dead.add(name);
     }
 
+    /**
+     * 前序遍历
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<String> getInheritanceOrder() {
-        return null;
+        List<String> result = new ArrayList<>();
+        preOrder(result, king);
+        return result;
     }
 
+    private void preOrder(List<String> result, String name) {
+        if (!dead.contains(name)) {
+            result.add(name);
+        }
+        List<String> children = edges.get(name);
+        if (children != null) {
+            children.forEach(c -> preOrder(result, c));
+        }
+    }
 
 }
