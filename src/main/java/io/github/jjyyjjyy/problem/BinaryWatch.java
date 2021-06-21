@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/binary-watch/">二进制手表</a>
  *
@@ -44,7 +46,11 @@ import io.github.jjyyjjyy.core.Tag;
     id = 401,
     name = "binary-watch",
     difficulty = Difficulty.EASY,
-    tags = {Tag.BIT_MANIPULATION, Tag.BACKTRACKING}
+    tags = {Tag.BIT_MANIPULATION}
 )
 public class BinaryWatch {
+
+    public List<String> readBinaryWatch(int turnedOn) {
+        return null;
+    }
 }

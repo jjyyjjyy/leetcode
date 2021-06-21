@@ -228,6 +228,7 @@ a|
 * link:{package}/XorOperationInAnArray.java[xor-operation-in-an-array]
 * link:{package}/HammingDistance.java[hamming-distance]
 * link:{package}/PowerOfFour.java[power-of-four]
+* link:{package}/BinaryWatch.java[binary-watch]
 a|
 * link:{package}/Subsets.java[subsets]
 * link:{package}/NumberOf1Bits.java[number-of-1-bits]
