@@ -1,9 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +52,19 @@ import java.util.List;
 )
 public class BinaryWatch {
 
+    /**
+     * 枚举小时和分钟, 判断小时和分钟中1的数量是否等于turnedOn.
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public List<String> readBinaryWatch(int turnedOn) {
-        return null;
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 60; j++) {
+                if (Integer.bitCount(i) + Integer.bitCount(j) == turnedOn) {
+                    result.add(i + ":" + (j > 9 ? j : ("0" + j)));
+                }
+            }
+        }
+        return result;
     }
 }
