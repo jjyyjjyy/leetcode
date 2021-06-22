@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">字符串的排列</a>
@@ -35,8 +40,38 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class Permutation {
 
+    private final List<String> rec = new ArrayList<>();
+    private boolean[] vis;
+
+    /**
+     * 1. 为了避免生成重复排列, 先将字符排好序.
+     * 2. 使用布尔数组标记当前字符是否被使用过.
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n*n!)")
     public String[] permutation(String s) {
-        return null;
+        int n = s.length();
+        vis = new boolean[n];
+        char[] arr = s.toCharArray();
+        Arrays.sort(arr);
+        StringBuilder perm = new StringBuilder();
+        backtrack(arr, 0, n, perm);
+        return rec.toArray(String[]::new);
     }
 
+    public void backtrack(char[] arr, int i, int n, StringBuilder perm) {
+        if (i == n) {
+            rec.add(perm.toString());
+            return;
+        }
+        for (int j = 0; j < n; j++) {
+            if (vis[j] || (j > 0 && !vis[j - 1] && arr[j - 1] == arr[j])) {
+                continue;
+            }
+            vis[j] = true;
+            perm.append(arr[j]);
+            backtrack(arr, i + 1, n, perm);
+            perm.deleteCharAt(perm.length() - 1);
+            vis[j] = false;
+        }
+    }
 }
