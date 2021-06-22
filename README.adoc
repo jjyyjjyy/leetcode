@@ -602,6 +602,7 @@ a|
 * link:{package}/PermutationsII.java[permutations-ii]
 * link:{package}/PalindromePartitioning.java[palindrome-partitioning]
 * link:{package}/MaximumLengthOfAConcatenatedStringWithUniqueCharacters.java[maximum-length-of-a-concatenated-string-with-unique-characters]
+* link:{package}/Permutation.java[zi-fu-chuan-de-pai-lie-lcof]
 a|
 * link:{package}/RegularExpressionMatching.java[regular-expression-matching]
 * link:{package}/FindMinimumTimeToFinishAllJobs.java[find-minimum-time-to-finish-all-jobs]

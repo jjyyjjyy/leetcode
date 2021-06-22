@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("throne-inheritance");
+        dumpToFile("zi-fu-chuan-de-pai-lie-lcof");
     }
 
     private static String capitalize(char cap) {
