@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/max-points-on-a-line/">直线上最多的点数</a>
@@ -51,7 +55,48 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaxPointsOnALine {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n^2*logm)")
     public int maxPoints(int[][] points) {
-        return -1;
+        int n = points.length;
+        if (n <= 2) {
+            return n;
+        }
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            if (result >= n - i || result > n / 2) {
+                break;
+            }
+            Map<Integer, Integer> map = new HashMap<>();
+            for (int j = i + 1; j < n; j++) {
+                int x = points[i][0] - points[j][0];
+                int y = points[i][1] - points[j][1];
+                if (x == 0) {
+                    y = 1;
+                } else if (y == 0) {
+                    x = 1;
+                } else {
+                    if (y < 0) {
+                        x = -x;
+                        y = -y;
+                    }
+                    int gcdXY = gcd(Math.abs(x), Math.abs(y));
+                    x /= gcdXY;
+                    y /= gcdXY;
+                }
+                int key = y + x * 20001;
+                map.put(key, map.getOrDefault(key, 0) + 1);
+            }
+            int max = 0;
+            for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+                int num = entry.getValue();
+                max = Math.max(max, num + 1);
+            }
+            result = Math.max(result, max);
+        }
+        return result;
+    }
+
+    private int gcd(int a, int b) {
+        return b != 0 ? gcd(b, a % b) : a;
     }
 }
