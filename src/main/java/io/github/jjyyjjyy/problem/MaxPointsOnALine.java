@@ -49,5 +49,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.HASH_TABLE, Tag.MATH}
 )
-public class MaxPointsonaLine {
+public class MaxPointsOnALine {
+
+    public int maxPoints(int[][] points) {
+        return -1;
+    }
 }
