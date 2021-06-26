@@ -62,4 +62,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BREADTH_FIRST_SEARCH}
 )
 public class SlidingPuzzle {
+
+    public int slidingPuzzle(int[][] board) {
+        return -1;
+    }
+
 }
