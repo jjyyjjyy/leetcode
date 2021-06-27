@@ -65,5 +65,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.BREADTH_FIRST_SEARCH}
 )
-public class SnakesandLadders {
+public class SnakesAndLadders {
+
+    public int snakesAndLadders(int[][] board) {
+        return -1;
+    }
+
 }
