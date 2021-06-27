@@ -574,6 +574,7 @@ a|
 * link:{package}/CourseSchedule.java[course-schedule]
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/SlidingPuzzle.java[sliding-puzzle]
+* link:{package}/SnakesAndLadders.java[snakes-and-ladders]
 |
 
 | SlidingWindow
