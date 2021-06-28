@@ -575,7 +575,8 @@ a|
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/SlidingPuzzle.java[sliding-puzzle]
 * link:{package}/SnakesAndLadders.java[snakes-and-ladders]
-|
+a|
+* link:{package}/BusRoutes.java[bus-routes]
 
 | SlidingWindow
 |
