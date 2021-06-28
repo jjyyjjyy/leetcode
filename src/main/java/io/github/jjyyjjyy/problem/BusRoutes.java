@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/bus-routes/">公交路线</a>
@@ -38,7 +41,48 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BusRoutes {
 
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(mn+n^2)")
     public int numBusesToDestination(int[][] routes, int source, int target) {
-        return -1;
+        if (source == target) {
+            return 0;
+        }
+        int n = routes.length;
+        boolean[][] edge = new boolean[n][n];
+        Map<Integer, List<Integer>> rec = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            for (int site : routes[i]) {
+                List<Integer> list = rec.getOrDefault(site, new ArrayList<>());
+                for (int j : list) {
+                    edge[i][j] = edge[j][i] = true;
+                }
+                list.add(i);
+                rec.put(site, list);
+            }
+        }
+
+        int[] dis = new int[n];
+        Arrays.fill(dis, -1);
+        Queue<Integer> que = new LinkedList<>();
+        for (int bus : rec.getOrDefault(source, new ArrayList<>())) {
+            dis[bus] = 1;
+            que.offer(bus);
+        }
+        while (!que.isEmpty()) {
+            int x = que.poll();
+            for (int y = 0; y < n; y++) {
+                if (edge[x][y] && dis[y] == -1) {
+                    dis[y] = dis[x] + 1;
+                    que.offer(y);
+                }
+            }
+        }
+
+        int ret = Integer.MAX_VALUE;
+        for (int bus : rec.getOrDefault(target, new ArrayList<>())) {
+            if (dis[bus] != -1) {
+                ret = Math.min(ret, dis[bus]);
+            }
+        }
+        return ret == Integer.MAX_VALUE ? -1 : ret;
     }
 }
