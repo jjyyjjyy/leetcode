@@ -3,6 +3,7 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/">二叉树的序列化与反序列化</a>
@@ -42,5 +43,14 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.TREE, Tag.DESIGN}
 )
-public class SerializeandDeserializeBinaryTree {
+public class SerializeAndDeserializeBinaryTree {
+
+    public String serialize(TreeNode root) {
+        return null;
+    }
+
+    public TreeNode deserialize(String data) {
+        return null;
+    }
+
 }

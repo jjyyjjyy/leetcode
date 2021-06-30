@@ -348,7 +348,8 @@ a|
 * link:{package}/LowestCommonAncestorOfABinaryTree.java[lowest-common-ancestor-of-a-binary-tree]
 * link:{package}/RedundantConnection.java[redundant-connection]
 * link:{package}/ThroneInheritance.java[throne-inheritance]
-|
+a|
+* link:{package}/SerializeAndDeserializeBinaryTree.java[serialize-and-deserialize-binary-tree]
 
 | Heap
 |
