@@ -1,9 +1,10 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/">二叉树的序列化与反序列化</a>
@@ -45,12 +46,37 @@ import io.github.jjyyjjyy.core.TreeNode;
 )
 public class SerializeAndDeserializeBinaryTree {
 
+    @Complexity(Complexity.ComplexityType.O_N)
     public String serialize(TreeNode root) {
-        return null;
+        return serialize(root, "");
+    }
+
+    private String serialize(TreeNode root, String s) {
+        if (root == null) {
+            return s + "null,";
+        }
+        s += root.val + ",";
+        s = serialize(root.left, s);
+        s = serialize(root.right, s);
+        return s;
     }
 
     public TreeNode deserialize(String data) {
-        return null;
+        String[] datas = data.split(",");
+        return deserialize(new ArrayList<>(Arrays.asList(datas)));
+    }
+
+    private TreeNode deserialize(List<String> datas) {
+        String data = datas.get(0);
+        if ("null".equals(data)) {
+            datas.remove(0);
+            return null;
+        }
+        TreeNode root = new TreeNode(Integer.valueOf(data));
+        datas.remove(0);
+        root.left = deserialize(datas);
+        root.right = deserialize(datas);
+        return root;
     }
 
 }
