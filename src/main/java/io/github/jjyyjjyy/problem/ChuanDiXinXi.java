@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -54,7 +55,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class ChuanDiXinXi {
 
+    @Complexity(Complexity.ComplexityType.O_M_N)
     public int numWays(int n, int[][] relation, int k) {
-        return -1;
+        int[] dp = new int[n];
+        dp[0] = 1;
+        for (int i = 0; i < k; i++) {
+            int[] next = new int[n];
+            for (int[] rel : relation) {
+                next[rel[1]] += dp[rel[0]];
+            }
+            dp = next;
+        }
+        return dp[n - 1];
     }
 }
