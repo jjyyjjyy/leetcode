@@ -17,6 +17,6 @@ class MaximumIceCreamBarsTest {
     @ParameterizedTest
     @CsvSource({"'1,3,2,4,1',7,4", "'10,6,8,7,7,8',5,0", "'1,6,3,1,2,5',20,6"})
     void maxIceCream(@ConvertWith(CsvToArray.class) int[] costs, int coins, int expect) {
-        assertEquals(expect, MAXIMUM_ICE_CREAM_BARS.maxIceCream(costs, coins));
+        assertEquals(expect, MAXIMUM_ICE_CREAM_BARS.maxIceCream2(costs, coins));
     }
 }

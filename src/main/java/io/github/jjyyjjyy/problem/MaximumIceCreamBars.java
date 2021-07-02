@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-ice-cream-bars/">雪糕的最大数量</a>
@@ -57,7 +60,43 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaximumIceCreamBars {
 
-    public int maxIceCream(int[] costs, int coins) {
-        return -1;
+    /**
+     * 1. 将数组排序.
+     * 2. 遍历数组, 判断当前累计花费加上当前雪糕价格是否大于coins, 如果不大于, 则计数加1.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
+    public int maxIceCream2(int[] costs, int coins) {
+        Arrays.sort(costs);
+        int count = 0;
+        for (int cost : costs) {
+            coins -= cost;
+            if (coins < 0) {
+                break;
+            }
+            count++;
+        }
+        return count;
     }
+
+    /**
+     * 计数排序
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
+    public int maxIceCream(int[] costs, int coins) {
+        int[] counts = new int[100001];
+        for (int cost : costs) {
+            counts[cost]++;
+        }
+        int count = 0;
+        for (int i = 1; i < 100_001; i++) {
+            if (coins < i) {
+                break;
+            }
+            int currentCount = Math.min(counts[i], coins / i);
+            count += currentCount;
+            coins -= i * currentCount;
+        }
+        return count;
+    }
+
 }
