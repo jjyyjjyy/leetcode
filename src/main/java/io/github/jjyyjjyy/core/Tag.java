@@ -10,6 +10,8 @@ public enum Tag {
 
     SORT("排序"),
 
+    SORTING("排序"),
+
     BIT_MANIPULATION("位运算"),
 
     TREE("树"),

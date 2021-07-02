@@ -101,6 +101,7 @@ a|
 * link:{package}/FindKthLargestXorCoordinateValue.java[find-kth-largest-xor-coordinate-value]
 * link:{package}/UncrossedLines.java[uncrossed-lines]
 * link:{package}/OpenTheLock.java[open-the-lock]
+* link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -407,6 +408,7 @@ a|
 * link:{package}/LargestNumber.java[largest-number]
 * link:{package}/ContainsDuplicateIII.java[contains-duplicate-iii]
 * link:{package}/HIndex.java[h-index]
+* link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 |
 
 | DP
@@ -462,6 +464,7 @@ a|
 a|
 * link:{package}/JumpGame.java[jump-game]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
+* link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 a|
 * link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
 
