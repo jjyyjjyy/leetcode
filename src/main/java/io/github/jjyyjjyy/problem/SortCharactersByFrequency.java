@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/sort-characters-by-frequency/">根据字符出现频率排序</a>
@@ -66,7 +72,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SortCharactersByFrequency {
 
+    /**
+     * 将字符按照出现次数排好序, 然后根据频次输出字符
+     */
+    @Complexity(value = Complexity.ComplexityType.O_DEFINE, complexity = "O(n+nlogn)")
     public String frequencySort(String s) {
-        return null;
+        Map<Character, Integer> counts = new HashMap<>();
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            counts.put(c, counts.getOrDefault(c, 0) + 1);
+        }
+        List<Character> characters = new ArrayList<>(counts.keySet());
+        characters.sort((a, b) -> counts.get(b) - counts.get(a));
+        StringBuilder result = new StringBuilder();
+        for (Character character : characters) {
+            Integer freq = counts.get(character);
+            for (int i = 0; i < freq; i++) {
+                result.append(character);
+            }
+        }
+        return result.toString();
     }
 }
