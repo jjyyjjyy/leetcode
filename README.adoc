@@ -304,6 +304,7 @@ a|
 * link:{package}/TopKFrequentWords.java[top-k-frequent-words]
 * link:{package}/ContiguousArray.java[contiguous-array]
 * link:{package}/OpenTheLock.java[open-the-lock]
+* link:{package}/SortCharactersByFrequency.java[sort-characters-by-frequency]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
@@ -359,6 +360,7 @@ a|
 * link:{package}/SuperUglyNumber.java[super-ugly-number]
 * link:{package}/KthLargest.java[kth-largest-element-in-a-stream]
 * link:{package}/TopKFrequentWords.java[top-k-frequent-words]
+* link:{package}/SortCharactersByFrequency.java[sort-characters-by-frequency]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 
