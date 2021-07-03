@@ -65,4 +65,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HEAP, Tag.HASH_TABLE}
 )
 public class SortCharactersByFrequency {
+
+    public String frequencySort(String s) {
+        return null;
+    }
 }
