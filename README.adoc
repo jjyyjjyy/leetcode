@@ -196,6 +196,7 @@ a|
 * link:{package}/ValidPerfectSquare.java[valid-perfect-square]
 * link:{package}/CheckIfItIsAStraightLine.java[check-if-it-is-a-straight-line]
 * link:{package}/MaximumProductOfThreeNumbers.java[maximum-product-of-three-numbers]
+* link:{package}/SetMismatch.java[set-mismatch]
 a|
 * link:{package}/StringToIntegerAtoi.java[string-to-integer-atoi]
 * link:{package}/IntegerToRoman.java[integer-to-roman]
@@ -292,6 +293,7 @@ a|
 * link:{package}/MyHashSet.java[design-hashset]
 * link:{package}/MyHashMap.java[design-hashmap]
 * link:{package}/EmployeeImportance.java[employee-importance]
+* link:{package}/SetMismatch.java[set-mismatch]
 a|
 * link:{package}/FourSum.java[4sum]
 * link:{package}/BinaryTreeInorderTraversal.java[binary-tree-inorder-traversal]
