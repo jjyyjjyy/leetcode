@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/set-mismatch/">错误的集合</a>
@@ -39,7 +44,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class SetMismatch {
 
+    /**
+     * 1. 计算当前数组的和sum.
+     * 2. 计算当前数组去重后的和distinctSum.
+     * 3. 重复的次数等于sum-distinctSum.
+     * 4. 丢失的次数等于n*(n+1)/2-distinctSum.
+     */
     public int[] findErrorNums(int[] nums) {
-        return null;
+        int n = nums.length;
+        int sum = Arrays.stream(nums).sum();
+        int distinctSum = Arrays.stream(nums).distinct().sum();
+        return new int[]{sum - distinctSum, n * (n + 1) / 2 - distinctSum};
+    }
+
+    /**
+     * 使用哈希表计算每个次数出现的次数, 1到n中出现次数为0的即为丢失的数字, 出现次数为2的即为重复的数字.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
+    public int[] findErrorNums2(int[] nums) {
+        Map<Integer, Integer> counts = new HashMap<>();
+        for (int num : nums) {
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
+        }
+        int[] result = new int[2];
+        for (int i = 1; i <= nums.length; i++) {
+            if (counts.get(i) == null) {
+                result[1] = i;
+            } else if (counts.get(i) == 2) {
+                result[0] = i;
+            }
+        }
+        return result;
     }
 }
