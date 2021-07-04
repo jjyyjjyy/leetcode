@@ -38,4 +38,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HASH_TABLE, Tag.MATH}
 )
 public class SetMismatch {
+
+    public int[] findErrorNums(int[] nums) {
+        return null;
+    }
 }
