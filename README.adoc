@@ -275,6 +275,7 @@ a|
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 * link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
+* link:{package}/NumberOfAtoms.java[number-of-atoms]
 
 | HashTable
 a|
@@ -310,6 +311,7 @@ a|
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
+* link:{package}/NumberOfAtoms.java[number-of-atoms]
 
 | Tree
 a|

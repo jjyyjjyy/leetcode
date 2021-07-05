@@ -71,5 +71,10 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.HARD,
     tags = {Tag.STACK, Tag.RECURSION, Tag.HASH_TABLE}
 )
-public class NumberofAtoms {
+public class NumberOfAtoms {
+
+    public String countOfAtoms(String formula) {
+        return null;
+    }
+
 }
