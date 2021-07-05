@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.*;
 
 /**
  * <a href="https://leetcode-cn.com/problems/number-of-atoms/">原子的数量</a>
@@ -73,8 +76,76 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class NumberOfAtoms {
 
+    private int i;
+
+    /**
+     * 1. 维护一个栈存储当前括号内元素和个数的对应关系.
+     * 2. 遍历字符串:
+     * 2.1. 如果是小括号, 则向栈中压入一个空的map.
+     * 2.2. 如果是大括号, 则表示当前括号遍历完毕, 找到后面的个数, 将当前括号内的统计结果加到上一个统计结果中.
+     * 2.3. 如果是字符, 将当前字符的个数加到上一个统计结果中.
+     * 3. 此时栈顶map统计所有元素出现的个数, 输出结果.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_POW_2)
     public String countOfAtoms(String formula) {
-        return null;
+        i = 0;
+        int n = formula.length();
+        Deque<Map<String, Integer>> stack = new LinkedList<>();
+        stack.push(new HashMap<>());
+
+        while (i < n) {
+            char ch = formula.charAt(i);
+            if (ch == '(') {
+                i++;
+                stack.push(new HashMap<>());
+            } else if (ch == ')') {
+                i++;
+                int num = getNum(formula);
+                Map<String, Integer> pop = stack.pop();
+                Map<String, Integer> peek = stack.element();
+                for (Map.Entry<String, Integer> entry : pop.entrySet()) {
+                    peek.put(entry.getKey(), peek.getOrDefault(entry.getKey(), 0) + entry.getValue() * num);
+                }
+            } else {
+                String atom = getAtom(formula);
+                int num = getNum(formula);
+                Map<String, Integer> peek = stack.element();
+                peek.put(atom, peek.getOrDefault(atom, 0) + num);
+            }
+        }
+
+        TreeMap<String, Integer> treeMap = new TreeMap<>(stack.pop());
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+            String atom = entry.getKey();
+            int count = entry.getValue();
+            sb.append(atom);
+            if (count > 1) {
+                sb.append(count);
+            }
+        }
+        return sb.toString();
     }
 
+    private String getAtom(String formula) {
+        StringBuilder atom = new StringBuilder();
+        atom.append(formula.charAt(i++));
+        while (i < formula.length() && Character.isLowerCase(formula.charAt(i))) {
+            atom.append(formula.charAt(i++));
+        }
+        return atom.toString();
+    }
+
+    private int getNum(String formula) {
+        int num = 0;
+        if (i == formula.length() || !Character.isDigit(formula.charAt(i))) {
+            num = 1;
+        } else {
+            while (i < formula.length() && Character.isDigit(formula.charAt(i))) {
+                num = num * 10 + (formula.charAt(i) - '0');
+                i++;
+            }
+        }
+        return num;
+    }
 }
