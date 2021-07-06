@@ -1,10 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * <a href="https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/">点菜展示表</a>
@@ -67,7 +71,38 @@ import java.util.List;
 )
 public class DisplayTableOfFoodOrdersInARestaurant {
 
+    /**
+     * 1. 按菜品和桌号统计个数.
+     * 2. 依次遍历菜品和桌号, 输出个数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<List<String>> displayTable(List<List<String>> orders) {
-        return null;
+        Map<Integer, Map<String, Integer>> customerCount = new TreeMap<>();
+        Map<String, Map<Integer, Integer>> foodCount = new TreeMap<>();
+        for (List<String> order : orders) {
+            int customer = Integer.parseInt(order.get(1));
+            String food = order.get(2);
+            Map<String, Integer> c = customerCount.getOrDefault(customer, new TreeMap<>());
+            c.put(food, c.getOrDefault(food, 0) + 1);
+            customerCount.put(customer, c);
+
+            Map<Integer, Integer> f = foodCount.getOrDefault(food, new TreeMap<>());
+            f.put(customer, f.getOrDefault(customer, 0) + 1);
+            foodCount.put(food, f);
+        }
+
+        List<List<String>> result = new ArrayList<>();
+        List<String> title = new ArrayList<>();
+        title.add("Table");
+        title.addAll(foodCount.keySet());
+        result.add(title);
+
+        customerCount.forEach((customer, f) -> {
+            List<String> currentLine = new ArrayList<>();
+            currentLine.add(String.valueOf(customer));
+            foodCount.keySet().forEach(food -> currentLine.add(String.valueOf(f.getOrDefault(food, 0))));
+            result.add(currentLine);
+        });
+        return result;
     }
 }
