@@ -102,6 +102,7 @@ a|
 * link:{package}/UncrossedLines.java[uncrossed-lines]
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
+* link:{package}/CountGoodMeals.java[count-good-meals]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -309,6 +310,7 @@ a|
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/SortCharactersByFrequency.java[sort-characters-by-frequency]
 * link:{package}/DisplayTableOfFoodOrdersInARestaurant.java[display-table-of-food-orders-in-a-restaurant]
+* link:{package}/CountGoodMeals.java[count-good-meals]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
