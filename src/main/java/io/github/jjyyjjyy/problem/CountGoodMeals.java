@@ -1,8 +1,13 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/count-good-meals/">大餐计数</a>
@@ -50,7 +55,19 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class CountGoodMeals {
 
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int countPairs(int[] deliciousness) {
-        return -1;
+        int max = Arrays.stream(deliciousness).max().getAsInt() * 2;
+        int mod = 1000000007;
+        int result = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int val : deliciousness) {
+            for (int j = 1; j <= max; j <<= 1) {
+                Integer count = map.getOrDefault(j - val, 0);
+                result = (result + count) % mod;
+            }
+            map.put(val, map.getOrDefault(val, 0) + 1);
+        }
+        return result;
     }
 }
