@@ -39,5 +39,9 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.HASH_TABLE, Tag.TWO_POINTERS}
 )
-public class BinarySubarraysWithSum {
+public class BinarySubArraysWithSum {
+
+    public int numSubarraysWithSum(int[] nums, int goal) {
+        return -1;
+    }
 }

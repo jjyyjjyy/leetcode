@@ -311,6 +311,7 @@ a|
 * link:{package}/SortCharactersByFrequency.java[sort-characters-by-frequency]
 * link:{package}/DisplayTableOfFoodOrdersInARestaurant.java[display-table-of-food-orders-in-a-restaurant]
 * link:{package}/CountGoodMeals.java[count-good-meals]
+* link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
@@ -539,6 +540,7 @@ a|
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
 * link:{package}/PermutationInString.java[permutation-in-string]
 * link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
+* link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
 a|
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 * link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]
