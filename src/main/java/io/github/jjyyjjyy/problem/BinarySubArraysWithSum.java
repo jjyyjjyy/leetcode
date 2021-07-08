@@ -1,8 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/binary-subarrays-with-sum/">和相同的二元子数组</a>
@@ -41,7 +45,21 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class BinarySubArraysWithSum {
 
+    /**
+     * 1. 遍历数组, 计算前缀和.
+     * 2. 将当前前缀和出现次数加1.
+     * 3. 结果加上当前前缀和-目标之差出现的次数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int numSubarraysWithSum(int[] nums, int goal) {
-        return -1;
+        int sum = 0;
+        Map<Integer, Integer> count = new HashMap<>();
+        int result = 0;
+        for (int num : nums) {
+            count.put(sum, count.getOrDefault(sum, 0) + 1);
+            sum += num;
+            result += count.getOrDefault(sum - goal, 0);
+        }
+        return result;
     }
 }
