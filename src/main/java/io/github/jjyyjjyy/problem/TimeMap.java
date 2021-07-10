@@ -4,6 +4,10 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * <a href="https://leetcode-cn.com/problems/time-based-key-value-store/">基于时间的键值存储</a>
  *
@@ -66,14 +70,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class TimeMap {
 
+    private final Map<String, TreeMap<Integer, String>> map = new HashMap<>();
 
     public TimeMap() {
     }
 
     public void set(String key, String value, int timestamp) {
+        TreeMap<Integer, String> existedMap = map.getOrDefault(key, new TreeMap<>((a, b) -> b - a));
+        existedMap.put(timestamp, value);
+        map.put(key, existedMap);
     }
 
     public String get(String key, int timestamp) {
-        return "";
+        TreeMap<Integer, String> existedMap = map.get(key);
+        if (existedMap == null) {
+            return "";
+        }
+        Integer k = existedMap.floorKey(timestamp);
+        if (k == null) {
+            return "";
+        }
+        return existedMap.get(k);
     }
 }
