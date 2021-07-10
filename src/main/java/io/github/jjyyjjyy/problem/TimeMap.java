@@ -64,5 +64,16 @@ import io.github.jjyyjjyy.core.Tag;
     difficulty = Difficulty.MEDIUM,
     tags = {Tag.HASH_TABLE, Tag.BINARY_SEARCH}
 )
-public class TimeBasedKeyValueStore {
+public class TimeMap {
+
+
+    public TimeMap() {
+    }
+
+    public void set(String key, String value, int timestamp) {
+    }
+
+    public String get(String key, int timestamp) {
+        return "";
+    }
 }

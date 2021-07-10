@@ -312,6 +312,7 @@ a|
 * link:{package}/DisplayTableOfFoodOrdersInARestaurant.java[display-table-of-food-orders-in-a-restaurant]
 * link:{package}/CountGoodMeals.java[count-good-meals]
 * link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
+* link:{package}/TimeMap.java[time-based-key-value-store]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
@@ -502,6 +503,7 @@ a|
 * link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 * link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 * link:{package}/CapacityToShipPackagesWithInDDays.java[capacity-to-ship-packages-within-d-days]
+* link:{package}/TimeMap.java[time-based-key-value-store]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
