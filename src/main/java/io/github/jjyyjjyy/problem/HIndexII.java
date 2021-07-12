@@ -48,4 +48,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.BINARY_SEARCH}
 )
 public class HIndexII {
+
+    public int hIndex(int[] citations) {
+        return -1;
+    }
 }

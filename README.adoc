@@ -313,6 +313,7 @@ a|
 * link:{package}/CountGoodMeals.java[count-good-meals]
 * link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
 * link:{package}/TimeMap.java[time-based-key-value-store]
+* link:{package}/HIndexII.java[h-index-ii]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
