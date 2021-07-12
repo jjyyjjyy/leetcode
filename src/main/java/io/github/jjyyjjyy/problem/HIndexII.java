@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -49,7 +50,22 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class HIndexII {
 
+    /**
+     * 二分查找
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int hIndex(int[] citations) {
-        return -1;
+        int left = 0;
+        int n = citations.length;
+        int right = n - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (citations[mid] >= n - mid) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return n - left;
     }
 }
