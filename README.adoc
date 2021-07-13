@@ -373,6 +373,7 @@ a|
 * link:{package}/SortCharactersByFrequency.java[sort-characters-by-frequency]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
+* link:{package}/TheSkylineProblem.java[the-skyline-problem]
 
 | Graph
 |
