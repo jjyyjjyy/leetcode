@@ -12,6 +12,10 @@ public class ArrayUtil {
         return list.stream().mapToInt(e -> e).toArray();
     }
 
+    public static int[][] toIntArrays(List<List<Integer>> list) {
+        return list.stream().map(l -> l.stream().mapToInt(e -> e).toArray()).toArray(int[][]::new);
+    }
+
     public static <T> T[][] toArray(List<List<T>> list) {
         Object[][] result = new Object[list.size()][];
         for (int i = 0; i < list.size(); i++) {

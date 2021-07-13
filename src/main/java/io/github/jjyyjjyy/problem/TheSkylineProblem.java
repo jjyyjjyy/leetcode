@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/the-skyline-problem/">天际线问题</a>
  *
@@ -41,4 +43,8 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.HEAP, Tag.BINARY_INDEXED_TREE, Tag.SEGMENT_TREE, Tag.DIVIDE_AND_CONQUER, Tag.LINE_SWEEP}
 )
 public class TheSkylineProblem {
+
+    public List<List<Integer>> getSkyline(int[][] buildings) {
+        return null;
+    }
 }
