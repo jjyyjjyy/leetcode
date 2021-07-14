@@ -103,6 +103,7 @@ a|
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 * link:{package}/CountGoodMeals.java[count-good-meals]
+* link:{package}/MinimumAbsoluteDifference.java[minimum-absolute-difference]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
