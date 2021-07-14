@@ -41,10 +41,15 @@ import io.github.jjyyjjyy.core.Tag;
  * </ul>
  */
 @Problem(
-    id = 1306,
+    id = 1818,
     name = "minimum-absolute-difference",
-    difficulty = Difficulty.EASY,
+    difficulty = Difficulty.MEDIUM,
     tags = {Tag.ARRAY}
 )
 public class MinimumAbsoluteDifference {
+
+    public int minAbsoluteSumDiff(int[] nums1, int[] nums2) {
+        return -1;
+    }
+
 }
