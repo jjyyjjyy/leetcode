@@ -104,6 +104,7 @@ a|
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 * link:{package}/CountGoodMeals.java[count-good-meals]
 * link:{package}/MinimumAbsoluteDifference.java[minimum-absolute-difference]
+* link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -423,6 +424,7 @@ a|
 * link:{package}/ContainsDuplicateIII.java[contains-duplicate-iii]
 * link:{package}/HIndex.java[h-index]
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
+* link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
 |
 
 | DP
@@ -479,6 +481,7 @@ a|
 * link:{package}/JumpGame.java[jump-game]
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
+* link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
 a|
 * link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
 
