@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/maximum-element-after-decreasing-and-rearranging/">减小和重新排列数组后的最大元素</a>
@@ -74,7 +77,17 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MaximumElementAfterDecreasingAndRearranging {
 
+    /**
+     * 将数组排好序, 遍历数组, 将当前元素变成min(a[i],a[i-1]+1)即可.
+     */
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int maximumElementAfterDecrementingAndRearranging(int[] arr) {
-        return -1;
+        int n = arr.length;
+        Arrays.sort(arr);
+        arr[0] = 1;
+        for (int i = 1; i < n; ++i) {
+            arr[i] = Math.min(arr[i], arr[i - 1] + 1);
+        }
+        return arr[n - 1];
     }
 }
