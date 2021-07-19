@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element/">最高频元素的频数</a>
@@ -59,7 +62,20 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class FrequencyOfTheMostFrequentElement {
 
+    @Complexity(Complexity.ComplexityType.O_N_LOG_N)
     public int maxFrequency(int[] nums, int k) {
-        return -1;
+        Arrays.sort(nums);
+        int n = nums.length;
+        long total = 0;
+        int l = 0, res = 1;
+        for (int r = 1; r < n; ++r) {
+            total += (long) (nums[r] - nums[r - 1]) * (r - l);
+            while (total > k) {
+                total -= nums[r] - nums[l];
+                ++l;
+            }
+            res = Math.max(res, r - l + 1);
+        }
+        return res;
     }
 }
