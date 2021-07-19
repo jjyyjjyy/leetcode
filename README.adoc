@@ -105,6 +105,7 @@ a|
 * link:{package}/CountGoodMeals.java[count-good-meals]
 * link:{package}/MinimumAbsoluteDifference.java[minimum-absolute-difference]
 * link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
+* link:{package}/FrequencyOfTheMostFrequentElement.java[frequency-of-the-most-frequent-element]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -510,6 +511,7 @@ a|
 * link:{package}/FindMinimumInRotatedSortedArray.java[find-minimum-in-rotated-sorted-array]
 * link:{package}/CapacityToShipPackagesWithInDDays.java[capacity-to-ship-packages-within-d-days]
 * link:{package}/TimeMap.java[time-based-key-value-store]
+* link:{package}/FrequencyOfTheMostFrequentElement.java[frequency-of-the-most-frequent-element]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
@@ -613,6 +615,7 @@ a|
 * link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
 * link:{package}/LongestContinuousSubarrayWithAbsoluteDiffLessThanOrEqualToLimit.java[longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit]
 * link:{package}/GrumpyBookstoreOwner.java[grumpy-bookstore-owner]
+* link:{package}/FrequencyOfTheMostFrequentElement.java[frequency-of-the-most-frequent-element]
 a|
 * link:{package}/SlidingWindowMaximum.java[sliding-window-maximum]
 * link:{package}/LongestRepeatingCharacterReplacement.java[longest-repeating-character-replacement]
