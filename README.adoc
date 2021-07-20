@@ -106,6 +106,7 @@ a|
 * link:{package}/MinimumAbsoluteDifference.java[minimum-absolute-difference]
 * link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
 * link:{package}/FrequencyOfTheMostFrequentElement.java[frequency-of-the-most-frequent-element]
+* link:{package}/MinimizeMaximumPairSumInArray.java[minimize-maximum-pair-sum-in-array]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -483,6 +484,7 @@ a|
 * link:{package}/RemoveDuplicateLetters.java[remove-duplicate-letters]
 * link:{package}/MaximumIceCreamBars.java[maximum-ice-cream-bars]
 * link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
+* link:{package}/MinimizeMaximumPairSumInArray.java[minimize-maximum-pair-sum-in-array]
 a|
 * link:{package}/MinimumNumberOfKConsecutiveBitFlips.java[minimum-number-of-k-consecutive-bit-flips]
 
@@ -551,6 +553,7 @@ a|
 * link:{package}/PermutationInString.java[permutation-in-string]
 * link:{package}/MaxConsecutiveOnesIII.java[max-consecutive-ones-iii]
 * link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
+* link:{package}/MinimizeMaximumPairSumInArray.java[minimize-maximum-pair-sum-in-array]
 a|
 * link:{package}/SubarraysWithKDifferentIntegers.java[subarrays-with-k-different-integers]
 * link:{package}/VolumeOfHistogramLcci.java[volume-of-histogram-lcci]

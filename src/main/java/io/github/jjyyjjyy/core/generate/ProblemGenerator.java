@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("frequency-of-the-most-frequent-element");
+        dumpToFile("minimize-maximum-pair-sum-in-array");
     }
 
     private static String capitalize(char cap) {
