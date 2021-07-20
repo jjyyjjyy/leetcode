@@ -1,8 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.Arrays;
 
 /**
  * <a href="https://leetcode-cn.com/problems/minimize-maximum-pair-sum-in-array/">数组中最大数对和的最小值</a>
@@ -59,7 +62,18 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class MinimizeMaximumPairSumInArray {
 
+    /**
+     * 1. 将数组排好序.
+     * 2. 遍历一半元素, 找到首尾和的最大值.
+     */
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public int minPairSum(int[] nums) {
-        return -1;
+        Arrays.sort(nums);
+        int result = 0;
+        int n = nums.length;
+        for (int i = 0; i < n / 2; i++) {
+            result = Math.max(result, nums[i] + nums[n - 1 - i]);
+        }
+        return result;
     }
 }
