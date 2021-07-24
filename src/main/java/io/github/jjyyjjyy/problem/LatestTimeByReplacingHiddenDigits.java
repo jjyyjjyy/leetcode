@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -54,7 +55,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class LatestTimeByReplacingHiddenDigits {
 
+    /**
+     * 时间最大值: 23:59
+     */
+    @Complexity(Complexity.ComplexityType.O_1)
     public String maximumTime(String time) {
-        return null;
+        char[] chars = time.toCharArray();
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < chars.length; i++) {
+            char current = chars[i];
+            if (current == '?') {
+                if (i == 0) {
+                    if (chars[1] != '?' && (chars[1] - '0') > 3) {
+                        current = '1';
+                    } else {
+                        current = '2';
+                    }
+                } else if (i == 3) {
+                    current = '5';
+                } else if (i == 4) {
+                    current = '9';
+                } else {
+                    if (result.charAt(0) == '2') {
+                        current = '3';
+                    } else {
+                        current = '9';
+                    }
+                }
+            }
+            result.append(current);
+        }
+        return result.toString();
     }
 }
