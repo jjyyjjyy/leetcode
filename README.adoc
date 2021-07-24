@@ -132,6 +132,7 @@ a|
 * link:{package}/NumberOfSegmentsInAString.java[number-of-segments-in-a-string]
 * link:{package}/RepeatedSubstringPattern.java[repeated-substring-pattern]
 * link:{package}/DetectCapital.java[detect-capital]
+* link:{package}/LatestTimeByReplacingHiddenDigits.java[latest-time-by-replacing-hidden-digits]
 a|
 * link:{package}/SimplifyPath.java[simplify-path]
 * link:{package}/MiniParser.java[mini-parser]
