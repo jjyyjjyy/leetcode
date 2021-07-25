@@ -107,6 +107,7 @@ a|
 * link:{package}/MaximumElementAfterDecreasingAndRearranging.java[maximum-element-after-decreasing-and-rearranging]
 * link:{package}/FrequencyOfTheMostFrequentElement.java[frequency-of-the-most-frequent-element]
 * link:{package}/MinimizeMaximumPairSumInArray.java[minimize-maximum-pair-sum-in-array]
+* link:{package}/RestoreTheArrayFromAdjacentPairs.java[restore-the-array-from-adjacent-pairs]
 a|
 * link:{package}/MedianOfTwoSortedArrays.java[median-of-two-sorted-arrays]
 * link:{package}/BestTimeToBuyAndSellStockIII.java[best-time-to-buy-and-sell-stock-iii]
@@ -319,6 +320,7 @@ a|
 * link:{package}/BinarySubArraysWithSum.java[binary-subarrays-with-sum]
 * link:{package}/TimeMap.java[time-based-key-value-store]
 * link:{package}/HIndexII.java[h-index-ii]
+* link:{package}/RestoreTheArrayFromAdjacentPairs.java[restore-the-array-from-adjacent-pairs]
 a|
 * link:{package}/NumberOfValidWordsForEachPuzzle.java[number-of-valid-words-for-each-puzzle]
 * link:{package}/MaxPointsOnALine.java[max-points-on-a-line]
