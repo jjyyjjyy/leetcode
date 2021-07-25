@@ -1,8 +1,14 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/restore-the-array-from-adjacent-pairs/">从相邻元素对还原数组</a>
@@ -63,8 +69,36 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class RestoreTheArrayFromAdjacentPairs {
 
+    /**
+     * 1. 维护一个哈希表, 记录每个点的相邻顶点, 如果相邻顶点数量为1, 那么该点是起点或终点.
+     * 2. 遍历数组, 找到上一个节点的左右两个节点, 如果前2个节点等于第1个数, 那当前节点等于第二个数.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public int[] restoreArray(int[][] adjacentPairs) {
-        return null;
+        Map<Integer, List<Integer>> pairs = new HashMap<>();
+        for (int[] pair : adjacentPairs) {
+            pairs.putIfAbsent(pair[0], new ArrayList<>());
+            pairs.get(pair[0]).add(pair[1]);
+            pairs.putIfAbsent(pair[1], new ArrayList<>());
+            pairs.get(pair[1]).add(pair[0]);
+        }
+        int n = adjacentPairs.length + 1;
+        int[] result = new int[n];
+
+        for (Map.Entry<Integer, List<Integer>> entry : pairs.entrySet()) {
+            if (entry.getValue().size() == 1) {
+                result[0] = entry.getKey();
+                break;
+            }
+        }
+        result[1] = pairs.get(result[0]).get(0);
+
+        for (int i = 2; i < n; i++) {
+            List<Integer> adj = pairs.get(result[i - 1]);
+            result[i] = result[i - 2] == adj.get(0) ? adj.get(1) : adj.get(0);
+        }
+
+        return result;
     }
 
 }
