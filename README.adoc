@@ -367,6 +367,7 @@ a|
 * link:{package}/LowestCommonAncestorOfABinaryTree.java[lowest-common-ancestor-of-a-binary-tree]
 * link:{package}/RedundantConnection.java[redundant-connection]
 * link:{package}/ThroneInheritance.java[throne-inheritance]
+* link:{package}/AllNodesDistanceKinBinaryTree.java[all-nodes-distance-k-in-binary-tree]
 a|
 * link:{package}/SerializeAndDeserializeBinaryTree.java[serialize-and-deserialize-binary-tree]
 
@@ -586,6 +587,7 @@ a|
 * link:{package}/CourseSchedule.java[course-schedule]
 * link:{package}/PathWithMinimumEffort.java[path-with-minimum-effort]
 * link:{package}/TargetSum.java[target-sum]
+* link:{package}/AllNodesDistanceKinBinaryTree.java[all-nodes-distance-k-in-binary-tree]
 a|
 * link:{package}/SortItemsByGroupsRespectingDependencies.java[sort-items-by-groups-respecting-dependencies]
 * link:{package}/SwimInRisingWater.java[swim-in-rising-water]
@@ -607,6 +609,7 @@ a|
 * link:{package}/OpenTheLock.java[open-the-lock]
 * link:{package}/SlidingPuzzle.java[sliding-puzzle]
 * link:{package}/SnakesAndLadders.java[snakes-and-ladders]
+* link:{package}/AllNodesDistanceKinBinaryTree.java[all-nodes-distance-k-in-binary-tree]
 a|
 * link:{package}/BusRoutes.java[bus-routes]
 
