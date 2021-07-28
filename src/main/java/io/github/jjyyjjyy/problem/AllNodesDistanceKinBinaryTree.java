@@ -3,6 +3,9 @@ package io.github.jjyyjjyy.problem;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
+import io.github.jjyyjjyy.core.TreeNode;
+
+import java.util.List;
 
 /**
  * <a href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/">二叉树中所有距离为 K 的结点</a>
@@ -50,4 +53,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.DEPTH_FIRST_SEARCH, Tag.BREADTH_FIRST_SEARCH}
 )
 public class AllNodesDistanceKinBinaryTree {
+
+    public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
+        return null;
+    }
+
 }
