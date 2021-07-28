@@ -1,11 +1,11 @@
 package io.github.jjyyjjyy.problem;
 
-import io.github.jjyyjjyy.core.Difficulty;
-import io.github.jjyyjjyy.core.Problem;
-import io.github.jjyyjjyy.core.Tag;
-import io.github.jjyyjjyy.core.TreeNode;
+import io.github.jjyyjjyy.core.*;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <a href="https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree/">二叉树中所有距离为 K 的结点</a>
@@ -54,8 +54,52 @@ import java.util.List;
 )
 public class AllNodesDistanceKinBinaryTree {
 
+    private final Map<Integer, TreeNode> parents = new HashMap<>();
+
+    private final List<Integer> result = new ArrayList<>();
+
+    /**
+     * 1. 记录每个节点的父节点.
+     * 2. 遍历左子树和右子树和父节点, 找到距离等于k的节点.
+     */
+    @Complexity(Complexity.ComplexityType.O_N)
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
-        return null;
+
+        recordParent(root);
+        findTarget(target, null, 0, k);
+        return result;
     }
 
+    private void findTarget(TreeNode target, TreeNode from, int depth, int k) {
+        if (target == null) {
+            return;
+        }
+        if (depth == k) {
+            result.add(target.val);
+            return;
+        }
+        if (target.left != from) {
+            findTarget(target.left, target, depth + 1, k);
+        }
+        if (target.right != from) {
+            findTarget(target.right, target, depth + 1, k);
+        }
+        if (parents.get(target.val) != from) {
+            findTarget(parents.get(target.val), target, depth + 1, k);
+        }
+    }
+
+    private void recordParent(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        if (root.left != null) {
+            parents.put(root.left.val, root);
+            recordParent(root.left);
+        }
+        if (root.right != null) {
+            parents.put(root.right.val, root);
+            recordParent(root.right);
+        }
+    }
 }
