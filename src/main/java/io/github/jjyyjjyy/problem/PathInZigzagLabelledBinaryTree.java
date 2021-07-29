@@ -4,6 +4,8 @@ import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.List;
+
 /**
  * <a href="https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/">二叉树寻路</a>
  *
@@ -46,4 +48,9 @@ import io.github.jjyyjjyy.core.Tag;
     tags = {Tag.TREE, Tag.MATH}
 )
 public class PathInZigzagLabelledBinaryTree {
+
+    public List<Integer> pathInZigZagTree(int label) {
+        return null;
+    }
+
 }

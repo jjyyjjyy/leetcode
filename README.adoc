@@ -223,6 +223,7 @@ a|
 * link:{package}/CanYouEatYourFavoriteCandyOnYourFavoriteDay.java[can-you-eat-your-favorite-candy-on-your-favorite-day]
 * link:{package}/ContinuousSubarraySum.java[continuous-subarray-sum]
 * link:{package}/PerfectSquares.java[perfect-squares]
+* link:{package}/PathInZigzagLabelledBinaryTree.java[path-in-zigzag-labelled-binary-tree]
 a|
 * link:{package}/BasicCalculator.java[basic-calculator]
 * link:{package}/ChalkboardXORGame.java[chalkboard-xor-game]
@@ -368,6 +369,7 @@ a|
 * link:{package}/RedundantConnection.java[redundant-connection]
 * link:{package}/ThroneInheritance.java[throne-inheritance]
 * link:{package}/AllNodesDistanceKinBinaryTree.java[all-nodes-distance-k-in-binary-tree]
+* link:{package}/PathInZigzagLabelledBinaryTree.java[path-in-zigzag-labelled-binary-tree]
 a|
 * link:{package}/SerializeAndDeserializeBinaryTree.java[serialize-and-deserialize-binary-tree]
 
