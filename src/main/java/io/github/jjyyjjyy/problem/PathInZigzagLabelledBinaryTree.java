@@ -1,9 +1,12 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -49,8 +52,31 @@ import java.util.List;
 )
 public class PathInZigzagLabelledBinaryTree {
 
+    @Complexity(Complexity.ComplexityType.O_LOG_N)
     public List<Integer> pathInZigZagTree(int label) {
-        return null;
+        int row = 1, rowStart = 1;
+        while (rowStart * 2 <= label) {
+            row++;
+            rowStart *= 2;
+        }
+        if (row % 2 == 0) {
+            label = getReverse(label, row);
+        }
+        List<Integer> path = new ArrayList<Integer>();
+        while (row > 0) {
+            if (row % 2 == 0) {
+                path.add(getReverse(label, row));
+            } else {
+                path.add(label);
+            }
+            row--;
+            label >>= 1;
+        }
+        Collections.reverse(path);
+        return path;
     }
 
+    public int getReverse(int label, int row) {
+        return (1 << row - 1) + (1 << row) - 1 - label;
+    }
 }
