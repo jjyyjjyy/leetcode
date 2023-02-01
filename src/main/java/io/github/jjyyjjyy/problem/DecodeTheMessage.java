@@ -1,5 +1,6 @@
 package io.github.jjyyjjyy.problem;
 
+import io.github.jjyyjjyy.core.Complexity;
 import io.github.jjyyjjyy.core.Difficulty;
 import io.github.jjyyjjyy.core.Problem;
 import io.github.jjyyjjyy.core.Tag;
@@ -66,7 +67,26 @@ import io.github.jjyyjjyy.core.Tag;
 )
 public class DecodeTheMessage {
 
+    /**
+     * 1. 初始化字符映射数组, 将数组中key字符按顺序设为映射后的字符
+     * 2. 遍历message, 取出数组映射后的字符.
+     */
+    @Complexity(Complexity.ComplexityType.O_M_AND_N)
     public String decodeMessage(String key, String message) {
-        return null;
+        char[] refs = new char[128];
+        refs[' '] = ' ';
+        int length = key.length();
+        for (int i = 0, j = 0; i < length; i++) {
+            char k = key.charAt(i);
+            if (refs[k] == 0) {
+                refs[k] = (char) ('a' + j++);
+            }
+        }
+
+        char[] messageChars = message.toCharArray();
+        for (int i = 0; i < messageChars.length; i++) {
+            messageChars[i] = refs[messageChars[i]];
+        }
+        return String.valueOf(messageChars);
     }
 }
