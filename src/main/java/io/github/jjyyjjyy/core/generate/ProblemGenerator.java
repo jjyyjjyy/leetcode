@@ -117,7 +117,7 @@ public class ProblemGenerator {
             .map(r -> ((JSONObject) r).getJSONObject("stat").getString("question__title_slug"))
             .forEach(ProblemGenerator::dumpToFile);*/
 
-        dumpToFile("restore-the-array-from-adjacent-pairs");
+        dumpToFile("decode-the-message");
     }
 
     private static String capitalize(char cap) {
